@@ -54,7 +54,7 @@
 						</div>
 						<div class="formItem">
 							<div class="entry">Sex</div>
-							<div class="inputBox">
+							<div class="formItem">
 								<input type="radio" name="sex" value="male">Male</input>
 								<input type="radio" name="sex" value="female">Female</input>
 							</div>

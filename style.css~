@@ -26,7 +26,7 @@
 .inputBox
 {
 	float:right;
-	width: 34em;
+	width: 14em;
 	text-align: left;
 	padding-left: 1em;
 }
@@ -35,5 +35,5 @@
 {
 	margin-left: 0px;
 	height: 2em;
-	width: 45em;
+	width: 25em;
 }
