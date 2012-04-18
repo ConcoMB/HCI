@@ -1,20 +1,32 @@
 <html>
 	<head>
-		<title>Sign Up</title>
+		<title>Add new shipping destination</title>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 	</head>
 	<body>
-		<h1>Add a new shipping destination</h1>
-		<div>
+		<div class="center">
+			<h1>Add a new shipping destination</h1>
 			<form>
-				<span>Address: </span>
-				<input type="text" value="address"><br>
-				<span>City: </span>
-				<input type="text" value="city"><br>
-				<span>Country: </span>
-				<input type="text" value="country"><br>
-				<span>Zip code: </span>
-				<input type="text" value="Zip"><br>
-				<input type="submit" value="add new destination"/>
+				<div class="formBox">
+					<div class="formItem">
+						<div class="entry">Address: </div>
+						<div class="inputBox"><input type="text" value="address"></div>
+					</div>
+					<div class="formItem">
+						<div class="entry">City: </div>
+						<div class="inputBox"><input type="text" value="city"></div>
+					</div>
+					<div class="formItem">
+						<div class="entry">Country: </div>
+						<div class="inputBox"><input type="text" value="country"></div>
+					</div>
+					<div class="formItem">
+						<div class="entry">Zip code: </div>
+						<div class="inputBox"><input type="text" value="Zip"></div>
+					</div>
+				</div>
+				<input class="submit" type="submit" value="add new destination"/>
 			</form>
 		</div>
+	</body>
+</html>

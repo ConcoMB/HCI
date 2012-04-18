@@ -1,5 +1,9 @@
 .formBox
 {
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	width: 30em;
 	background-color: #fbffbf;
 	border: 1px solid black;
 	padding: 2em;
@@ -38,12 +42,13 @@
 	width: 45em;
 }
 
-.button
-{
-	margin-top: 2em;
-}
 .submit
 {
+	margin-top: 2em;
+	font-size: 1.5em;
+	width: 13em;
+	height: 2em;
+	-webkit-appearance:button;
 	text-align: center;
 }
 
@@ -75,19 +80,22 @@ h2
 	font-family: Arial;
 }
 
-.langauges
+.language
 {
-	width: 5em;
+	margin-left: 1em;
+	border-style: none;
+	width: 30em;
 	height: 2em;
 	float: left;
 }
 
 .search
 {
-	height: 1.3em;
+	padding-left: 1em;
+	height: 1em;
 	font-size: 1.3em;
-	padding-bottom: 2em;
-	padding-top: 2em;
+	padding-bottom: 1em;
+	padding-top: 1em;
 	float: left;
 }
 
@@ -99,12 +107,12 @@ h2
 	height: 10em;
 }
 
-.sign
+.userhead
 {
-	margin-top: 0px;
+	padding-top: 1em;
 	border: 1px solid black;
 	width: 22em;
-	height: 10em;
+	height: 9em;
 	float: right;
 }
 
@@ -125,6 +133,7 @@ input#sb
 
 .categories
 {
+	float: left;
 	margin-top: 2em;
 	font-size: 2em;
 	width: 6em;
@@ -132,15 +141,64 @@ input#sb
 
 .category
 {
+	padding-left: 0.2em;
+	font-style: normal;
+	font-weight: normal;
+	padding-bottom: 0.3em;
+	padding-top: 0.3em;
 	background-color: #ff6a67;
 	width: 6em;
 	margin-left: 0.1em;
-	margin-bottom: 0.2em;
-	margin-top: 0.2em;
 	border-color: black;
 	border-width: 1px;
 	border-style: solid;
 	text-decoration: none;
 	color: #010101;
+}
+
+img#icon
+{
+	height: 10em;
+	float: left;
+}
+
+.lefthead
+{
+	width: 46em;
+	float: left;
+}
+
+.category a
+{
+	text-decoration: none;
+	color: #050505;
+	text-shadow: 0px 0px;
+	font-style: normal;
+	font-weight: normal;
+}
+
+.carthead
+{
+	padding-right: 1em;
+	float: right;
+}
+
+.carthead img
+{
+	margin-top: 2em;
+	margin-bottom: 1em;
+	display: block;
+}
+
+.signedinfo
+{
+	padding-left: 1em;
+	border-width: 10em;
+	float: left;
+}
+
+.button
+{
+	-webkit-appearance:button;
 }
 
