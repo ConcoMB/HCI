@@ -1,46 +1,46 @@
+
 .formBox
 {
 	margin-right: auto;
 	margin-left: auto;
-	text-align: left;
+	text-align: center;
 	width: 30em;
+
+
+
 	background-color: #fbffbf;
 	border: 1px solid black;
 	padding: 2em;
 }
 
-.center
-{
+.center {
 	margin: auto;
 	text-align: center;
 }
 
-.entry
-{
+.entry {
 	text-align: right;
-	width: 10em;
-	float:left;
+	width: 47%;
+	float: left;
 }
 
-.content
-{
+.content {
 	width: 50em;
 }
 
-.inputBox
-{
-	float:right;
-	width: 34em;
+.inputBox {
+	float: right;
+	width:47%;
 	text-align: left;
 	padding-left: 1em;
 }
 
-.formItem
-{
+.formItem {
 	margin-left: 0px;
 	height: 2em;
-	width: 45em;
+	
 }
+
 
 .submit
 {
@@ -202,3 +202,66 @@ img#icon
 	-webkit-appearance:button;
 }
 
+
+.addressInfo {
+	
+	width:400px;
+	padding-bottom: 2em;
+	padding-top: 1em;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+
+.form{
+	text-align:right;
+	width: 47%;
+	float: left;
+	
+}
+.data{	
+	width: 47%;
+	float: right;
+	text-align:left;
+}
+
+.itemBox{
+	
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	width: 30em;
+	background-color: #fbffbf;
+	border: 1px solid black;
+	padding: 2em;
+	margin-bottom:20px;
+	height: 6em;
+}
+
+#article{
+	width: 20%;
+	float: left;
+	
+}
+
+
+.articleData{
+	
+	width: 80%;
+	float:right;
+	
+}	
+
+.artForm{
+	
+	text-align:right;
+	width: 30%;
+	float: left;
+	
+}
+.artData{
+	text-align:left;
+	width: 65%;
+	float: right;
+	
+}
