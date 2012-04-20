@@ -235,11 +235,16 @@ img#icon
 	border: 1px solid black;
 	padding: 2em;
 	margin-bottom:20px;
-	height: 6em;
+	overflow: auto;
 }
 
-#article{
+.articleImg{
 	width: 20%;
+	float: left;
+	
+}
+.detailImg{
+	width: 40%;
 	float: left;
 	
 }
@@ -249,6 +254,11 @@ img#icon
 	width: 75%;
 	float:right;
 }	
+
+.articleDetail{
+	width:55%;
+	float: right;
+}
 
 .artForm{
 	
