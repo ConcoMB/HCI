@@ -133,6 +133,7 @@ input#sb
 
 .categories
 {
+	margin-right: 2em;
 	float: left;
 	margin-top: 2em;
 	font-size: 2em;
@@ -141,6 +142,7 @@ input#sb
 
 .category
 {
+	float: left;
 	padding-left: 0.2em;
 	font-style: normal;
 	font-weight: normal;
@@ -272,4 +274,8 @@ img#icon
 	width: 65%;
 	float: right;
 	
+}
+.main{
+	margin-top: 2em;
+	float: left;
 }
