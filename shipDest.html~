@@ -9,7 +9,7 @@
 			<div class="lefthead">
 				<img src="./bag.jpg" id="icon"/>
 				<div class="language">
-					<span><strong>English</strong></span><span> | </span><span>EspaÃ±ol</span>
+					<span><strong>English</strong></span><span> | </span><span>Español</span>
 				</div>
 				<div class="search">
 					<form>
@@ -44,13 +44,13 @@
 				<a>Category 1</a>
 			</div>
 			<div class="category">
-				<a>Category 2</a>
+				<a>Category 1</a>
 			</div>
 			<div class="category">
-				<a>Category 3</a>
+				<a>Category 1</a>
 			</div>
 			<div class="category">
-				<a>Category 4</a>
+				<a>Category 1</a>
 			</div>
 		</div>
 		<div class="main">
@@ -63,7 +63,7 @@
 								Address:
 							</div>
 							<div class="inputBox">
-								<input class="wide" type="text" value="address">
+								<input type="text" value="address">
 							</div>
 						</div>
 						<div class="formItem">
@@ -71,7 +71,7 @@
 								City:
 							</div>
 							<div class="inputBox">
-								<input class="wide" type="text" value="city">
+								<input type="text" value="city">
 							</div>
 						</div>
 						<div class="formItem">
@@ -79,7 +79,7 @@
 								Country:
 							</div>
 							<div class="inputBox">
-								<input class="wide" type="text" value="country">
+								<input type="text" value="country">
 							</div>
 						</div>
 						<div class="formItem">
@@ -87,7 +87,7 @@
 								Zip code:
 							</div>
 							<div class="inputBox">
-								<input class="wide" type="text" value="Zip">
+								<input type="text" value="Zip">
 							</div>
 						</div>
 					</div>
