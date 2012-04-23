@@ -282,3 +282,26 @@ div#info{
 .wide{
 	width: 80%;
 }
+.profile
+{
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	overflow:auto;
+	width: 500px;
+
+
+
+	background-color: #fbffbf;
+	border: 1px solid black;
+	padding: 2em;
+}
+img#userPhoto
+{
+	height: 10em;
+	float: right;
+}
+.dataProfile{
+	float:left;
+}
+
