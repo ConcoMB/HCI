@@ -1,7 +1,6 @@
 <html>
 	<head>
 		<title>My profile</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 	</head>
 	<body>
@@ -40,10 +39,18 @@
 			</div>
 		</div>
 		<div class="categories">
-			<div class="category"><a>Category 1</a></div>
-			<div class="category"><a>Category 2</a></div>
-			<div class="category"><a>Category 3</a></div>
-			<div class="category"><a>Category 4</a></div>
+			<div class="category">
+				<a>Category 1</a>
+			</div>
+			<div class="category">
+				<a>Category 1</a>
+			</div>
+			<div class="category">
+				<a>Category 1</a>
+			</div>
+			<div class="category">
+				<a>Category 1</a>
+			</div>
 		</div>
 		<div class="main">
 			<div class="center" id="info">
@@ -77,6 +84,7 @@
 							</button>
 						</div>
 					</div>
+					
 				</div>
 			</div>
 		</div>
