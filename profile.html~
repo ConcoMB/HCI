@@ -1,7 +1,6 @@
 <html>
 	<head>
-		<title>Add new shipping destination</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+		<title>My profile</title>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 	</head>
 	<body>
@@ -54,45 +53,39 @@
 			</div>
 		</div>
 		<div class="main">
-			<div class="center">
-				<h1>Add a new shipping destination</h1>
-				<form>
-					<div class="formBox">
-						<div class="formItem">
-							<div class="entry">
-								Address:
-							</div>
-							<div class="inputBox">
-								<input type="text" value="address">
-							</div>
+			<div class="center" id="info">
+				<h1>My Profile</h1>
+				<div class="profile">
+					<img src="./user.jpg" id="userPhoto"/>
+					<div class="dataProfile">
+						<h2>User1</h2>
+						<div class="info">
+							<span>Name: </span><span>Name1</span>
+							<br>
+							<span>Last Name: </span><span>Last Name1</span>
+							<br>
+							<span>E-mail: </span><span>email1</span>
+							<br>
+							<span>Country: </span><span>country</span>
+							<br>
 						</div>
-						<div class="formItem">
-							<div class="entry">
-								City:
-							</div>
-							<div class="inputBox">
-								<input type="text" value="city">
-							</div>
+						<div>
+							<a>View my shipping destinations</a>
 						</div>
-						<div class="formItem">
-							<div class="entry">
-								Country:
-							</div>
-							<div class="inputBox">
-								<input type="text" value="country">
-							</div>
+						<div>
+							<a>View bought products</a>
 						</div>
-						<div class="formItem">
-							<div class="entry">
-								Zip code:
-							</div>
-							<div class="inputBox">
-								<input type="text" value="Zip">
-							</div>
+						<div class="info">
+							<button>
+								Edit Profile
+							</button>
+							<button>
+								Change Password
+							</button>
 						</div>
 					</div>
-					<input class="submit" type="submit" value="Add new destination"/>
-				</form>
+					
+				</div>
 			</div>
 		</div>
 	</body>

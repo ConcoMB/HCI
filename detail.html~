@@ -1,31 +1,31 @@
 <html>
 	<head>
-		<title>My shopping cart</title>
+		<title>Product</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 	</head>
 	<body>
 			<div class="head">
-			<div class="lefthead">
-				<img src="./bag.jpg" id="icon"/>
-				<div class="language">
-					<span><strong>English</strong></span><span> | </span><span>EspaÃ±ol</span>
+				<div class="lefthead">
+					<img src="./bag.jpg" id="icon"/>
+					<div class="language">
+						<span><strong>English</strong></span><span> | </span><span>Español</span>
+					</div>
+					<div class="search">
+						<form>
+							<span>Search: </span>
+							<input type="text" value="search"/>
+							<select>
+								<option>Category1</option>
+								<option>Category2</option>
+								<option>Category3</option>
+								<option>Category4</option>
+							</select>
+							<input type="submit" value="search"/>
+						</form>
+					</div>
 				</div>
-				<div class="search">
-					<form>
-						<span>Search: </span>
-						<input type="text" value="search"/>
-						<select>
-							<option>Category1</option>
-							<option>Category2</option>
-							<option>Category3</option>
-							<option>Category4</option>
-						</select>
-						<input type="submit" value="search"/>
-					</form>
-				</div>
-			</div>
-			<div class="userhead">
+				<div class="userhead">
 				<div class="signedinfo">
 					<p><span>Hello </span><span>User1</span></p>
 					<p></p><a>Go to my profile</a></p>
@@ -45,11 +45,10 @@
 		</div>
 		<div class="main">
 			<div class="center">
-				<h1>My shopping cart</h1>
 				<div>
 					<div class="itemBox">
-						<img src="./notImg.jpg" class="articleImg"/>
-						<div class="articleData">
+						<img src="./notImg.jpg" class="detailImg"/>
+						<div class="articleDetail">
 							<div class="artForm">
 								<span>Name: </span>
 							</div>
@@ -65,29 +64,10 @@
 							</div>
 							<br>
 							<div class="artForm">
-								<span>Description: </span>
+								<span>Rank: </span>
 							</div>
 							<div class="artData">
-								<span>Desc</span>
-							</div>
-							<br>
-						</div>
-					</div>
-					<div class="itemBox">
-						<img src="./notImg.jpg" class="articleImg"/>
-						<div class="articleData">
-							<div class="artForm">
-								<span>Name: </span>
-							</div>
-							<div class="artData">
-								<span>Arti1</span>
-							</div>
-							<br>
-							<div class="artForm">
-								<span>Price: </span>
-							</div>
-							<div class="artData">
-								<span>X$</span>
+								<span>85</span>
 							</div>
 							<br>
 							<div class="artForm">
@@ -100,10 +80,7 @@
 						</div>
 					</div>
 				</div>
-				<div>
-					<span><h3>Total amount:</h3></span><span><h3>Z$</h3></span>
-				</div>
-				<input type="submit" class="submit" value="Check Out"/>
+				<input type="submit" class="submit" value="Add to cart"/>
 			</div>
 		</div>
 	</body>
