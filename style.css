@@ -24,10 +24,6 @@
 	float: left;
 }
 
-.content {
-	width: 50em;
-}
-
 .inputBox {
 	float: right;
 	width:47%;
@@ -276,6 +272,12 @@ img#icon
 	
 }
 .main{
+	margin-right: 25%;
 	margin-top: 2em;
+	float: right;
+}
+div#info{
 	float: left;
+	border-style: solid;
+	border-width: 1px;
 }
