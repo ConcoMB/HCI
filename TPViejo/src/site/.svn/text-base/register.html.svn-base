@@ -1,0 +1,69 @@
+<div id="pathWrapper"></div>
+<div id="tabs">
+	<ul>
+		<li>
+			<a href="#register" class="translateMe">Register</a>
+		</li>
+	</ul>
+	<div id="register">
+		<div id="form" class="fakewindowcontain">
+			<div id="line">
+				<span id="info" class="translateMe">Name:</span>
+				<input id="regInput" class="name"/>
+				<span class="ast"> *</span>
+				<div class="ui-widget alertaCont">
+					<div class=" alerta ui-state-error ui-corner-all" style="padding: 0 .7em;">
+						<p>
+							<span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+							<strong class="translateMe">Alert:</strong>
+							Sample ui-state-error style.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div id="line">
+				<span id="info" class="translateMe">Username:</span>
+				<input id="regInput" class="username"/>
+			</div>
+			<div id="line">
+				<span id="info" class="translateMe">Password:</span>
+				<input id="regInput" type="password" class="password"/>
+			</div>
+			<div id="line">
+				<span id="info" class="translateMe">Confirm Password:</span>
+				<input id="regInput" type="password" class="passwordConfirmation"/>
+			</div>
+			<div id="line">
+				<span id="info" class="translateMe">E-mail:</span>
+				<input id="regInput" class="email"/>
+			</div>
+			<div id="line">
+				<span id="info" class="translateMe">Birthday Date:</span>
+				<div class="dateInput">
+					<select>
+						<option class="translateMe">Day</option>
+					</select>
+					<select>
+						<option class="translateMe">Month</option>
+					</select>
+					<select>
+						<option class="translateMe">Year</option>
+					</select>
+				</div>
+				<span class="ast"> *</span>
+				<div class="ui-widget alertaCont">
+					<div class=" alerta ui-state-error ui-corner-all" style="padding: 0 .7em;">
+						<p>
+							<span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+							<strong class="translateMe">Alert:</strong>
+							Sample ui-state-error style.
+						</p>
+					</div>
+				</div>
+			</div>
+			<button id="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+				<span id="endRegistrationButton" value="End registration"class="ui-button-text translateMe" title="End registration">Register</span>
+			</button>
+		</div>
+	</div>
+</div>

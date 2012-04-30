@@ -1,0 +1,111 @@
+DIV.PathMenuBar 
+{
+/*	MARGIN: 5px 0px 3px 5px;	*/
+	WIDTH: auto;
+	Font-Size:11px;
+	FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, Sans-serif;
+/*	padding:3px;
+	margin-top:3px;	*/
+}
+DIV.PathMenuBar A 
+{	
+	PADDING: 0px 0px 0px 0px;	
+	MARGIN: 0px;	
+	WIDTH: auto;	
+}
+DIV.PathMenuBar A:hover, DIV.PathMenuBar A:active 
+{	
+	COLOR: #ff3300
+}
+DIV.PathMenuBar A:visited 
+{	
+	COLOR: #800080;
+}
+DIV.PathElement, DIV.PathElementHover, DIV.PathElementLeaf
+{
+	position: relative;
+	display: inline;
+	float: left;
+	margin: 0;
+	padding: 3px 21px 3px 5px; 
+	vertical-align: bottom;
+	white-space: nowrap;
+	height: auto !important;
+	height: 16px;
+	line-height: 16px;
+	Font-Size:11px;
+}
+div.PathElement, div.PathElementHover
+{
+	/*border: 1px solid transparent !important;
+/*%	_border-color: #ffffff*/
+}
+div.PathElement
+{
+	background: url('../images/arrowrgt.gif') right center no-repeat;
+}
+div.PathElementHover
+{
+	background: url('../images/arrowdwn.gif') right center no-repeat;
+	background-color: #e3ebf2;
+	border: 1px solid #a1c6eb !important;
+}
+div.PathElement a, div.PathElementHover a
+{
+	background-color: Transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+div.PathElementHover a
+{
+	background-color: #303030 !important;
+	color: #000000;
+}
+div.PathElement a:visited, div.PathElement a:link, div.PathElement a:active
+{
+	color: #0000EE;
+}
+div.PathElementLeaf a:visited, div.PathElementLeaf a:link, div.PathElementLeaf a:active, div.PathElementLeaf a:hover
+{
+	background-color: Transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	font-weight: bold;
+	color: #000000;
+}
+div.PathPopup
+{
+	position: absolute;
+	top: 0px;
+	left: -30000px;
+	background-color: #ffffff;
+	border: 1px solid #b8b8b8;
+/*	filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=3,OffY=2,Color='#e0e0e0',Positive='true') alpha(opacity=95);*/
+}
+div.PathPopup a:visited, div.PathPopup a:link, div.PathPopup a:active, div.PathPopup a:hover
+{
+	background-color: #ffffff;
+	border: 1px solid #ffffff;
+	color: #000000;
+	display: block;
+	margin: 0 2px;
+	padding: 3px;
+	text-decoration: none;
+}
+div.PathPopup a:hover
+{
+	background-color: #f0f7fd;
+	border: 1px solid #addbef;
+	color: #000000;
+}
+.PathPopupElementLink
+{
+	background: url('../images/arrowrgt.gif') right center no-repeat;
+}
+.PathElement{
+	background-color:	#303030 !important;
+}

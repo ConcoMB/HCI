@@ -1,0 +1,293 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/hci-2011b-6/!svn/ver/18/TPE1/src/js
+END
+site.js
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/site.js
+END
+logInButton.js
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/logInButton.js
+END
+dictionary.js
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/dictionary.js
+END
+server.js
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/server.js
+END
+view.js
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/view.js
+END
+order.js
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/order.js
+END
+jquery.mousewheel.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/jquery.mousewheel.min.js
+END
+jquery-ui-1.8.16.custom.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/hci-2011b-6/!svn/ver/16/TPE1/src/js/jquery-ui-1.8.16.custom.min.js
+END
+state.js
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/state.js
+END
+editButton.js
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/editButton.js
+END
+cancelButton.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/cancelButton.js
+END
+article.js
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/article.js
+END
+language.js
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/language.js
+END
+jquery-1.6.4.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/hci-2011b-6/!svn/ver/16/TPE1/src/js/jquery-1.6.4.js
+END
+main.js
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/hci-2011b-6/!svn/ver/18/TPE1/src/js/main.js
+END
+address.js
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/address.js
+END
+errorHandler.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/errorHandler.js
+END
+accordionTweak.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/accordionTweak.js
+END
+searchData.js
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/searchData.js
+END
+tree.js
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/tree.js
+END
+utils.js
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/utils.js
+END
+myLink.js
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/myLink.js
+END
+jquery-1.6.2.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/hci-2011b-6/!svn/ver/16/TPE1/src/js/jquery-1.6.2.min.js
+END
+logOutButton.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/logOutButton.js
+END
+okButton.js
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/okButton.js
+END
+easing.js
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/easing.js
+END
+actionButton.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/actionButton.js
+END
+list.js
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/list.js
+END
+jquery.path-menu.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/jquery.path-menu.js
+END
+map.js
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/map.js
+END
+category.js
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/category.js
+END
+user.js
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/user.js
+END
+baseTranslatorButton.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/baseTranslatorButton.js
+END
+pathMenu.js
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/pathMenu.js
+END
+jquery.hoverIntent.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/jquery.hoverIntent.js
+END
+persistence.js
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/persistence.js
+END
+translatorButton.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/translatorButton.js
+END
+jquery.jcarousel.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/jquery.jcarousel.min.js
+END
+callbackHandler.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/callbackHandler.js
+END
+orderItem.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/orderItem.js
+END
+jquery.mousewheel.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/jquery.mousewheel.js
+END
+endRegistrationButton.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/endRegistrationButton.js
+END
+jquery.metadata.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/jquery.metadata.js
+END
+jquery.menu_toggle_adder-1.0.0.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/jquery.menu_toggle_adder-1.0.0.min.js
+END
+exception.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/exception.js
+END
+initJQueryUI.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/initJQueryUI.js
+END
+searchButton.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/searchButton.js
+END
+country.js
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/hci-2011b-6/!svn/ver/17/TPE1/src/js/country.js
+END

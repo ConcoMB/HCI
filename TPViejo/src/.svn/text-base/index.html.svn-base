@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href=" style/article.css"/>
+		<link rel="stylesheet" type="text/css" href=" style/articlesfound.css"/>
+		<link rel="stylesheet" type="text/css" href=" style/categories.css"/>
+		<link rel="stylesheet" type="text/css" href=" style/default.css"/>
+		<link rel="stylesheet" type="text/css" href=" style/register.css"/>
+		<link rel="stylesheet" type="text/css" href=" style/bottomNumbers.css"/>
+		<link rel="stylesheet" type="text/css" href=" style/aboutus.css"/>
+		<link rel="stylesheet" type="text/css" href=" style/help.css"/>
+		<link rel="stylesheet" type="text/css" href=" style/myaccount.css"/>
+		<link rel="stylesheet" type="text/css" href=" style/advancedsearch.css"/>
+		<link rel="stylesheet" type="text/css" href=" style/myorders.css"/>
+		<link type="text/css" href=" style/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href=" style/jquery.path-menu.css"/>
+		<link rel="stylesheet" type="text/css" href=" style/skins/tango/skin.css"/>
+		<link rel="stylesheet" type="text/css" href=" style/menu_toggle_adder.css"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title class="translateMe">Koppe</title>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+		<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+		<script type="text/javascript" src="js/jquery.path-menu.js"></script>
+		<script type="text/javascript" src="js/initJQueryUI.js"></script>
+		<script type="text/javascript" src="js/jquery.menu_toggle_adder-1.0.0.min.js"></script>
+		<script type="text/javascript" src="js/persistence.js"></script>
+		<script type="text/javascript" src="js/searchData.js"></script>
+		<script type="text/javascript" src="js/indexList.js"></script>
+		<script type="text/javascript" src="js/list.js"></script>
+		<script type="text/javascript" src="js/article.js"></script>
+		<script type="text/javascript" src="js/category.js"></script>
+		<script type="text/javascript" src="js/tree.js"></script>
+		<script type="text/javascript" src="js/map.js"></script>
+		<script type="text/javascript" src="js/exception.js"></script>
+		<script type="text/javascript" src="js/editButton.js"></script>
+		<script type="text/javascript" src="js/cancelButton.js"></script>
+		<script type="text/javascript" src="js/errorHandler.js"></script>
+		<script type="text/javascript" src="js/user.js"></script>
+		<script type="text/javascript" src="js/dictionary.js"></script>
+		<script type="text/javascript" src="js/language.js"></script>
+		<script type="text/javascript" src="js/baseTranslatorButton.js"></script>
+		<script type="text/javascript" src="js/translatorButton.js"></script>
+		<script type="text/javascript" src="js/searchButton.js"></script>
+		<script type="text/javascript" src="js/logInButton.js"></script>
+		<script type="text/javascript" src="js/logOutButton.js"></script>
+		<script type="text/javascript" src="js/endRegistrationButton.js"></script>
+		<script type="text/javascript" src="js/myLink.js"></script>
+		<script type="text/javascript" src="js/utils.js"></script>
+		<script type="text/javascript" src="js/server.js"></script>
+		<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+		<script type="text/javascript" src="js/callbackHandler.js"></script>
+		<script type="text/javascript" src="js/site.js"></script>
+		<script type="text/javascript" src="js/view.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+	</head>
+	<body>
+		<noscript>
+			<div class="errorCont">
+				<strong class="errorText">Sorry, to enter this site, you need to have javascript enabled. | Disculpa, para acceder a este sitio debes tener javascript habilitado</strong>
+				<link rel="stylesheet" type="text/css" href="style/error.css"/>
+			</div>
+		</noscript>
+		<div id="container">
+			<div id="topArea">
+				<div id="topLinks">
+					<div id="topLeftLinks">
+						<ul class="horizList containingTranslators" >
+							<li>
+								<a class="translateMe link">Help</a>
+							</li>
+							<li>
+								<span class="listDivisor">|</span>
+							</li>
+							<li>
+								<a class="translateMe link">About us</a>
+							</li>
+						</ul>
+					</div>
+					<div id="topRightLinks">
+						<ul class="horizList">
+							<li>
+								<a id="login" class="translateMe">Log in</a>
+							</li>
+							<li>
+								<span class="listDivisor">|</span>
+							</li>
+							<li>
+								<a class="translateMe link">Register</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="topContainer">
+					<div id="topbar" class="ui-widget-header">
+						<div id="ddownMenu" >
+							<a href="javascript:void(view.moveTo('home'))" class="" id="koppeLogo"> <img src="images/koppe-isologo6_59x16.png" alt="Koppe. Buying made easier."/></a>
+							<button id="ddownMenuButton">
+								Dropdown menu
+							</button>
+						</div>
+						<div id="searchbar">
+							<select class="searchbarCombo searchbarUtil">
+								<option value="categories" class="translateMe">All Categories</option>
+							</select>
+							<input id="searchBarInput" type="search" class="searchbarInput searchbarUtil" />
+							<button id="searchButton" value="Search" class="searchbarButton translateMe searchbarUtil">
+								Search
+							</button>
+							<button id="advsearchButton" value="advancedSearch" class="searchbarButton translateMe searchbarUtil link">
+								Advanced Search
+							</button>
+						</div>
+					</div>
+					<div id="menu">
+						<ul id="innerMenu">
+							<li>
+								<a href="javascript:void(view.moveTo('home'))" class="translateMe link">Home</a>
+							</li>
+							<li>
+								<a href="javascript:void(view.moveTo('categories'))" class="translateMe link">Categories</a>
+								<ul id="categoryMenu"></ul>
+							</li>
+							<li>
+								<a href="#" class="translateMe link" >My Account</a>
+							</li>
+							<li>
+								<a href="#" class="translateMe link">My Wishlist</a>
+							</li>
+							<li>
+								<a href="#" class="translateMe link">My Cart</a>
+							</li>
+							<li>
+								<a href="javascript:void(view.moveTo('myorders'))" class="translateMe link">My Orders</a>
+							</li>
+						</ul>
+					</div>
+					<div id="catMenu" class="toggler menu">
+						<div id="catInnerMenu"></div>
+					</div>
+				</div>
+			</div>
+			<div id="middleArea">
+				<div id="contentArea"></div>
+			</div>
+			<div id="bottomArea">
+				<div id="bottomLinks">
+					<ul class="horizList containingTranslators">
+						<li>
+							<a class="translateMe link">Help</a>
+						</li>
+						<li>
+							<span class="listDivisor">|</span>
+						</li>
+						<li>
+							<a class="translateMe link">About us</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id= "loginPopUp" class="hidden">
+				<form id="loginForm">
+					<span class="translateMe">Username:</span>
+					<input id="username" type="text">
+					<span class="translateMe">Password:</span>
+					<input id="password" type="password">
+					<!-- <input type="checkbox" class="translateMe">Remember me</input> -->
+				</form>
+			</div>
+			<div id="welcomePopUp" class="hidden"></div>
+			<div id="dump" class="hidden"></div>
+		</div>
+	</body>
+</html>

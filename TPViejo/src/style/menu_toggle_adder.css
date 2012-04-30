@@ -1,0 +1,98 @@
+/*-- classes added in script --*/
+
+ul#innerMenu li a.menu_selected {
+color:  #fff;
+font-weight: bold;
+margin-bottom: 2px;
+}
+
+ul#innerMenu li ul li a.menu_selected {
+background-color: #ededed;
+font-weight: bold;
+color: #B8EC79;
+margin-bottom: 0;
+}
+
+li.menu_selected_holder {
+background-image:url(images/bg_menu_selected.gif);
+background-repeat: no-repeat;
+}
+
+/*-- end classes added in script --*/
+
+/*-- classes for toggler images --*/
+
+ul#innerMenu img.toggler {
+float: left; 
+margin: 0 -15px 0 0;
+position: relative;
+
+}
+
+ul#innerMenu img.toggler:hover {cursor:pointer; cursor: hand; }
+
+/*-- end classes for toggle images --*/
+
+ul#innerMenu {
+width: 100px;
+margin: 0;
+padding: 4px 0 6px 0;
+}
+
+ul#innerMenu li { 
+list-style: none;
+display: block;
+clear: both;
+line-height: 20px;
+min-height: 20px;
+}
+
+ul#innerMenu li ul {
+display: none;
+clear: both;
+}
+
+ul#innerMenu li ul li { 
+line-height: 17px;
+}
+
+ul#innerMenu li a { 
+/*-- total width should be 198px --*/
+display: block;
+padding: 0 0 2px 0;
+width: 183px;
+margin-left: 15px;
+float: left;
+}
+
+ul#innerMenu li ul li a { 
+/*-- total width should be 298px --*/
+display: block;
+padding: 0 0 0 15px;
+width: 183px;
+margin-left: 8px;;
+color: #B8EC79;
+line-height: 18px;
+}
+
+/*-- menu styling --*/
+
+.menu_header {
+color: #fff;
+font-weight: bold;
+font-size: 13px;
+margin: 0;
+padding: 0;
+text-align: center;
+height: 20px;
+line-height: 20px;
+width: 200px;
+background-image: url(images/bg_top_shape.gif);
+background-repeat: no-repeat;
+}
+
+.menu_bottom_shape {
+clear: left;
+float: left;
+margin-top: -3px;
+}

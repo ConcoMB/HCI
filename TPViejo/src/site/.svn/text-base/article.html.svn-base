@@ -1,0 +1,73 @@
+<link rel="stylesheet" type="text/css" href=" style/article2.css"/>
+<div id="pathWrapper"></div>
+<div id="tabs">
+	<ul>
+		<li>
+			<a href="#article">Article</a>
+		</li>
+	</ul>
+	<div id="article">
+		<div class="articleCont">
+			<div class="articleNameCont">
+				<h1 class="articleName">AnArticle!!!</h1>
+				<h2 class="articlePrice"> $58</h2>
+			</div>
+			<div class="articleWrapper">
+				<div class="photo"><img src="images/defaultArticle.png"/>
+				</div>
+				<div id="infoWraper">
+					
+					<ul class="imageListArt">
+						<button class="cart" title="Add to cart"></button>
+						<button class="star" title="Add to wishlist"></button>
+					</ul>
+										
+					<div id="article">
+						<div id="description">
+							<ul id="briefDescription">
+								<li>
+									<span class="translateMe dataList">Price</span>: <span id="articlePrice"></span>
+								</li>
+								<li>
+									<span class="translateMe dataList">Stock</span>: <span id="articleStock"></span>
+								</li>
+								<li>
+									<span class="translateMe dataList">Location</span>: <span id="location"></span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="articleDescript">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis mauris sit amet turpis mollis elementum. Nam consectetur, nulla ac mattis gravida, ligula odio ornare diam, vitae viverra risus sem sed felis. Phasellus eu enim sed diam convallis viverra. Cras congue semper turpis, ac euismod lacus feugiat sed. Donec et ornare sem. Fusce consequat porta dolor, dignissim suscipit orci tincidunt a. Fusce eu sem in libero iaculis iaculis.
+					Phasellus sed mauris in libero euismod gravida. Integer hendrerit lorem a urna ultrices varius. Sed cursus mattis porta. Suspendisse rutrum pretium massa in congue. Aliquam cursus, eros vitae tempor adipiscing, risus dolor commodo libero, at eleifend nunc arcu eget libero. Vivamus commodo sem a magna semper eget semper nunc tempus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean eu magna lacus. Nullam placerat scelerisque bibendum. Fusce viverra, mauris eget facilisis auctor, neque urna consequat neque, consectetur aliquet sem nisi condimentum metus. Aliquam mi orci, suscipit eu aliquam vel, commodo quis sapien.
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="commentWrapper">
+	<div id="comments">
+		<!-- here goes acordion -->
+		<div id="accordion">
+			<div>
+				<h3><a href="#" class="translateMe">Bobby123</a></h3>
+				<div>
+					Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+				</div>
+			</div>
+			<div>
+				<h3><a href="#" class="translateMe">JimmyWilson</a></h3>
+				<div>
+					Phasellus mattis tincidunt nibh.
+				</div>
+			</div>
+			<div>
+				<h3><a href="#" class="translateMe">L0VeB4G5</a></h3>
+				<div>
+					Nam dui erat, auctor a, dignissim quis.
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
