@@ -305,4 +305,10 @@ img#userPhoto
 	padding: 2em;
 	background-color: #cdcdcd;
 }
+#prev{
+	float: left;
+}
+#next{
+	float: right;
+}
 
