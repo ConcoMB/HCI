@@ -3,6 +3,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/server.js"></script>
 		<script type="text/javascript" src="js/login.js"></script>
 		<link rel="stylesheet" href="js/jquery-ui-1.8.19.custom/development-bundle/themes/base/jquery.ui.all.css">
 		<script src="js/jquery-ui-1.8.19.custom/development-bundle/jquery-1.7.2.js"></script>
@@ -40,13 +41,13 @@
 			</div>
 			<div class="userhead">
 				<div>
-					<form>
+					<form id="loginForm">
 						<input id="sb" type="submit" value="log in"/>
 						<span class="entry">User name: </span>
-						<input type="text" value="user name"/>
+						<input id="name" type="text"/>
 						<br>
 						<span class="entry">Password:</span>
-						<input type="password"/>
+						<input id="password" type="password"/>
 						<br>
 					</form>
 				</div>
