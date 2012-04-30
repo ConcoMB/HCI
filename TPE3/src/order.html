@@ -1,11 +1,11 @@
 <html>
 	<head>
 		<title>Order</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	</head>
 	<body>
-			<div class="head">
+		<div class="head">
 			<div class="lefthead">
 				<img src="img/bag.jpg" id="icon"/>
 				<div class="language">
@@ -27,9 +27,15 @@
 			</div>
 			<div class="userhead">
 				<div class="signedinfo">
-					<p><span>Hello </span><span>User1</span></p>
-					<p><a>My profile</a></p>
-					<p><span>Its not you?</span><a>Log out</a></p>
+					<p>
+						<span>Hello </span><span>User1</span>
+					</p>
+					<p>
+						<a>My profile</a>
+					</p>
+					<p>
+						<span>Its not you?</span><a>Log out</a>
+					</p>
 				</div>
 				<div class="carthead">
 					<img src="img/cart.jpg"/>
@@ -38,10 +44,18 @@
 			</div>
 		</div>
 		<div class="categories">
-			<div class="category"><a>Category 1</a></div>
-			<div class="category"><a>Category 2</a></div>
-			<div class="category"><a>Category 3</a></div>
-			<div class="category"><a>Category 4</a></div>
+			<div class="category">
+				<a>Category 1</a>
+			</div>
+			<div class="category">
+				<a>Category 2</a>
+			</div>
+			<div class="category">
+				<a>Category 3</a>
+			</div>
+			<div class="category">
+				<a>Category 4</a>
+			</div>
 		</div>
 		<div class="main">
 			<div class="center">
@@ -51,6 +65,21 @@
 						<h3>Total amount: Z$</h3>
 					</div>
 					<input type="submit" class="submit" value="Check Out"/>
+
+					<form>
+						<span>Order by:</span>
+						<select>
+							<option>Ascendent</option>
+							<option>Descendent</option>
+						</select>
+
+						<select>
+							<option>Price</option>
+							<option>Name</option>
+							<option>Ranking</option>
+						</select>
+					</form>
+
 					<div class="itemBox">
 						<img src="img/notImg.jpg" class="articleImg"/>
 						<div class="articleData">
@@ -82,7 +111,7 @@
 								<span>Desc</span>
 							</div>
 							<br>
-							
+
 						</div>
 					</div>
 					<div class="itemBox">

@@ -1,63 +1,88 @@
 <html>
 	<head>
 		<title>Search Result</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	</head>
 	<body>
-			<div class="head">
-				<div class="lefthead">
-					<img src="img/bag.jpg" id="icon"/>
-					<div class="language">
-						<span><strong>English</strong></span><span> | </span><span>Español</span>
-					</div>
-					<div class="search">
-						<form>
-							<span>Search: </span>
-							<input type="text" value="search"/>
-							<select>
-								<option>Category1</option>
-								<option>Category2</option>
-								<option>Category3</option>
-								<option>Category4</option>
-							</select>
-							<input type="submit" value="search"/>
-						</form>
-					</div>
+		<div class="head">
+			<div class="lefthead">
+				<img src="img/bag.jpg" id="icon"/>
+				<div class="language">
+					<span><strong>English</strong></span><span> | </span><span>Español</span>
 				</div>
-				<div class="userhead">
-					<div>
-						<form>
-							<input id="sb" type="submit" value="log in"/>
-							<span class="entry">User name: </span><input type="text" value="user name"/><br>
-							<span class="entry">Password:</span><input type="password"/><br>
-						</form>
-					</div>
-					<div class="signHelp">
-						<a>Forgot password?</a>
-					</div>
-					<div class="signHelp">
-						<span>New in the site? </span><a>Sign up now!</a>
-					</div>		
+				<div class="search">
+					<form>
+						<span>Search: </span>
+						<input type="text" value="search"/>
+						<select>
+							<option>Category1</option>
+							<option>Category2</option>
+							<option>Category3</option>
+							<option>Category4</option>
+						</select>
+						<input type="submit" value="search"/>
+					</form>
 				</div>
 			</div>
-			<div class="categories">
-				<div class="category"><a>Category 1</a></div>
-				<div class="category"><a>Category 2</a></div>
-				<div class="category"><a>Category 3</a></div>
-				<div class="category"><a>Category 4</a></div>
+			<div class="userhead">
+				<div>
+					<form>
+						<input id="sb" type="submit" value="log in"/>
+						<span class="entry">User name: </span>
+						<input type="text" value="user name"/>
+						<br>
+						<span class="entry">Password:</span>
+						<input type="password"/>
+						<br>
+					</form>
+				</div>
+				<div class="signHelp">
+					<a>Forgot password?</a>
+				</div>
+				<div class="signHelp">
+					<span>New in the site? </span><a>Sign up now!</a>
+				</div>
 			</div>
-			<div class="main">
-				<div class="center">
-					<h1>Results for:</h1>
-					<h2>mySearch</h2>
-					<div>
-						<div class="itemBox">
-							<img src="img/notImg.jpg" class="articleImg"/>
-							<div class="articleData">
-								<div class="artForm">
-									<span>Name: </span>
-								</div>
+		</div>
+		<div class="categories">
+			<div class="category">
+				<a>Category 1</a>
+			</div>
+			<div class="category">
+				<a>Category 2</a>
+			</div>
+			<div class="category">
+				<a>Category 3</a>
+			</div>
+			<div class="category">
+				<a>Category 4</a>
+			</div>
+		</div>
+		<div class="main">
+			<div class="center">
+				<h1>Results for:</h1>
+				<h2>mySearch</h2>
+				<form>
+					<span>Order by:</span>
+					<select>
+						<option>Ascendent</option>
+						<option>Descendent</option>
+					</select>
+
+					<select>
+						<option>Price</option>
+						<option>Name</option>
+						<option>Ranking</option>
+					</select>
+				</form>
+				<div>
+					<div class="itemBox">
+						<img src="img/notImg.jpg" class="articleImg"/>
+						<div class="articleData">
+							<div class="artForm">
+								<span>Name: </span>
+							</div>
 							<div class="artData">
 								<span>Arti1</span>
 							</div>
@@ -79,11 +104,11 @@
 							<div class="toTheCart">
 								<input type="text" value="1"/>
 								<a>Add to order</a>
-									<select>
-										<option value="NEW">Create new order</option>
-										<option value="1">Order1</option>
-										<option value="2">Order2</option>
-									</select>
+								<select>
+									<option value="NEW">Create new order</option>
+									<option value="1">Order1</option>
+									<option value="2">Order2</option>
+								</select>
 							</div>
 						</div>
 					</div>
@@ -114,11 +139,11 @@
 							<div class="toTheCart">
 								<input type="text" value="1"/>
 								<a>Add to order</a>
-									<select>
-										<option value="NEW">Create new order</option>
-										<option value="1">Order1</option>
-										<option value="2">Order2</option>
-									</select>
+								<select>
+									<option value="NEW">Create new order</option>
+									<option value="1">Order1</option>
+									<option value="2">Order2</option>
+								</select>
 							</div>
 						</div>
 					</div>
