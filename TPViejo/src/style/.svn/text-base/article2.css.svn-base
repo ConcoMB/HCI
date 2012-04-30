@@ -1,0 +1,43 @@
+.articleCont {
+	clear: left;
+	margin-top: 35px;
+	position: relative;
+	padding: 1% 4%;
+	margin-bottom:30px;
+}
+.articleNameCont {
+	height: 30px;
+	margin-bottom: 15px;
+}
+.articleName{
+	float:left;
+}
+.articlePrice{
+	
+	margin-left: 10px;
+	-webkit-margin-before: 4px;
+	float:left;
+	vertical-align: bottom;
+}
+.articleDescript{
+	display: inline;
+}
+.articleWrapper{
+	
+}
+.photo{
+	
+	clear: left;
+	float: left;
+	margin-right: 25px;
+	height:180px;
+	width:180px;
+}
+.imageListArt{
+	float:left;
+	height:40px;
+	vertical-align: middle;
+}
+.dataList{
+	margin-left: 15px;
+}

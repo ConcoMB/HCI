@@ -1,0 +1,19 @@
+.categories {
+	clear: left;
+	margin-top: 35px;
+	position: relative;
+	width: 350px;
+	padding: 1% 4%;
+	overflow: hidden;
+}
+.catLine{
+	position:relative;
+	height: 40px;
+	vertical-align: middle;
+}
+.categoryCont{
+	margin-bottom: 35px;
+}
+.subcategory{
+	margin-left: 15px;
+}

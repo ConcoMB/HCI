@@ -1,0 +1,65 @@
+#myCart {
+	clear: left;
+	margin-top: 35px;
+	position: relative;
+	padding: 1% 4%;
+	overflow: hidden;
+}
+#myWishlist {
+	clear: left;
+	margin-top: 35px;
+	position: relative;
+	padding: 1% 4%;
+	overflow: hidden;
+}
+.myOrdersButtons {
+	margin-bottom: 20px;
+}
+.orderTabsDiv {
+	clear: left;
+	padding: 1% 4%;
+	position: relative;
+	margin-top:35px;
+	overflow: hidden;
+}
+.orderTabsDivIn {
+	clear: left;
+	padding: 1% 4%;
+	position: relative;
+	
+	overflow: hidden;
+}
+.orderName{
+	float:left;
+	
+}
+.totalOrder{
+	margin-left: 79px;
+	float:left;
+	vertical-align: bottom;
+	-webkit-margin-before: 4px;
+}
+.totalPrice{
+	margin-left: 8px;
+	-webkit-margin-before: 4px;
+	float:left;
+	vertical-align: bottom;
+}
+.orderNameCont{
+	height:10px;
+	
+}
+#inMyCart {
+	clear: left;
+	margin-top: 35px;
+	position: relative;
+	padding: 1% 4%;
+	overflow: hidden;
+}
+#inMyWishlist {
+	clear: left;
+	margin-top: 35px;
+	position: relative;
+	padding: 1% 4%;
+	overflow: hidden;
+}

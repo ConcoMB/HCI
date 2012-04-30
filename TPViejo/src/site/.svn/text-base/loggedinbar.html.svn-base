@@ -1,0 +1,20 @@
+<ul class="horizList">
+	<li class="firstItem">
+		<h3 class="greeting translateMe"></h3>
+	</li>
+	<li>
+		<a id="myWishlistLink" class="translateMe link">My Orders</a>
+	</li>
+	<li>
+		<span class="listDivisor">|</span>
+	</li>
+	<li>
+		<a class="translateMe link">My account</a>
+	</li>
+	<li>
+		<span class="listDivisor">|</span>
+	</li>
+	<li>
+		<a id="logout" class="translateMe">Log out</a>
+	</li>
+</ul>
