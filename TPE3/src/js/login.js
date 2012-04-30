@@ -1,8 +1,7 @@
-$('document')
-$('#sb').click(function(eventObject){
-	if($('#name').val()!=nil){
-		
-	}
-	alert($('#name').val());
-	
+$(document).ready(function() {
+	$('#loginForm').submit(function() {
+		if(!$('#name').val()||!$('#password').val()) {
+			return false;
+		}
+	});
 });
