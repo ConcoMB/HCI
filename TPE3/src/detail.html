@@ -2,12 +2,12 @@
 	<head>
 		<title>Product</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
-		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	</head>
 	<body>
 			<div class="head">
 				<div class="lefthead">
-					<img src="../img/bag.jpg" id="icon"/>
+					<img src="img/bag.jpg" id="icon"/>
 					<div class="language">
 						<span><strong>English</strong></span><span> | </span><span>Español</span>
 					</div>
@@ -28,11 +28,11 @@
 				<div class="userhead">
 				<div class="signedinfo">
 					<p><span>Hello </span><span>User1</span></p>
-					<p></p><a>My profile</a></p>
-					<p></p><span>Its not you?</span><a>Log out</a></p>
+					<p><a>My profile</a></p>
+					<p><span>Its not you?</span><a>Log out</a></p>
 				</div>
 				<div class="carthead">
-					<img src="../img/cart.jpg"/>
+					<img src="img/cart.jpg"/>
 					<a>Shopping cart</a>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 			<div class="center">
 				<div>
 					<div class="itemBox">
-						<img src="../img/notImg.jpg" class="detailImg"/>
+						<img src="img/notImg.jpg" class="detailImg"/>
 						<div class="articleDetail">
 							<div class="artForm">
 								<span>Name: </span>
@@ -80,7 +80,12 @@
 						</div>
 					</div>
 				</div>
-				<input type="submit" class="submit" value="Add to cart"/>
+				<select>
+					<option value="NEW">Create new order</option>
+					<option value="1">Order1</option>
+					<option value="2">Order2</option>
+				</select>
+				<input type="submit" class="submit" value="Add to order"/>
 			</div>
 		</div>
 	</body>
