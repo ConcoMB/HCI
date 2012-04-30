@@ -3,6 +3,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/utils.js"></script>
 		<script type="text/javascript" src="js/server.js"></script>
 		<script type="text/javascript" src="js/login.js"></script>
 		<link rel="stylesheet" href="js/jquery-ui-1.8.19.custom/development-bundle/themes/base/jquery.ui.all.css">
@@ -19,12 +20,11 @@
 		</script>
 	</head>
 	<body>
+	<div>
 		<div class="head">
 			<div class="lefthead">
 				<img src="img/bag.jpg" id="icon"/>
-				<div class="language">
-					<a>English</a> | <a>Español</a>
-				</div>
+
 				<div class="search">
 					<form>
 						<span>Search: </span>
@@ -40,7 +40,7 @@
 				</div>
 			</div>
 			<div class="userhead">
-				<div>
+				<br><div>
 					<form id="loginForm">
 						<input id="sb" type="submit" value="log in"/>
 						<span class="entry">User name: </span>
@@ -52,38 +52,38 @@
 					</form>
 				</div>
 				<div class="signHelp">
-					<a>Forgot password?</a>
-				</div>
-				<div class="signHelp">
-					<span>New in the site? </span><a>Sign up now!</a>
+					<span>New in the site? </span><a href="signUp.html">Sign up now!</a>
 				</div>
 			</div>
 		</div>
-		<div class="categories">
-			<div id="accordion">
-				<h3><a href="#">Category 1</a></h3>
-				<div class="subCat">
-					<a>Subcategory 1</a>
-					<a>Subcategory 2</a>
-					<a>Subcategory 2</a>
-				</div>
-				<h3><a href="#">Category 2</a></h3>
-				<div class="subCat">
-					<a>Subcategory 1</a>
-					<a>Subcategory 2</a>
-					<a>Subcategory 2</a>
-				</div>
-				<h3><a href="#">Category 3</a></h3>
-				<div class="subCat">
-					<a>Subcategory 1</a>
-					<a>Subcategory 2</a>
-					<a>Subcategory 2</a>
+		<div class="centerStuff">
+			<div class="categories">
+				<div id="accordion">
+					<h3><a href="#">Category 1</a></h3>
+					<div class="subCat">
+						<a href="search.html">Subcategory 1</a>
+						<a href="search.html">Subcategory 2</a>
+						<a href="search.html">Subcategory 2</a>
+					</div>
+					<h3><a href="#">Category 2</a></h3>
+					<div class="subCat">
+						<a href="search.html">Subcategory 1</a>
+						<a href="search.html">Subcategory 2</a>
+						<a href="search.html">Subcategory 2</a>
+					</div>
+					<h3><a href="#">Category 3</a></h3>
+					<div class="subCat">
+						<a href="search.html">Subcategory 1</a>
+						<a href="search.html">Subcategory 2</a>
+						<a href="search.html">Subcategory 2</a>
+					</div>
 				</div>
 			</div>
+			<div class="main"></div>
 		</div>
-
 		<div id="bottomArea">
 			<a>English</a> | <a>Español</a> | <a> Deutsch </a> | <a> Français </a>
 		</div>
+	</div>
 	</body>
 </html>
