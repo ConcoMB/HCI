@@ -82,7 +82,6 @@ h2
 	border-style: none;
 	width: 30em;
 	height: 2em;
-	float: left;
 }
 
 .search
@@ -99,8 +98,7 @@ h2
 {
 	border: 1px solid black;
 	background-color: #fbffbf;
-	width: 70em;
-	height: 10em;
+	height: 8em;
 }
 
 .userhead
@@ -108,7 +106,6 @@ h2
 	padding-top: 1em;
 	border: 1px solid black;
 	width: 22em;
-	height: 9em;
 	float: right;
 }
 
@@ -132,7 +129,7 @@ input#sb
 	float: left;
 	margin-top: 2em;
 	font-size: 2em;
-	width: 6em;
+	width: 20%;
 }
 
 .category
@@ -155,7 +152,7 @@ input#sb
 
 img#icon
 {
-	height: 10em;
+	height: 8em;
 	float: left;
 }
 
@@ -273,6 +270,7 @@ img#icon
 .main{
 	margin-right: 25%;
 	margin-top: 2em;
+	width: 50%;
 	float: right;
 }
 div#info{
@@ -299,5 +297,12 @@ img#userPhoto
 }
 .dataProfile{
 	float:left;
+}
+#wrapper{
+	width: 80em;
+}
+#footer{
+	padding: 2em;
+	background-color: #cdcdcd;
 }
 
