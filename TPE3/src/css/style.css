@@ -55,7 +55,7 @@
 	margin-bottom: 1em;
 }
 
-a
+
 {
 	font-family: Arial;
 	text-decoration: underline;
@@ -332,4 +332,7 @@ img#userPhoto
 	text-align: center;
 	margin-top: 30%;
 	bottom: 0px;
+}
+#editAddress{
+	float: right;
 }
