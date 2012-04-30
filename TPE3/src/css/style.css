@@ -258,7 +258,7 @@ img#icon
 .main{
 	margin-right: 25%;
 	margin-top: 2em;
-	width: 50%;
+	width: 80%;
 	float: right;
 }
 div#info{
@@ -288,10 +288,6 @@ img#userPhoto
 }
 #wrapper{
 	width: 80em;
-}
-#footer{
-	padding: 2em;
-	background-color: #cdcdcd;
 }
 #prev{
 	margin-left: 1em;
@@ -330,4 +326,8 @@ img#userPhoto
 }
 .itemBox select{
 	margin-left: 1em;
+}
+#bottomArea{
+	margin-top: 30%;
+	bottom: 0px;
 }
