@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>My shopping cart</title>
+		<title>Order</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	</head>
@@ -45,11 +45,12 @@
 		</div>
 		<div class="main">
 			<div class="center">
-				<h1>My shopping cart</h1>
+				<h1>Order x</h1>
 				<div>
 					<div>
 						<h3>Total amount: Z$</h3>
 					</div>
+					<input type="submit" class="submit" value="Check Out"/>
 					<div class="itemBox">
 						<img src="img/notImg.jpg" class="articleImg"/>
 						<div class="articleData">
@@ -68,12 +69,20 @@
 							</div>
 							<br>
 							<div class="artForm">
+								<span>Cant: </span>
+							</div>
+							<div class="artData">
+								<span>X</span>
+							</div>
+							<br>
+							<div class="artForm">
 								<span>Description: </span>
 							</div>
 							<div class="artData">
 								<span>Desc</span>
 							</div>
 							<br>
+							
 						</div>
 					</div>
 					<div class="itemBox">
@@ -93,6 +102,12 @@
 								<span>X$</span>
 							</div>
 							<br>
+							<div class="artForm">
+								<span>Cant: </span>
+							</div>
+							<div class="artData">
+								<span>X</span>
+							</div>
 							<div class="artForm">
 								<span>Description: </span>
 							</div>
@@ -103,7 +118,10 @@
 						</div>
 					</div>
 				</div>
-				<input type="submit" class="submit" value="Check Out"/>
+				<div class="pages">
+					<a id="prev">&lt&ltPrev</a>
+					<a id="next">Next&gt&gt</a>
+				</div>
 			</div>
 		</div>
 	</body>

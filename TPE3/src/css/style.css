@@ -40,7 +40,8 @@
 
 .submit
 {
-	margin-top: 2em;
+	margin-top: 1em;
+	margin-bottom: 1em;
 	font-size: 1.5em;
 	width: 13em;
 	height: 2em;
@@ -105,7 +106,7 @@ h2
 {
 	padding-top: 1em;
 	border: 1px solid black;
-	width: 22em;
+	width: 25%;
 	float: right;
 }
 
@@ -129,26 +130,13 @@ input#sb
 	float: left;
 	margin-top: 2em;
 	font-size: 2em;
-	width: 20%;
+	width: 15%;
 }
 
-.category
-{
-	text-align: center;
-	float: left;
-	padding-left: 0.2em;
-	font-style: normal;
-	font-weight: normal;
-	padding-bottom: 0.3em;
-	padding-top: 0.3em;
-	background-color: #ff6a67;
-	width: 6em;
-	margin-left: 0.1em;
-	border-color: black;
-	border-width: 1px;
-	border-style: solid;
-
+.subCat a{
+	font-size: 13px;
 }
+
 
 img#icon
 {
@@ -305,4 +293,41 @@ img#userPhoto
 	padding: 2em;
 	background-color: #cdcdcd;
 }
-
+#prev{
+	margin-left: 1em;
+	float: left;
+}
+#next{
+	margin-right: 1em;
+	float: right;
+}
+.toTheCart input{
+	float: left;
+	width: 3em;
+}
+.toTheCart{
+	margin-top: 1em;
+	margin-left: 5%;
+}
+.toTheCart a{
+	float: left;
+	margin-left: 1.5em;
+}
+.itemBox div{
+	float: left;
+}
+.orderBox{
+	background-color: #fbffbf;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	margin-left:25%;
+	text-align: left;
+	width: 15em;
+	padding: 2em;
+	margin-bottom:20px;
+	overflow: auto;
+}
+.itemBox select{
+	margin-left: 1em;
+}
