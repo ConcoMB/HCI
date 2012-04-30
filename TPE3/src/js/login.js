@@ -1,4 +1,8 @@
-$('#loginForm').submit(function(eventObject){
-	if(!$('#name'))
+$('document')
+$('#sb').click(function(eventObject){
+	if($('#name').val()!=nil){
+		
+	}
+	alert($('#name').val());
 	
 });
