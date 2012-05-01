@@ -1,54 +1,29 @@
-<html>
-	<head>
-		<title>Product</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-	</head>
-	<body>
-		<div class="main">
-			<div class="center">
+<div class="center">
+	<div>
+		<div class="itemBox">
+			<img src="img/notImg.jpg" class="detailImg"/>
+			<div class="articleDetail">
 				<div>
-					<div class="itemBox">
-						<img src="img/notImg.jpg" class="detailImg"/>
-						<div class="articleDetail">
-							<div class="artForm">
-								<span>Name: </span>
-							</div>
-							<div class="artData">
-								<span>Arti1</span>
-							</div>
-							<br>
-							<div class="artForm">
-								<span>Price: </span>
-							</div>
-							<div class="artData">
-								<span>X$</span>
-							</div>
-							<br>
-							<div class="artForm">
-								<span>Rank: </span>
-							</div>
-							<div class="artData">
-								<span>85</span>
-							</div>
-							<br>
-							<div class="artForm">
-								<span>Description: </span>
-							</div>
-							<div class="artData">
-								<span>Desc</span>
-							</div>
-							<br>
-						</div>
-					</div>
+				<span class="artForm">Name: </span>
+				<span id="artName" class="artData"></span>
 				</div>
-				<select>
-					<option value="NEW">Create new order</option>
-					<option value="1">Order1</option>
-					<option value="2">Order2</option>
-				</select>
-				<input type="submit" class="submit" value="Add to order"/>
+				<br>
+				<span class="artForm">Price: </span>
+				<span id="artPrice" class="artData">$</span>
+				<br>
+				<span class="artForm">Rank: </span>
+				<span id="artRank" class="artData"></span>
+				<br>
+				<span class="artForm">Description: </span>
+				<span id="artDesc" class="artData"></span>
+				<br>
 			</div>
 		</div>
-	</body>
-</html>
+	</div>
+	<select>
+		<option value="NEW">Create new order</option>
+		<option value="1">Order1</option>
+		<option value="2">Order2</option>
+	</select>
+	<input type="submit" class="submit" value="Add to order"/>
+</div>

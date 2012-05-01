@@ -1,71 +1,65 @@
-<html>
-	<head>
-		<title>Sign Up</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-	</head>
-	<body>
-		<div class="main">
-			<div class="center">
-			<h1>Sign up</h1>
-			<form>
-				<div>
-					<h2>Account info</h2>
-					<div class="formBox">
-						<div class="formItem">
-							<div class="entry">User name</div>
-							<div class="inputBox"><input class="wide" type="text"/></div>
-						</div>
-						<div class="formItem">
-							<div class="entry">Password</div>
-							<div class="inputBox"><input class="wide" type="password"/></div>
-						</div>
-						<div class="formItem">
-							<div class="entry">Confirm password</div>
-							<div class="inputBox"><input class="wide" type="password"/></div>
-						</div>
-						<div class="formItem">
-							<div class="entry">E-mail</div>
-							<div class="inputBox"><input class="wide" type="text"/></div>
-						</div>
-						<div class="formItem">
-							<div class="entry">Confirm e-mail</div>
-							<div class="inputBox"><input class="wide" type="text"/></div>
-						</div>
+<div class="center">
+	<h1>Sign up</h1>
+	<form id="signupForm">
+		<div>
+			<div id="errors"></div>
+			<h2>Account info</h2>
+			<div class="formBox">
+				<div class="formItem">
+					<div class="entry">
+						User name
+					</div>
+					<div class="inputBox">
+						<input id="su_username" class="wide" type="text"/>
 					</div>
 				</div>
-				<div>
-				<h2>Personal information</h2>
-					<div class="formBox">
-						<div class="formItem">
-							<div class="entry">Name</div>
-							<div class="inputBox"><input class="wide" type="text"/></div>
-						</div>
-						<div class="formItem">
-							<div class="entry">Last name</div>
-							<div class="inputBox"><input class="wide" type="text"/></div>
-						</div>
-						<div class="formItem">
-							<div class="entry">Country</div>
-								<div class="inputBox">
-									<select>
-										<option value="AR">Argentina</option>
-										<option value="US">United States</option>
-										<option value="SP">Spain</option>
-									</select>
-								</div>
-							</div>
-							<div class="formItem">
-								<div class="entry">Sex</div>
-									<div class="inputBox">
-										<input type="radio" name="sex" value="male">Male</input>
-										<input type="radio" name="sex" value="female">Female</input>		
-									</div>	
-								</div>
-							</div>
-						</div>
-				<input class="submit" type="submit" value="Sign Up!"/>
-			</form>
+				<div class="formItem">
+					<div class="entry">
+						Password
+					</div>
+					<div class="inputBox">
+						<input id="su_password" class="wide" type="password"/>
+					</div>
+				</div>
+				<div class="formItem">
+					<div class="entry">
+						Confirm password
+					</div>
+					<div class="inputBox">
+						<input id="su_rPassword" class="wide" type="password"/>
+					</div>
+				</div>
+				<div class="formItem">
+					<div class="entry">
+						E-mail
+					</div>
+					<div class="inputBox">
+						<input id="su_email" class="wide" type="text"/>
+					</div>
+				</div>
+			</div>
 		</div>
-	</body>
-</html>
+		<div>
+			<h2>Personal information</h2>
+			<div class="formBox">
+				<div class="formItem">
+					<div class="entry">
+						Name
+					</div>
+					<div class="inputBox">
+						<input id="su_name" class="wide" type="text"/>
+					</div>
+				</div>
+				<div class="formItem">
+					<div class="entry">
+						Last name
+					</div>
+					<div class="inputBox">
+						<input id="su_lastname" class="wide" type="text"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<input class="submit" type="submit" value="Sign Up!"/>
+	</form>
+</div>

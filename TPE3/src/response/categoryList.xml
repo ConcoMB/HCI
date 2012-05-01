@@ -1,0 +1,12 @@
+<response status="ok">
+	<categories>
+		<category id="1">
+			<code>DVD</code>
+			<name>DVD</name>
+		</category>
+		<category id="2">
+			<code>BOO</code>
+			<name>Books</name>
+		</category>
+	</categories>
+</response>
