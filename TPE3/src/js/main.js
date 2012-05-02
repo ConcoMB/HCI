@@ -14,4 +14,5 @@ $(document).ready(function(){
 	$('.category').click(categoryClickHandler);
 	$('.artName').click(productClickHandler);
 	$('#signupLink').click(signupForm);
+	$('#main').load('home.html');
 });

@@ -8,6 +8,7 @@ function updateUserPanel(name) {
 	}).done(function(html) {
 		$(".userhead").html(html);
 		$("#userName").text(name);
+		$('#myCart').click(cartClickHandler);
 	});
 	/*$(".userhead").load('signed.html');
 	 $("#userName").text(name);*/
