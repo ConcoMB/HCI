@@ -9,6 +9,7 @@ function updateUserPanel(name) {
 		$(".userhead").html(html);
 		$("#userName").text(name);
 		$('#myCart').click(cartClickHandler);
+		$('#logOut').click(logOutHandler);
 	});
 	/*$(".userhead").load('signed.html');
 	 $("#userName").text(name);*/
@@ -25,4 +26,9 @@ function loginFormHandler() {
 		updateUserPanel($(user).find('user').attr('name'));
 	}
 	return false;
+}
+
+function logOutHandler(){
+	window.location = "index.html"
+	$('#main').load('home.html');
 }
