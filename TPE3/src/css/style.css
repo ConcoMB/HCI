@@ -22,11 +22,12 @@
 	text-align: right;
 	width: 27%;
 	float: left;
+	clear:left
 }
 
 .inputBox {
-	float: right;
-	width: 67%;
+	float: left;
+	width: 65%;
 	text-align: left;
 	padding-left: 1em;
 }
@@ -344,4 +345,13 @@ img#userPhoto
 
 #errors{
 	color:#710909;
+}
+
+.req{
+	float:right;
+	text-align: left;
+}
+
+.reqFields{
+	height: 2em;
 }
