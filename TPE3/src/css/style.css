@@ -4,7 +4,7 @@
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
-	width: 30em;
+	width: 35em;
 
 
 
@@ -20,13 +20,14 @@
 
 .entry {
 	text-align: right;
-	width: 27%;
+	width: 25%;
 	float: left;
+	clear:left
 }
 
 .inputBox {
-	float: right;
-	width: 67%;
+	float: left;
+	width: 50%;
 	text-align: left;
 	padding-left: 1em;
 }
@@ -265,7 +266,7 @@ div#info{
 	float: none;
 }
 .wide{
-	width: 80%;
+	width: 95%;
 }
 .profile
 {
@@ -344,4 +345,21 @@ img#userPhoto
 
 #errors{
 	color:#710909;
+}
+
+.req{
+	float:left;
+	text-align: left;
+}
+
+.reqFields{
+	height: 2em;
+}
+
+.reqError{
+	
+	color:#CD0A0A;
+	width: 20%;
+	float: left;
+	height: 65%;
 }
