@@ -4,8 +4,8 @@
 			<img src="img/notImg.jpg" class="detailImg"/>
 			<div class="articleDetail">
 				<div>
-				<span class="artForm">Name: </span>
-				<span id="artName" class="artData"></span>
+					<span class="artForm">Name: </span>
+					<span id="artName" class="artData"></span>
 				</div>
 				<br>
 				<span class="artForm">Price: </span>
@@ -22,10 +22,13 @@
 	</div>
 	<div>
 		<form id="BUY">
-			<select id="orderList"></select><br>
-			<span>Amount: </span><input id="buyCant" type="text" value="1"/><br>
+			<div class="buyOrderData">
+				<span class="amountLabel">Amount: </span>
+				<input id="buyCant" type="text" value="1"/>
+				<select id="orderList"></select>
+			</div>
 			<input id="addToOrder" type="submit" class="submit" value="Add to order"/>
 		</form>
 	</div>
-	
+
 </div>
