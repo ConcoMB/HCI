@@ -1,4 +1,4 @@
-<language id="1">
+<language>
 	<name>Español</name>
 	<errors>
 		<empty_username>You must enter a username</empty_username>
@@ -19,4 +19,9 @@
 		<signupLink>Regístrate!</signupLink>
 		<sb>Entrar</sb>
 	</header>
+	<product>
+		<pnameLabel>Nombre:</pnameLabel>
+		<priceLabel>Prrecio:</priceLabel>
+		<descLabel>Descripcion:</descLabel>
+	</product>
 </language>

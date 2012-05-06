@@ -20,66 +20,65 @@
 		<script src="js/jquery-ui-1.8.19.custom/development-bundle/ui/jquery.ui.accordion.js"></script>
 	</head>
 	<body>
-	<div id="wrapper">
-		<div id="head">
-			<div class="lefthead">
-				<img src="img/bag.jpg" id="icon"/>
+		<div id="wrapper">
+			<div id="head">
+				<div class="lefthead">
+					<img src="img/bag.jpg" id="icon"/>
 
-				<div class="search">
-					<form id="search">
-						<span class="translate" id="searchLabel>Search: </span>
-						<input id="query" type="text" value="search"/>
-						<select id="searchCat">
-						</select>
-						<input id="searchButton" class="translate" type="submit" value="search"/>
-					</form>
+					<div class="search">
+						<form id="search">
+							<span class="translate" id="searchLabel">Search: </span>
+							<input id="query" type="text" value="search"/>
+							<select id="searchCat"></select>
+							<input id="searchButton" class="translate" type="submit" value="search"/>
+						</form>
+					</div>
+				</div>
+				<div class="userhead">
+					<div>
+						<form id="loginForm">
+							<input id="sb" class="translate" type="submit" value="log in"/>
+							<span id="usernameLabel" class="entry translate">User name: </span>
+							<input id="name" type="text"/>
+							<br>
+							<span id="passwordLabel" class="entry translate">Password:</span>
+							<input id="password" type="password"/>
+							<br>
+						</form>
+					</div>
+					<div class="signHelp">
+						<span id="newInSiteLabel" class="translate">New in the site? </span><a id="signupLink" href="#" class="translate">Sign up now!</a>
+					</div>
 				</div>
 			</div>
-			<div class="userhead">
-				<div>
-					<form id="loginForm">
-						<input id="sb" class="translate" type="submit" value="log in"/>
-						<span id="usernameLabel" class="entry translate">User name: </span>
-						<input id="name" type="text"/>
-						<br>
-						<span id="passwordLabel" class="entry translate">Password:</span>
-						<input id="password" type="password"/>
-						<br>
-					</form>
-				</div>
-				<div class="signHelp">
-					<span id="newInSiteLabel" class="translate">New in the site? </span><a id="signupLink" href="#" class="translate">Sign up now!</a>
-				</div>
-			</div>
-		</div>
-		<div class="centerStuff">
-			<div id="categories">
-				<div id="accordion">
-					<!--<h3><a class="category" href="#">Category 1</a></h3>
-					<div class="subCat">
+			<div class="centerStuff">
+				<div id="categories">
+					<div id="accordion">
+						<!--<h3><a class="category" href="#">Category 1</a></h3>
+						<div class="subCat">
 						<a class="subcategory" href="search.html">Subcategory 1</a>
 						<a class="subcategory" href="search.html">Subcategory 2</a>
 						<a class="subcategory" href="search.html">Subcategory 2</a>
-					</div>
-					<h3><a href="#">Category 2</a></h3>
-					<div class="subCat">
+						</div>
+						<h3><a href="#">Category 2</a></h3>
+						<div class="subCat">
 						<a href="search.html">Subcategory 1</a>
 						<a href="search.html">Subcategory 2</a>
 						<a href="search.html">Subcategory 2</a>
-					</div>
-					<h3><a href="#">Category 3</a></h3>
-					<div class="subCat">
+						</div>
+						<h3><a href="#">Category 3</a></h3>
+						<div class="subCat">
 						<a href="search.html">Subcategory 1</a>
 						<a href="search.html">Subcategory 2</a>
 						<a href="search.html">Subcategory 2</a>
-					</div>-->
+						</div>-->
+					</div>
 				</div>
+				<div id="main"></div>
 			</div>
-			<div id="main"></div>
+			<div id="footer">
+				<!--<a>English</a> | <a>Español</a> | <a> Deutsch </a> | <a> Français </a>-->
+			</div>
 		</div>
-		<div id="footer">
-			<!--<a>English</a> | <a>Español</a> | <a> Deutsch </a> | <a> Français </a>-->
-		</div>
-	</div>
 	</body>
 </html>
