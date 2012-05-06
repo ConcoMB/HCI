@@ -1,63 +1,18 @@
 <html>
 	<head>
 		<title>New shipping destination</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	</head>
 	<body>
-		<div class="head">
-			<div class="lefthead">
-				<img src="img/bag.jpg" id="icon"/>
-				<div class="language">
-					<span><strong>English</strong></span><span> | </span><span>Español</span>
-				</div>
-				<div class="search">
-					<form>
-						<span>Search: </span>
-						<input type="text" value="search"/>
-						<select>
-							<option>Category1</option>
-							<option>Category2</option>
-							<option>Category3</option>
-							<option>Category4</option>
-						</select>
-						<input type="submit" value="search"/>
-					</form>
-				</div>
-			</div>
-			<div class="userhead">
-				<div class="signedinfo">
-					<p>
-						<span>Hello </span><span>User1</span>
-					</p>
-					<p><a>My profile</a></p>
-					<p><span>Its not you?</span><a>Log out</a></p>
-				</div>
-				<div class="carthead">
-					<img src="img/cart.jpg"/>
-					<a>Shopping cart</a>
-				</div>
-			</div>
-		</div>
-		<div class="categories">
-			<div class="category">
-				<a>Category 1</a>
-			</div>
-			<div class="category">
-				<a>Category 2</a>
-			</div>
-			<div class="category">
-				<a>Category 3</a>
-			</div>
-			<div class="category">
-				<a>Category 4</a>
-			</div>
-		</div>
 		<div class="main">
 			<div class="center">
 				<h1>New shipping destination</h1>
 				<form>
 					<div class="formBox">
+						<div class="reqFields">
+							* Required fields
+						</div>
 						<div class="formItem">
 							<div class="entry">
 								Address:
@@ -65,6 +20,10 @@
 							<div class="inputBox">
 								<input class="wide" type="text" value="address">
 							</div>
+							<div class="req">
+								*
+							</div>
+
 						</div>
 						<div class="formItem">
 							<div class="entry">
@@ -73,6 +32,10 @@
 							<div class="inputBox">
 								<input class="wide" type="text" value="city">
 							</div>
+							<div class="req">
+								*
+							</div>
+
 						</div>
 						<div class="formItem">
 							<div class="entry">
@@ -81,6 +44,10 @@
 							<div class="inputBox">
 								<input class="wide" type="text" value="country">
 							</div>
+							<div class="req">
+								*
+							</div>
+
 						</div>
 						<div class="formItem">
 							<div class="entry">
@@ -89,6 +56,10 @@
 							<div class="inputBox">
 								<input class="wide" type="text" value="Zip">
 							</div>
+							<div class="req">
+								*
+							</div>
+
 						</div>
 					</div>
 					<input class="submit" type="submit" value="Add new destination"/>

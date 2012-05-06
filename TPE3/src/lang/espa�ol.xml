@@ -1,0 +1,22 @@
+<language id="1">
+	<name>Español</name>
+	<errors>
+		<empty_username>You must enter a username</empty_username>
+		<username_exists>Username already exists</username_exists>
+		<password_mismatch>The passwords do not match</password_mismatch>
+		<empty_password>You must enter a password</empty_password>
+		<empty_email>You must enter an email</empty_email>
+		<empty_name>You must enter your name</empty_name>
+		<wrong_email>The email format must be: example@domain.com</wrong_email>
+		<invalid_date>The date format must be dd/mm/yyyy </invalid_date>
+	</errors>
+	<header>
+		<searchLabel>Buscar:</searchLabel>
+		<searchButton>Buscar</searchButton>
+		<usernameLabel>Usuario:</usernameLabel>
+		<passwordLabel>Contraseña:</passwordLabel>
+		<newInSiteLabel>¿Nuevo en el sitio?</newInSiteLabel>
+		<signupLink>Regístrate!</signupLink>
+		<sb>Entrar</sb>
+	</header>
+</language>

@@ -1,92 +1,29 @@
-<html>
-	<head>
-		<title>Product</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-	</head>
-	<body>
-			<div class="head">
-				<div class="lefthead">
-					<img src="img/bag.jpg" id="icon"/>
-					<div class="language">
-						<span><strong>English</strong></span><span> | </span><span>Español</span>
-					</div>
-					<div class="search">
-						<form>
-							<span>Search: </span>
-							<input type="text" value="search"/>
-							<select>
-								<option>Category1</option>
-								<option>Category2</option>
-								<option>Category3</option>
-								<option>Category4</option>
-							</select>
-							<input type="submit" value="search"/>
-						</form>
-					</div>
-				</div>
-				<div class="userhead">
-				<div class="signedinfo">
-					<p><span>Hello </span><span>User1</span></p>
-					<p><a>My profile</a></p>
-					<p><span>Its not you?</span><a>Log out</a></p>
-				</div>
-				<div class="carthead">
-					<img src="img/cart.jpg"/>
-					<a>Shopping cart</a>
-				</div>
-			</div>
-		</div>
-		<div class="categories">
-			<div class="category"><a>Category 1</a></div>
-			<div class="category"><a>Category 2</a></div>
-			<div class="category"><a>Category 3</a></div>
-			<div class="category"><a>Category 4</a></div>
-		</div>
-		<div class="main">
-			<div class="center">
+<div class="center">
+	<div>
+		<div class="itemBox">
+			<img src="img/notImg.jpg" class="detailImg"/>
+			<div class="articleDetail">
 				<div>
-					<div class="itemBox">
-						<img src="img/notImg.jpg" class="detailImg"/>
-						<div class="articleDetail">
-							<div class="artForm">
-								<span>Name: </span>
-							</div>
-							<div class="artData">
-								<span>Arti1</span>
-							</div>
-							<br>
-							<div class="artForm">
-								<span>Price: </span>
-							</div>
-							<div class="artData">
-								<span>X$</span>
-							</div>
-							<br>
-							<div class="artForm">
-								<span>Rank: </span>
-							</div>
-							<div class="artData">
-								<span>85</span>
-							</div>
-							<br>
-							<div class="artForm">
-								<span>Description: </span>
-							</div>
-							<div class="artData">
-								<span>Desc</span>
-							</div>
-							<br>
-						</div>
-					</div>
+				<span class="artForm">Name: </span>
+				<span id="artName" class="artData"></span>
 				</div>
-				<select>
-					<option value="NEW">Create new order</option>
-					<option value="1">Order1</option>
-					<option value="2">Order2</option>
-				</select>
-				<input type="submit" class="submit" value="Add to order"/>
+				<br>
+				<span class="artForm">Price: </span>
+				<span id="artPrice" class="artData">$</span>
+				<br>
+				<span class="artForm">Rank: </span>
+				<span id="artRank" class="artData"></span>
+				<br>
+				<span class="artForm">Description: </span>
+				<span id="artDesc" class="artData"></span>
+				<br>
 			</div>
 		</div>
-	</body>
-</html>
+	</div>
+	<select>
+		<option value="NEW">Create new order</option>
+		<option value="1">Order1</option>
+		<option value="2">Order2</option>
+	</select>
+	<input type="submit" class="submit" value="Add to order"/>
+</div>
