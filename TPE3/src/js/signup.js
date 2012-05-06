@@ -25,15 +25,29 @@ function signupFormHandler(){
 	$('#errors').html('');
 	if(!username){
 		error+=$(language).find('empty_username').text()+"<br>";
+		$('#reqUser').css('visibility','visible');
+	}else{
+		$('#reqUser').css('visibility','hidden');
 	}
 	if(!password){
 		error+=$(language).find('empty_password').text()+"<br>";
+		$('#reqPass').css('visibility','visible');
+	}else{
+		$('#reqPass').css('visibility','hidden');
 	}
-	else if(password!=rPassword){
+	if(password!=rPassword){
 		error+=$(language).find('password_mismatch').text()+"<br>";
 	};
+	if(!rPassword){
+		$('#reqConf').css('visibility','visible');
+	}else{
+		$('#reqConf').css('visibility','hidden');
+	}
 	if(!email){
 		error+=$(language).find('empty_email').text()+"<br>";
+		$('#reqMail').css('visibility','visible');
+	}else{
+		$('#reqMail').css('visibility','hidden');
 	}
 	var exp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	if(!email.match(exp)){
@@ -41,9 +55,15 @@ function signupFormHandler(){
 	}
 	if(!name){
 		error+=$(language).find('empty_name').text()+"<br>";
+		$('#reqName').css('visibility','visible');
+	}else{
+		$('#reqName').css('visibility','hidden');
 	}
 	if(!ValidateForm(date)){
 		error+=$(language).find('invalid_date').text()+"<br>";
+		$('#reqDate').css('visibility','visible');
+	}else{
+		$('#reqDate').css('visibility','hidden');
 	}
 	$('#errors').append(error);
 	if(!error){
