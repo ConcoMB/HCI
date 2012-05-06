@@ -21,7 +21,7 @@
 	</header>
 	<product>
 		<pnameLabel>Nombre:</pnameLabel>
-		<priceLabel>Prrecio:</priceLabel>
+		<priceLabel>Precio:</priceLabel>
 		<descLabel>Descripcion:</descLabel>
 	</product>
 </language>

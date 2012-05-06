@@ -241,6 +241,7 @@ img#icon
 .articleDetail{
 	width:55%;
 	float: right;
+	margin-left: 1em;
 }
 
 .artForm{
@@ -248,12 +249,14 @@ img#icon
 	text-align:right;
 	width: 35%;
 	float: left;
+	font-weight: bold;
 	
 }
 .artData{
 	text-align:left;
 	width: 60%;
 	float: right;
+	font-size: 15px;
 	
 	
 }
@@ -377,18 +380,15 @@ img#userPhoto
 }
 .amountLabel{
 	clear:left;
-	float:left;
+	
 }
 
 #buyCant{
-	margin-left:1em;
-	margin-right: 1em;
-	float:left;
 	width: 3em;
 }
 
 #orderList{
-	float: left;
+	
 }
 
 .buyOrderData{
@@ -396,6 +396,5 @@ img#userPhoto
 	margin-left: auto;
 	text-align: center;
 	width: 30em;
-
 	overflow: auto;
 }
