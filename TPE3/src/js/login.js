@@ -11,8 +11,6 @@ function updateUserPanel(name) {
 		$('#myCart').click(cartClickHandler);
 		$('#logOut').click(logOutHandler);
 	});
-	/*$(".userhead").load('signed.html');
-	 $("#userName").text(name);*/
 }
 
 function loginFormHandler() {

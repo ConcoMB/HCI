@@ -16,4 +16,5 @@ $(document).ready(function(){
 	$('.artName').click(productClickHandler);
 	$('#signupLink').click(signupForm);
 	$('#main').load('home.html');
+	translate();
 });
