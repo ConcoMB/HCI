@@ -1,4 +1,4 @@
-<language id="1">
+<language>
 	<name>English</name>
 	<errors>
 		<errors_signUp>
@@ -21,19 +21,32 @@
 			<empty_phone>You must enter a phone</empty_phone>
 		</errors_newShipDest>
 	</errors>
+	<header>
+		<searchLabel>Search:</searchLabel>
+		<searchButton>Search</searchButton>
+		<usernameLabel>Username:</usernameLabel>
+		<passwordLabel>Password:</passwordLabel>
+		<newInSiteLabel>New in the site?</newInSiteLabel>
+		<signupLink>Sign up now!</signupLink>
+		<sb>Log In</sb>
+	</header>
+	<product>
+		<pnameLabel>Name:</pnameLabel>
+		<priceLabel>Price:</priceLabel>
+		<descLabel>Description:</descLabel>
+	</product>
 	<general>
 		<requiredFields>Required Fields</requiredFields>
-
 	</general>
 	<signUp>
-		<signUp>Sign Up</su_signUp>
-		<accountInfo>Account Info</su_accountInfo>
-		<userNameLabel>User name:</su_username>
-		<confirmPasswordLabel>Confirm password:</confirmPass>
+		<signUp>Sign Up</signUp>
+		<accountInfo>Account Info</accountInfo>
+		<userNameLabel>User name:</userNameLabel>
+		<confirmPasswordLabel>Confirm password:</confirmPasswordLabel>
 		<emailLabel>E-mail:</emailLabel>
 		<nameLabel>Name:</nameLabel>
-		<birthDateLabel>Birth date (dd/mm/yyyy):</birthDate>
+		<birthDateLabel>Birth date (dd/mm/yyyy):</birthDateLabel>
 		<personalInformation>Personal Information</personalInformation>
-		<signUpButton>Sign Up!</signUpBotton>
+		<signUpButton>Sign Up!</signUpButton>
 	</signUp>
 </language>
