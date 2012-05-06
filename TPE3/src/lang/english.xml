@@ -25,7 +25,6 @@
 		<searchLabel>Search:</searchLabel>
 		<searchButton>Search</searchButton>
 		<usernameLabel>Username:</usernameLabel>
-		<passwordLabel>Password:</passwordLabel>
 		<newInSiteLabel>New in the site?</newInSiteLabel>
 		<signupLink>Sign up now!</signupLink>
 		<sb>Log In</sb>
@@ -36,9 +35,10 @@
 		<descLabel>Description:</descLabel>
 	</product>
 	<general>
-		<requiredFields>Required Fields</requiredFields>
+		<passwordLabel>Password:</passwordLabel>
+		<requiredFields>* Required Fields</requiredFields>
 	</general>
-	<signUp>
+	<signUpForm>
 		<signUp>Sign Up</signUp>
 		<accountInfo>Account Info</accountInfo>
 		<userNameLabel>User name:</userNameLabel>
@@ -48,5 +48,5 @@
 		<birthDateLabel>Birth date (dd/mm/yyyy):</birthDateLabel>
 		<personalInformation>Personal Information</personalInformation>
 		<signUpButton>Sign Up!</signUpButton>
-	</signUp>
+	</signUpForm>
 </language>

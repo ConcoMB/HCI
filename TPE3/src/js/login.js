@@ -10,6 +10,7 @@ function updateUserPanel(name) {
 		$("#userName").text(name);
 		$('#myCart').click(cartClickHandler);
 		$('#logOut').click(logOutHandler);
+		translate($('.userhead'));
 	});
 }
 

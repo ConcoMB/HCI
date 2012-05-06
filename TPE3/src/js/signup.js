@@ -9,6 +9,7 @@ function signupForm(){
 		url : "signUp.html"
 	}).done(function(html) {
 		$('#main').html(html);
+		translate($('#main'));
 		$('#signupForm').submit(signupFormHandler);
 	});
 }
