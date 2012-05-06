@@ -30,5 +30,5 @@ function loginFormHandler() {
 
 function logOutHandler(){
 	window.location = "index.html"
-	$('#main').load('home.html');
+	//$('#main').load('home.html');
 }
