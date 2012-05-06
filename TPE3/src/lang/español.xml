@@ -8,20 +8,33 @@
 		<empty_email>You must enter an email</empty_email>
 		<empty_name>You must enter your name</empty_name>
 		<wrong_email>The email format must be: example@domain.com</wrong_email>
-		<invalid_date>The date format must be dd/mm/yyyy </invalid_date>
+		<invalid_date>The date format must be dd/mm/yyyy</invalid_date>
 	</errors>
 	<header>
 		<searchLabel>Buscar:</searchLabel>
 		<searchButton>Buscar</searchButton>
 		<usernameLabel>Usuario:</usernameLabel>
-		<passwordLabel>Contraseña:</passwordLabel>
 		<newInSiteLabel>¿Nuevo en el sitio?</newInSiteLabel>
 		<signupLink>Regístrate!</signupLink>
 		<sb>Entrar</sb>
 	</header>
 	<product>
 		<pnameLabel>Nombre:</pnameLabel>
-		<priceLabel>Prrecio:</priceLabel>
+		<priceLabel>Precio:</priceLabel>
 		<descLabel>Descripcion:</descLabel>
 	</product>
+	<signUpForm>
+		<signUp>Regístrate</signUp>
+		<accountInfo>Informacion de Cuenta</accountInfo>
+		<userNameLabel>Nombre de usuario:</userNameLabel>
+		<confirmPasswordLabel>Confirmar Contraseña:</confirmPasswordLabel>
+		<emailLabel>E-mail:</emailLabel>
+		<nameLabel>Nombre:</nameLabel>
+		<birthDateLabel>Fecha de Nacimiento (dd/mm/aaaa):</birthDateLabel>
+		<personalInformation>Informacion Personal</personalInformation>
+		<signUpButton>Regístrate!</signUpButton>
+	</signUpForm>
+	<general>
+		<passwordLabel>Contraseña:</passwordLabel>
+	</general>
 </language>

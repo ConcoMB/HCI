@@ -35,8 +35,11 @@ function loadLanguage(lid, name) {
 	});
 }
 
-function translate() {
-	$('.translate').each(function() {
+function translate(elem) {
+	if(!elem){
+		elem=$(document);
+	}
+	$('.translate',elem).each(function() {
 		var id = $(this).attr('id');
 		if(this.nodeName.toLowerCase() == 'input' && $(this).attr('type') == 'submit') {
 			$(this).attr('value', $(language).find(id).text());
@@ -44,7 +47,7 @@ function translate() {
 			$(this).text($(language).find(id).text());
 		}
 	});
-	$('[class*="translate_"]').each(function(){
+	$('[class*="translate_"]',elem).each(function(){
 		var classStr=$(this).attr('class');
 		//alert(classStr);
 		var code=classStr.replace(/.*translate_([^\s]*)[\s.*]?/,'$1');

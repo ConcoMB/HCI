@@ -11,6 +11,7 @@ function productClickHandler(){
 		$('#main').html(html);
 		updateProduct(pid);
 		$("#BUY").submit(addToOrderHandler);
+		translate($('#product'));
 	});
 }
 
@@ -53,6 +54,7 @@ function fillProducts(products) {
 				}
 			});
 			$('.artName').click(productClickHandler);
+			translate($('#productList'));
 		}
 	});
 }
