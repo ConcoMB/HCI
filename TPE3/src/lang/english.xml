@@ -21,4 +21,19 @@
 			<empty_phone>You must enter a phone</empty_phone>
 		</errors_newShipDest>
 	</errors>
+	<general>
+		<requiredFields>Required Fields</requiredFields>
+
+	</general>
+	<signUp>
+		<signUp>Sign Up</su_signUp>
+		<accountInfo>Account Info</su_accountInfo>
+		<userNameLabel>User name:</su_username>
+		<confirmPasswordLabel>Confirm password:</confirmPass>
+		<emailLabel>E-mail:</emailLabel>
+		<nameLabel>Name:</nameLabel>
+		<birthDateLabel>Birth date (dd/mm/yyyy):</birthDate>
+		<personalInformation>Personal Information</personalInformation>
+		<signUpButton>Sign Up!</signUpBotton>
+	</signUp>
 </language>
