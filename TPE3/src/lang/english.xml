@@ -1,14 +1,25 @@
 <language id="1">
 	<name>English</name>
 	<errors>
-		<empty_username>You must enter a username</empty_username>
-		<username_exists>Username already exists</username_exists>
-		<password_mismatch>The passwords do not match</password_mismatch>
-		<empty_password>You must enter a password</empty_password>
-		<empty_email>You must enter an email</empty_email>
-		<empty_name>You must enter your name</empty_name>
-		<wrong_email>The email format must be: example@domain.com</wrong_email>
-		<invalid_date>The date format must be dd/mm/yyyy </invalid_date>
+		<errors_signUp>
+			<empty_username>You must enter a username</empty_username>
+			<username_exists>Username already exists</username_exists>
+			<password_mismatch>The passwords do not match</password_mismatch>
+			<empty_password>You must enter a password</empty_password>
+			<empty_email>You must enter an email</empty_email>
+			<empty_name>You must enter your name</empty_name>
+			<wrong_email>The email format must be: example@domain.com</wrong_email>
+			<invalid_date>The date format must be dd/mm/yyyy</invalid_date>
+		</errors_signUp>
+		<errors_newShipDest>
+			<empty_sd_name>You must enter a name for your ship destination</empty_sd_name>
+			<empty_sd_address1>You must enter an address</empty_sd_address1>
+			<empty_country>Your must select a country</empty_country>
+			<empty_state>You must select a state</empty_state>
+			<empty_city>You must enter a city</empty_city>
+			<empty_ZC>You must enter a zip code</empty_ZC>
+			<empty_phone>You must enter a phone</empty_phone>
+		</errors_newShipDest>
 	</errors>
 	<header>
 		<searchLabel>Search:</searchLabel>
@@ -24,4 +35,19 @@
 		<priceLabel>Price:</priceLabel>
 		<descLabel>Description:</descLabel>
 	</product>
+	<general>
+		<requiredFields>Required Fields</requiredFields>
+
+	</general>
+	<signUp>
+		<signUp>Sign Up</su_signUp>
+		<accountInfo>Account Info</su_accountInfo>
+		<userNameLabel>User name:</su_username>
+		<confirmPasswordLabel>Confirm password:</confirmPass>
+		<emailLabel>E-mail:</emailLabel>
+		<nameLabel>Name:</nameLabel>
+		<birthDateLabel>Birth date (dd/mm/yyyy):</birthDate>
+		<personalInformation>Personal Information</personalInformation>
+		<signUpButton>Sign Up!</signUpBotton>
+	</signUp>
 </language>

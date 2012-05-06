@@ -1,6 +1,6 @@
 <div class="center">
 	<div>
-		<div class="itemBox">
+		<div id="product" class="itemBox">
 			<img src="img/notImg.jpg" class="detailImg"/>
 			<div class="articleDetail">
 				<div>
@@ -20,10 +20,12 @@
 			</div>
 		</div>
 	</div>
-	<select>
-		<option value="NEW">Create new order</option>
-		<option value="1">Order1</option>
-		<option value="2">Order2</option>
-	</select>
-	<input type="submit" class="submit" value="Add to order"/>
+	<div>
+		<form id="BUY">
+			<select id="orderList"></select><br>
+			<span>Amount: </span><input id="buyCant" type="text" value="1"/><br>
+			<input id="addToOrder" type="submit" class="submit" value="Add to order"/>
+		</form>
+	</div>
+	
 </div>

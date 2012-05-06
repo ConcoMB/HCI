@@ -10,6 +10,7 @@ $(document).ready(function(){
 				});
 			});
 	$('#loginForm').submit(loginFormHandler);
+	$('#search').submit(searchHandler);
 	$('.subcategory').click(subcategoryClickHandler);
 	$('.category').click(categoryClickHandler);
 	$('.artName').click(productClickHandler);
