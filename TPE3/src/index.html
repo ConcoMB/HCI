@@ -4,10 +4,11 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 		<script type="text/javascript" src="js/utils.js"></script>
+		<script type="text/javascript" src="js/product.js"></script>
 		<script type="text/javascript" src="js/login.js"></script>
 		<script type="text/javascript" src="js/category.js"></script>
 		<script type="text/javascript" src="js/language.js"></script>
-		<script type="text/javascript" src="js/product.js"></script>
+		<script type="text/javascript" src="js/search.js"></script>
 		<script type="text/javascript" src="js/cart.js"></script>
 		<script type="text/javascript" src="js/signup.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
@@ -24,14 +25,10 @@
 				<img src="img/bag.jpg" id="icon"/>
 
 				<div class="search">
-					<form>
+					<form id="search">
 						<span>Search: </span>
-						<input type="text" value="search"/>
-						<select>
-							<option>Category1</option>
-							<option>Category2</option>
-							<option>Category3</option>
-							<option>Category4</option>
+						<input id="query" type="text" value="search"/>
+						<select id="searchCat">
 						</select>
 						<input type="submit" value="search"/>
 					</form>

@@ -4,15 +4,16 @@
 		<br>
 		<span class="artForm">Price: </span><span class="artData artPrice"></span>
 		<br>
-			<span class="artForm">Description: </span>
-			<span class="artData">Desc</span>
+		<span class="artForm">Description: </span>
+		<span class="artData">Desc</span>
 		<br>
 		<div class="toTheCart">
-			<input type="text" value="1"/>
-			<a>Add to order</a>
-			<select>
-				<option value="NEW">Create new order</option><option value="1">Order1</option><option value="2">Order2</option>
-			</select>
+			<form id="toTheCart">
+				<span>Amount: </span>
+				<input id="buyCant" type="text" value="1"/>
+				<select id="orderList"></select>
+				<input type="submit" value="Add to order"/>
+			</form>
 		</div>
 	</div>
 </div>

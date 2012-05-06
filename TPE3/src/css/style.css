@@ -362,4 +362,5 @@ img#userPhoto
 	width: 20%;
 	float: left;
 	height: 65%;
+	visibility:hidden;
 }
