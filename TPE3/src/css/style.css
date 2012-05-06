@@ -241,6 +241,7 @@ img#icon
 .articleDetail{
 	width:55%;
 	float: right;
+	margin-left: 1em;
 }
 
 .artForm{
@@ -248,12 +249,14 @@ img#icon
 	text-align:right;
 	width: 35%;
 	float: left;
+	font-weight: bold;
 	
 }
 .artData{
 	text-align:left;
 	width: 60%;
 	float: right;
+	font-size: 15px;
 	
 	
 }
@@ -299,13 +302,10 @@ img#userPhoto
 	margin-right: 1em;
 	float: right;
 }
-.toTheCart input{
-	float: left;
-	width: 3em;
-}
 .toTheCart{
 	margin-top: 1em;
 	margin-left: 5%;
+	width:100%
 }
 .toTheCart a{
 	float: left;
@@ -377,4 +377,24 @@ img#userPhoto
 
 .artItem{
 	width: 100%;
+}
+.amountLabel{
+	clear:left;
+	
+}
+
+#buyCant{
+	width: 3em;
+}
+
+#orderList{
+	
+}
+
+.buyOrderData{
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	width: 30em;
+	overflow: auto;
 }
