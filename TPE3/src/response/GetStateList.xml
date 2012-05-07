@@ -1,0 +1,14 @@
+<response status="ok">
+	<states>
+		<state id="1">
+			<country_id>2</country_id>
+			<code>FL</code>
+			<name>Florida</name>
+		</state>
+		<state id="2">
+			<country_id>2</country_id>
+			<code>TX</code>
+			<name>Texas</name>
+		</state>
+	</states>
+</response>

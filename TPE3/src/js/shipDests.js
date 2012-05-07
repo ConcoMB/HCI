@@ -1,33 +1,45 @@
-function viewSDests(){
-	var list=GetAddressList();
+function viewSDests() {
+	var list = GetAddressList();
 	$.ajax({
 		type : "GET",
-		url : "shipDestTemplate.html",
+		url : "addressTemplate.html",
 		dataType : "html",
 		success : function(template) {
-			$(list).find('orderBox').each(function() {
-						
-			}
+			$(list).find('address').each(function() {
+				var div = $(template).clone();
+				$(div).find(".shipName").text($(this).find("full_name").text());
+				var addr = $(this).find("address_line_1").text() + ", " + $(this).find("address_line_2").text();
+				$(div).find(".addr").text(addr);
+				var countryID = $(this).find("country_id").text();
+				var stateID = $(this).find("state_id").text();
+				$(div).find(".acity").text($(this).find("city").text());
+				$(div).find(".azip").text($(this).find("zip_code").text());
+				$(div).find(".apnumber").text($(this).find("phone_number").text());
+				var country = $(GetCountryList()).find("country[id=" + countryID + "]").find("name").text();
+				$(div).find(".acountry").text(country);
+				var state = $(GetStateList()).find("state[id=" + stateID + "]").find("name").text();
+				$(div).find(".astate").text(state);
+				var addrID=$(this).attr("id");
+				$(div).find(".editAddr").attr("href", "#target=editSD&id="+addrID);
+				$("#addrs").append(div);
+
+			});
+			$("#addrs").accordion({
+				collapsible : true,
+				active:false
+			});
 		}
 	});
 }
 
-function GetAddressList(){
+function GetAddressList() {
 	return request("GetAddressList");
 }
 
+function GetStateList() {
+	return request("GetStateList");
+}
 
-<response status="ok">
-	<addresses>
-		<address id="1">
-			<full_name>ITBA 1</full_name>
-			<address_line_1>Av. Eduardo Madero 399</address_line_1>
-			<address_line_2 />
-			<country_id>1</country_id>
-			<state_id>1</state_id>
-			<city>Capital Federal</city>
-			<zip_code>C1106ACD</zip_code>
-			<phone_number>0800-888-ITBA</phone_number>
-		</address>
-	</addresses>
-</response>
+function GetCountryList() {
+	return request('GetCountryList');
+}

@@ -1,21 +1,20 @@
-user=null;
-language=null;
+user = null;
+language = null;
 
-$(document).ready(function(){
+$(document).ready(function() {
 	updateLanguageList();
 	updateCategoryList();
-	$(function() {
-				$("#accordion").accordion({
-					collapsible : true
-				});
-			});
+	$("#accordion").accordion({
+		collapsible : true,
+		active: false
+	});
 	$('#loginForm').submit(loginFormHandler);
 	$('#search').submit(searchHandler);
 	//$('.subcategory').click(subcategoryClickHandler);
 	$('.category').click(categoryClickHandler);
 	//$('.artName').click(productClickHandler);
-	$('#signupLink').attr('href','#target=signUp');
-	$(window).bind( 'hashchange', hashChangeHandler);
-	$(window).trigger( 'hashchange' );
+	$('#signupLink').attr('href', '#target=signUp');
+	$(window).bind('hashchange', hashChangeHandler);
+	$(window).trigger('hashchange');
 	translate();
-});
+}); 
