@@ -2,7 +2,7 @@ function getProduct(pid){
 	return request('product');
 }
 
-function productClickHandler(){
+/*function productClickHandler(){
 	var name=$(this).text();
 	var pid=$(this).data('pid');
 	$.ajax({
@@ -13,7 +13,7 @@ function productClickHandler(){
 		$("#BUY").submit(addToOrderHandler);
 		translate($('#product'));
 	});
-}
+}*/
 
 function updateProduct(pid){
 	var product=getProduct(pid);
@@ -41,7 +41,8 @@ function fillProducts(products) {
 				var price = $(this).find('price').text();
 				var pid = $(this).attr('id');
 				var div = $(template).clone();
-				$(div).find('.artName').text(name).data('pid', pid);
+				var nameLink='#target=detail&pid='+pid;
+				$(div).find('.artName').text(name).attr('href',nameLink).data('pid', pid);
 				$(div).find('.artPrice').text(price);
 				$(div).data("pid", pid);
 				$('#productList').append(div);
@@ -52,9 +53,10 @@ function fillProducts(products) {
 				}else{
 					$(div).find("#toTheCart").css("visibility", "hidden");
 				}
+				translate($('#productList'));
 			});
-			$('.artName').click(productClickHandler);
-			translate($('#productList'));
+			//$('.artName').click(productClickHandler);
+			//translate($('#productList'));
 		}
 	});
 }

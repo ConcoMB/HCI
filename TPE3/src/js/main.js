@@ -11,10 +11,11 @@ $(document).ready(function(){
 			});
 	$('#loginForm').submit(loginFormHandler);
 	$('#search').submit(searchHandler);
-	$('.subcategory').click(subcategoryClickHandler);
+	//$('.subcategory').click(subcategoryClickHandler);
 	$('.category').click(categoryClickHandler);
-	$('.artName').click(productClickHandler);
-	$('#signupLink').click(signupForm);
-	$('#main').load('home.html');
+	//$('.artName').click(productClickHandler);
+	$('#signupLink').attr('href','#target=signUp');
+	$(window).bind( 'hashchange', hashChangeHandler);
+	$(window).trigger( 'hashchange' );
 	translate();
 });

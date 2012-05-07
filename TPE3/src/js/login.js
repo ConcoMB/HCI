@@ -2,13 +2,14 @@ function signIn(username, password) {
 	return request('signIn');
 }
 
-function updateUserPanel(name) {
+function updateUserPanel() {
+	var name=$(user).find('user').attr('name');
 	$.ajax({
 		url : "signed.html"
 	}).done(function(html) {
 		$(".userhead").html(html);
 		$("#userName").text(name);
-		$('#myCart').click(cartClickHandler);
+		//$('#myCart').click(cartClickHandler);
 		$('#logOut').click(logOutHandler);
 		translate($('.userhead'));
 	});
@@ -22,7 +23,7 @@ function loginFormHandler() {
 	}
 	user = signIn(username, password)
 	if(user) {
-		updateUserPanel($(user).find('user').attr('name'));
+		updateUserPanel();
 	}
 	return false;
 }

@@ -14,19 +14,22 @@ function updateCategoryList() {
 		var cname = $(this).find('name').text();
 		var cid = $(this).attr('id');
 		var div = $('<div></div>').addClass('subCat');
-		var a = $('<a></a>').addClass('category').attr('href', '#').text(cname).data('cid', cid);
+		var href='#target=category&page=0&cname='+cname+'&cid='+cid;
+		var a = $('<a></a>').addClass('category').attr('href', href).text(cname).data('cid', cid);
 		var h3 = $('<h3></h3>');
 		h3.append(a);
 		$("#searchCat").append($("<option></option>").text(cname).attr("value", cid));
 		var subcategories = getSubcategoryList($(this).attr('id'));
 
 		$(subcategories).find('subcategory').each(function() {
-			var sub = $('<a></a>').addClass('subcategory').attr('href', '#').text($(this).find('name').text());
-			sub.data('sid', $(this).attr('id'));
+			var sid=$(this).attr('id');
+			var sname=$(this).find('name').text();
+			var sub = $('<a></a>').addClass('subcategory').attr('href', href+'&sid='+sid+'&sname='+sname).text(sname);
+			sub.data('sid', sid);
 			sub.data('cid', $(this).find('category_id').text());
 			sub.data('cname', cname);
 			div.append(sub, '<br>');
-			$("#searchCat").append($("<option></option>").text(cname + " -> " + sub.text()).attr("value", $(this).attr('id')));
+			$("#searchCat").append($("<option></option>").text(cname + " -> " + sub.text()).attr("value", sid));
 		});
 
 		$('#accordion').append(h3, div);
@@ -44,7 +47,7 @@ function getProductListByCategory(cid, page) {
 	return request('productList');
 }
 
-function subcategoryClickHandler() {
+/*function subcategoryClickHandler() {
 	var name = $(this).text();
 	var sid = $(this).data('sid');
 	var cid = $(this).data('cid');
@@ -57,10 +60,10 @@ function subcategoryClickHandler() {
 		$("#categoryName").text(cname);
 		updateProductList(cid, sid, 1);
 	});
-}
+}*/
 
 function categoryClickHandler() {
-	var name = $(this).text();
+	/*var name = $(this).text();
 	var cid = $(this).data('cid');
 	$.ajax({
 		url : "category.html"
@@ -68,7 +71,14 @@ function categoryClickHandler() {
 		$('#main').html(html);
 		$("#categoryName").text(name);
 		updateProductList(cid, null, 1);
-	});
+	});*/
+	window.location.hash=$(this).attr('href');
+}
+
+function category(cname,sname, cid, sid, page){
+	updateProductList(cid, sid, page);
+	$('#categoryName').html(cname);
+	$("#subcategoryName").text(sname);
 }
 
 function updateProductList(cid, sid, page) {

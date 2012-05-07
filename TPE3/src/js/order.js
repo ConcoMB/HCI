@@ -47,8 +47,8 @@ function ordersToCart(orders){
 				var name = $(this).find('name').text();
 				var div = $(template).clone();
 				var orderID = $(this).attr("id");
-				$(div).find('#name').text("Order"+cant++);
-				$(div).find('#goToOrder').click(goToOrderHandler);
+				$(div).find('.orderName').text("Order"+cant++);
+				$(div).find('.goToOrder').attr('href','#target=order&oid='+orderID);
 				$(div).data("orderID", orderID);
 				$('#content').append(div);
 			});
@@ -57,13 +57,13 @@ function ordersToCart(orders){
 
 }
 
-function goToOrderHandler(){
+/*function goToOrderHandler(){
 	var orderID=$(this).parents(".orderBox").data("orderID");
 	var ord=GetOrder($(user).find("user").attr("id"), $(user).find("token").text(), orderID);
 	
 	$("#main").load("order.html");
 	
-}
+}*/
 
 function GetOrder(user, token, orderID){
 	return request("GetOrder");
