@@ -1,7 +1,4 @@
 function hashChangeHandler(event) {
-	if(!window.location.hash) {
-		window.location.hash = '#target=home';
-	}
 	var hash = window.location.hash || '#target=home';
 	var params = parseHash(hash);
 	$.ajax({
@@ -10,9 +7,6 @@ function hashChangeHandler(event) {
 		$('#main').html(html);
 		/*ADDITIONAL FUNCTIONS*/
 		switch(params.target) {
-			case 'home':
-				//$('#main').load('home.html');
-				break;
 			case 'signUp':
 				signupForm();
 				break;
@@ -27,6 +21,9 @@ function hashChangeHandler(event) {
 				break;
 			case 'search':
 				search(params.query, params.cid);
+				break;
+			case 'order':
+				goToOrder(params.oid, params.oname);
 				break;
 		}
 		translate();
