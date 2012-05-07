@@ -1,8 +1,5 @@
 /*SHOW FORM*/
 
-function getCountryList(){
-	return request('countryList');	
-}
 
 function signupForm(){
 	/*$.ajax({

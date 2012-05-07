@@ -1,147 +1,135 @@
-<html>
-	<head>
-		<title>New shipping destination</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<script type="text/javascript" src="js/shipDestination.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-	</head>
-	<body>
-		<div class="main">
-			<div class="center">
-				<h1>New shipping destination</h1>
-				<form id="shipDestForm">
-					<div class="formBox">
-						<div class="reqFields">
-							* Required fields
-						</div>
-						<div class="formItem">
-							<div class="entry">
-								Name:
-							</div>
-							<div class="inputBox">
-								<input id="sd_name" class="wide" type="text"/>
-							</div>
-							<div class="req">
-								*
-							</div>
-							<div id="reqAddressName" class="reqError">
-								Required field
-							</div>
-
-						</div>
-
-						<div class="formItem">
-							<div class="entry">
-								Address line 1:
-							</div>
-							<div class="inputBox">
-								<input id="sd_address1" class="wide" type="text"/>
-							</div>
-							<div class="req">
-								*
-							</div>
-							<div id="reqAddres1" class="reqError">
-								Required field
-							</div>
-
-						</div>
-						<div class="formItem">
-							<div class="entry">
-								Address line 2:
-							</div>
-							<div class="inputBox">
-								<input id="sd_address2" class="wide" type="text"/>
-							</div>
-						</div>
-
-						<div class="formItem">
-							<div class="entry">
-								Country:
-							</div>
-							<div class="inputBox">
-								<select id="sd_country" >
-									<option>Country 1</option>
-									<option>Country 2</option>
-								</select>
-
-							</div>
-							<div class="req">
-								*
-							</div>
-							<div id="reqCountry" class="reqError">
-								Required field
-							</div>
-
-						</div>
-						<div class="formItem">
-							<div class="entry">
-								State:
-							</div>
-							<div class="inputBox">
-								<select id="sd_state" >
-									<option>State 1</option>
-									<option>State 2</option>
-								</select>
-
-							</div>
-							<div class="req">
-								*
-							</div>
-							<div id="reqState" class="reqError">
-								Required field
-							</div>
-
-						</div>
-						<div class="formItem">
-							<div class="entry">
-								City:
-							</div>
-							<div class="inputBox">
-								<input id="sd_city" class="wide" type="text"/>
-							</div>
-							<div class="req">
-								*
-							</div>
-							<div id="reqCity" class="reqError">
-								Required field
-							</div>
-
-						</div>
-						<div class="formItem">
-							<div class="entry">
-								Zip code:
-							</div>
-							<div class="inputBox">
-								<input id="sd_ZC" class="wide" type="text"/>
-							</div>
-							<div class="req">
-								*
-							</div>
-							<div id="reqZC" class="reqError">
-								Required field
-							</div>
-
-						</div>
-						<div class="formItem">
-							<div class="entry">
-								Phone number:
-							</div>
-							<div class="inputBox">
-								<input id="phone" class="wide" type="text"/>
-							</div>
-							<div class="req">
-								*
-							</div>
-							<div id="reqPhone" class="reqError">
-								Required field
-							</div>
-
-						</div>
-
-					</div>
-					<input class="submit" type="submit"/>
-				</form>
+<div class="center">
+	<h1>New shipping destination</h1>
+	<form id="shipDestForm">
+		<div class="formBox">
+			<div class="reqFields">
+				* Required fields
 			</div>
+			<div class="formItem">
+				<div class="entry">
+					Name:
+				</div>
+				<div class="inputBox">
+					<input id="sd_name" class="wide" type="text"/>
+				</div>
+				<div class="req">
+					*
+				</div>
+				<div id="reqAddressName" class="reqError">
+					Required field
+				</div>
+
+			</div>
+
+			<div class="formItem">
+				<div class="entry">
+					Address line 1:
+				</div>
+				<div class="inputBox">
+					<input id="sd_address1" class="wide" type="text"/>
+				</div>
+				<div class="req">
+					*
+				</div>
+				<div id="reqAddres1" class="reqError">
+					Required field
+				</div>
+
+			</div>
+			<div class="formItem">
+				<div class="entry">
+					Address line 2:
+				</div>
+				<div class="inputBox">
+					<input id="sd_address2" class="wide" type="text"/>
+				</div>
+			</div>
+
+			<div class="formItem">
+				<div class="entry">
+					Country:
+				</div>
+				<div class="inputBox">
+					<select id="sd_country" >
+						<option>Country 1</option>
+						<option>Country 2</option>
+					</select>
+
+				</div>
+				<div class="req">
+					*
+				</div>
+				<div id="reqCountry" class="reqError">
+					Required field
+				</div>
+
+			</div>
+			<div class="formItem">
+				<div class="entry">
+					State:
+				</div>
+				<div class="inputBox">
+					<select id="sd_state" >
+						<option>State 1</option>
+						<option>State 2</option>
+					</select>
+
+				</div>
+				<div class="req">
+					*
+				</div>
+				<div id="reqState" class="reqError">
+					Required field
+				</div>
+
+			</div>
+			<div class="formItem">
+				<div class="entry">
+					City:
+				</div>
+				<div class="inputBox">
+					<input id="sd_city" class="wide" type="text"/>
+				</div>
+				<div class="req">
+					*
+				</div>
+				<div id="reqCity" class="reqError">
+					Required field
+				</div>
+
+			</div>
+			<div class="formItem">
+				<div class="entry">
+					Zip code:
+				</div>
+				<div class="inputBox">
+					<input id="sd_ZC" class="wide" type="text"/>
+				</div>
+				<div class="req">
+					*
+				</div>
+				<div id="reqZC" class="reqError">
+					Required field
+				</div>
+
+			</div>
+			<div class="formItem">
+				<div class="entry">
+					Phone number:
+				</div>
+				<div class="inputBox">
+					<input id="phone" class="wide" type="text"/>
+				</div>
+				<div class="req">
+					*
+				</div>
+				<div id="reqPhone" class="reqError">
+					Required field
+				</div>
+
+			</div>
+
 		</div>
-	</body>
-</html>
+		<input class="submit" type="submit"/>
+	</form>
+</div>
