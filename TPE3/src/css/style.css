@@ -141,7 +141,9 @@ input#sb
 
 img#icon
 {
-	height: 8em;
+	width:128px;
+	height:128px;
+	/*height: 8em;*/
 	float: left;
 }
 
