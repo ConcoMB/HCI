@@ -25,6 +25,12 @@ function hashChangeHandler(event) {
 			case 'order':
 				goToOrder(params.oid, params.oname);
 				break;
+			case 'profile':
+				viewProfile();
+				break;
+			case 'shipDests':
+				viewSDests();
+				break;
 		}
 		translate();
 	});
