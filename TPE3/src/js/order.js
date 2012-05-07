@@ -47,9 +47,9 @@ function ordersToCart(orders){
 				var name = $(this).find('name').text();
 				var div = $(template).clone();
 				var orderID = $(this).attr("id");
+				$(div).data("index",cant);
 				$(div).find('#name').text("Order"+cant++);
 				$(div).find('#goToOrder').click(goToOrderHandler);
-				$(div).data("orderID", orderID);
 				$('#content').append(div);
 			});
 		}
@@ -57,12 +57,37 @@ function ordersToCart(orders){
 
 }
 
-function goToOrderHandler(){
+function goToOrderHandler(cant){
 	var orderID=$(this).parents(".orderBox").data("orderID");
 	var ord=GetOrder($(user).find("user").attr("id"), $(user).find("token").text(), orderID);
-	
+	var index= $(this).parents(".orderBox").data("index");
+	var totalPrice=0;
 	$("#main").load("order.html");
+	$("#orderID").text("Order"+index);
 	
+	$.ajax({
+		type : "GET",
+		url : "orderProduct.html",
+		dataType : "html",
+		success : function(template) {
+			$(ord).find('item').each(function() {
+				var prodID = $(this).find('product_id').text();
+				var div = $(template).clone();
+				var amount = $(this).find("count").text();
+				var price = $(this).find("price").text();
+				totalPrice+=price;
+				var product = GetProduct(prodID);
+				$(div).find("#pname").text($(product).find("name").text());
+				$(div).find("#pprice").text($(product).find("price").text());
+				$('#items').append(div);
+			});
+		}
+	});
+	$("#price").text(totalPrice);
+}
+
+function GetProduct(prodID){
+	return request("GetProduct");
 }
 
 function GetOrder(user, token, orderID){

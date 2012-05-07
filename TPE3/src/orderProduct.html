@@ -1,18 +1,20 @@
 <div class="itemBox"><img src="img/notImg.jpg" class="articleImg"/>
 	<div class="articleData">
 		<div class="artItem">
-			<span class="artForm">Name: </span><a href="#" class="artData artName"></a>
+			<span class="artForm">Name: </span><a href="#" id="pname" class="artData artName"></a>
 		</div>
 
 		<div class="artItem">
-			<span class="artForm">Price: </span><span class="artData artPrice"></span>
+			<span class="artForm">Price: </span><span id="pprice" class="artData artPrice"></span>
 		</div>
 
 		<div class="artItem">
 			<span class="artForm">Description: </span>
-			<span class="artData">Desc</span>
+			<span class="artData"></span>
 		</div>
-
-		<input type="submit" value="Remove from order" />
+		<form id="remove">
+			<span>Remove: </span><input type="text" value="1"/>
+			<input type="submit" value="Remove from order" />
+		</form>
 	</div>
 </div>
