@@ -12,20 +12,20 @@ function updateLanguageList() {
 		$(lang).text(name);
 		$(lang).data('lid', lid);
 		if(!first) {
-			$('#footer').append('|');
+			$('#footer').append(' | ');
 		} else {
 			first = false;
-			loadLanguage(lid, name);
+			loadLanguage(lid);
 		}
 		$('#footer').append(lang);
 	});
 	$('.language').click(languageClickHandler);
 }
 
-function loadLanguage(lid, name) {
+function loadLanguage(lid) {
 	$.ajax({
 		type : "GET",
-		url : "lang/" + name.toLowerCase() + ".xml",
+		url : "lang/" + lid + ".xml",
 		dataType : "xml",
 		async : false,
 		success : function(xml) {
@@ -57,6 +57,7 @@ function translate(elem) {
 }
 
 function languageClickHandler() {
-	loadLanguage($(this).data('lid'), $(this).text());
+	loadLanguage($(this).data('lid'));
 	translate();
+	return false;
 }

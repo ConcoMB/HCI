@@ -1,17 +1,20 @@
 function searchHandler(){
 	var query = $("#query").attr("value");
 	var cid = $("#searchCat").attr("value");
-	var req = "<criteria>"+query+"</criteria>";	
-	$.ajax({
+	/*$.ajax({
 		url : "search.html"
 	}).done(function(html) {
 		$('#main').html(html);
 		$("#searchTitle").text(query);
 		search(query, cid, req);
-	});
+	});*/
+	window.location.hash='#target=search&cid='+cid+'&query='+query;
+	return false;
 }
 
-function search(query, cid, req){
+function search(query, cid){
+	$('#searchTitle').text(query);
+	var req = "<criteria>"+query+"</criteria>";	
 	var response = getProductListByName(req);
 	fillProducts(response);
 }

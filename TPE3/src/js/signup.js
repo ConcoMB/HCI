@@ -5,13 +5,14 @@ function getCountryList(){
 }
 
 function signupForm(){
-	$.ajax({
+	/*$.ajax({
 		url : "signUp.html"
 	}).done(function(html) {
 		$('#main').html(html);
 		translate($('#main'));
 		$('#signupForm').submit(signupFormHandler);
-	});
+	});*/
+	$('#signupForm').submit(signupFormHandler);
 }
 
 /*SEND FORM*/

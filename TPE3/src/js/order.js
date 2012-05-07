@@ -44,12 +44,11 @@ function ordersToCart(orders){
 		dataType : "html",
 		success : function(template) {
 			$(orders).find('order').each(function() {
-				var name = $(this).find('name').text();
+
 				var div = $(template).clone();
 				var orderID = $(this).attr("id");
-				$(div).data("index",cant);
-				$(div).find('#name').text("Order"+cant++);
-				$(div).find('#goToOrder').click(goToOrderHandler);
+				$(div).find('.orderName').text("Order"+cant);
+				$(div).find('.goToOrder').attr('href','#target=order&oid='+orderID+"&oname=Order"+cant++);
 				$('#content').append(div);
 			});
 		}
@@ -57,14 +56,10 @@ function ordersToCart(orders){
 
 }
 
-function goToOrderHandler(cant){
-	var orderID=$(this).parents(".orderBox").data("orderID");
+function goToOrder(orderID, name){
 	var ord=GetOrder($(user).find("user").attr("id"), $(user).find("token").text(), orderID);
-	var index= $(this).parents(".orderBox").data("index");
 	var totalPrice=0;
-	$("#main").load("order.html");
-	$("#orderID").text("Order"+index);
-	
+	$("#orderID").text(name);	
 	$.ajax({
 		type : "GET",
 		url : "orderProduct.html",
@@ -75,20 +70,23 @@ function goToOrderHandler(cant){
 				var div = $(template).clone();
 				var amount = $(this).find("count").text();
 				var price = $(this).find("price").text();
-				totalPrice+=price;
+				totalPrice+=parseFloat(price);
 				var product = GetProduct(prodID);
-				$(div).find("#pname").text($(product).find("name").text());
-				$(div).find("#pprice").text($(product).find("price").text());
+				$(div).find(".artName").text($(product).find("name").text());
+				$(div).find(".artPrice").text($(product).find("price").text());
 				$('#items').append(div);
 			});
+			$("#totalPrice").text(totalPrice);
 		}
+		
 	});
-	$("#price").text(totalPrice);
+	
 }
 
 function GetProduct(prodID){
 	return request("GetProduct");
 }
+
 
 function GetOrder(user, token, orderID){
 	return request("GetOrder");
