@@ -36,17 +36,17 @@
 	</product>
 	<general>
 		<passwordLabel>Password:</passwordLabel>
-		<requiredFields>* Required Fields</requiredFields>
+		<requiredFields>* Required fields</requiredFields>
 	</general>
 	<signUpForm>
-		<signUp>Sign Up</signUp>
-		<accountInfo>Account Info</accountInfo>
+		<signUp>Sign up</signUp>
+		<accountInfo>Account information</accountInfo>
 		<userNameLabel>User name:</userNameLabel>
 		<confirmPasswordLabel>Confirm password:</confirmPasswordLabel>
 		<emailLabel>E-mail:</emailLabel>
 		<nameLabel>Name:</nameLabel>
 		<birthDateLabel>Birth date (dd/mm/yyyy):</birthDateLabel>
-		<personalInformation>Personal Information</personalInformation>
-		<signUpButton>Sign Up!</signUpButton>
+		<personalInformation>Personal information</personalInformation>
+		<signUpButton>Sign up!</signUpButton>
 	</signUpForm>
 </language>

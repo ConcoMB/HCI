@@ -25,13 +25,13 @@
 	</product>
 	<signUpForm>
 		<signUp>Regístrate</signUp>
-		<accountInfo>Informacion de Cuenta</accountInfo>
-		<userNameLabel>Nombre de usuario:</userNameLabel>
-		<confirmPasswordLabel>Confirmar Contraseña:</confirmPasswordLabel>
+		<accountInfo>Informacion de la cuenta</accountInfo>
+		<userNameLabel>Nombre del usuario:</userNameLabel>
+		<confirmPasswordLabel>Confirmar contraseña:</confirmPasswordLabel>
 		<emailLabel>E-mail:</emailLabel>
 		<nameLabel>Nombre:</nameLabel>
-		<birthDateLabel>Fecha de Nacimiento (dd/mm/aaaa):</birthDateLabel>
-		<personalInformation>Informacion Personal</personalInformation>
+		<birthDateLabel>Fecha de nacimiento (dd/mm/aaaa):</birthDateLabel>
+		<personalInformation>Informacion personal</personalInformation>
 		<signUpButton>Regístrate!</signUpButton>
 	</signUpForm>
 	<general>

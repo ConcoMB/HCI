@@ -1,13 +1,8 @@
-
-.formBox
-{
+.formBox {
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
 	width: 35em;
-
-
-
 	background-color: #fbffbf;
 	border: 1px solid black;
 	padding: 2em;
@@ -22,7 +17,7 @@
 	text-align: right;
 	width: 30%;
 	float: left;
-	clear:left
+	clear: left
 }
 
 .inputBox {
@@ -35,59 +30,49 @@
 .formItem {
 	margin-left: 0px;
 	height: 2em;
-	
 }
 
-
-.submit
-{
+.submit {
 	margin-top: 1em;
 	margin-bottom: 1em;
 	font-size: 1.5em;
 	width: 13em;
 	height: 2em;
-	-webkit-appearance:button;
+	-webkit-appearance: button;
 	text-align: center;
 }
 
-.info
-{
+.info {
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
 
-
 /*{
-	font-family: Arial;
-	text-decoration: underline;
-	color:blue;
-}*/
+ font-family: Arial;
+ text-decoration: underline;
+ color:blue;
+ }*/
 
-span
-{
-	font-family: Arial;
-}
-
-h1
-{
+span {
 	font-family: Arial;
 }
 
-h2
-{
+h1 {
 	font-family: Arial;
 }
 
-.language
-{
+h2 {
+	font-family: Arial;
+}
+
+.language {
 	margin-left: 1em;
 	border-style: none;
 	width: 30em;
 	height: 2em;
 }
 
-.search
-{
+.search {
 	padding-left: 1em;
 	height: 1em;
 	font-size: 1.3em;
@@ -96,65 +81,56 @@ h2
 	float: left;
 }
 
-#head
-{
+#head {
 	border: 1px solid black;
 	background-color: #fbffbf;
 	height: 8em;
 }
 
-.userhead
-{
+.userhead {
 	/*height:100%;*/
 	/*border: 1px solid black;*/
 	width: 30%;
 	float: right;
-	padding-top:1em;
+	padding-top: 1em;
 }
 
-input#sb
-{
+input#sb {
 	width: 4em;
 	float: right;
 }
 
-.signHelp
-{
+.signHelp {
 	margin-bottom: 0.4em;
 	text-align: right;
 	width: 15em;
 	float: left;
 }
 
-#categories
-{
+#categories {
 	float: left;
 	margin-top: 2em;
 	font-size: 2em;
 	width: 15%;
 }
 
-.subCat a{
+.subCat a {
 	font-size: 13px;
 }
 
-
-img#icon
-{
-	width:128px;
-	height:128px;
+img#icon {
+	width: 128px;
+	height: 128px;
 	/*height: 8em;*/
 	float: left;
 }
 
-.lefthead
-{
+.lefthead {
 	/*width: 75%;*/
 	float: left;
 }
 
-.category a
-{
+.category a {
 	text-decoration: none;
 	color: #050505;
 	text-shadow: 0px 0px;
@@ -162,56 +138,49 @@ img#icon
 	font-weight: normal;
 }
 
-.carthead
-{
+.carthead {
 	padding-right: 1em;
 	float: right;
 }
 
-.carthead img
-{
+.carthead img {
 	margin-top: 2em;
 	margin-bottom: 1em;
 	display: block;
 }
 
-.signedinfo
-{
+.signedinfo {
 	padding-left: 1em;
 	border-width: 10em;
 	float: left;
 }
 
-.button
-{
-	-webkit-appearance:button;
+.button {
+	-webkit-appearance: button;
 }
-
 
 .addressInfo {
-	
-	width:400px;
+
+	width: 400px;
 	padding-bottom: 2em;
 	padding-top: 1em;
-	margin-left:auto;
-	margin-right:auto;
-	
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.form{
-	text-align:right;
+.form {
+	text-align: right;
 	width: 47%;
 	float: left;
-	
 }
-.data{	
+.data {
 	width: 47%;
 	float: right;
-	text-align:left;
+	text-align: left;
 }
 
-.itemBox{
-	
+.itemBox {
+
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
@@ -219,184 +188,213 @@ img#icon
 	background-color: #fbffbf;
 	border: 1px solid black;
 	padding: 2em;
-	margin-bottom:20px;
+	margin-bottom: 20px;
 	overflow: auto;
 }
 
-.articleImg{
+.articleImg {
 	width: 20%;
 	float: left;
-	
 }
-.detailImg{
+.detailImg {
 	width: 40%;
 	float: left;
-	
 }
 
-
-.articleData{	
+.articleData {
 	width: 75%;
-	float:right;
-}	
+	float: right;
+}
 
-.articleDetail{
-	width:55%;
+.articleDetail {
+	width: 55%;
 	float: right;
 	margin-left: 1em;
 }
 
-.artForm{
-	
-	text-align:right;
+.artForm {
+
+	text-align: right;
 	width: 35%;
 	float: left;
 	font-weight: bold;
-	
 }
-.artData{
-	text-align:left;
+.artData {
+	text-align: left;
 	width: 60%;
 	float: right;
 	font-size: 15px;
-	
-	
 }
-#main{
+#main {
 	margin-right: 15%;
 	margin-top: 2em;
 	width: 70%;
 	float: right;
 }
-div#info{
+div#info {
 	float: none;
 }
-.wide{
+.wide {
 	width: 95%;
 }
-.profile
-{
+.profile {
 	margin-right: auto;
 	margin-left: auto;
 	text-align: left;
-	overflow:auto;
+	overflow: auto;
 	width: 500px;
 	background-color: #fbffbf;
 	border: 1px solid black;
 	padding: 2em;
 }
-img#userPhoto
-{
+img#userPhoto {
 	height: 10em;
 	float: right;
 }
-.dataProfile{
-	float:left;
+.dataProfile {
+	float: left;
 }
-#wrapper{
+#wrapper {
 	width: 80em;
 }
-#prev{
+#prev {
 	margin-left: 1em;
 	float: left;
 }
-#next{
+#next {
 	margin-right: 1em;
 	float: right;
 }
-.toTheCart{
+.toTheCart {
 	margin-top: 1em;
 	margin-left: 5%;
-	width:100%
+	width: 100%
 }
-.toTheCart a{
+.toTheCart a {
 	float: left;
 	margin-left: 1.5em;
 }
-.itemBox div{
+.itemBox div {
 	float: left;
 }
-.orderBox{
+.orderBox {
+
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	width: 30em;
 	background-color: #fbffbf;
-	border-width: 1px;
-	border-style: solid;
-	border-color: black;
-	margin-left: 35%;
-	text-align: left;
-	width: 15em;
+	border: 1px solid black;
 	padding: 2em;
-	margin-bottom:20px;
+	margin-bottom: 20px;
 	overflow: auto;
 }
-.itemBox select{
+.itemBox select {
 	margin-left: 1em;
 }
 
-#footer{
+#footer {
 	text-align: center;
 	clear: both;
 	/*bottom: 0px;*/
 }
-#editAddress{
+#editAddress {
 	float: right;
 }
 
-#wrapper{
-	margin:auto;
+#wrapper {
+	margin: auto;
 	width: 70em;
 }
 
-#errors{
-	color:#CD0A0A;
+#errors {
+	color: #CD0A0A;
 }
 
-.req{
-	float:left;
+.req {
+	float: left;
 	text-align: left;
 }
 
-.reqFields{
+.reqFields {
 	height: 2em;
 }
 
-.reqError{
+.reqError {
 	visibility: hidden;
-	color:#CD0A0A;
+	color: #CD0A0A;
 	width: 20%;
 	float: left;
 	height: 65%;
-	visibility:hidden;
+	visibility: hidden;
 }
 
-#sd_country{
-	
-	width:95%;
+#sd_country {
+
+	width: 95%;
 }
-#sd_state{
-	
-	width:95%;
+#sd_state {
+
+	width: 95%;
 }
 
-.artItem{
+.artItem {
 	width: 100%;
 }
-.amountLabel{
-	clear:left;
-	
+.amountLabel {
+	clear: left;
 }
 
-#buyCant{
+#buyCant {
 	width: 3em;
 }
 
-#orderList{
-	
-}
-
-.buyOrderData{
+.buyOrderData {
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
 	width: 30em;
 	overflow: auto;
+}
+.dataItem {
+	width: 100%;
+	height: 1.3em;
+}
+
+.orderLabel {
+	text-align: right;
+	width: 49%;
+	float: left;
+	font-weight: bold;
+}
+
+.orderData {
+	text-align: left;
+	width: 49%;
+	float: right;
+	font-size: 15px;
+}
+
+.centerButton{
+	margin-top:2em;
+	margin-left:auto;
+	margin-right:auto;
+		
+}
+
+.profLabel{
+	
+	text-align: right;
+	width: 49%;
+	float: left;
+	font-weight: bold;
+}
+
+.profData{
+	
+	text-align: left;
+	width: 49%;
+	float: right;
+	font-size: 15px;
+
 }
