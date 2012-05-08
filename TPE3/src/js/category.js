@@ -39,13 +39,6 @@ function updateCategoryList() {
 
 /*CATEGORY PRODUCTS*/
 
-function getProductListBySubcategory(cid, sid, page) {
-	return request('productList');
-}
-
-function getProductListByCategory(cid, page) {
-	return request('productList');
-}
 
 /*function subcategoryClickHandler() {
 	var name = $(this).text();

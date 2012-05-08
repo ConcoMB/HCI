@@ -83,10 +83,6 @@ function goToOrder(orderID, name){
 	
 }
 
-function GetProduct(prodID){
-	return request("GetProduct");
-}
-
 
 function GetOrder(user, token, orderID){
 	return request("GetOrder");

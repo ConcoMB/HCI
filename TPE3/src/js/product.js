@@ -1,5 +1,12 @@
-function getProduct(pid){
-	return request('product');
+function GetProduct(pid){
+	return request('GetProduct');
+}
+function getProductListBySubcategory(cid, sid, page) {
+	return request('productList');
+}
+
+function getProductListByCategory(cid, page) {
+	return request('productList');
 }
 
 /*function productClickHandler(){
@@ -16,7 +23,7 @@ function getProduct(pid){
 }*/
 
 function updateProduct(pid){
-	var product=getProduct(pid);
+	var product=GetProduct(pid);
 	$('#artName').text($(product).find('name').text());
 	$('#artPrice').text($(product).find('price').text());
 	$('#artRank').text($(product).find('sales_rank').text());

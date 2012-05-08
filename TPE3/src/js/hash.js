@@ -28,8 +28,11 @@ function hashChangeHandler(event) {
 			case 'profile':
 				viewProfile();
 				break;
-			case 'shipDests':
-				viewSDests();
+			case 'addresses':
+				viewAddrs();
+				break;
+			case 'newAddr':
+				newAddr();
 				break;
 		}
 		translate();

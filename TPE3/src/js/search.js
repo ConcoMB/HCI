@@ -15,10 +15,10 @@ function searchHandler(){
 function search(query, cid){
 	$('#searchTitle').text(query);
 	var req = "<criteria>"+query+"</criteria>";	
-	var response = getProductListByName(req);
+	var response = GetProductListByName(req);
 	fillProducts(response);
 }
 
-function getProductListByName(req){
-	return request("search");
+function GetProductListByName(req){
+	return request("GetProductListByName");
 }
