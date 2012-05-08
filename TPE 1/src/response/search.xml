@@ -1,0 +1,12 @@
+<response status="ok">
+	<products size="1">
+		<product id="2">
+			<category_id>2</category_id>
+			<subcategory_id>11</subcategory_id>
+			<name>Intervention</name>
+			<sales_rank>845</sales_rank>
+			<price>17.13</price>
+			<image_url />
+		</product>
+	</products>
+</response>

@@ -1,7 +1,0 @@
-#aboutUs {
-	clear: left;
-	margin-top: 35px;
-	position: relative;
-	padding: 1% 4%;
-	overflow: hidden;
-}
