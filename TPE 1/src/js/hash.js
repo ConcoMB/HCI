@@ -20,7 +20,7 @@ function hashChangeHandler(event) {
 				cart();
 				break;
 			case 'search':
-				search(params.query, params.cid);
+				search(params.query, params.cid, params.sid, params.page);
 				break;
 			case 'order':
 				goToOrder(params.oid, params.oname);
@@ -47,4 +47,21 @@ function parseHash(hash) {
 		params[a[0]] = a[1];
 	}
 	return params;
+}
+
+function getHash(param, value){
+	var hash=window.location.hash;
+	var params=parseHash(hash);
+	var newHash='#';
+	params[param]=value;
+	var first=true;
+	for(var name in params){
+		if(!first){
+			newHash+='&';
+		}else{
+			first=false;
+		}
+		newHash+=name+'='+params[name];
+	}
+	return newHash;
 }

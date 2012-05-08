@@ -6,6 +6,7 @@
 		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery-hash.js"></script>
 		<script type="text/javascript" src="js/utils.js"></script>
+		<script type="text/javascript" src="js/page.js"></script>
 		<script type="text/javascript" src="js/product.js"></script>
 		<script type="text/javascript" src="js/login.js"></script>
 		<script type="text/javascript" src="js/category.js"></script>
@@ -23,6 +24,7 @@
 		<script src="js/jquery-ui-1.8.19.custom/development-bundle/ui/jquery.ui.core.js"></script>
 		<script src="js/jquery-ui-1.8.19.custom/development-bundle/ui/jquery.ui.widget.js"></script>
 		<script src="js/jquery-ui-1.8.19.custom/development-bundle/ui/jquery.ui.accordion.js"></script>
+		<script src="js/jquery-ui-1.8.19.custom/development-bundle/ui/jquery.ui.tabs.js"></script>
 	</head>
 	<body>
 		<div id="wrapper">
@@ -32,9 +34,9 @@
 					<div class="search">
 						<form id="search">
 							<span class="translate" id="searchLabel">Search: </span>
-							<input id="query" type="text" value="search"/>
+							<input id="query" type="text"/>
 							<select id="searchCat">
-								<option>All categories</option>
+								<option value="-1">All categories</option>
 							</select>
 							<input id="searchButton" class="translate" type="submit" value="search"/>
 						</form>

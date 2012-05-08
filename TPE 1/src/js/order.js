@@ -47,10 +47,15 @@ function ordersToCart(orders){
 
 				var div = $(template).clone();
 				var orderID = $(this).attr("id");
+				$(div).attr('id','orderTab'+orderID);
 				$(div).find('.orderName').text("Order"+cant);
-				$(div).find('.goToOrder').attr('href','#target=order&oid='+orderID+"&oname=Order"+cant++);
+				$(div).find('.goToOrder').attr('href','#target=order&oid='+orderID+"&oname=Order"+cant);
+				var a=$('<a></a>').attr('href','#orderTab'+orderID).text('Order'+cant++);
+				var li=$('<li></li>').append(a);
+				$('#orderTabs').append(li);
 				$('#content').append(div);
 			});
+			$('#content').tabs();
 		}
 	});
 

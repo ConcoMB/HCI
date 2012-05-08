@@ -29,7 +29,7 @@ function updateCategoryList() {
 			sub.data('cid', $(this).find('category_id').text());
 			sub.data('cname', cname);
 			div.append(sub, '<br>');
-			$("#searchCat").append($("<option></option>").text(cname + " -> " + sub.text()).attr("value", sid));
+			$("#searchCat").append($("<option></option>").text(cname + " -> " + sub.text()).attr("value", cid+'.'+sid));
 		});
 
 		$('#accordion').append(h3, div);
@@ -82,6 +82,7 @@ function updateProductList(cid, sid, page) {
 		products = getProductListBySubcategory(cid, sid, page);
 	}
 	fillProducts(products);
+	updatePages(page,$(products).find('products').attr('size'));
 }
 
 
