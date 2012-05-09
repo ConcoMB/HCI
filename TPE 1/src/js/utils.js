@@ -1,7 +1,7 @@
 function request(method, params, service) {
 	var ans;
 	if(dummy) {
-		dummyCall(method, params, service);
+		ans=dummyCall(method, params, service);
 	} else {
 		/*API CALL*/
 		var path = 'service/' + service + '.groovy?' + 'method=' + method + parseParams(params);
