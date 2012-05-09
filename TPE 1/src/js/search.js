@@ -32,6 +32,12 @@ function search(query, cid, sid, page) {
 	updatePages(page, $(response).find('products').attr('size'));
 }
 
-function GetProductListByName(req) {
-	return request("GetProductListByName");
+function GetProductListByName(crit, ord, p) {
+	var params={
+		criteria: crit,
+		order: ord,
+		items_per_page: IPP,
+		page: p		
+	};
+	return request("GetProductListByName", params,'Catalog');
 }

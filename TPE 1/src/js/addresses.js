@@ -33,15 +33,26 @@ function viewAddrs() {
 }
 
 function GetAddressList() {
-	return request("GetAddressList");
+	var params={
+		username: $(user).find("user").attr("username"),
+		authentication_token : $(user).find("token").text()
+	}
+	return request("GetAddressList", params, 'Order');
 }
 
-function GetStateList(lang, cID) {
-	return request("GetStateList");
+function GetStateList(cID) {
+	var params={
+		language_id: $(language).find('language').attr('id'),
+		country_id: cID
+	}
+	return request("GetStateList", params, 'Common');
 }
 
 function GetCountryList() {
-	return request('GetCountryList');
+	var params={
+		language_id: $(language).find('language').attr('id')
+	}
+	return request('GetCountryList', params, 'Common');
 }
 
 
@@ -102,11 +113,19 @@ function newShipDestFormHandler(){
 		xml += address1 + '</address_line_1><address_line_2>' + address2 + '</address_line_2><country_id>';
 		xml += country + '</country_id><state_id>' + state + '</state_id><city>' + city + '</city><zip_code>';
 		xml += zipCode + '</zip_code><phone_number>' + phone + '</phone_number></address>';
-		var req=request('CreateAddress');
+		var req=createAddress(xml);
 	}
 	return false;	
 }
 
+function createAddress(addr){
+	var params={
+		address: addr,
+		username: $(user).find("user").attr("username"),
+		authentication_token : $(user).find("token").text()
+	}
+	return request('CreateAddress', params, 'Order');
+}
 
 function newAddr(){
 	var countries = GetCountryList();
@@ -122,7 +141,7 @@ function newAddr(){
 
 function updateStates(){
 	var thisCountryID=$("#sd_country").attr("value");
-	var states= GetStateList(language, thisCountryID);
+	var states= GetStateList(thisCountryID);
 	$(states).find('state').each(function() {
 		var sID=$(this).attr("id");
 		var sName=$(this).find("name").text();

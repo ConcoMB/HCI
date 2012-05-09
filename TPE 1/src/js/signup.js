@@ -68,7 +68,7 @@ function signupFormHandler(){
 	if(!error){
 		var xml='<account><username>'+username+'</username><name>'+name+'</name><password>';
 		xml+=password+'</password><email>'+email+'</email> <birth_date>'+date+'</birth_date></account>';
-		var req=request('createAccount');
+		var req=createAccount(xml);
 		signIn(username, password);
 		updateUserPanel(username);
 		$('#main').load('home.html');
@@ -76,6 +76,10 @@ function signupFormHandler(){
 	return false;
 }
 
+function createAccount(acc){
+	var params={account: acc};
+	return request('CreateAccount',params,'Security');
+}
 
 var dtCh= "/";
 var minYear=0;

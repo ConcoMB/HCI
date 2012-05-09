@@ -1,12 +1,30 @@
 function GetProduct(pid){
-	return request('GetProduct');
+	var params={
+		product_id: pid
+	}
+	return request('GetProduct', params, 'Catalog');
 }
-function getProductListBySubcategory(cid, sid, page) {
-	return request('productList');
+function getProductListBySubcategory(cid, sid, p, ord) {
+	var params={
+		category_id: cid,
+		subcategory_id: sid,
+		page: p,
+		items_per_page: IPP,
+		order:	ord,
+		language_id: $(language).find('language').attr('id')
+	}
+	return request('GetProductListBySubcategory', params, 'Catalog');
 }
 
-function getProductListByCategory(cid, page) {
-	return request('productList');
+function getProductListByCategory(cid, p, ord) {
+	var params={
+		category_id: cid,
+		page: p,
+		items_per_page: IPP,
+		order:	ord,
+		language_id: $(language).find('language').attr('id')
+	}
+	return request('GetProductListByCategory', params, 'Catalog');
 }
 
 /*function productClickHandler(){

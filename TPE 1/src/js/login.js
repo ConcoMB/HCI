@@ -1,5 +1,9 @@
-function signIn(username, password) {
-	return request('signIn');
+function signIn(name, pass) {
+	var params={
+		username: name,
+		password: pass
+	}
+	return request('SignIn', params, 'Security');
 }
 
 function updateUserPanel() {

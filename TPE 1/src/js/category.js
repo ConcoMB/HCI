@@ -1,11 +1,18 @@
 /*CATEGORY LISTS*/
 
 function getCategoryList() {
-	return request('categoryList');
+	var params={
+		language_id: $(language).find('language').attr('id')
+	}
+	return request('GetCategoryList', params, 'Common');
 }
 
 function getSubcategoryList(categoryID) {
-	return request('subcategoryList');
+	var params={
+		category_id: categoryID,
+		language_id: $(language).find('language').attr('id')
+	}
+	return request('GetSubcategoryList', params, 'Common');
 }
 
 function updateCategoryList() {

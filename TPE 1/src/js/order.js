@@ -20,8 +20,12 @@ function addToOrder(pid){
 }
 
 
-function getOrderList(user, token){
-	return request("getOrderList");
+function getOrderList(){
+	var params={
+		username: $(user).find("user").attr("username"),
+		authentication_token: $(user).find("token").text()
+	}
+	return request("GetOrderList", params, 'Order');
 }
 
 function updateOrderList(orders, where){
@@ -89,6 +93,11 @@ function goToOrder(orderID, name){
 }
 
 
-function GetOrder(user, token, orderID){
-	return request("GetOrder");
+function GetOrder(orderID){
+	var params={
+		username: $(user).find("user").attr("username"),
+		authentication_token : $(user).find("token").text(),
+		order_id: orderID
+	}
+	return request("GetOrder", params, 'Order');
 }

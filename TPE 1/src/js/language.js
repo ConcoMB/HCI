@@ -1,5 +1,5 @@
 function getLanguageList() {
-	return request('languageList');
+	return request('GetLanguageList', null,'Common');
 }
 
 function updateLanguageList() {
