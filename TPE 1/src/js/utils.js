@@ -19,7 +19,7 @@ function request(method, params, service) {
 		});
 	}
 	//alert(path+'\n'+ans);
-	if(!ans || $(ans).find('response').attr('status')!='OK') {
+	if(!ans || $(ans).find('response').attr('status')!='ok') {
 		alert('Error on request');
 		return dummyCall(method, params, service);
 	}
