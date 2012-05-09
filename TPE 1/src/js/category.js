@@ -4,7 +4,7 @@ function getCategoryList() {
 	var params={
 		language_id: $(language).find('language').attr('id')
 	}
-	return request('GetCategoryList', params, 'Common');
+	return request('GetCategoryList', params, 'Catalog');
 }
 
 function getSubcategoryList(categoryID) {
@@ -12,7 +12,7 @@ function getSubcategoryList(categoryID) {
 		category_id: categoryID,
 		language_id: $(language).find('language').attr('id')
 	}
-	return request('GetSubcategoryList', params, 'Common');
+	return request('GetSubcategoryList', params, 'Catalog');
 }
 
 function updateCategoryList() {
