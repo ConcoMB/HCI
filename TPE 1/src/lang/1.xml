@@ -45,7 +45,10 @@
 		<confirmPasswordLabel>Confirm password:</confirmPasswordLabel>
 		<emailLabel>E-mail:</emailLabel>
 		<nameLabel>Name:</nameLabel>
-		<birthDateLabel>Birth date (dd/mm/yyyy):</birthDateLabel>
+		<birthDateLabel>Birth date:</birthDateLabel>
+		<dayLabel>Day:</dayLabel>
+		<monthLabel>Month:</monthLabel>
+		<yearLabel>Year:</yearLabel>
 		<personalInformation>Personal information</personalInformation>
 		<signUpButton>Sign up!</signUpButton>
 	</signUpForm>

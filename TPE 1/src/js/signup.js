@@ -19,7 +19,7 @@ function signupFormHandler(){
 	var rPassword=$('#su_rPassword').attr("value");
 	var email=$('#su_email').attr("value");
 	var name=$('#su_name').attr("value");
-	var date=$('#su_birth_date').attr("value");;
+	var date=$('#su_birth_month').attr("value")+'-'+$('#su_birth_day').attr("value")+'-'+$('#su_birth_year').attr("value");
 	var error='';
 	$('#errors').html('');
 	if(!username){
@@ -64,15 +64,20 @@ function signupFormHandler(){
 	}else{
 		$('#reqDate').css('visibility','hidden');
 	}
-	$('#errors').append(error);
 	if(!error){
 		var xml='<account><username>'+username+'</username><name>'+name+'</name><password>';
 		xml+=password+'</password><email>'+email+'</email> <birth_date>'+date+'</birth_date></account>';
 		var req=createAccount(xml);
-		signIn(username, password);
-		updateUserPanel(username);
-		$('#main').load('home.html');
+		if($(req).find('response').attr('status')=='ok'){
+			user=signIn(username, password);
+			updateUserPanel();
+			$('#main').load('home.html');
+		}else{
+			/*FALLO*/
+			errorHandler(req);
+		}
 	}
+	$('#errors').append(error);
 	return false;
 }
 
@@ -81,7 +86,7 @@ function createAccount(acc){
 	return request('CreateAccount',params,'Security');
 }
 
-var dtCh= "/";
+var dtCh= "-";
 var minYear=0;
 var maxYear=2011;
 

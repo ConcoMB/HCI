@@ -12,17 +12,15 @@ function request(method, params, service) {
 			async : false,
 			success : function(xml) {
 				var status = $(xml).find('response').attr('status');
-				if(status == 'ok') {
-					ans = xml;
-				}
+				ans = xml;
 			}
 		});
 	}
 	//alert(path+'\n'+ans);
-	if(!ans || $(ans).find('response').attr('status')!='ok') {
+	/*if(!ans || $(ans).find('response').attr('status')!='ok') {
 		alert('Error on request');
 		return dummyCall(method, params, service);
-	}
+	}*/
 	return ans;
 }
 

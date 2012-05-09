@@ -30,7 +30,7 @@
 		<confirmPasswordLabel>Confirmar contraseña:</confirmPasswordLabel>
 		<emailLabel>E-mail:</emailLabel>
 		<nameLabel>Nombre:</nameLabel>
-		<birthDateLabel>Fecha de nacimiento (dd/mm/aaaa):</birthDateLabel>
+		<birthDateLabel>Fecha de nacimiento</birthDateLabel>
 		<personalInformation>Informacion personal</personalInformation>
 		<signUpButton>Regístrate!</signUpButton>
 	</signUpForm>
