@@ -1,37 +1,62 @@
 <div class="center" id="info">
 	<h1>My Profile</h1>
 	<div class="profile">
-		<img src="img/user.jpg" id="userPhoto"/>
-		<div class="dataProfile">
-			<h2 id="usern" ></h2>
-			<div class="info">
-				<div>
+		<h2 id="usern" ></h2>
+		<div class="info">
+			<form id="prof_update">
+				<div class="dataItem">
 					<span class="profLabel">Name: </span><span id="uname" class="profData">Name1</span>
+					<div class="inputBox">
+						<input id="prof_name" class="wide prof_input" type="text"/>
+					</div>
+					<div id="reqProfName" class="reqProfError">
+						Required field
+					</div>
+
 				</div>
-				<div>
-					<span class="profLabel">Password: </span><span class="profData"> ******* </span>
-				</div>
-				<div>
+				<div class="dataItem">
 					<span class="profLabel">E-mail: </span><span id="uemail"class="profData"></span>
+					<div class="inputBox">
+						<input id="prof_mail" class="wide prof_input" type="text"/>
+					</div>
+					<div id="reqProfEmail" class="reqProfError">
+						Required field
+					</div>
+
 				</div>
-				<div>
-					<span class="profLabel">Bitrh date: </span><span id="ubdate" class="profData"></span>
+				<div class="dataItem">
+					<span class="profLabel">Birth date: </span><span id="ubdate" class="profData"></span>
+					<div class="inputBox">
+						<input id="prof_birthDate" class="wide prof_input" type="text"/>
+					</div>
+					<div id="reqProfBdate" class="reqProfError">
+						Required field
+					</div>
 				</div>
-			</div>
-			<div>
-				<a href="#target=addresses">My addresses</a>
-			</div>
-			<div>
-				<a href="#target=cart">My shopping cart</a>
-			</div>
-			<div class="info">
-				<button>
-					Edit Profile
-				</button>
-				<button>
-					Change Password
-				</button>
-			</div>
+				<input id="acceptProfileButton" type="submit" value="Accept"/>
+				<input id="editProfileButton" type="submit" value="Edit profile"/>
+			</form>
+			<form>
+				<div class="dataItem">
+					<span class="profLabel">Password: </span><span class="profData"> ******* </span>
+					<div class="inputBox">
+						<input id="prof_pass" class="wide prof_inputPass" type="password"/>
+					</div>
+				</div>
+				<div class="dataItem prof_confPass_item">
+					<span class="profLabel">Confirm password: </span>
+					<div class="inputBox">
+						<input id="prof_confPass" class="wide prof_inputPass" type="password"/>
+					</div>
+				</div>
+				<input id="changePasswordButton" type="submit" value="Change password"/>
+			</form>
+		</div>
+		<div>
+			<a href="#target=addresses">My addresses</a>
+		</div>
+		<div>
+			<a href="#target=cart">My shopping cart</a>
 		</div>
 	</div>
 </div>
