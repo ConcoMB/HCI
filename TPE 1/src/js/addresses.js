@@ -81,30 +81,50 @@ function newShipDestFormHandler(){
 	if(!username){
 		error+=$(language).find('empty_sd_name').text()+"<br>";
 		$('#reqAddressName').css('visibility','visible');
+	}else{
+		$('#reqAddressName').css('visibility','hidden');	
 	}
+	
 	if(!address1){
 		error+=$(language).find('empty_sd_address1').text()+"<br>";
 		$('#reqAddress1').css('visibility','visible');
+	}else{
+		$('#reqAddress1').css('visibility','hidden');
 	}
+	
 	if(!country){
 		error+=$(language).find('empty_sd_country').text()+"<br>";
 		$('#reqCountry').css('visibility','visible');
+	}else{
+		$('#reqCountry').css('visibility','hidden');
 	}
+	
 	if(!state){
 		error+=$(language).find('empty_sd_state').text()+"<br>";
 		$('#reqState').css('visibility','visible');
+	}else{
+		$('#reqState').css('visibility','hidden');
 	}
+	
 	if(!city){
 		error+=$(language).find('empty_sd_name').text()+"<br>";
 		$('#reqCity').css('visibility','visible');
+	}else{
+		$('#reqCity').css('visibility','hidden');
 	}
+	
 	if(!zipCode){
 		error+=$(language).find('empty_sd_ZC').text()+"<br>";
 		$('#reqZC').css('visibility','visible');
+	}else{
+		$('#reqZC').css('visibility','hidden');
 	}
+	
 	if(!phone){
 		error+=$(language).find('empty_sd_phone').text()+"<br>";
 		$('#reqPhone').css('visibility','visible');
+	}else{
+		$('#reqPhone').css('visibility','hidden');
 	}
 	
 	$('#errors').append(error);

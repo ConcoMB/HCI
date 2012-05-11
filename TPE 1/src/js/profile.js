@@ -53,14 +53,22 @@ function acceptProfileHandler() {
 	if(!name) {
 		$('#reqProfName').css('display', 'inline');
 		error = true;
+	} else {
+		$('#reqProfName').css('display', 'none');
 	}
+
 	if(!email) {
 		$('#reqProfEmail').css('display', 'inline');
 		error = true;
+	} else {
+		$('#reqProfEmail').css('display', 'none');
 	}
+
 	if(!bdate) {
 		$('#reqProfBdate').css('display', 'inline');
 		error = true;
+	} else {
+		$('#reqProfBdate').css('display', 'none');
 	}
 
 	if(error == false) {
@@ -111,28 +119,35 @@ function changePasswordHandler() {
 	if(!pass) {
 		$('#reqProfPass').css('display', 'inline');
 		error = true;
+	} else {
+		$('#reqProfPass').css('display', 'none');
 	}
+
 	if(!newPass) {
 		$('#reqProfNewPass').css('display', 'inline');
 		$('#reqProfNewPassMatch').css('display', 'none');
-		error = true;	
+		error = true;
+	} else {
+		$('#reqProfNewPass').css('display', 'none');
 	}
+
 	if(!confPass) {
 		$('#reqProfConfPass').css('display', 'inline');
 		$('#reqProfNewPassMatch').css('display', 'none');
 		error = true;
+	} else {
+		$('#reqProfConfPass').css('display', 'none');
 	}
 
 	if(newPass != confPass) {
 		$('#reqProfNewPass').css('display', 'none');
 		$('#reqProfConfPass').css('display', 'none');
 		$('#reqProfNewPassMatch').css('display', 'inline');
-		
 		error = true;
 	}
 
 	if(error == false) {
-		
+
 		var params = {
 			username : $(user).find("user").attr("username"),
 			password : pass,
@@ -141,7 +156,7 @@ function changePasswordHandler() {
 		var req = request('ChangePassword', params, 'Security');
 
 		if($(req).find('response').attr('status') == 'ok') {
-			
+
 			$(window).trigger('hashchange');
 		}
 	}
