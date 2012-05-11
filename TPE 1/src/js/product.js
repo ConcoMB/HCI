@@ -50,8 +50,10 @@ function updateProduct(pid){
 	if(user){
 		var ord= getOrderList($(user).find("user").attr("id"),$(user).find("token").text());
 		updateOrderList(ord,$("#orderList"));
+		$("#addToOrder").click(toCartHandler);
 	}else{
 		$("#BUY").css("visibility", "hidden");
+		$(".notLogged").css("visibility", "visible");
 	}
 }
 
@@ -77,6 +79,7 @@ function fillProducts(products) {
 					updateOrderList(or, $(div).find("#orderList"));
 				}else{
 					$(div).find("#toTheCart").css("visibility", "hidden");
+					$(div).find(".notLogged").css("visibility", "visible");
 				}
 				translate($('#productList'));
 			});

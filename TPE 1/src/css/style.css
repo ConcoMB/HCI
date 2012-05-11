@@ -20,6 +20,10 @@
 	clear: left
 }
 
+.notLogged{
+	visibility:hidden;
+}
+
 .inputBox {
 	float: left;
 	width: 45%;
