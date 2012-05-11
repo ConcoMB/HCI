@@ -417,7 +417,7 @@ img#userPhoto {
 }
 
 
-.prof_confPass_item{
+.prof_newPass_item{
 	display:none;
 }
 
@@ -427,6 +427,13 @@ img#userPhoto {
 #cancelEditProfile{
 	display:none;
 }
+#acceptChangePassword{
+	display:none;
+}
+#cancelChangePassword{
+	display:none;
+}
+
 
 .reqProfError{
 	color: #CD0A0A;

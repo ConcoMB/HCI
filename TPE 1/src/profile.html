@@ -34,23 +34,52 @@
 					</div>
 				</div>
 				<input id="acceptProfileButton" type="submit" value="Accept"/>
-				<button id="cancelEditProfile">Cancel</button>
-				<button id="editProfileButton">Edit profile</button>
+				<a>
+				<input id="cancelEditProfile" type="button" value="Cancel"/>
+				</a>
+				<a>
+				<input id="editProfileButton" type="button" value="Edit profile"/>
+				</a>
 			</form>
-			<form>
+			<form id="changePasswordForm">
 				<div class="dataItem">
-					<span class="profLabel">Password: </span><span class="profDataPass"> ******* </span>
+					<span class="profLabel">Password: </span><span class="profDataPass"> ****** </span>
 					<div class="inputBox">
 						<input id="prof_pass" class="wide prof_inputPass" type="password"/>
 					</div>
+					<div id="reqProfPass" class="reqProfError">
+						Required field
+					</div>
 				</div>
-				<div class="dataItem prof_confPass_item">
+				<div class="dataItem prof_newPass_item">
+					<span class="profLabel">New password: </span>
+					<div class="inputBox">
+						<input id="prof_newPass" class="wide prof_inputPass" type="password"/>
+					</div>
+					<div id="reqProfNewPass" class="reqProfError">
+						Required field
+					</div>
+					<div id="reqProfNewPassMatch" class="reqProfError">
+						Passwords don't match 
+					</div>
+				</div>
+				<div class="dataItem prof_newPass_item">
 					<span class="profLabel">Confirm password: </span>
 					<div class="inputBox">
 						<input id="prof_confPass" class="wide prof_inputPass" type="password"/>
 					</div>
+					<div id="reqProfConfPass" class="reqProfError">
+						Required field
+					</div>
 				</div>
-				<input id="changePasswordButton" type="submit" value="Change password"/>
+				<input id="acceptChangePassword" type="submit" value="Accept"/>
+				<a>
+				<input id="cancelChangePassword" type="button" value="Cancel"/>
+				</a>
+				<a>
+				<input id="changePasswordButton" type="button" value="Change password"/>
+				</a>
+
 			</form>
 		</div>
 		<div>
