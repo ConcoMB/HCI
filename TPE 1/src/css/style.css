@@ -395,8 +395,13 @@ img#userPhoto {
 	width: 65%;
 	float: right;
 	font-size: 15px;
-	
+}
 
+.profDataPass{
+	text-align: left;
+	width: 65%;
+	float: right;
+	font-size: 15px;
 }
 
 #usern{
@@ -417,6 +422,9 @@ img#userPhoto {
 }
 
 #acceptProfileButton{
+	display:none;
+}
+#cancelEditProfile{
 	display:none;
 }
 

@@ -4,6 +4,11 @@ function viewProfile(){
 	$("#usern").text($(account).find("username").text());
 	$("#uemail").text($(account).find("email").text());
 	$("#ubdate").text($(account).find("birth_date").text());
+	$("#editProfileButton").click(editProfileHandler);
+	$("#cancelEditProfile").click(function(){
+		$(window).trigger('hashchange');
+	});
+	
 }
 
 function GetAccount(){
@@ -29,10 +34,10 @@ function editProfileHandler(){
 	$("#prof_birthDate").attr("value",bdate);
 	
 	$(".prof_input").css('display','inline');
-	
+	$("#cancelEditProfile").css('display','inline');
 	$("#acceptProfileButton").css('display','inline');
 	
-	$("#acceptProfileButton").submit(acceptProfileHandler);
+	$("#prof_update").submit(acceptProfileHandler);
 }
 
 function acceptProfileHandler(){
@@ -40,7 +45,7 @@ function acceptProfileHandler(){
 	
 	var name = $("#prof_name").attr("value");
 	var email = $("#prof_mail").attr("value");
-	var bdate = $("#prof_bdate").attr("value");
+	var bdate = $("#prof_birthDate").attr("value");
 	var error = false;
 	
 	if(!name){
@@ -57,9 +62,14 @@ function acceptProfileHandler(){
 	}
 	
 	if(error == false){
+		alert("ENTRE AL IF1");
 		var xml = '<account><name>' + name + '</name><email>'; 
 		xml += email + '</email><birth_date>' + bdate + '</birth_date><account>';
 		var req=updateAccount(xml);
+		if($(req).find('reponse').attr('status') == 'ok'){
+			alert("ENTRE AL IF#@")
+			$(window).trigger('hashchange');
+		}
 	}
 	
 	return false;
@@ -73,3 +83,4 @@ function updateAccount(acc){
 	};
 	return request('UpdateAccount',params,'Security');
 }
+
