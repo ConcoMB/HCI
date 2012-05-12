@@ -5,9 +5,13 @@ function cart(){
 
 function toCartHandler(){
 	var order=$("#orderList").attr("value");
+	var product = window.location.hash.split("pid=");
+	product=product[1];
+	var howMany = $("#buyCant").attr("value"); 
+	var sendXML="<order_item><product_id>"+product+"</product_id><count>"+howMany+"</count></order_item>";
 	if(order="new"){
-		//newOrder();
-	}else{
-		//ponerlo en esa order
+		order=$(CreateOrder()).find("order").attr("id");
 	}
+	AddOrderItem(order, sendXML);
 }
+

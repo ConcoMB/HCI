@@ -101,3 +101,22 @@ function GetOrder(orderID){
 	}
 	return request("GetOrder", params, 'Order');
 }
+
+function AddOrderItem(orderID, xml){
+	var params={
+		username:$(user).find("user").attr("username"),
+		token: $(user).find("token").text(),
+		order: orderID,
+		prod: xml
+	}
+	
+	return request("AddOrderItem", params, "Order");
+}
+
+function CreateOrder(){
+	var params={
+		username:$(user).find("user").attr("username"),
+		token: $(user).find("token").text()
+	}
+	return request("CreateOrder", params, "Order");
+}
