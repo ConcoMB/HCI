@@ -11,14 +11,14 @@ function searchHandler() {
 	 $("#searchTitle").text(query);
 	 search(query, cid, req);
 	 });*/
-	window.location.hash = '#target=search&page=0&cid=' + cid + ( sid ? ('&sid=' + sid) : '') + '&query=' + query;
+	window.location.hash = '#target=search&page=1&cid=' + cid + ( sid ? ('&sid=' + sid) : '') + '&query=' + query;
 	return false;
 }
 
 function search(query, cid, sid, page) {
 	$('#searchTitle').text(query);
-	var req = "<criteria>" + query + "</criteria>";
-	var response = GetProductListByName(req);
+	var response = GetProductListByName(query,'ASC',page);
+	$('#numberResults').text($(response).find('products').attr('size'));
 	if(cid != -1) {
 		$(response).find('product').each(function() {
 			if($(this).find('category_id').text() != cid) {

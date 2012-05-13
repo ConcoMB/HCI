@@ -1,13 +1,13 @@
 function signIn(name, pass) {
-	var params={
-		username: name,
-		password: pass
+	var params = {
+		username : name,
+		password : pass
 	}
 	return request('SignIn', params, 'Security');
 }
 
 function updateUserPanel() {
-	var name=$(user).find('user').attr('name');
+	var name = $(user).find('user').attr('name');
 	$.ajax({
 		url : "signed.html"
 	}).done(function(html) {
@@ -26,14 +26,21 @@ function loginFormHandler() {
 	if(!username || !password) {
 		return false;
 	}
-	user = signIn(username, password)
-	if(user) {
+	var resp = signIn(username, password)
+	var err = parseError(resp);
+	if(!err) {
+		user = resp;
 		updateUserPanel();
+	} else {
+		var errString = $(language).find('incorrectLogin').text();
+		$('#loginError').text(errString);
+		$('#loginError').css('visibility', 'visible');
 	}
+	
 	return false;
 }
 
-function logOutHandler(){
+function logOutHandler() {
 	window.location = "index.html"
 	//$('#main').load('home.html');
 }

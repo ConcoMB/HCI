@@ -21,7 +21,7 @@ function updateCategoryList() {
 		var cname = $(this).find('name').text();
 		var cid = $(this).attr('id');
 		var div = $('<div></div>').addClass('subCat');
-		var href='#target=category&page=0&cname='+cname+'&cid='+cid;
+		var href='#target=category&page=1&cname='+cname+'&cid='+cid;
 		var a = $('<a></a>').addClass('category').attr('href', href).text(cname).data('cid', cid);
 		var h3 = $('<h3></h3>');
 		h3.append(a);

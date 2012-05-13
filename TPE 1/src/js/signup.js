@@ -68,17 +68,43 @@ function signupFormHandler(){
 		var xml='<account><username>'+username+'</username><name>'+name+'</name><password>';
 		xml+=password+'</password><email>'+email+'</email> <birth_date>'+date+'</birth_date></account>';
 		var req=createAccount(xml);
-		if($(req).find('response').attr('status')=='ok'){
+		var err=parseError(req);
+		if(!err){
 			user=signIn(username, password);
 			updateUserPanel();
 			$('#main').load('home.html');
 		}else{
 			/*FALLO*/
-			errorHandler(req);
+			signupError(err);
 		}
 	}
 	$('#errors').append(error);
 	return false;
+}
+
+function signupError(code){
+	var errString, id;
+	switch(code){
+		case '107':
+			errString=$(language).find('username_length');
+			break;
+		case '108':
+			errString=$(language).find('password_length');
+			break;
+		case '109':
+			errString=$(language).find('name_length');
+			break;
+		case '110':
+			errString=$(language).find('email_length');
+			break;
+		case '111':
+			errString=$(language).find('invalid_date');
+			break;
+		case '201':
+			errString=$(language).find('username_exists');
+			break;		
+	}
+	$('#errors').append(errString);
 }
 
 function createAccount(acc){

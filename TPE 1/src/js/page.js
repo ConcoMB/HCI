@@ -1,13 +1,13 @@
 function updatePages(page, size){
-	if(page==0){
+	if(page==1){
 		$('#prev').css('visibility','hidden');
 	}
 	else{
-		$('#prev').attr('href',getHash('page',page-1));
+		$('#prev').attr('href',getHash('page',parseInt(page)-1));
 	}
-	if((page+1)*IPP>=size){
+	if((page)*IPP>=size){
 		$('#next').css('visibility','hidden');
 	}else{
-		$('#next').attr('href',getHash('page',page+1));
+		$('#next').attr('href',getHash('page',parseInt(page)+1));
 	}
 }

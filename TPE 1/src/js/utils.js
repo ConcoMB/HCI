@@ -5,6 +5,7 @@ function request(method, params, service) {
 	} else {
 		/*API CALL*/
 		var path = 'service/' + service + '.groovy?' + 'method=' + method + parseParams(params);
+		//alert(path);
 		$.ajax({
 			type : "GET",
 			url : path,
@@ -16,7 +17,6 @@ function request(method, params, service) {
 			}
 		});
 	}
-	//alert(path+'\n'+ans);
 	/*if(!ans || $(ans).find('response').attr('status')!='ok') {
 		alert('Error on request');
 		return dummyCall(method, params, service);
