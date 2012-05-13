@@ -2,10 +2,11 @@
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
-	width: 35em;
+	width: 40em;
 	background-color: #fbffbf;
 	border: 1px solid black;
 	padding: 2em;
+	overflow: auto;
 }
 
 .center {
@@ -446,4 +447,9 @@ img#userPhoto {
 	height: 65%;
 	display:none;
 
+}
+
+.dateInput{
+	margin-left: 2px;
+	width:8em;
 }
