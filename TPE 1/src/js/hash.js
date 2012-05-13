@@ -23,7 +23,7 @@ function hashChangeHandler(event) {
 				search(params.query, params.cid, params.sid, params.page);
 				break;
 			case 'order':
-				goToOrder(params.oid, params.oname);
+				goToOrder(params.oid, params.oname, params.status);
 				break;
 			case 'profile':
 				viewProfile();
@@ -33,6 +33,12 @@ function hashChangeHandler(event) {
 				break;
 			case 'newAddr':
 				newAddr();
+				break;
+			case "checkOut":
+				checkOut(params.oid);
+				break;
+			case "confirmed":
+				confirmed(params.oid,params.aid);
 				break;
 		}
 		translate();

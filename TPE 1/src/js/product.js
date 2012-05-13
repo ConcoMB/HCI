@@ -74,7 +74,7 @@ function fillProducts(products) {
 				$(div).data("pid", pid);
 				$('#productList').append(div);
 				if(user){
-					$(div).find("#toTheCart").submit(toTheCartHandler);
+					$(div).find("#toTheCart").submit(toOrder);
 					var or=getOrderList($(user).find("user").attr("id"), $(user).find("token").text());
 					updateOrderList(or, $(div).find("#orderList"));
 				}else{

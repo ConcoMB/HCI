@@ -15,3 +15,6 @@ function toCartHandler(){
 	AddOrderItem(order, sendXML);
 }
 
+function toOrder(){
+	alert($(".artPrice").text());
+}
