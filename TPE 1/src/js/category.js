@@ -22,9 +22,10 @@ function updateCategoryList() {
 		var cid = $(this).attr('id');
 		var div = $('<div></div>').addClass('subCat');
 		var href='#target=category&page=1&cname='+cname+'&cid='+cid;
-		var a = $('<a></a>').addClass('category').attr('href', href).text(cname).data('cid', cid);
-		var h3 = $('<h3></h3>');
-		h3.append(a);
+		var a = $('<a></a>').addClass('subcategory').attr('href', href).text('All').data('cid', cid);
+		var h3 = $('<h3></h3>').addClass('category');
+		h3.text(cname);
+		div.append(a, '<br>');
 		$("#searchCat").append($("<option></option>").text(cname).attr("value", cid));
 		var subcategories = getSubcategoryList($(this).attr('id'));
 

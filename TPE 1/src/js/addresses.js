@@ -76,86 +76,76 @@ function newAddrHandler() {
 	$('#errors').html('');
 
 	if(!name) {
-		error += $(language).find('empty_sd_name').text() + "<br>";
-		$('#reqAddressName').css('visibility', 'visible');
-	} else {
-		$('#reqAddressName').css('visibility', 'hidden');
+		$('#reqAddressName').text($(language).find('requiredField').text());
 	}
 
 	if(!address1) {
-		error += $(language).find('empty_sd_address1').text() + "<br>";
-		$('#reqAddress1').css('visibility', 'visible');
-	} else {
-		$('#reqAddress1').css('visibility', 'hidden');
+		$('#reqAddress1').text($(language).find('requiredField').text());
 	}
 
 	if(country == "no") {
-		error += $(language).find('empty_sd_country').text() + "<br>";
-		$('#reqCountry').css('visibility', 'visible');
-	} else {
-		$('#reqCountry').css('visibility', 'hidden');
+		$('#reqCountry').text($(language).find('requiredField').text());
 	}
 
 	if(state == "no") {
-		error += $(language).find('empty_sd_state').text() + "<br>";
-		$('#reqState').css('visibility', 'visible');
-	} else {
-		$('#reqState').css('visibility', 'hidden');
+		$('#reqState').text($(language).find('requiredField').text());
 	}
 
 	if(!city) {
-		error += $(language).find('empty_sd_name').text() + "<br>";
-		$('#reqCity').css('visibility', 'visible');
-	} else {
-		$('#reqCity').css('visibility', 'hidden');
+		$('#reqCity').text($(language).find('requiredField').text());
 	}
 
 	if(!zipCode) {
-		error += $(language).find('empty_sd_ZC').text() + "<br>";
-		$('#reqZC').css('visibility', 'visible');
-	} else {
-		$('#reqZC').css('visibility', 'hidden');
+		text($(language).find('requiredField').text());
 	}
 
 	if(!phone) {
-		error += $(language).find('empty_sd_phone').text() + "<br>";
-		$('#reqPhone').css('visibility', 'visible');
+		$('#reqPhone').text($(language).find('requiredField').text());
 	} else {
 		var pn = parseInt(phone);
 		if(!pn) {
-			error += $(language).find('invalid_sd_phone').text() + "<br>";
+			$('#reqPhone').text($(language).find('invalid_sd_phone').text());
 		}
-		$('#reqPhone').css('visibility', 'hidden');
 	}
+
+	//$('#errors').append(error);
 	if(!error) {
 		var xml = '<address><full_name>' + name + '</full_name><address_line_1>';
 		xml += address1 + '</address_line_1><address_line_2>' + address2 + '</address_line_2><country_id>';
 		xml += country + '</country_id><state_id>' + state + '</state_id><city>' + city + '</city><zip_code>';
 		xml += zipCode + '</zip_code><phone_number>' + phone + '</phone_number></address>';
-		var params = {
-			username : $(user).find("user").attr("username"),
-			authentication_token : $(user).find("token").text(),
-			address : xml
-		}
-		request("CreateAddress", params, "Order");
 
-		if(window.location.hash.match(/oid/)) {
-			var aux = window.location.hash.split("oid=");
-			var orderID = aux[1];
-			window.location.hash = "#target=checkOut&oid=" + orderID;
+		var resp = CreateAddress(xml);
+		var err = parseErrors(resp);
+		if(!err) {
+			if(window.location.hash.match(/oid/)) {
+				var aux = window.location.hash.split("oid=");
+				var orderID = aux[1];
+				window.location.hash = "#target=checkOut&oid=" + orderID;
+			} else {
+				window.location.hash = "#target=addresses";
+			}
 		} else {
-			window.location.hash = "#target=addresses";
+			createAddressError(err);
 		}
 	}
 }
 
-function createAddress(addr) {
+function CreateAddress(addr) {
 	var params = {
+		address : addr,
 		username : $(user).find("user").attr("username"),
-		authentication_token : $(user).find("token").text(),
-		address : addr
+		authentication_token : $(user).find("token").text()
 	}
 	return request('CreateAddress', params, 'Order');
+}
+
+function createAddressError(code) {
+	switch(code) {
+		case '202':
+			$('#reqAddressName').text($(language).find('address_exists').text());
+			break;
+	}
 }
 
 function newAddr() {
@@ -197,6 +187,7 @@ function GetAddress(addressID) {
 		authentication_token : $(user).find("token").text(),
 		address_id : addressID
 	}
+
 	return request("GetAddress", params, "Order");
 }
 

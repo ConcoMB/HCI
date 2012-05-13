@@ -30,6 +30,9 @@
 		<errors_changePassword>
 			<incorrectPassword>Wrong password</incorrectPassword>
 		</errors_changePassword>
+		<errors_newAddress>
+			<address_exists>Choose another address name</address_exists>
+		</errors_newAddress>
 	</errors>
 	<header>
 		<searchLabel>Search:</searchLabel>
