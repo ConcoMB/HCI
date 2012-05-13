@@ -19,146 +19,133 @@ function viewAddrs() {
 				$(div).find(".acountry").text(country);
 				var state = $(GetStateList(language, countryID)).find("state[id=" + stateID + "]").find("name").text();
 				$(div).find(".astate").text(state);
-				var addrID=$(this).attr("id");
-				$(div).find(".editAddr").attr("href", "#target=editSD&id="+addrID);
+				var addrID = $(this).attr("id");
+				$(div).find(".editAddr").attr("href", "#target=editSD&id=" + addrID);
 				$("#addrs").append(div);
 
 			});
 			$("#addrs").accordion({
 				collapsible : true,
-				active:false
+				active : false
 			});
 		}
 	});
 }
 
 function GetAddressList() {
-	var params={
-		username: $(user).find("user").attr("username"),
+	var params = {
+		username : $(user).find("user").attr("username"),
 		authentication_token : $(user).find("token").text()
 	}
 	return request("GetAddressList", params, 'Order');
 }
 
 function GetStateList(cID) {
-	var params={
-		language_id: $(language).find('language').attr('id'),
-		country_id: cID
+	var params = {
+		language_id : $(language).find('language').attr('id'),
+		country_id : cID
 	}
 	return request("GetStateList", params, 'Common');
 }
 
 function GetCountryList() {
-	var params={
-		language_id: $(language).find('language').attr('id')
+	var params = {
+		language_id : $(language).find('language').attr('id')
 	}
 	return request('GetCountryList', params, 'Common');
 }
 
-function newAddrHandler(){
-	var name=$('#sd_name').attr("value");
-	var address1=$('#sd_address1').attr("value");
-	var address2=$('#sd_address2').attr("value");
-	var country=$('#sd_country').attr("value");
-	var state=$('#sd_state').attr("value");
-	var city=$('#sd_city').attr("value");
-	var zipCode=$('#sd_ZC').attr("value");
-	var phone=$('#sd_phone').attr("value");
-	var error='';
+function newAddrHandler() {
+	var name = $('#sd_name').attr("value");
+	var address1 = $('#sd_address1').attr("value");
+	var address2 = $('#sd_address2').attr("value");
+	var country = $('#sd_country').attr("value");
+	var state = $('#sd_state').attr("value");
+	var city = $('#sd_city').attr("value");
+	var zipCode = $('#sd_ZC').attr("value");
+	var phone = $('#sd_phone').attr("value");
+	var error = '';
 	$('#errors').html('');
-	
-	if(!name){
-		error+=$(language).find('empty_sd_name').text()+"<br>";
-		$('#reqAddressName').css('visibility','visible');
-	}else{
-		$('#reqAddressName').css('visibility','hidden');	
+
+	if(!name) {
+		$('#reqAddressName').text($(language).find('requiredField').text());
 	}
-	
-	if(!address1){
-		error+=$(language).find('empty_sd_address1').text()+"<br>";
-		$('#reqAddress1').css('visibility','visible');
-	}else{
-		$('#reqAddress1').css('visibility','hidden');
+
+	if(!address1) {
+		$('#reqAddress1').text($(language).find('requiredField').text());
 	}
-	
-	if(country=="no"){
-		error+=$(language).find('empty_sd_country').text()+"<br>";
-		$('#reqCountry').css('visibility','visible');
-	}else{
-		$('#reqCountry').css('visibility','hidden');
+
+	if(country == "no") {
+		$('#reqCountry').text($(language).find('requiredField').text());
 	}
-	
-	if(state=="no"){
-		error+=$(language).find('empty_sd_state').text()+"<br>";
-		$('#reqState').css('visibility','visible');
-	}else{
-		$('#reqState').css('visibility','hidden');
+
+	if(state == "no") {
+		$('#reqState').text($(language).find('requiredField').text());
 	}
-	
-	if(!city){
-		error+=$(language).find('empty_sd_name').text()+"<br>";
-		$('#reqCity').css('visibility','visible');
-	}else{
-		$('#reqCity').css('visibility','hidden');
+
+	if(!city) {
+		$('#reqCity').text($(language).find('requiredField').text());
 	}
-	
-	if(!zipCode){
-		error+=$(language).find('empty_sd_ZC').text()+"<br>";
-		$('#reqZC').css('visibility','visible');
-	}else{
-		$('#reqZC').css('visibility','hidden');
+
+	if(!zipCode) {
+		text($(language).find('requiredField').text());
 	}
-	
-	if(!phone){
-		error+=$(language).find('empty_sd_phone').text()+"<br>";
-		$('#reqPhone').css('visibility','visible');
-	}else{
-		var pn=parseInt(phone);
-		if(!pn){
-			error+=$(language).find('invalid_sd_phone').text()+"<br>";
+
+	if(!phone) {
+		$('#reqPhone').text($(language).find('requiredField').text());
+	} else {
+		var pn = parseInt(phone);
+		if(!pn) {
+			$('#reqPhone').text($(language).find('invalid_sd_phone').text());
 		}
-		$('#reqPhone').css('visibility','hidden');
 	}
-	
+
 	//$('#errors').append(error);
-	if(!error){
-		var xml= '<address><full_name>' + name + '</full_name><address_line_1>';
+	if(!error) {
+		var xml = '<address><full_name>' + name + '</full_name><address_line_1>';
 		xml += address1 + '</address_line_1><address_line_2>' + address2 + '</address_line_2><country_id>';
 		xml += country + '</country_id><state_id>' + state + '</state_id><city>' + city + '</city><zip_code>';
 		xml += zipCode + '</zip_code><phone_number>' + phone + '</phone_number></address>';
-		var params={
-			username: $(user).find("user").attr("username"),
-			authentication_token: $(user).find("token").text(),
-			address: xml
-		}
-		request("CreateAddress", params, "Order");
-		
-		if(window.location.hash.match(/oid/)){
-			var aux=window.location.hash.split("oid=");
-			var orderID=aux[1];
-			window.location.hash="#target=checkOut&oid="+orderID;
-		}else{
-			window.location.hash="#target=addresses";
+		var resp = CreateAddress(xml);
+		var err = parseErrors(resp);
+		if(!err) {
+			if(window.location.hash.match(/oid/)) {
+				var aux = window.location.hash.split("oid=");
+				var orderID = aux[1];
+				window.location.hash = "#target=checkOut&oid=" + orderID;
+			} else {
+				window.location.hash = "#target=addresses";
+			}
+		} else {
+			createAddressError(err);
 		}
 	}
 }
 
-function createAddress(addr){
-	var params={
-		address: addr,
-		username: $(user).find("user").attr("username"),
+function CreateAddress(addr) {
+	var params = {
+		address : addr,
+		username : $(user).find("user").attr("username"),
 		authentication_token : $(user).find("token").text()
 	}
 	return request('CreateAddress', params, 'Order');
 }
 
-function newAddr(){
+function createAddressError(code){
+	switch(code){
+		case '202':
+			$('#reqAddressName').text($(language).find('address_exists').text());
+			break;
+	}
+}
+
+function newAddr() {
 	var countries = GetCountryList();
 	$("#sd_country").append('<option value="no">Choose a country</option>');
 	$(countries).find('country').each(function() {
-		var cID=$(this).attr("id");
-		var cName=$(this).find("name").text();
-		var country = '<option value="'+cID +'">'+cName+'</option>';
+		var cID = $(this).attr("id");
+		var cName = $(this).find("name").text();
+		var country = '<option value="' + cID + '">' + cName + '</option>';
 		$("#sd_country").append(country);
 	});
 	updateStates();
@@ -166,25 +153,25 @@ function newAddr(){
 	$('#addrForm').submit(newAddrHandler);
 }
 
-function updateStates(){
+function updateStates() {
 	$("#sd_state").html("");
-	var thisCountryID=$("#sd_country").attr("value");
-	var states= GetStateList(thisCountryID);
+	var thisCountryID = $("#sd_country").attr("value");
+	var states = GetStateList(thisCountryID);
 	$("#sd_state").append('<option value="no">Choose a state</option>');
 	$(states).find('state').each(function() {
-		var sID=$(this).attr("id");
-		var sName=$(this).find("name").text();
-		var state = '<option value="'+sID +'">'+sName+'</option>';
+		var sID = $(this).attr("id");
+		var sName = $(this).find("name").text();
+		var state = '<option value="' + sID + '">' + sName + '</option>';
 		$("#sd_state").append(state);
 	});
-	
+
 }
 
-function GetAddress(addressID){
-	var params={
-		username: $(user).find("user").attr("username"),
-		authentication_token: $(user).find("token").text(),
-		address:addressID
+function GetAddress(addressID) {
+	var params = {
+		username : $(user).find("user").attr("username"),
+		authentication_token : $(user).find("token").text(),
+		address : addressID
 	}
 	return request("GetAddress", params, "Order");
 }

@@ -23,46 +23,29 @@ function signupFormHandler(){
 	var error='';
 	$('#errors').html('');
 	if(!username){
-		error+=$(language).find('empty_username').text()+"<br>";
-		$('#reqUser').css('visibility','visible');
-	}else{
-		$('#reqUser').css('visibility','hidden');
+		$('#reqUser').text($(language).find('requiredField').text());
 	}
 	if(!password){
-		error+=$(language).find('empty_password').text()+"<br>";
-		$('#reqPass').css('visibility','visible');
-	}else{
-		$('#reqPass').css('visibility','hidden');
+		$('#reqPass').text($(language).find('requiredField').text());
 	}
 	if(password!=rPassword){
-		error+=$(language).find('password_mismatch').text()+"<br>";
-	};
+		$('#reqPass').text(error+=$(language).find('password_mismatch').text());
+	}
 	if(!rPassword){
-		$('#reqConf').css('visibility','visible');
-	}else{
-		$('#reqConf').css('visibility','hidden');
+		$('#reqConf').text($(language).find('requiredField').text());
 	}
 	if(!email){
-		error+=$(language).find('empty_email').text()+"<br>";
-		$('#reqMail').css('visibility','visible');
-	}else{
-		$('#reqMail').css('visibility','hidden');
+		$('#reqMail').text($(language).find('requiredField').text());
 	}
 	var exp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	if(!email.match(exp)){
-		error+=$(language).find('wrong_email').text()+"<br>";
+		$('#reqMail').text($(language).find('wrong_email').text());
 	}
 	if(!name){
-		error+=$(language).find('empty_name').text()+"<br>";
-		$('#reqName').css('visibility','visible');
-	}else{
-		$('#reqName').css('visibility','hidden');
+		$('#reqName').text($(language).find('requiredField').text());
 	}
 	if(!ValidateForm(date)){
-		error+=$(language).find('invalid_date').text()+"<br>";
-		$('#reqDate').css('visibility','visible');
-	}else{
-		$('#reqDate').css('visibility','hidden');
+		$('#reqDate').text($(language).find('requiredField').text());
 	}
 	if(!error){
 		var xml='<account><username>'+username+'</username><name>'+name+'</name><password>';
