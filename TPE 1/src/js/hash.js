@@ -40,6 +40,9 @@ function hashChangeHandler(event) {
 			case "confirmed":
 				confirmed(params.oid,params.aid);
 				break;
+			case "editAddr":
+				editAddressHandler(params.id);
+				break;
 		}
 		translate();
 	});
