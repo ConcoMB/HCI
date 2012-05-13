@@ -85,6 +85,7 @@ function ordersToCart(orders) {
 						break;
 				}
 				if(status != "1") {
+					alert( $(user).find("token").text());
 					var addressID = $(this).find("address_id").text();
 					var address = GetAddress(addressID);
 					$(div).find(".addressData").text($(address).find("full_name").text());
