@@ -45,14 +45,23 @@
 				<div class="userhead">
 					<div>
 						<form id="loginForm">
-							<input id="sb" class="translate" type="submit" value="log in"/>
-							<span id="usernameLabel" class="entry translate">User name: </span>
-							<input id="name" type="text"/>
-							<br>
-							<span id="passwordLabel" class="entry translate">Password:</span>
-							<input id="password" type="password"/>
-							<br>
+							<div id="loginSpans">
+								<div id="userNameDiv">
+									<span id="usernameLabel" class="translate">User name: </span>
+								</div>
+								<div id="passwordDiv">
+									<span id="passwordLabel" class="translate">Password:</span>
+								</div>
+							</div>
+							<div id="loginInputs">
+								<input id="name" class="loginInput" type="text"/>
+								<input id="password" class="loginInput"type="password"/>
+								<input id="sb" class="translate" type="submit" value="log in"/>
+							</div>
 						</form>
+					</div>
+					<div id="loginError">
+						Error al loggearse
 					</div>
 					<div class="signHelp">
 						<span id="newInSiteLabel" class="translate">New in the site? </span><a id="signupLink" href="#" class="translate">Sign up now!</a>
