@@ -318,7 +318,7 @@ img#userPhoto {
 	width: 20%;
 	float: left;
 	height: 65%;
-	visibility: hidden;
+	
 }
 
 #sd_country {
@@ -330,6 +330,13 @@ img#userPhoto {
 	width: 95%;
 }
 
+#addr_country{
+	width:95%;
+}
+
+#addr_state{
+	width:95%;
+}
 .artItem {
 	width: 100%;
 }
@@ -530,4 +537,7 @@ input#sb {
 #noOrd{
 	visibility:hidden;
 	display:none;
+}
+.adrBut{
+	margin-top:1em;
 }
