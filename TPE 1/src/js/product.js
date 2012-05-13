@@ -50,7 +50,11 @@ function updateProduct(pid){
 	if(user){
 		var ord= getOrderList($(user).find("user").attr("id"),$(user).find("token").text());
 		updateOrderList(ord,$("#orderList"));
-		$("#addToOrder").click(toCartHandler);
+		$("#addToOrder").click(function(){
+			var cant=$("#buyCant").attr("value");
+			var order=$("#orderList").attr("value");
+			toCartHandler(pid, order, cant);
+		});
 	}else{
 		$("#BUY").css("visibility", "hidden");
 		$(".notLogged").css("visibility", "visible");
@@ -74,11 +78,15 @@ function fillProducts(products) {
 				$(div).data("pid", pid);
 				$('#productList').append(div);
 				if(user){
-					$(div).find("#toTheCart").submit(toTheCartHandler);
+					$(div).find(".toTheCart").submit(function(){
+						var order=$(div).find(".orderList").attr("value");
+						var cant=$(div).find(".buyCant").attr("value");
+						toCartHandler(pid, order, cant);
+					});
 					var or=getOrderList($(user).find("user").attr("id"), $(user).find("token").text());
-					updateOrderList(or, $(div).find("#orderList"));
+					updateOrderList(or, $(div).find(".orderList"));
 				}else{
-					$(div).find("#toTheCart").css("visibility", "hidden");
+					$(div).find(".toTheCart").css("visibility", "hidden");
 					$(div).find(".notLogged").css("visibility", "visible");
 				}
 				translate($('#productList'));

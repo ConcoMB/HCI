@@ -78,7 +78,7 @@ function signupFormHandler(){
 			signupError(err);
 		}
 	}
-	$('#errors').append(error);
+	//$('#errors').append(error);
 	return false;
 }
 

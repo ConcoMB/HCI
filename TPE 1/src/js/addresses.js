@@ -55,18 +55,7 @@ function GetCountryList() {
 	return request('GetCountryList', params, 'Common');
 }
 
-
-function newShipDestForm(){
-	$.ajax({
-		url : "newAddr.html"
-	}).done(function(html) {
-		$('#main').html(html);
-		$('#addrForm').submit(newShipDestFormHandler);
-	});
-}
-
-
-function newShipDestFormHandler(){
+function newAddrHandler(){
 	var name=$('#sd_name').attr("value");
 	var address1=$('#sd_address1').attr("value");
 	var address2=$('#sd_address2').attr("value");
@@ -78,7 +67,7 @@ function newShipDestFormHandler(){
 	var error='';
 	$('#errors').html('');
 	
-	if(!username){
+	if(!name){
 		error+=$(language).find('empty_sd_name').text()+"<br>";
 		$('#reqAddressName').css('visibility','visible');
 	}else{
@@ -92,14 +81,14 @@ function newShipDestFormHandler(){
 		$('#reqAddress1').css('visibility','hidden');
 	}
 	
-	if(!country){
+	if(country=="no"){
 		error+=$(language).find('empty_sd_country').text()+"<br>";
 		$('#reqCountry').css('visibility','visible');
 	}else{
 		$('#reqCountry').css('visibility','hidden');
 	}
 	
-	if(!state){
+	if(state=="no"){
 		error+=$(language).find('empty_sd_state').text()+"<br>";
 		$('#reqState').css('visibility','visible');
 	}else{
@@ -124,18 +113,34 @@ function newShipDestFormHandler(){
 		error+=$(language).find('empty_sd_phone').text()+"<br>";
 		$('#reqPhone').css('visibility','visible');
 	}else{
+		var pn=parseInt(phone);
+		if(!pn){
+			error+=$(language).find('invalid_sd_phone').text()+"<br>";
+		}
 		$('#reqPhone').css('visibility','hidden');
 	}
 	
-	$('#errors').append(error);
+	//$('#errors').append(error);
 	if(!error){
 		var xml= '<address><full_name>' + name + '</full_name><address_line_1>';
 		xml += address1 + '</address_line_1><address_line_2>' + address2 + '</address_line_2><country_id>';
 		xml += country + '</country_id><state_id>' + state + '</state_id><city>' + city + '</city><zip_code>';
 		xml += zipCode + '</zip_code><phone_number>' + phone + '</phone_number></address>';
-		var req=createAddress(xml);
+		var params={
+			username: $(user).find("user").attr("username"),
+			authentication_token: $(user).find("token").text(),
+			address: xml
+		}
+		request("CreateAddress", params, "Order");
+		
+		if(window.location.hash.match(/oid/)){
+			var aux=window.location.hash.split("oid=");
+			var orderID=aux[1];
+			window.location.hash="#target=checkOut&oid="+orderID;
+		}else{
+			window.location.hash="#target=addresses";
+		}
 	}
-	return false;	
 }
 
 function createAddress(addr){
@@ -149,6 +154,7 @@ function createAddress(addr){
 
 function newAddr(){
 	var countries = GetCountryList();
+	$("#sd_country").append('<option value="no">Choose a country</option>');
 	$(countries).find('country').each(function() {
 		var cID=$(this).attr("id");
 		var cName=$(this).find("name").text();
@@ -157,15 +163,28 @@ function newAddr(){
 	});
 	updateStates();
 	$("#sd_country").change(updateStates);
+	$('#addrForm').submit(newAddrHandler);
 }
 
 function updateStates(){
+	$("#sd_state").html("");
 	var thisCountryID=$("#sd_country").attr("value");
 	var states= GetStateList(thisCountryID);
+	$("#sd_state").append('<option value="no">Choose a state</option>');
 	$(states).find('state').each(function() {
 		var sID=$(this).attr("id");
 		var sName=$(this).find("name").text();
 		var state = '<option value="'+sID +'">'+sName+'</option>';
 		$("#sd_state").append(state);
 	});
+	
+}
+
+function GetAddress(addressID){
+	var params={
+		username: $(user).find("user").attr("username"),
+		authentication_token: $(user).find("token").text(),
+		address:addressID
+	}
+	return request("GetAddress", params, "Order");
 }
