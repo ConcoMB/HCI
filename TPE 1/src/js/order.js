@@ -88,8 +88,12 @@ function ordersToCart(orders){
 					var addressID=$(this).find("address_id").text();
 					var address=GetAddress(addressID);
 					$(div).find(".addressData").text($(address).find("full_name").text());
+					$(div).find(".deleteOrder").css("display","none");
 				}else{
 					$(div).find(".addrDiv").css("display","none");
+					$(div).find(".deleteOrder").click(function(){
+						deleteOrderH(orderID);
+					});
 				}
 				$(div).find('.status').text(stat);
 				$(div).find('.goToOrder').attr('href','#target=order&oid='+orderID+"&oname=Order"+cant+"&status="+status);
@@ -102,6 +106,18 @@ function ordersToCart(orders){
 		}
 	});
 
+}
+
+function deleteOrderH(orderID){
+	if(confirm("Remove this order?")){
+		params={
+			username: $(user).find("user").attr("username"),
+			authentication_token: $(user).find("token").text(),
+			order_id: orderID
+		}
+		request("DeleteOrder",params,"Order");
+		$(window).trigger('hashchange');
+	}
 }
 
 function goToOrder(orderID, name, status){
@@ -126,6 +142,18 @@ function goToOrder(orderID, name, status){
 				$(div).find(".artName").text($(product).find("name").text());
 				$(div).find(".artPrice").text($(product).find("price").text());
 				$('#items').append(div);
+				if(status!="1"){
+					$(div).find(".remove").css("display","none");
+				}else{
+					$(div).find(".rmform").submit(function(){
+						if(confirm("Remove this item?")){
+							var cant=$(div).find(".howMany").attr("value");
+							removeItemHandler(prodID, cant, orderID);
+						}
+						
+					});
+					$(div).find(".rmform").data("prodID", prodID);
+				}
 			});
 			$("#totalPrice").text(totalPrice);
 			$("#checkOut").attr("href","#target=checkOut&oid="+orderID);
@@ -135,6 +163,15 @@ function goToOrder(orderID, name, status){
 	
 }
 
+function removeItemHandler(pid, cant, oid){
+	var params={
+		username: $(user).find("user").attr("username"),
+		authentication_token: $(user).find("token").text(),
+		order_id: oid,
+		order_item:"<order_item> <product_id>"+ pid+"</product_id> <count>"+can+"</count></order_item>"
+	}
+	return request("DeleteOrderItem", params, "Order");
+}
 
 function GetOrder(orderID){
 	var params={
