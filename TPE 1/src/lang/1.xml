@@ -27,6 +27,9 @@
 			<empty_ZC>You must enter a zip code</empty_ZC>
 			<empty_phone>You must enter a phone</empty_phone>
 		</errors_newShipDest>
+		<errors_changePassword>
+			<incorrectPassword>Wrong password</incorrectPassword>
+		</errors_changePassword>
 	</errors>
 	<header>
 		<searchLabel>Search:</searchLabel>
@@ -44,6 +47,7 @@
 	<general>
 		<passwordLabel>Password:</passwordLabel>
 		<requiredFields>* Required fields</requiredFields>
+		<requiredField>Required</requiredField>
 	</general>
 	<signUpForm>
 		<signUp>Sign up</signUp>
