@@ -149,8 +149,7 @@ function goToOrder(orderID, name, status){
 						if(confirm("Remove this item?")){
 							var cant=$(div).find(".howMany").attr("value");
 							removeItemHandler(prodID, cant, orderID);
-						}
-						
+						}						
 					});
 					$(div).find(".rmform").data("prodID", prodID);
 				}
