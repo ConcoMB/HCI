@@ -1,8 +1,15 @@
 <language>
 	<name>English</name>
 	<errors>
+		<errors_logIn>
+			<incorrectLogin>Username or password is incorrect</incorrectLogin>
+		</errors_logIn>
 		<errors_signUp>
 			<empty_username>You must enter a username</empty_username>
+			<username_length>Username must be 1~15 characters long</username_length>
+			<password_length>Password must be 8~15 characters long</password_length>
+			<email_length>Email bust be 1~128 characters long</email_length>
+			<name_length>Name must be 1~80 characters long</name_length>
 			<username_exists>Username already exists</username_exists>
 			<password_mismatch>The passwords do not match</password_mismatch>
 			<empty_password>You must enter a password</empty_password>
@@ -20,6 +27,9 @@
 			<empty_ZC>You must enter a zip code</empty_ZC>
 			<empty_phone>You must enter a phone</empty_phone>
 		</errors_newShipDest>
+		<errors_changePassword>
+			<incorrectPassword>Wrong password</incorrectPassword>
+		</errors_changePassword>
 	</errors>
 	<header>
 		<searchLabel>Search:</searchLabel>
@@ -37,6 +47,7 @@
 	<general>
 		<passwordLabel>Password:</passwordLabel>
 		<requiredFields>* Required fields</requiredFields>
+		<requiredField>Required</requiredField>
 	</general>
 	<signUpForm>
 		<signUp>Sign up</signUp>

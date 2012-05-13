@@ -51,38 +51,48 @@ function acceptProfileHandler() {
 	var error = false;
 
 	if(!name) {
-		$('#reqProfName').css('display', 'inline');
+		$('#reqProfName').text($(language).find('requiredField').text());
 		error = true;
-	} else {
-		$('#reqProfName').css('display', 'none');
 	}
 
 	if(!email) {
-		$('#reqProfEmail').css('display', 'inline');
+		$('#reqProfEmail').text($(language).find('requiredField').text());
 		error = true;
-	} else {
-		$('#reqProfEmail').css('display', 'none');
 	}
 
 	if(!bdate) {
-		$('#reqProfBdate').css('display', 'inline');
+		$('#reqProfBdate').text($(language).find('requiredField').text());
 		error = true;
-	} else {
-		$('#reqProfBdate').css('display', 'none');
 	}
 
-	if(error == false) {
+	if(!error) {
 
 		var xml = '<account><name>' + name + '</name><email>';
-		xml += email + '</email><birth_date>' + bdate + '</birth_date><account>';
+		xml += email + '</email><birth_date>' + bdate + '</birth_date></account>';
 		var req = updateAccount(xml);
-		if($(req).find('response').attr('status') == 'ok') {
-
+		var err=parseError(req);
+		if(!err) {
 			$(window).trigger('hashchange');
+		} else{
+			editProfileError(err);
 		}
 	}
 
 	return false;
+}
+
+function editProfileError(code){
+	switch(code){
+		case '109':
+			$('#reqProfName').text($(language).find('name_length'));
+			break;
+		case '110':
+			$('#reqProfEmail').text($(language).find('email_length'));
+			break;
+		case '111':
+			$('#reqProfBdate').text($(language).find('invalid_date'));
+			break;	
+	}
 }
 
 function updateAccount(acc) {
@@ -117,49 +127,43 @@ function changePasswordHandler() {
 	var error = false;
 
 	if(!pass) {
-		$('#reqProfPass').css('display', 'inline');
+		$('#reqProfPass').text($(language).find('requiredField').text());
 		error = true;
-	} else {
-		$('#reqProfPass').css('display', 'none');
 	}
-
 	if(!newPass) {
-		$('#reqProfNewPass').css('display', 'inline');
-		$('#reqProfNewPassMatch').css('display', 'none');
+		$('#reqProfNewPass').text($(language).find('requiredField').text());
 		error = true;
-	} else {
-		$('#reqProfNewPass').css('display', 'none');
 	}
 
 	if(!confPass) {
-		$('#reqProfConfPass').css('display', 'inline');
-		$('#reqProfNewPassMatch').css('display', 'none');
-		error = true;
-	} else {
-		$('#reqProfConfPass').css('display', 'none');
+		$('#reqProfConfPass').text($(language).find('requiredField').text());
 	}
 
 	if(newPass != confPass) {
-		$('#reqProfNewPass').css('display', 'none');
-		$('#reqProfConfPass').css('display', 'none');
-		$('#reqProfNewPassMatch').css('display', 'inline');
-		error = true;
+		$('#reqProfNewPass').text($(language).find('password_mismatch').text());
 	}
 
-	if(error == false) {
+	if(!error) {
 
-		var params = {
-			username : $(user).find("user").attr("username"),
-			password : pass,
-			new_password : newPass
-		}
-		var req = request('ChangePassword', params, 'Security');
-
-		if($(req).find('response').attr('status') == 'ok') {
+		var req=ChangePassword(pass, newPass);
+		var err=parseError(req);
+		if(!err) {
 
 			$(window).trigger('hashchange');
+		}
+		else{
+			$('#reqProfPass').text($(language).find('incorrectPassword').text());
 		}
 	}
 
 	return false;
+}
+
+function ChangePassword(pass, nPass){
+	var params = {
+			username : $(user).find("user").attr("username"),
+			password : pass,
+			new_password : nPass
+		}
+		return request('ChangePassword', params, 'Security');
 }

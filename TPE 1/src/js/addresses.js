@@ -119,10 +119,9 @@ function newAddrHandler() {
 		}
 		$('#reqPhone').css('visibility', 'hidden');
 	}
-
-	$('#errors').append(error);
-	if(!error) {
-		var xml = '<address><full_name>' + name + '</full_name><address_line_1>';
+	
+	if(!error){
+		var xml= '<address><full_name>' + name + '</full_name><address_line_1>';
 		xml += address1 + '</address_line_1><address_line_2>' + address2 + '</address_line_2><country_id>';
 		xml += country + '</country_id><state_id>' + state + '</state_id><city>' + city + '</city><zip_code>';
 		xml += zipCode + '</zip_code><phone_number>' + phone + '</phone_number></address>';
