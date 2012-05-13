@@ -526,3 +526,8 @@ input#sb {
 	margin-top:20px;
 	
 }
+
+#noOrd{
+	visibility:hidden;
+	display:none;
+}
