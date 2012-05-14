@@ -11,7 +11,7 @@ function hashChangeHandler(event) {
 				signupForm();
 				break;
 			case 'category':
-				category(params.cname,params.sname, params.cid, params.sid, params.page);
+				category(params.cname,params.sname, params.cid, params.sid, params.page, params.order);
 				break;
 			case 'detail':
 				updateProduct(params.pid);
@@ -20,7 +20,7 @@ function hashChangeHandler(event) {
 				cart();
 				break;
 			case 'search':
-				search(params.query, params.cid, params.sid, params.page);
+				search(params.query, params.cid, params.sid, params.page, params.order);
 				break;
 			case 'order':
 				goToOrder(params.oid, params.oname, params.status);
@@ -60,6 +60,9 @@ function parseHash(hash) {
 
 function getHash(param, value){
 	var hash=window.location.hash;
+	if(!param||!value){
+		return hash;
+	}
 	var params=parseHash(hash);
 	var newHash='#';
 	params[param]=value;
