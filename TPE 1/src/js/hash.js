@@ -43,6 +43,8 @@ function hashChangeHandler(event) {
 			case "editAddr":
 				editAddressHandler(params.id);
 				break;
+			case "home":
+				carousel();
 		}
 		translate();
 	});

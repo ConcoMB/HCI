@@ -265,7 +265,5 @@ function editAddressButtonHandler(addressID) {
 	var zipCode = $('#addr_ZC').attr("value");
 	var phone = $('#addr_phone').attr("value");
 	
-	
-
 }
 
