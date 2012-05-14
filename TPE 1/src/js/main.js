@@ -1,7 +1,7 @@
 user = null;
 language = null;
 IPP=8;
-dummy=false;
+dummy=true;
 
 $(document).ready(function() {
 	updateLanguageList();
