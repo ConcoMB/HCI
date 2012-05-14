@@ -21,10 +21,10 @@ function updateCategoryList() {
 		var cname = $(this).find('name').text();
 		var cid = $(this).attr('id');
 		var div = $('<div></div>').addClass('subCat');
-		var href='#target=category&page=1&cname='+cname+'&cid='+cid;
+		var href='#target=category&page=1&order=ASC&cname='+cname+'&cid='+cid;
 		var a = $('<a></a>').addClass('subcategory').attr('href', href).text('All').data('cid', cid);
 		var h3 = $('<h3></h3>').addClass('category');
-		h3.text(cname);
+		h3.append($('<a></a>').text(cname).attr('href','#'));
 		div.append(a, '<br>');
 		$("#searchCat").append($("<option></option>").text(cname).attr("value", cid));
 		var subcategories = getSubcategoryList($(this).attr('id'));
@@ -76,18 +76,19 @@ function categoryClickHandler() {
 	window.location.hash=$(this).attr('href');
 }
 
-function category(cname,sname, cid, sid, page){
-	updateProductList(cid, sid, page);
+function category(cname,sname, cid, sid, page, order){
+	updateProductList(cid, sid, page, order);
 	$('#categoryName').html(cname);
 	$("#subcategoryName").text(sname);
+	updateSort(order);
 }
 
-function updateProductList(cid, sid, page) {
+function updateProductList(cid, sid, page, order) {
 	var products;
 	if(!sid) {
-		products = getProductListByCategory(cid, page);
+		products = getProductListByCategory(cid, page, order);
 	} else {
-		products = getProductListBySubcategory(cid, sid, page);
+		products = getProductListBySubcategory(cid, sid, page, order);
 	}
 	fillProducts(products);
 	updatePages(page,$(products).find('products').attr('size'));

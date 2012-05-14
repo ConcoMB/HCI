@@ -11,13 +11,13 @@ function searchHandler() {
 	 $("#searchTitle").text(query);
 	 search(query, cid, req);
 	 });*/
-	window.location.hash = '#target=search&page=1&cid=' + cid + ( sid ? ('&sid=' + sid) : '') + '&query=' + query;
+	window.location.hash = '#target=search&page=1&order=ASC&cid=' + cid + ( sid ? ('&sid=' + sid) : '') + '&query=' + query;
 	return false;
 }
 
-function search(query, cid, sid, page) {
+function search(query, cid, sid, page, order) {
 	$('#searchTitle').text(query);
-	var response = GetProductListByName(query,'ASC',page);
+	var response = GetProductListByName(query, order, page);
 	$('#numberResults').text($(response).find('products').attr('size'));
 	if(cid != -1) {
 		$(response).find('product').each(function() {
@@ -30,6 +30,7 @@ function search(query, cid, sid, page) {
 	}
 	fillProducts(response);
 	updatePages(page, $(response).find('products').attr('size'));
+	updateSort(order);
 }
 
 function GetProductListByName(crit, ord, p) {
