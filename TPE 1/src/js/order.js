@@ -85,7 +85,6 @@ function ordersToCart(orders) {
 						break;
 				}
 				if(status != "1") {
-					alert($(user).find("token").text());
 					var addressID = $(this).find("address_id").text();
 					var address = GetAddress(addressID);
 					$(div).find(".addressData").text($(address).find("full_name").text());
@@ -135,8 +134,22 @@ function goToOrder(orderID, name, status) {
 		orderError(err);
 	} else {
 		var totalPrice = 0;
-		if(status != "1") {
-			$("#checkOut").css("display", "none");
+		switch(status) {
+			case "1":
+				$("#stat").text("Created");
+				break;
+			case "2":
+				$("#stat").text("Confirmed");
+				$("#checkOut").css("display", "none");
+				break;
+			case "3":
+				$("#stat").text("Transported");
+				$("#checkOut").css("display", "none");
+				break;
+			case "4":
+				$("#stat").text("Delivered");
+				$("#checkOut").css("display", "none");
+				break;
 		}
 		$("#orderID").text(name);
 		$.ajax({
@@ -149,10 +162,11 @@ function goToOrder(orderID, name, status) {
 					var div = $(template).clone();
 					var amount = $(this).find("count").text();
 					var price = $(this).find("price").text();
-					totalPrice += parseFloat(price);
+					totalPrice += parseFloat(price)*parseInt(amount);
 					var product = GetProduct(prodID);
 					$(div).find(".artName").text($(product).find("name").text());
-					$(div).find(".artPrice").text($(product).find("price").text());
+					$(div).find(".artPrice").text(price);
+					$(div).find(".artAmount").text(amount);
 					$('#items').append(div);
 					if(status != "1") {
 						$(div).find(".remove").css("display", "none");
@@ -244,7 +258,7 @@ function checkOut(orderID) {
 				$(div).find(".apnumber").text($(this).find("phone_number").text());
 				var country = $(GetCountryList()).find("country[id=" + countryID + "]").find("name").text();
 				$(div).find(".acountry").text(country);
-				var state = $(GetStateList(language, countryID)).find("state[id=" + stateID + "]").find("name").text();
+				var state = $(GetStateList(countryID)).find("state[id=" + stateID + "]").find("name").text();
 				$(div).find(".astate").text(state);
 				var addrID = $(this).attr("id");
 				$(div).find(".adrBut").attr("value", "Select address");
@@ -262,11 +276,18 @@ function checkOut(orderID) {
 }
 
 function confirmed(order, address) {
-	var params = {
-		username : $(user).find("user").attr("username"),
-		authentication_token : $(user).find("token").text(),
-		order_id : order,
-		address_id : address
+	var err = updateOrderAddr(order, address);
+	err = parseError(err);
+	if(err) {
+		alert(err);
+		orderError(err);
+	} else {
+		var params = {
+			username : $(user).find("user").attr("username"),
+			authentication_token : $(user).find("token").text(),
+			order_id : order,
+			address_id : address
+		}
+		return request("ConfirmOrder", params, "Order");
 	}
-	return request("ConfirmOrder", params, "Order");
 }

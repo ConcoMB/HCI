@@ -22,12 +22,13 @@ function orderError(err){
 		case "115":
 		case "114":
 		case "116":
+		case "117":
 			string=$(language).find('invalid_params');
 			break;
 		case "999":
 			string=$(language).find('unknown_error');
 			break;
 	}
-	$("#error").append(string);
+	$("#errors").append(string);
 }
 
