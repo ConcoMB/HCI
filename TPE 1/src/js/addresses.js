@@ -23,6 +23,12 @@ function viewAddrs() {
 				$(div).find(".astate").text(state);
 				var addrID = $(this).attr("id");
 				$(div).find(".editAddr").attr("href", "#target=editAddr&id=" + addrID);
+				$(div).find(".adrRmv").click(function(){
+					/*if(confirm("Remove this address?")){
+						removeAddr(addrID);
+					}*/
+					alert("We're working on this event... check again later!");
+				});
 				$("#addrs").append(div);
 
 			});
@@ -40,6 +46,7 @@ function viewAddrs() {
 
 }
 
+
 function GetAddressList() {
 	var params = {
 		username : $(user).find("user").attr("username"),
@@ -53,14 +60,26 @@ function GetStateList(cID) {
 		language_id : $(language).find('language').attr('id'),
 		country_id : cID
 	}
-	return request("GetStateList", params, 'Common');
+	var states =request('GetStateList', params, 'Common');
+	var err=parseError(err);
+	if(err){
+		alert("error state" +err);
+	}else{
+		return states;
+	}
 }
 
 function GetCountryList() {
 	var params = {
 		language_id : $(language).find('language').attr('id')
 	}
-	return request('GetCountryList', params, 'Common');
+	var countries =request('GetCountryList', params, 'Common');
+	var err=parseError(err);
+	if(err){
+		alert("error country"+err);
+	}else{
+		return countries;
+	}
 }
 
 function newAddrHandler() {
@@ -114,13 +133,13 @@ function newAddrHandler() {
 		xml += address1 + '</address_line_1><address_line_2>' + address2 + '</address_line_2><country_id>';
 		xml += country + '</country_id><state_id>' + state + '</state_id><city>' + city + '</city><zip_code>';
 		xml += zipCode + '</zip_code><phone_number>' + phone + '</phone_number></address>';
-
 		var resp = CreateAddress(xml);
 		var err = parseErrors(resp);
 		if(!err) {
 			if(window.location.hash.match(/oid/)) {
 				var aux = window.location.hash.split("oid=");
 				var orderID = aux[1];
+				var addrID=$(resp).find("address").attr("id");
 				window.location.hash = "#target=checkOut&oid=" + orderID;
 			} else {
 				window.location.hash = "#target=addresses";
@@ -129,6 +148,16 @@ function newAddrHandler() {
 			createAddressError(err);
 		}
 	}
+}
+
+function updateOrderAddr(order, addr){
+	var params={
+		username : $(user).find("user").attr("username"),
+		authentication_token : $(user).find("token").text(),
+		order_id: order,
+		address_id:addr
+	}
+	return request("ChangeOrderAddress",params,"Order");
 }
 
 function CreateAddress(addr) {
@@ -217,7 +246,8 @@ function editAddressHandler(addressID) {
 	$("#addr_city").attr("value", city);
 	$("#addr_ZC").attr("value", zipCode);
 	$("#addr_phone").attr("value", phone);
-
+	$("#sd_country").change(updateStates);
+	
 	$("#editAddressButton").submit(editAddressButtonHandler(addressID));
 	$("#cancelButton").click(function() {
 		window.location.hash = "#target=addresses";

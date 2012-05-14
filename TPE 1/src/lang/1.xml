@@ -33,6 +33,11 @@
 		<errors_newAddress>
 			<address_exists>Choose another address name</address_exists>
 		</errors_newAddress>
+		<general_errors>
+			<missing_info>An error occurred: there's been a lack of information in the server. Please try again later</missing_info>
+			<invalid_params>An error occurred: there's been a missinterpretation in the information. Please try again later</invalid_params>
+			<unknown_error>An error has occurred. Please try again later. We're working in order to solve this problem</unknown_error>
+		</general_errors>
 	</errors>
 	<header>
 		<searchLabel>Search:</searchLabel>
