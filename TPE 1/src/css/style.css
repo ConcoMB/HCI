@@ -541,3 +541,8 @@ input#sb {
 .adrBut{
 	margin-top:1em;
 }
+
+#myAddr{
+	visibility:hidden;
+	display:none;
+}
