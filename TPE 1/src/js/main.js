@@ -10,12 +10,19 @@ $(document).ready(function() {
 		collapsible : true,
 		active: false
 	});
-	$('#loginForm').submit(loginFormHandler);
+	var resp=getCookie("login");
+	if(!resp){
+		$('#loginForm').submit(loginFormHandler);
+		$('#signupLink').attr('href', '#target=signUp');
+	}else{
+		var arr=resp.split(",");
+		login(arr[0],arr[1]);
+		updateUserPanel();
+	}
 	$('#search').submit(searchHandler);
 	//$('.subcategory').click(subcategoryClickHandler);
 	$('.category').click(categoryClickHandler);
 	//$('.artName').click(productClickHandler);
-	$('#signupLink').attr('href', '#target=signUp');
 	$(window).bind('hashchange', hashChangeHandler);
 	$(window).trigger('hashchange');
 	translate();

@@ -134,7 +134,7 @@ function newAddrHandler() {
 		xml += country + '</country_id><state_id>' + state + '</state_id><city>' + city + '</city><zip_code>';
 		xml += zipCode + '</zip_code><phone_number>' + phone + '</phone_number></address>';
 		var resp = CreateAddress(xml);
-		var err = parseErrors(resp);
+		var err = parseError(resp);
 		if(!err) {
 			if(window.location.hash.match(/oid/)) {
 				var aux = window.location.hash.split("oid=");

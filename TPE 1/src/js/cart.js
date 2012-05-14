@@ -19,14 +19,12 @@ function toCartHandler(product, order, cant) {
 			order = $(aux).find("order").attr("id");
 		}
 	}
-	if(!err) {
-		err = AddOrderItem(order, sendXML);
-		err = parseError(err);
-		if(err) {
-			orderError(err);
-		} else {
-			alert("Product added to your order");
-		}
+	err = AddOrderItem(order, sendXML);
+	err = parseError(err);
+	if(err) {
+		orderError(err);
+	} else {
+		alert("Product added to your order");
 	}
 }
 

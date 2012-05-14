@@ -29,13 +29,11 @@ function getOrderList() {
 }
 
 function updateOrderList(orders, where) {
-	var cant = 1;
 	$(where).append('<option value="new">Create new Order</option>');
 	$(orders).find("order").each(function() {
 		if(!$(this).find("confirmed_date").text()) {
 			var id = $(this).attr("id");
-			$(where).append("<option value='" + id + "'>Order" + cant + "</option>");
-			cant++;
+			$(where).append("<option value='" + id + "'>Order " + id + "</option>");
 		}
 	});
 }
@@ -52,7 +50,7 @@ function ordersToCart(orders) {
 				var div = $(template).clone();
 				var orderID = $(this).attr("id");
 				$(div).attr('id', 'orderTab' + orderID);
-				$(div).find('.orderName').text("Order" + cant);
+				$(div).find('.orderName').text("Order " + orderID);
 				$(div).find(".crDate").text($(this).find("created_date").text());
 				var status = $(this).find("status").text();
 				var stat;
@@ -96,8 +94,8 @@ function ordersToCart(orders) {
 					});
 				}
 				$(div).find('.status').text(stat);
-				$(div).find('.goToOrder').attr('href', '#target=order&oid=' + orderID + "&oname=Order" + cant + "&status=" + status);
-				var a = $('<a></a>').attr('href', '#orderTab' + orderID).text('Order' + cant);
+				$(div).find('.goToOrder').attr('href', '#target=order&oid=' + orderID + "&oname=Order " + orderID + "&status=" + status);
+				var a = $('<a></a>').attr('href', '#orderTab' + orderID).text('Order ' + orderID);
 				var li = $('<li></li>').append(a);
 				$('#orderTabs').append(li);
 				$('#content').append(div);
@@ -141,14 +139,28 @@ function goToOrder(orderID, name, status) {
 			case "2":
 				$("#stat").text("Confirmed");
 				$("#checkOut").css("display", "none");
+				var addr=GetAddress($(ord).find("address_id").text());
+				$("#myAddr").css("visibility", "visible");
+				$("#myAddr").css("display", "inline");
+				$("#addr").text($(addr).find("full_name").text());
 				break;
 			case "3":
 				$("#stat").text("Transported");
 				$("#checkOut").css("display", "none");
+				var addr=GetAddress($(ord).find("address_id").text());
+				$("#myAddr").css("visibility", "visible");
+				$("#myAddr").css("display", "inline");
+				$("#addr").text($(addr).find("full_name").text());
+
 				break;
 			case "4":
 				$("#stat").text("Delivered");
 				$("#checkOut").css("display", "none");
+				var addr=GetAddress($(ord).find("address_id").text());
+				$("#myAddr").css("visibility", "visible");
+				$("#myAddr").css("display", "inline");
+				$("#addr").text($(addr).find("full_name").text());
+
 				break;
 		}
 		$("#orderID").text(name);
@@ -174,6 +186,9 @@ function goToOrder(orderID, name, status) {
 						$(div).find(".rmform").submit(function() {
 							if(confirm("Remove this item?")) {
 								var cant = $(div).find(".howMany").attr("value");
+								if(cant>amount){
+									cant=amount;
+								}
 								removeItemHandler(prodID, cant, orderID);
 							}
 						});
