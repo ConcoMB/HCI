@@ -56,6 +56,12 @@
 		<passwordLabel>Password:</passwordLabel>
 		<requiredFields>* Required fields</requiredFields>
 		<requiredField>Required</requiredField>
+		<orderBy>Order by: </orderBy>
+		<asc>Ascendant</asc>
+		<desc>Descendant</desc>
+		<price>Price</price>
+		<name>Name</name>
+		<rankinkg>Ranking</rankinkg>
 	</general>
 	<signUpForm>
 		<signUp>Sign up</signUp>
@@ -71,4 +77,16 @@
 		<personalInformation>Personal information</personalInformation>
 		<signUpButton>Sign up!</signUpButton>
 	</signUpForm>
+	<order>
+		<order>Order </order>
+		<createNewOrder>Create new Order</createNewOrder>
+		<status>Status: </status>
+		<created>created</created>
+		<confirmed>confirmed</confirmed>
+		<transported>transported</transported>
+		<delivered>delivered</delivered>
+		<shippedTo>Shipped to: </shippedTo>
+		<amount>Total amount: </amount>
+		<noItems>You currently have no items in this order</noItems>
+	</order>
 </language>

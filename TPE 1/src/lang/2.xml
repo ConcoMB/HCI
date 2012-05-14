@@ -36,5 +36,25 @@
 	</signUpForm>
 	<general>
 		<passwordLabel>Contraseña:</passwordLabel>
+		<orderBy>Ordenar por: </orderBy>
+		<requiredFields>* Campo requerido</requiredFields>
+		<requiredField>Requerido</requiredField>
+		<asc>Ascendente</asc>
+		<desc>Descendente</desc>
+		<price>Precio</price>
+		<name>Nombre</name>
+		<rankinkg>Ranking</rankinkg>
 	</general>
+	<order>
+		<status>Estado: </status>
+		<order>Orden </order>
+		<createNewOrder>Crear nueva Orden</createNewOrder>
+		<created>creado</created>
+		<confirmed>confirmado</confirmed>
+		<transported>transportado</transported>
+		<delivered>mandado</delivered>
+		<shippedTo>Mandado a: </shippedTo>
+		<amount>Cantidad total: </amount>
+		<noItems>Actualmente no tienes objetos en esta orden</noItems>
+	</order>
 </language>

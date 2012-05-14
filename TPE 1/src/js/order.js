@@ -1,24 +1,3 @@
-/*function addToOrderHandler(){
- addToOrder($("#product").data("pid"));
- }
-
- function toTheCartHandler(){
- addToOrder($(this).parents(".itemBox").data("pid"));
- }
-
- function addToOrder(pid){
- var orderID=$("#orderList").attr("value");
- var cant=$("#buyCant").attr("value");
- var u =$(user).find("user").attr("id");
- var tkn= $(user).find("token").text();
- var item="<order_item> <product_id>"+ pid +"</product_id> <count>"+ cant +"</count></order_item>"
- if(orderID=="new"){
- //CreateOrder(u,tkn);
- }else{
- //AddOrderItem(u, tkn, orderID, item);
- }
- }
- */
 
 function getOrderList() {
 	var params = {
@@ -29,11 +8,11 @@ function getOrderList() {
 }
 
 function updateOrderList(orders, where) {
-	$(where).append('<option value="new">Create new Order</option>');
+	$(where).append('<option value="new">'+$(language).find('createNewOrder').text()+'</option>');
 	$(orders).find("order").each(function() {
 		if(!$(this).find("confirmed_date").text()) {
 			var id = $(this).attr("id");
-			$(where).append("<option value='" + id + "'>Order " + id + "</option>");
+			$(where).append("<option value='" + id + "'>"+ $(language).find('order').text()+ id + "</option>");
 		}
 	});
 }
@@ -132,12 +111,23 @@ function goToOrder(orderID, name, status) {
 		orderError(err);
 	} else {
 		var totalPrice = 0;
+		$("#orderStatus").text($(language).find("status").text());
+		$("#orderShipped").text($(language).find("shippedTo").text());
+		$("#amount").text($(language).find("amount").text());
+		$("#noOrd").text($(language).find("noItems").text());
+		$("#orderBy").text($(language).find("orderBy").text());
+		$("#asc").text($(language).find("asc").text());
+		$("#desc").text($(language).find("desc").text());
+		$("#pr").text($(language).find("price").text());
+		$("#nam").text($(language).find("name").text());
+		$("#rank").text($(language).find("ranking").text());
+
 		switch(status) {
 			case "1":
-				$("#stat").text("Created");
+				$("#stat").text($(language).find("created").text());
 				break;
 			case "2":
-				$("#stat").text("Confirmed");
+				$("#stat").text($(language).find("confirmed").text());
 				$("#checkOut").css("display", "none");
 				var addr=GetAddress($(ord).find("address_id").text());
 				$("#myAddr").css("visibility", "visible");
@@ -145,7 +135,7 @@ function goToOrder(orderID, name, status) {
 				$("#addr").text($(addr).find("full_name").text());
 				break;
 			case "3":
-				$("#stat").text("Transported");
+				$("#stat").text($(language).find("transported").text());
 				$("#checkOut").css("display", "none");
 				var addr=GetAddress($(ord).find("address_id").text());
 				$("#myAddr").css("visibility", "visible");
@@ -154,7 +144,7 @@ function goToOrder(orderID, name, status) {
 
 				break;
 			case "4":
-				$("#stat").text("Delivered");
+				$("#stat").text($(language).find("delivered").text());
 				$("#checkOut").css("display", "none");
 				var addr=GetAddress($(ord).find("address_id").text());
 				$("#myAddr").css("visibility", "visible");

@@ -1,28 +1,28 @@
 <div class="center">
 	<h1 id="orderID"></h1>
-	<h2><span>Status: </span><span id="stat"></span></h2>
+	<h2><span class="translate" id="orderStatus"></span><span id="stat"></span></h2>
 	<div>
 		<div id="errors"></div>
 		<div id="myAddr">
-			<h3><span>Shipped to: </span><span id="addr"></span></h3>
+			<h3><span class="translate" id="orderShipped"></span><span id="addr"></span></h3>
 		</div>
 		<div id="price">
-			<h3> Total amount <span id="totalPrice"></span></h3>
+			<h3><span class="translate" id="amount"></span><span id="totalPrice"></span></h3>
 		</div>
-		<h3 id="noOrd">You currently have no items in this order</h3>
+		<h3  class="translate" id="noOrd"></h3>
 		<a id="checkOut"><input type="button" class="submit" value="Check Out"/></a>
 		<div id="sort">
 		<form>
-			<span>Order by:</span>
+			<span class="translate"  id="orderBy"></span>
 			<select>
-				<option>Ascendent</option>
-				<option>Descendent</option>
+				<option class="translate" id="asc"></option>
+				<option class="translate" id="desc"></option>
 			</select>
 
 			<select>
-				<option>Price</option>
-				<option>Name</option>
-				<option>Ranking</option>
+				<option class="translate" id="pr"></option>
+				<option class="translate" id="nam"></option>
+				<option class="translate" id="rank"></option>
 			</select>
 		</form>
 		</div>
