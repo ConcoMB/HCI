@@ -114,7 +114,7 @@ function newAddrHandler() {
 		xml += address1 + '</address_line_1><address_line_2>' + address2 + '</address_line_2><country_id>';
 		xml += country + '</country_id><state_id>' + state + '</state_id><city>' + city + '</city><zip_code>';
 		xml += zipCode + '</zip_code><phone_number>' + phone + '</phone_number></address>';
-
+		alert(country+state);
 		var resp = CreateAddress(xml);
 		var err = parseErrors(resp);
 		if(!err) {
@@ -217,7 +217,8 @@ function editAddressHandler(addressID) {
 	$("#addr_city").attr("value", city);
 	$("#addr_ZC").attr("value", zipCode);
 	$("#addr_phone").attr("value", phone);
-
+	$("#sd_country").change(updateStates);
+	
 	$("#editAddressButton").submit(editAddressButtonHandler(addressID));
 	$("#cancelButton").click(function() {
 		window.location.hash = "#target=addresses";

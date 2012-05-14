@@ -85,7 +85,7 @@ function ordersToCart(orders) {
 						break;
 				}
 				if(status != "1") {
-					alert( $(user).find("token").text());
+					alert($(user).find("token").text());
 					var addressID = $(this).find("address_id").text();
 					var address = GetAddress(addressID);
 					$(div).find(".addressData").text($(address).find("full_name").text());
@@ -130,55 +130,55 @@ function deleteOrderH(orderID) {
 
 function goToOrder(orderID, name, status) {
 	var ord = GetOrder(orderID);
-	err=parseError(ord);
-	if(err){
-		alert(err);
-	}
-	var totalPrice = 0;
-	if(status != "1") {
-		$("#checkOut").css("display", "none");
-	}
-	$("#orderID").text(name);
-	$.ajax({
-		type : "GET",
-		url : "orderProduct.html",
-		dataType : "html",
-		success : function(template) {
-			$(ord).find('item').each(function() {
-				var prodID = $(this).find('product_id').text();
-				var div = $(template).clone();
-				var amount = $(this).find("count").text();
-				var price = $(this).find("price").text();
-				totalPrice += parseFloat(price);
-				var product = GetProduct(prodID);
-				$(div).find(".artName").text($(product).find("name").text());
-				$(div).find(".artPrice").text($(product).find("price").text());
-				$('#items').append(div);
-				if(status != "1") {
-					$(div).find(".remove").css("display", "none");
-				} else {
-					$(div).find(".rmform").submit(function() {
-						if(confirm("Remove this item?")) {
-							var cant = $(div).find(".howMany").attr("value");
-							removeItemHandler(prodID, cant, orderID);
-						}
-					});
-					$(div).find(".rmform").data("prodID", prodID);
-				}
-			});
-			$("#totalPrice").text(totalPrice);
-			$("#checkOut").attr("href", "#target=checkOut&oid=" + orderID);
-			if(totalPrice==0){
-				$("#checkOut").css("display", "none");
-				$("#price").css("display","none");
-				$("#noOrd").css("display", "inline");
-				$("#noOrd").css("visibility", "visible");
-				$("#sort").css("display","none");
-				
-			}
+	err = parseError(ord);
+	if(err) {
+		orderError(err);
+	} else {
+		var totalPrice = 0;
+		if(status != "1") {
+			$("#checkOut").css("display", "none");
 		}
-	});
+		$("#orderID").text(name);
+		$.ajax({
+			type : "GET",
+			url : "orderProduct.html",
+			dataType : "html",
+			success : function(template) {
+				$(ord).find('item').each(function() {
+					var prodID = $(this).find('product_id').text();
+					var div = $(template).clone();
+					var amount = $(this).find("count").text();
+					var price = $(this).find("price").text();
+					totalPrice += parseFloat(price);
+					var product = GetProduct(prodID);
+					$(div).find(".artName").text($(product).find("name").text());
+					$(div).find(".artPrice").text($(product).find("price").text());
+					$('#items').append(div);
+					if(status != "1") {
+						$(div).find(".remove").css("display", "none");
+					} else {
+						$(div).find(".rmform").submit(function() {
+							if(confirm("Remove this item?")) {
+								var cant = $(div).find(".howMany").attr("value");
+								removeItemHandler(prodID, cant, orderID);
+							}
+						});
+						$(div).find(".rmform").data("prodID", prodID);
+					}
+				});
+				$("#totalPrice").text(totalPrice);
+				$("#checkOut").attr("href", "#target=checkOut&oid=" + orderID);
+				if(totalPrice == 0) {
+					$("#checkOut").css("display", "none");
+					$("#price").css("display", "none");
+					$("#noOrd").css("display", "inline");
+					$("#noOrd").css("visibility", "visible");
+					$("#sort").css("display", "none");
 
+				}
+			}
+		});
+	}
 }
 
 function removeItemHandler(pid, cant, oid) {
@@ -188,10 +188,10 @@ function removeItemHandler(pid, cant, oid) {
 		order_id : oid,
 		order_item : "<order_item> <product_id>" + pid + "</product_id> <count>" + cant + "</count></order_item>"
 	}
-	var err= request("DeleteOrderItem", params, "Order");
-	err=parseError(err);
-	if(err){
-		alert(err);
+	var err = request("DeleteOrderItem", params, "Order");
+	err = parseError(err);
+	if(err) {
+		orderError(err);
 	}
 	$(window).trigger('hashchange');
 }
