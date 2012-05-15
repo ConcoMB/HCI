@@ -23,7 +23,7 @@ function hashChangeHandler(event) {
 				search(params.query, params.cid, params.sid, params.page, params.order);
 				break;
 			case 'order':
-				goToOrder(params.oid, params.oname, params.status);
+				goToOrder(params.oid, params.status);
 				break;
 			case 'profile':
 				viewProfile();

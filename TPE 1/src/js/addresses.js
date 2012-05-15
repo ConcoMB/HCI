@@ -38,8 +38,8 @@ function viewAddrs() {
 			});
 			if(!flag) {
 				$("#addrs").css("display", "none");
-				$("#noOrd").css("display", "inline");
-				$("#noOrd").css("visibility", "visible");
+				$(".invisible").css("display", "inline");
+				$(".invisible").css("visibility", "visible");
 			}
 		}
 	});

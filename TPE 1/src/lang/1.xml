@@ -59,9 +59,9 @@
 		<orderBy>Order by: </orderBy>
 		<asc>Ascendant</asc>
 		<desc>Descendant</desc>
-		<price>Price</price>
-		<name>Name</name>
-		<rankinkg>Ranking</rankinkg>
+		<prix>Price</prix>
+		<Name>Name</Name>
+		<ranking>Ranking</ranking>
 	</general>
 	<signUpForm>
 		<signUp>Sign up</signUp>
@@ -78,7 +78,16 @@
 		<signUpButton>Sign up!</signUpButton>
 	</signUpForm>
 	<order>
-		<order>Order </order>
+		<noOrder>You currently have no orders</noOrder>
+		<myCart>My shopping cart</myCart>
+		<createdDate>Created date: </createdDate>
+		<confirmedDate>Confirmed date: </confirmedDate>
+		<shippedDate>Shipped date: </shippedDate>
+		<deliveredDate>Delivered date: </deliveredDate>
+		<viewOrder>View order</viewOrder>
+		<deleteOrder>Delete order</deleteOrder>
+		<Order>Order </Order>
+		<check_out>Check Out!</check_out>
 		<createNewOrder>Create new Order</createNewOrder>
 		<status>Status: </status>
 		<created>created</created>
@@ -89,4 +98,7 @@
 		<amount>Total amount: </amount>
 		<noItems>You currently have no items in this order</noItems>
 	</order>
+	<Address>
+		<address>Address: </address>
+	</Address>
 </language>

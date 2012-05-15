@@ -36,25 +36,37 @@
 	</signUpForm>
 	<general>
 		<passwordLabel>Contraseña:</passwordLabel>
-		<orderBy>Ordenar por: </orderBy>
+		<orderBy>Ordenar por:</orderBy>
 		<requiredFields>* Campo requerido</requiredFields>
 		<requiredField>Requerido</requiredField>
 		<asc>Ascendente</asc>
 		<desc>Descendente</desc>
-		<price>Precio</price>
-		<name>Nombre</name>
-		<rankinkg>Ranking</rankinkg>
+		<prix>Precio</prix>
+		<Name>Nombre</Name>
+		<ranking>Ranking</ranking>
 	</general>
 	<order>
-		<status>Estado: </status>
-		<order>Orden </order>
+		<noOrder>Actualmente no tienes ordenes</noOrder>		
+		<myCart>Mi carrito</myCart>
+		<createdDate>Fecha de creación:</createdDate>
+		<confirmedDate>Fecha de confirmación:</confirmedDate>
+		<shippedDate>Fecha de envío:</shippedDate>
+		<deliveredDate>Fecha de entrega:</deliveredDate>
+		<viewOrder>Ver orden</viewOrder>
+		<deleteOrder>Borrar orden</deleteOrder>
+		<status>Estado:</status>
+		<Order>Orden </Order>
+		<check_out>Confirmar!</check_out>
 		<createNewOrder>Crear nueva Orden</createNewOrder>
 		<created>creado</created>
 		<confirmed>confirmado</confirmed>
 		<transported>transportado</transported>
 		<delivered>mandado</delivered>
-		<shippedTo>Mandado a: </shippedTo>
-		<amount>Cantidad total: </amount>
+		<shippedTo>Mandado a:</shippedTo>
+		<amount>Cantidad total:</amount>
 		<noItems>Actualmente no tienes objetos en esta orden</noItems>
 	</order>
+	<Address>
+		<address>Dirección:</address>
+	</Address>
 </language>

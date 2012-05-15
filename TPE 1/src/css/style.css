@@ -534,7 +534,7 @@ input#sb {
 	
 }
 
-#noOrd{
+.invisible{
 	visibility:hidden;
 	display:none;
 }
