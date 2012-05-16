@@ -69,4 +69,19 @@
 	<Address>
 		<address>Dirección:</address>
 	</Address>
+	<description>
+		<actors>Actores: </actors>
+		<format>Formato: </format>
+		<lang>Idioma: </lang>
+		<langu>Idioma: </langu>
+		<subtit>Subtitulos: </subtit>
+		<region>Región: </region>
+		<aspect>Relación de aspecto: </aspect>
+		<discs>Cantidad de discos: </discs>
+		<release>Fecha de publicación: </release>
+		<runtime>Duración: </runtime>
+		<authors>Autores: </authors>
+		<publisher>Publicador: </publisher>
+		<pDate>Fecha de publicación: </pDate>
+	</description>
 </language>

@@ -101,4 +101,19 @@
 	<Address>
 		<address>Address: </address>
 	</Address>
+	<description>
+		<actors>Actors: </actors>
+		<format>Format: </format>
+		<lang>Language: </lang>
+		<langu>Language: </langu>
+		<subtit>Subtitles: </subtit>
+		<region>Region: </region>
+		<aspect>Aspect ratio: </aspect>
+		<discs>Number of discs: </discs>
+		<release>Release date: </release>
+		<runtime>Run time: </runtime>
+		<authors>Authors: </authors>
+		<publisher>Publisher: </publisher>
+		<pDate>Published date: </pDate>
+	</description>
 </language>

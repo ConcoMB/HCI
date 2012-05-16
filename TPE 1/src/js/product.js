@@ -45,8 +45,31 @@ function updateProduct(pid){
 	$('#artName').text($(product).find('name').text());
 	$('#artPrice').text($(product).find('price').text());
 	$('#artRank').text($(product).find('sales_rank').text());
-	$('#artDesc').text($(product).find('actors').text());
 	$("#product").data("pid", pid);
+	var catID = $(product).find("category_id").text();
+	if(catID=="1"){
+		//DVD
+		$(".book").css("display","none");
+		$("#artActor").text($(product).find("actors").text());
+		$("#artFormat").text($(product).find("format").text());
+		$("#artlang").text($(product).find("language").text());
+		$("#artSubtit").text($(product).find("subtitles").text());
+		$("#artRegion").text($(product).find("region").text());
+		$("#artAspect").text($(product).find("aspect_ratio").text());
+		$("#artDiscs").text($(product).find("numer_discs").text());
+		$("#artRelease").text($(product).find("release_date").text());
+		$("#artRuntime").text($(product).find("run_time").text());
+		$("#artASIN").text($(product).find("ASIN").text());
+	}else if(catID=="2"){
+		//BOOK
+		$(".DVD").css("display","none");
+		$("#artAuthors").text($(product).find("authors").text());
+		$("#artPublisher").text($(product).find("publisher").text());
+		$("#artPDate").text($(product).find("published_date").text());
+		$("#artISBN_10").text($(product).find("ISBN_10").text());
+		$("#artISBN_13").text($(product).find("ISBN_13").text());
+		$("#artLangu").text($(product).find("language").text());
+	}
 	if(user){
 		var ord= getOrderList($(user).find("user").attr("id"),$(user).find("token").text());
 		updateOrderList(ord,$("#orderList"));

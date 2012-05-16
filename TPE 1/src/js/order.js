@@ -172,6 +172,7 @@ function goToOrder(orderID, status) {
 					$(div).find(".artName").text($(product).find("name").text());
 					$(div).find(".artPrice").text(price);
 					$(div).find(".artAmount").text(amount);
+					$(div).find(".ranking").text($(this).find("sales_rank").text());
 					$('#items').append(div);
 					if(status != "1") {
 						$(div).find(".remove").css("display", "none");
