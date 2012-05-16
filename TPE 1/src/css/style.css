@@ -384,7 +384,7 @@ img#userPhoto {
 .profLabel{
 	
 	text-align: right;
-	width: 30%;
+	width: 47%;
 	float: left;
 	font-weight: bold;
 	
@@ -392,14 +392,14 @@ img#userPhoto {
 
 .profData{
 	text-align: left;
-	width: 65%;
+	width: 47%;
 	float: right;
 	font-size: 15px;
 }
 
 .profDataPass{
 	text-align: left;
-	width: 65%;
+	width: 47%;
 	float: right;
 	font-size: 15px;
 }
