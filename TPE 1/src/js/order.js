@@ -132,7 +132,11 @@ function goToOrder(orderID, status) {
 				$("#myAddr").css("visibility", "visible");
 				$("#myAddr").css("display", "inline");
 				$("#addr").text($(addr).find("full_name").text());
-
+				var lat = parseInt($(ord).find("latitude").text());
+				var longit = parseInt($(ord).find("longitude").text());
+				$(".center").append('<h3><span id="position" class="translate"></span></h3>');
+				$(".center").append('<div id="map_canvas" style="width:100%; height:100%"></div>');
+				gMap(lat,longit);
 				break;
 			case "4":
 				$("#stat").attr("id","delivered");
@@ -290,3 +294,26 @@ function confirmed(order, address) {
 		return request("ConfirmOrder", params, "Order");
 	}
 }
+
+/*
+function updateorder(order, stat){
+	var params={
+		username : $(user).find("user").attr("username"),
+		authentication_token : $(user).find("token").text(),
+		order_id : order,
+		status:stat,
+		latitude:la,
+		longitude: lo
+	}
+	var path = 'updateorder.groovy?'+ method + parseParams(params);
+	$.ajax({
+			type : "GET",
+			url : path,
+			contentType: "text/html; charset=UTF-8",		
+			dataType : "html",
+			async : false,
+			success : function(xml) {
+				var status = $(xml).find('response').attr('status');
+				ans = xml;
+			}
+		});}*/
