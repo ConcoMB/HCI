@@ -1,7 +1,7 @@
 function carousel() {
 
 	//rotation speed and timer
-	var speed = 2000;
+	var speed = 3000;
 	var run = setInterval('rotate()', speed);
 
 	//grab the width and calculate left value
