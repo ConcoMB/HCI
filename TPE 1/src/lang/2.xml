@@ -11,12 +11,16 @@
 		<invalid_date>The date format must be dd/mm/yyyy</invalid_date>
 	</errors>
 	<header>
+		<hello>Hola </hello>
+		<logOut>cerrar sesión</logOut>
 		<searchLabel>Buscar:</searchLabel>
 		<searchButton>Buscar</searchButton>
 		<usernameLabel>Usuario:</usernameLabel>
 		<newInSiteLabel>¿Nuevo en el sitio?</newInSiteLabel>
 		<signupLink>Regístrate!</signupLink>
-		<sb>Entrar</sb>
+		<sb>Iniciar sesión</sb>
+		<profile>Mi perfil</profile>
+		<notYou>¿No eres tú?</notYou>
 	</header>
 	<product>
 		<pnameLabel>Nombre:</pnameLabel>
@@ -63,8 +67,13 @@
 		<transported>transportado</transported>
 		<delivered>mandado</delivered>
 		<shippedTo>Mandado a:</shippedTo>
+		<amountLabel>Cantidad: </amountLabel>
+		<sendTo>Enviar a dirección: </sendTo>
 		<amount>Cantidad total:</amount>
 		<noItems>Actualmente no tienes objetos en esta orden</noItems>
+		<addToOrder>Agregar a la order</addToOrder>
+		<notLogged>Debes estar registrado para comprar un producto</notLogged>
+
 	</order>
 	<Address>
 		<address>Dirección: </address>

@@ -40,12 +40,16 @@
 		</general_errors>
 	</errors>
 	<header>
+		<hello>Hello </hello>
+		<logOut>log out</logOut>
 		<searchLabel>Search:</searchLabel>
 		<searchButton>Search</searchButton>
 		<usernameLabel>Username:</usernameLabel>
 		<newInSiteLabel>New in the site?</newInSiteLabel>
 		<signupLink>Sign up now!</signupLink>
 		<sb>Log In</sb>
+		<profile>My profile</profile>
+		<notYou>It's not you?</notYou>
 	</header>
 	<product>
 		<pnameLabel>Name:</pnameLabel>
@@ -96,7 +100,12 @@
 		<delivered>delivered</delivered>
 		<shippedTo>Shipped to: </shippedTo>
 		<amount>Total amount: </amount>
+		<amountLabel>Amount: </amountLabel>
+		<sendTo>Ship to address: </sendTo>
+		
 		<noItems>You currently have no items in this order</noItems>
+		<addToOrder>Add to order</addToOrder>
+		<notLogged>You need to be logged in order to buy a product</notLogged>
 	</order>
 	<Address>
 		<address>Address: </address>

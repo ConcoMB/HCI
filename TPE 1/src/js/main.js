@@ -10,6 +10,11 @@ $(document).ready(function() {
 		collapsible : true,
 		active: false
 	});
+	var lang=getCookie("lang");
+	if(lang){
+		loadLanguage(lang);
+		translate();
+	}
 	var resp=getCookie("login");
 	if(!resp){
 		$('#loginForm').submit(loginFormHandler);

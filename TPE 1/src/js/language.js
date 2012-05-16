@@ -64,5 +64,6 @@ function translate(elem) {
 function languageClickHandler() {
 	loadLanguage($(this).data('lid'));
 	translate();
+	setCookie("lang", $(this).data('lid'), 1);
 	return false;
 }
