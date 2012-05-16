@@ -70,6 +70,7 @@
 		<address>Dirección:</address>
 	</Address>
 	<description>
+		<moreInfo>Más información</moreInfo>
 		<actors>Actores: </actors>
 		<format>Formato: </format>
 		<lang>Idioma: </lang>

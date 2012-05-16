@@ -60,6 +60,10 @@ function updateProduct(pid){
 		$("#artRelease").text($(product).find("release_date").text());
 		$("#artRuntime").text($(product).find("run_time").text());
 		$("#artASIN").text($(product).find("ASIN").text());
+		$(".DVD").accordion({
+				collapsible : true,
+				active : false
+		});
 	}else if(catID=="2"){
 		//BOOK
 		$(".DVD").css("display","none");
@@ -69,6 +73,10 @@ function updateProduct(pid){
 		$("#artISBN_10").text($(product).find("ISBN_10").text());
 		$("#artISBN_13").text($(product).find("ISBN_13").text());
 		$("#artLangu").text($(product).find("language").text());
+		$(".book").accordion({
+				collapsible : true,
+				active : false
+		});
 	}
 	if(user){
 		var ord= getOrderList($(user).find("user").attr("id"),$(user).find("token").text());
@@ -94,11 +102,13 @@ function fillProducts(products) {
 				var name = $(this).find('name').text();
 				var price = $(this).find('price').text();
 				var pid = $(this).attr('id');
+				var rank=$(this).find("sales_rank").text();
 				var div = $(template).clone();
 				var nameLink='#target=detail&pid='+pid;
 				$(div).find('.artName').text(name).attr('href',nameLink).data('pid', pid);
 				$(div).find('.artPrice').text(price);
 				$(div).data("pid", pid);
+				$(div).find(".ranking").text(rank);
 				$('#productList').append(div);
 				if(user){
 					$(div).find(".toTheCartF").submit(function(){

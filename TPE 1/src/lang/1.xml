@@ -102,6 +102,7 @@
 		<address>Address: </address>
 	</Address>
 	<description>
+		<moreInfo>More information</moreInfo>
 		<actors>Actors: </actors>
 		<format>Format: </format>
 		<lang>Language: </lang>
