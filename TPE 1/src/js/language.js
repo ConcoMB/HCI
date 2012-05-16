@@ -41,7 +41,7 @@ function translate(elem) {
 	}
 	$('.translate',elem).each(function() {
 		var id = $(this).attr('id');
-		if(this.nodeName.toLowerCase() == 'input' && ($(this).attr('type') == 'submit' || $(this).attr('type')=="button")) {
+		if(this.nodeName.toLowerCase() == 'input' && ($(this).attr('type') == 'submit' || $(this).attr('type')=="button" || $(this).attr('type') == 'text')) {
 			$(this).attr('value', $(language).find(id).text());
 		} else {
 			$(this).text($(language).find(id).text());
@@ -52,13 +52,14 @@ function translate(elem) {
 		//alert(classStr);
 		var code=classStr.replace(/.*translate_([^\s]*)[\s.*]?/,'$1');
 		//alert(code);
-		if(this.nodeName.toLowerCase() == 'input' && ($(this).attr('type') == 'submit' || $(this).attr('type')=="button")) {
+		if(this.nodeName.toLowerCase() == 'input' && ($(this).attr('type') == 'submit' || $(this).attr('type')=="button"|| $(this).attr('type') == 'text')) {
 			$(this).attr('value', $(language).find(code).text());
 		} else {
 			$(this).text($(language).find(code).text());
 		}
 		
 	});
+	//updateCategoryList();
 }
 
 function languageClickHandler() {

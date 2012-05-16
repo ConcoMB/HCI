@@ -17,12 +17,13 @@ function getSubcategoryList(categoryID) {
 
 function updateCategoryList() {
 	var categories = getCategoryList();
+	$("#accordion").innerHTML="";
 	$(categories).find('category').each(function() {
 		var cname = $(this).find('name').text();
 		var cid = $(this).attr('id');
 		var div = $('<div></div>').addClass('subCat');
 		var href='#target=category&page=1&order=ASC&cname='+cname+'&cid='+cid;
-		var a = $('<a></a>').addClass('subcategory').attr('href', href).text('All').data('cid', cid);
+		var a = $('<a></a>').addClass('subcategory, translate_all').attr('href', href).data('cid', cid);
 		var h3 = $('<h3></h3>').addClass('category');
 		h3.append($('<a></a>').text(cname).attr('href','#'));
 		div.append(a, '<br>');

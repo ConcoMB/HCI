@@ -39,7 +39,20 @@
 			<unknown_error>An error has occurred. Please try again later. We're working in order to solve this problem</unknown_error>
 		</general_errors>
 	</errors>
+	<prof>
+		<bday>Birth date: </bday>
+		<mail>E-mail: </mail>
+		<accept>Accept</accept>
+		<cancel>Cancel</cancel>
+		<editP>Edit profile</editP>
+		<changePass>Change password</changePass>
+		<newPass>New password: </newPass>
+		<confirmPass>Confirm new password: </confirmPass>
+		<passMismatch>Passwords don't match</passMismatch>
+	</prof>
 	<header>
+		<allCats>All categories</allCats>
+		<all>All</all>
 		<hello>Hello </hello>
 		<logOut>log out</logOut>
 		<searchLabel>Search:</searchLabel>
@@ -52,12 +65,20 @@
 		<notYou>It's not you?</notYou>
 	</header>
 	<product>
+		<results>results for: </results>
+		
 		<pnameLabel>Name:</pnameLabel>
 		<priceLabel>Price:</priceLabel>
 		<descLabel>Description:</descLabel>
 	</product>
 	<general>
-		<passwordLabel>Password:</passwordLabel>
+		<next>Next&gt;&gt;</next>
+		<prev>&lt;&lt;Previous</prev>
+		<categoryLabel>Category: </categoryLabel>
+		<month>Month</month>
+		<day>Day</day>
+		<year>Year</year>
+		<passwordLabel>Password: </passwordLabel>
 		<requiredFields>* Required fields</requiredFields>
 		<requiredField>Required</requiredField>
 		<orderBy>Order by: </orderBy>

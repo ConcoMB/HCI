@@ -11,6 +11,8 @@
 		<invalid_date>The date format must be dd/mm/yyyy</invalid_date>
 	</errors>
 	<header>
+		<allCats>Todas las categorias</allCats>
+		<all>Todas</all>
 		<hello>Hola </hello>
 		<logOut>cerrar sesión</logOut>
 		<searchLabel>Buscar:</searchLabel>
@@ -23,10 +25,22 @@
 		<notYou>¿No eres tú?</notYou>
 	</header>
 	<product>
-		<pnameLabel>Nombre:</pnameLabel>
-		<priceLabel>Precio:</priceLabel>
-		<descLabel>Descripcion:</descLabel>
+		<results>resultados para: </results>
+		<pnameLabel>Nombre: </pnameLabel>
+		<priceLabel>Precio: </priceLabel>
+		<descLabel>Descripcion: </descLabel>
 	</product>
+	<prof>
+		<bday>Fecha de nacimiento: </bday>
+		<mail>Correo electrónico: </mail>
+		<accept>Aceptar</accept>
+		<cancel>Cancelar</cancel>
+		<editP>Editar perfil</editP>
+		<changePass>Cambiar contraseña</changePass>
+		<passMismatch>Las contraseñas no coinciden</passMismatch>
+		<newPass>Nueva contraseña: </newPass>
+		<confirmPass>Confirmar nueva contraseña: </confirmPass>
+	</prof>
 	<signUpForm>
 		<signUp>Regístrate</signUp>
 		<accountInfo>Informacion de la cuenta</accountInfo>
@@ -34,11 +48,17 @@
 		<confirmPasswordLabel>Confirmar contraseña:</confirmPasswordLabel>
 		<emailLabel>E-mail:</emailLabel>
 		<nameLabel>Nombre:</nameLabel>
-		<birthDateLabel>Fecha de nacimiento</birthDateLabel>
+		<birthDateLabel>Fecha de nacimiento: </birthDateLabel>
 		<personalInformation>Informacion personal</personalInformation>
 		<signUpButton>Regístrate!</signUpButton>
 	</signUpForm>
 	<general>
+		<next>Siguiente&gt;&gt;</next>
+		<prev>&lt;&lt;Previo</prev>
+		<categoryLabel>Categoría: </categoryLabel>		
+		<month>Mes</month>
+		<day>Día</day>
+		<year>Año</year>
 		<passwordLabel>Contraseña:</passwordLabel>
 		<orderBy>Ordenar por:</orderBy>
 		<requiredFields>* Campo requerido</requiredFields>
