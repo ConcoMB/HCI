@@ -47,6 +47,7 @@ function updateProduct(pid){
 	$('#artPrice').text($(product).find('price').text());
 	$('#artRank').text($(product).find('sales_rank').text());
 	$("#product").data("pid", pid);
+	$('.detailImg').attr("src",$(product).find('image_url').text());
 	var catID = $(product).find("category_id").text();
 	if(catID=="1"){
 		//DVD
@@ -104,12 +105,14 @@ function fillProducts(products) {
 				var price = $(this).find('price').text();
 				var pid = $(this).attr('id');
 				var rank=$(this).find("sales_rank").text();
+				var img=$(this).find("image_url").text();
 				var div = $(template).clone();
 				var nameLink='#target=detail&pid='+pid;
 				$(div).find('.artName').text(name).attr('href',nameLink).data('pid', pid);
 				$(div).find('.artPrice').text(price);
 				$(div).data("pid", pid);
 				$(div).find(".ranking").text(rank);
+				$(div).find('.articleImg').attr("src",img);
 				$('#productList').append(div);
 				if(user){
 					$(div).find(".toTheCartF").submit(function(){
