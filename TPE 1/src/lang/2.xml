@@ -72,6 +72,7 @@
 
 	</general>
 	<order>
+		<confirmed>Tu orden ha sido confirmada</confirmed>
 		<noOrder>Actualmente no tienes ordenes</noOrder>		
 		<myCart>Mi carrito</myCart>
 		<createdDate>Fecha de creación:</createdDate>

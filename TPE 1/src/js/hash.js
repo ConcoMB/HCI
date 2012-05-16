@@ -11,7 +11,7 @@ function hashChangeHandler(event) {
 				signupForm();
 				break;
 			case 'category':
-				category(params.cname,params.sname, params.cid, params.sid, params.page, params.order);
+				category(params.cid, params.sid, params.page, params.order);
 				break;
 			case 'detail':
 				updateProduct(params.pid);

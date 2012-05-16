@@ -104,6 +104,7 @@
 		<signUpButton>Sign up!</signUpButton>
 	</signUpForm>
 	<order>
+		<confirmed>Your order has been confirmed</confirmed>
 		<position>Your package whereabouts: </position>
 		<noOrder>You currently have no orders</noOrder>
 		<myCart>My shopping cart</myCart>
