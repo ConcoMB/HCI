@@ -14,6 +14,7 @@ $(document).ready(function() {
 	if(lang){
 		loadLanguage(lang);
 		translate();
+		translateCategories();
 	}
 	var resp=getCookie("login");
 	if(!resp){
