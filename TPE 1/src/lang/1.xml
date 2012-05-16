@@ -100,6 +100,16 @@
 	</order>
 	<Address>
 		<address>Address: </address>
+		<myAddrs>My addresses</myAddrs>
+		<noAddr>You currently have no addresses</noAddr>
+		<newAddr>Add a new address</newAddr>
+		<country>Country: </country>
+		<state>State: </state>
+		<city>City: </city>
+		<ZIP>ZIP code: </ZIP>
+		<phone>Phone number: </phone>
+		<editAd>Edit address</editAd>
+		<rmAd>Remove address</rmAd>
 	</Address>
 	<description>
 		<moreInfo>More information</moreInfo>

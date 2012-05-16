@@ -67,7 +67,17 @@
 		<noItems>Actualmente no tienes objetos en esta orden</noItems>
 	</order>
 	<Address>
-		<address>Dirección:</address>
+		<address>Dirección: </address>
+		<myAddrs>Mis direcciones</myAddrs>
+		<noAddr>Actualmente no tienes direcciones</noAddr>
+		<newAddr>Agregar nueva dirección</newAddr>
+		<country>País: </country>
+		<state>Estado: </state>
+		<city>Ciudad: </city>
+		<ZIP>Número ZIP: </ZIP>
+		<phone>Número de teléfono: </phone>
+		<editAd>Editar dirección</editAd>
+		<rmAd>Eliminar dirección</rmAd>
 	</Address>
 	<description>
 		<moreInfo>Más información</moreInfo>
