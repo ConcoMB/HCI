@@ -24,21 +24,21 @@ function updateCategoryList() {
 		var href = '#target=category&page=1&order=ASC&cname=' + cname + '&cid=' + cid;
 		var a = $('<a></a>').addClass('subcategory, translate_all').attr('href', href).attr('id', -1);
 		var h3 = $('<h3></h3>').addClass('category');
-		h3.append($('<a></a>').text(cname).attr('href', '#').attr('id', cid));
+		h3.append($('<a></a>').html(cname).attr('href', '#').attr('id', cid));
 		div.append(a, '<br>');
-		$("#searchCat").append($("<option></option>").text(cname).attr("value", cid).attr("id","search"+cid));
+		$("#searchCat").append($("<option></option>").html(cname).attr("value", cid).attr("id","search"+cid));
 		var subcategories = getSubcategoryList($(this).attr('id'));
 
 		$(subcategories).find('subcategory').each(function() {
 			var sid = $(this).attr('id');
 			var sname = $(this).find('name').text();
-			var sub = $('<a></a>').addClass('subcategory').attr('href', href + '&sid=' + sid + '&sname=' + sname).text(sname)
+			var sub = $('<a></a>').addClass('subcategory').attr('href', href + '&sid=' + sid + '&sname=' + sname).html(sname)
 			$(sub).attr('id', cid + "." + sid);
 			sub.data('sid', sid);
 			sub.data('cid', $(this).find('category_id').text());
 			sub.data('cname', cname);
 			div.append(sub, '<br>');
-			$("#searchCat").append($("<option></option>").text(cname + " -> " + sub.text()).attr("value", cid + '.' + sid).attr("id", "search"+cid + '.' + sid));
+			$("#searchCat").append($("<option></option>").html(cname + " -> " + sub.text()).attr("value", cid + '.' + sid).attr("id", "search"+cid + '.' + sid));
 		});
 
 		$('#accordion').append(h3, div);

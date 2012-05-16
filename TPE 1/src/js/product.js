@@ -42,6 +42,7 @@ function getProductListByCategory(cid, p, ord) {
 
 function updateProduct(pid){
 	var product=GetProduct(pid);
+	$("#like").attr("src","https://www.facebook.com/plugins/like.php?href="+window.location.href);
 	$('#artName').text($(product).find('name').text());
 	$('#artPrice').text($(product).find('price').text());
 	$('#artRank').text($(product).find('sales_rank').text());

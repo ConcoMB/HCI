@@ -43,13 +43,13 @@
 	</prof>
 	<signUpForm>
 		<signUp>Regístrate</signUp>
-		<accountInfo>Informacion de la cuenta</accountInfo>
+		<accountInfo>Información de la cuenta</accountInfo>
 		<userNameLabel>Nombre del usuario:</userNameLabel>
 		<confirmPasswordLabel>Confirmar contraseña:</confirmPasswordLabel>
 		<emailLabel>E-mail:</emailLabel>
 		<nameLabel>Nombre:</nameLabel>
 		<birthDateLabel>Fecha de nacimiento: </birthDateLabel>
-		<personalInformation>Informacion personal</personalInformation>
+		<personalInformation>Información personal</personalInformation>
 		<signUpButton>Regístrate!</signUpButton>
 	</signUpForm>
 	<general>

@@ -112,20 +112,8 @@ function goToOrder(orderID, status) {
 		orderError(err);
 	} else {
 		var totalPrice = 0;
-		$("#nro").text(orderID);
-		/*$("#Order").text($(language).find("Order").text());
-		$("#status").text($(language).find("status").text());
-		$("#shippedTo").text($(language).find("shippedTo").text());
-		$("#amount").text($(language).find("amount").text());
-		$("#noItems").text($(language).find("noItems").text());
-		$("#orderBy").text($(language).find("orderBy").text());
-		$("#asc").text($(language).find("asc").text());
-		$("#desc").text($(language).find("desc").text());
-		$("#prix").text($(language).find("prix").text());
-		$("#Name").text($(language).find("Name").text());
-		$("#ranking").text($(language).find("ranking").text());
-		$("#checkOut").attr("value", $(language).find("checkOut").text());
-		*/switch(status) {
+		$("#nro").text(orderID);		
+		switch(status) {
 			case "1":
 				$("#stat").attr("id","created");
 				break;
