@@ -12,7 +12,7 @@ function updateOrderList(orders, where) {
 	$(orders).find("order").each(function() {
 		if(!$(this).find("confirmed_date").text()) {
 			var id = $(this).attr("id");
-			$(where).append("<option value='" + id + "'>"+ $(language).find('order').text()+ id + "</option>");
+			$(where).append("<option value='" + id + "'>"+ $(language).find('Order').text()+ id + "</option>");
 		}
 	});
 }

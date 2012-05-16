@@ -79,7 +79,7 @@ function updateProduct(pid){
 		});
 	}
 	if(user){
-		var ord= getOrderList($(user).find("user").attr("id"),$(user).find("token").text());
+		var ord= getOrderList();
 		updateOrderList(ord,$("#orderList"));
 		$("#addToOrder").click(function(){
 			var cant=$("#buyCant").attr("value");
@@ -116,11 +116,12 @@ function fillProducts(products) {
 						var cant=$(div).find(".buyCant").attr("value");
 						toCartHandler(pid, order, cant);
 					});
-					var or=getOrderList($(user).find("user").attr("id"), $(user).find("token").text());
+					var or=getOrderList();
 					updateOrderList(or, $(div).find(".orderList"));
+					
 				}else{
 					$(div).find(".toTheCart").css("visibility", "hidden");
-					$(div).find(".notLogged").css("visibility", "visible");
+					$(div).find(".translate_notLogged").css("visibility", "visible");
 				}
 				translate($('#productList'));
 			});
