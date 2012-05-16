@@ -9,8 +9,8 @@ function request(method, params, service) {
 		$.ajax({
 			type : "GET",
 			url : path,
-			contentType: "text/html; charset=UTF-8",		
-			dataType : "html",
+			contentType: "text/html; charset=iso-8859-1",		
+			dataType : "xml",
 			async : false,
 			success : function(xml) {
 				var status = $(xml).find('response').attr('status');

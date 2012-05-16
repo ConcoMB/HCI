@@ -5,16 +5,9 @@ dummy=false;
 
 $(document).ready(function() {
 	updateLanguageList();
-	updateCategoryList();
-	$("#accordion").accordion({
-		collapsible : true,
-		active: false
-	});
 	var lang=getCookie("lang");
 	if(lang){
 		loadLanguage(lang);
-		translate();
-		translateCategories();
 	}
 	var resp=getCookie("login");
 	if(!resp){
@@ -25,11 +18,16 @@ $(document).ready(function() {
 		login(arr[0],arr[1]);
 		updateUserPanel();
 	}
+	updateCategoryList();
+	$("#accordion").accordion({
+		collapsible : true,
+		active: false
+	});
 	$('#search').submit(searchHandler);
 	//$('.subcategory').click(subcategoryClickHandler);
 	$('.category').click(categoryClickHandler);
 	//$('.artName').click(productClickHandler);
 	$(window).bind('hashchange', hashChangeHandler);
 	$(window).trigger('hashchange');
-	translate();
+	//translate();
 }); 
