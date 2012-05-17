@@ -72,6 +72,7 @@
 		<descLabel>Description:</descLabel>
 	</product>
 	<general>
+		<welcome>Welcome to Buy Stuff!</welcome>
 		<next>Next&gt;&gt;</next>
 		<prev>&lt;&lt;Previous</prev>
 		<categoryLabel>Category: </categoryLabel>
@@ -103,6 +104,8 @@
 		<signUpButton>Sign up!</signUpButton>
 	</signUpForm>
 	<order>
+		<confirmed>Your order has been confirmed</confirmed>
+		<position>Your package whereabouts: </position>
 		<noOrder>You currently have no orders</noOrder>
 		<myCart>My shopping cart</myCart>
 		<createdDate>Created date: </createdDate>

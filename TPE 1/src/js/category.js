@@ -21,8 +21,8 @@ function updateCategoryList() {
 		var cname = $(this).find('name').text();
 		var cid = $(this).attr('id');
 		var div = $('<div></div>').addClass('subCat');
-		var href = '#target=category&page=1&order=ASC&cname=' + cname + '&cid=' + cid;
-		var a = $('<a></a>').addClass('subcategory, translate_all').attr('href', href).attr('id', -1);
+		var href = '#target=category&page=1&order=ASC&cid=' + cid;
+		var a = $('<a></a>').addClass('subcategory, translate_all').attr('href', href).attr('id', cid);
 		var h3 = $('<h3></h3>').addClass('category');
 		h3.append($('<a></a>').html(cname).attr('href', '#').attr('id', cid));
 		div.append(a, '<br>');
@@ -32,7 +32,7 @@ function updateCategoryList() {
 		$(subcategories).find('subcategory').each(function() {
 			var sid = $(this).attr('id');
 			var sname = $(this).find('name').text();
-			var sub = $('<a></a>').addClass('subcategory').attr('href', href + '&sid=' + sid + '&sname=' + sname).html(sname)
+			var sub = $('<a></a>').addClass('subcategory').attr('href', href + '&sid=' + sid).html(sname)
 			$(sub).attr('id', cid + "." + sid);
 			sub.data('sid', sid);
 			sub.data('cid', $(this).find('category_id').text());
@@ -100,7 +100,9 @@ function categoryClickHandler() {
 	window.location.hash = $(this).attr('href');
 }
 
-function category(cname, sname, cid, sid, page, order) {
+function category(cid, sid, page, order) {
+	var cname = $("#"+cid).text();
+	var sname = $(document.getElementById(cid+"."+sid)).text();
 	updateProductList(cid, sid, page, order);
 	$('#categoryName').html(cname);
 	$("#subcategoryName").text(sname);

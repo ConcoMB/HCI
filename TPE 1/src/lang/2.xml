@@ -68,8 +68,11 @@
 		<prix>Precio</prix>
 		<Name>Nombre</Name>
 		<ranking>Ranking</ranking>
+		<welcome>Bienvenido a Buy Stuff!</welcome>
+
 	</general>
 	<order>
+		<confirmed>Tu orden ha sido confirmada</confirmed>
 		<noOrder>Actualmente no tienes ordenes</noOrder>		
 		<myCart>Mi carrito</myCart>
 		<createdDate>Fecha de creación:</createdDate>
@@ -93,6 +96,7 @@
 		<noItems>Actualmente no tienes objetos en esta orden</noItems>
 		<addToOrder>Agregar a la order</addToOrder>
 		<notLogged>Debes estar registrado para comprar un producto</notLogged>
+		<position>Posición de tu paquete: </position>
 
 	</order>
 	<Address>
