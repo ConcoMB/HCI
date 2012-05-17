@@ -53,7 +53,7 @@ function signupFormHandler(){
 		error=true;
 	}
 	var dateErr=isDate(date);
-	if(dateErr){
+	if(dateErr!=true){
 		$('#reqDate').text($(language).find(dateErr).text());
 		error=true;
 	}

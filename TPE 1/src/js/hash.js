@@ -8,7 +8,12 @@ function hashChangeHandler(event) {
 		/*ADDITIONAL FUNCTIONS*/
 		switch(params.target) {
 			case 'signUp':
-				signupForm();
+				if(user)
+				{
+					window.location.hash="#target=home";					
+				}else{
+					signupForm();
+				}
 				break;
 			case 'category':
 				category(params.cid, params.sid, params.page, params.order);

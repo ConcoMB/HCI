@@ -1,6 +1,8 @@
 <language>
 	<name>Español</name>
 	<errors>
+		<incorrectLogin>Nombre de usuario o contraseña invalidos</incorrectLogin>
+		
 		<empty_username>Por favor escribe un nombre de usuario</empty_username>
 		<username_exists>El nombr de usuario ya existe</username_exists>
 		<password_mismatch>Las contraseñas no coinciden</password_mismatch>
