@@ -107,7 +107,7 @@
 		<signUpButton>Sign up!</signUpButton>
 	</signUpForm>
 	<order>
-		<confirmed>Your order has been confirmed</confirmed>
+		<Oconfirmed>Your order has been confirmed</Oconfirmed>
 		<position>Your package whereabouts: </position>
 		<noOrder>You currently have no orders</noOrder>
 		<myCart>My shopping cart</myCart>
@@ -129,7 +129,10 @@
 		<amount>Total amount: </amount>
 		<amountLabel>Amount: </amountLabel>
 		<sendTo>Ship to address: </sendTo>
-		
+		<removeLabel>Remove: </removeLabel>
+		<rmvFromOrder>Remove from order</rmvFromOrder>
+		<removeThisItem>Remove this item?</removeThisItem>
+		<rmvOrder>Remove this order?</rmvOrder>
 		<noItems>You currently have no items in this order</noItems>
 		<addToOrder>Add to order</addToOrder>
 		<notLogged>You need to be logged in order to buy a product</notLogged>
