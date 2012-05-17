@@ -24,6 +24,7 @@
 
 .translate_notLogged{
 	visibility:hidden;
+	display:none;
 }
 
 .inputBox {

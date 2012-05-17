@@ -126,8 +126,9 @@ function fillProducts(products) {
 					updateOrderList(or, $(div).find(".orderList"));
 					
 				}else{
-					$(div).find(".toTheCart").css("visibility", "hidden");
+					$(div).find(".toTheCart").css("display", "none");
 					$(div).find(".translate_notLogged").css("visibility", "visible");
+					$(div).find(".translate_notLogged").css("display", "inline");
 				}
 				translate($('#productList'));
 			});
