@@ -90,7 +90,7 @@ function updateProduct(pid){
 		});
 	}else{
 		$("#BUY").css("visibility", "hidden");
-		$(".notLogged").css("visibility", "visible");
+		$(".translate_notLogged").css("visibility", "visible");
 	}
 }
 
@@ -108,11 +108,13 @@ function fillProducts(products) {
 				var img=$(this).find("image_url").text();
 				var div = $(template).clone();
 				var nameLink='#target=detail&pid='+pid;
-				$(div).find('.artName').text(name).attr('href',nameLink).data('pid', pid);
-				$(div).find('.artPrice').text(price);
+				$(div).find('.artName').html(name).attr('href',nameLink).data('pid', pid);
+				$(div).find('.artPrice').text(price+"$");
 				$(div).data("pid", pid);
 				$(div).find(".ranking").text(rank);
 				$(div).find('.articleImg').attr("src",img);
+				$(div).find(".like").attr("src","https://www.facebook.com/plugins/like.php?href="+window.location.hostname +nameLink);
+
 				$('#productList').append(div);
 				if(user){
 					$(div).find(".toTheCartF").submit(function(){
