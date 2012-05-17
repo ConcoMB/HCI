@@ -15,7 +15,7 @@ function updateLanguageList() {
 			$('#footer').append(' | ');
 		} else {
 			first = false;
-			loadLanguage(lid);
+			//loadLanguage(lid);
 		}
 		$('#footer').append(lang);
 	});
@@ -64,7 +64,6 @@ function translate(elem) {
 
 function languageClickHandler() {
 	loadLanguage($(this).data('lid'));
-	translate();
 	//translateCategories();
 	setCookie("lang", $(this).data('lid'), 1);
 	location.reload();

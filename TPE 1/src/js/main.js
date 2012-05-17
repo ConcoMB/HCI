@@ -1,13 +1,17 @@
 user = null;
 language = null;
 IPP=8;
-dummy=true;
+dummy=false;
+defaultLang=1;
 
 $(document).ready(function() {
 	updateLanguageList();
 	var lang=getCookie("lang");
 	if(lang){
 		loadLanguage(lang);
+	}
+	else{
+		loadLanguage(defaultLang);
 	}
 	var resp=getCookie("login");
 	if(!resp){

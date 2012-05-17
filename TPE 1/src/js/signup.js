@@ -20,32 +20,41 @@ function signupFormHandler(){
 	var email=$('#su_email').attr("value");
 	var name=$('#su_name').attr("value");
 	var date=$('#su_birth_month').attr("value")+'-'+$('#su_birth_day').attr("value")+'-'+$('#su_birth_year').attr("value");
-	var error='';
+	var error=false;
 	$('#errors').html('');
+	$('[id^="req"]').text('');
 	if(!username){
 		$('#reqUser').text($(language).find('requiredField').text());
+		error=true;
 	}
 	if(!password){
 		$('#reqPass').text($(language).find('requiredField').text());
+		error=true;
 	}
 	if(password!=rPassword){
-		$('#reqPass').text(error+=$(language).find('password_mismatch').text());
+		$('#reqPass').text($(language).find('password_mismatch').text());
+		error=true;
 	}
 	if(!rPassword){
 		$('#reqConf').text($(language).find('requiredField').text());
+		error=true;
 	}
 	if(!email){
 		$('#reqMail').text($(language).find('requiredField').text());
+		error=true;
 	}
 	var exp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	if(!email.match(exp)){
 		$('#reqMail').text($(language).find('wrong_email').text());
+		error=true;
 	}
 	if(!name){
 		$('#reqName').text($(language).find('requiredField').text());
+		error=true;
 	}
 	if(!ValidateForm(date)){
 		$('#reqDate').text($(language).find('requiredField').text());
+		error=true;
 	}
 	if(!error){
 		var xml='<account><username>'+username+'</username><name>'+name+'</name><password>';
@@ -69,22 +78,22 @@ function signupError(code){
 	var errString, id;
 	switch(code){
 		case '107':
-			errString=$(language).find('username_length');
+			$('#reqUser').text($(language).find('username_length'));
 			break;
 		case '108':
-			errString=$(language).find('password_length');
+			$('#reqPass').text($(language).find('password_length'));
 			break;
 		case '109':
-			errString=$(language).find('name_length');
+			$('#reqName').text($(language).find('name_length'));
 			break;
 		case '110':
-			errString=$(language).find('email_length');
+			$('#reqMail').text($(language).find('email_length'));
 			break;
 		case '111':
-			errString=$(language).find('invalid_date');
+			$('#reqDate').text($(language).find('invalid_date'));
 			break;
 		case '201':
-			errString=$(language).find('username_exists');
+			$('#reqUser').text($(language).find('username_exists'));
 			break;		
 	}
 	$('#errors').append(errString);

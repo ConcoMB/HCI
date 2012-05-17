@@ -27,6 +27,7 @@ function loginFormHandler() {
 		return false;
 	}
 	login(username,password);
+	location.reload();
 }
 
 function login(username, password)
@@ -35,7 +36,6 @@ function login(username, password)
 	var err = parseError(resp);
 	if(!err) {
 		user = resp;
-		updateUserPanel();
 		var array=new Array(username, password);
 		setCookie("login", array, 1);
 	} else {
