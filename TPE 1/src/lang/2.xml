@@ -92,11 +92,11 @@
 		<Order>Orden </Order>
 		<check_out>Confirmar!</check_out>
 		<createNewOrder>Crear nueva Orden</createNewOrder>
-		<created>creado</created>
-		<confirmed>confirmado</confirmed>
-		<transported>transportado</transported>
-		<delivered>mandado</delivered>
-		<shippedTo>Mandado a: </shippedTo>
+		<created>creada</created>
+		<confirmed>confirmada</confirmed>
+		<transported>transportada</transported>
+		<delivered>mandada</delivered>
+		<shippedTo>Mandada a: </shippedTo>
 		<amountLabel>Cantidad: </amountLabel>
 		<sendTo>Enviar a dirección: </sendTo>
 		<amount>Cantidad total: </amount>
@@ -104,12 +104,18 @@
 		<addToOrder>Agregar a la order</addToOrder>
 		<notLogged>Debes estar registrado para comprar un producto</notLogged>
 		<position>Posición de tu paquete: </position>
-
+		<productToOrder>Producto agregado a la orden</productToOrder>
 	</order>
 	<Address>
+		<confirm>Confirmar</confirm>
+		<newAddrT>Nueva dirección</newAddrT>		
+		<addr1>Dirección, línea 1: </addr1>
+		<addr2>Dirección, línea 2: </addr2>
 		<address>Dirección: </address>
+		<chooseCountry>Elige un país</chooseCountry>
+		<chooseState>Elige un estado</chooseState>		
 		<myAddrs>Mis direcciones</myAddrs>
-		<noAddr>Actualmente no tienes direcciones</noAddr>
+		<noAddrs>Actualmente no tienes direcciones</noAddrs>
 		<newAddr>Agregar nueva dirección</newAddr>
 		<country>País: </country>
 		<state>Estado: </state>

@@ -121,6 +121,7 @@ function fillProducts(products) {
 						var order=$(div).find(".orderList").attr("value");
 						var cant=$(div).find(".buyCant").attr("value");
 						toCartHandler(pid, order, cant);
+						return false;
 					});
 					var or=getOrderList();
 					updateOrderList(or, $(div).find(".orderList"));

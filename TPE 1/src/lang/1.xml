@@ -75,6 +75,7 @@
 		<descLabel>Description:</descLabel>
 	</product>
 	<general>
+		<confirm>Confirm</confirm>
 		<welcome>Welcome to Buy Stuff!</welcome>
 		<next>Next&gt;&gt;</next>
 		<prev>&lt;&lt;Previous</prev>
@@ -136,12 +137,18 @@
 		<noItems>You currently have no items in this order</noItems>
 		<addToOrder>Add to order</addToOrder>
 		<notLogged>You need to be logged in order to buy a product</notLogged>
+		<productToOrder>Product added to your order</productToOrder>
 	</order>
 	<Address>
+		<addr1>Address line 1: </addr1>
+		<addr2>Address line 2: </addr2>
 		<address>Address: </address>
 		<myAddrs>My addresses</myAddrs>
-		<noAddr>You currently have no addresses</noAddr>
+		<noAddrs>You currently have no addresses</noAddrs>
 		<newAddr>Add a new address</newAddr>
+		<newAddrT>New address</newAddrT>
+		<chooseCountry>Choose a country</chooseCountry>
+		<chooseState>Choose a state</chooseState>		
 		<country>Country: </country>
 		<state>State: </state>
 		<city>City: </city>
