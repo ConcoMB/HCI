@@ -546,3 +546,18 @@ input#sb {
 	visibility:hidden;
 	display:none;
 }
+
+#dvdInfo span{
+	font-size:13px;
+}
+#bookInfo span{
+	font-size:13px;
+}
+#bookInfo .artForm{
+	width: 50%;
+}
+
+#bookInfo .artData{
+	font-size:13px;
+	width:45%;
+}
