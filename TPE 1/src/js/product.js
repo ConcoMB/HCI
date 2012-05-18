@@ -43,7 +43,7 @@ function getProductListByCategory(cid, p, ord) {
 function updateProduct(pid){
 	var product=GetProduct(pid);
 	$("#like").attr("src","https://www.facebook.com/plugins/like.php?href="+window.location.href);
-	$('#artName').text($(product).find('name').text());
+	$('#artName').html($(product).find('name').text());
 	$('#artPrice').text($(product).find('price').text());
 	$('#artRank').text($(product).find('sales_rank').text());
 	$("#product").data("pid", pid);
@@ -90,7 +90,7 @@ function updateProduct(pid){
 		});
 	}else{
 		$("#BUY").css("visibility", "hidden");
-		$(".notLogged").css("visibility", "visible");
+		$(".translate_notLogged").css("visibility", "visible");
 	}
 }
 
@@ -108,24 +108,28 @@ function fillProducts(products) {
 				var img=$(this).find("image_url").text();
 				var div = $(template).clone();
 				var nameLink='#target=detail&pid='+pid;
-				$(div).find('.artName').text(name).attr('href',nameLink).data('pid', pid);
-				$(div).find('.artPrice').text(price);
+				$(div).find('.artName').html(name).attr('href',nameLink).data('pid', pid);
+				$(div).find('.artPrice').text(price+"$");
 				$(div).data("pid", pid);
 				$(div).find(".ranking").text(rank);
 				$(div).find('.articleImg').attr("src",img);
+				$(div).find(".like").attr("src","https://www.facebook.com/plugins/like.php?href="+window.location.hostname +nameLink);
+
 				$('#productList').append(div);
 				if(user){
 					$(div).find(".toTheCartF").submit(function(){
 						var order=$(div).find(".orderList").attr("value");
 						var cant=$(div).find(".buyCant").attr("value");
 						toCartHandler(pid, order, cant);
+						return false;
 					});
 					var or=getOrderList();
 					updateOrderList(or, $(div).find(".orderList"));
 					
 				}else{
-					$(div).find(".toTheCart").css("visibility", "hidden");
+					$(div).find(".toTheCart").css("display", "none");
 					$(div).find(".translate_notLogged").css("visibility", "visible");
+					$(div).find(".translate_notLogged").css("display", "inline");
 				}
 				translate($('#productList'));
 			});

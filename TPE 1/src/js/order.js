@@ -94,7 +94,7 @@ function ordersToCart(orders) {
 }
 
 function deleteOrderH(orderID) {
-	if(confirm("Remove this order?")) {
+	if(confirm($(language).find("rmvOrder").text())) {
 		params = {
 			username : $(user).find("user").attr("username"),
 			authentication_token : $(user).find("token").text(),
@@ -145,13 +145,13 @@ function goToOrder(orderID, status) {
 				$("#myAddr").css("visibility", "visible");
 				$("#myAddr").css("display", "inline");
 				$("#addr").text($(addr).find("full_name").text());
-
 				break;
 		}
 		$("#orderID").text(name);
 		$.ajax({
 			type : "GET",
 			url : "orderProduct.html",
+			async:false,
 			dataType : "html",
 			success : function(template) {
 				$(ord).find('item').each(function() {
@@ -165,12 +165,14 @@ function goToOrder(orderID, status) {
 					$(div).find(".artPrice").text(price);
 					$(div).find(".artAmount").text(amount);
 					$(div).find(".ranking").text($(this).find("sales_rank").text());
+					$(div).find('.articleImg').attr("src",$(product).find('image_url').text());
+					$(div).find(".namePr").attr("href","#target=detail&pid="+prodID);
 					$('#items').append(div);
 					if(status != "1") {
 						$(div).find(".remove").css("display", "none");
 					} else {
 						$(div).find(".rmform").submit(function() {
-							if(confirm("Remove this item?")) {
+							if(confirm($(language).find("removeThisItem").text())) {
 								var cant = $(div).find(".howMany").attr("value");
 								if(cant>amount){
 									cant=amount;

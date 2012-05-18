@@ -12,7 +12,7 @@ function updateUserPanel() {
 		url : "signed.html"
 	}).done(function(html) {
 		$(".userhead").html(html);
-		$("#userName").text(name);
+		$("#userName").html(name);
 		//$('#myCart').click(cartClickHandler);
 		$('#logOut').click(logOutHandler);
 		//translate($('.userhead'));
@@ -26,8 +26,10 @@ function loginFormHandler() {
 	if(!username || !password) {
 		return false;
 	}
-	login(username,password);
-	location.reload();
+	if(login(username,password)){
+		location.reload();
+	}
+	return false;
 }
 
 function login(username, password)
@@ -38,6 +40,7 @@ function login(username, password)
 		user = resp;
 		var array=new Array(username, password);
 		setCookie("login", array, 1);
+		return true;
 	} else {
 		var errString = $(language).find('incorrectLogin').text();
 		$('#loginError').text(errString);

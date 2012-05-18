@@ -185,7 +185,7 @@ function newAddr() {
 
 function updateCountries() {
 	var countries = GetCountryList();
-	$("#sd_country").append('<option value="no">Choose a country</option>');
+	$("#sd_country").append('<option value="no">'+$(language).find("chooseCountry").text()+'</option>');
 	$(countries).find('country').each(function() {
 		var cID = $(this).attr("id");
 		var cName = $(this).find("name").text();
@@ -200,7 +200,7 @@ function updateStates() {
 	$("#sd_state").html("");
 	var thisCountryID = $("#sd_country").attr("value");
 	var states = GetStateList(thisCountryID);
-	$("#sd_state").append('<option value="no">Choose a state</option>');
+	$("#sd_state").append('<option value="no">'+$(language).find("chooseState").text()+'</option>');
 	$(states).find('state').each(function() {
 		var sID = $(this).attr("id");
 		var sName = $(this).find("name").text();

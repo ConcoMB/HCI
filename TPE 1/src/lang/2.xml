@@ -1,14 +1,19 @@
 <language>
 	<name>Español</name>
 	<errors>
-		<empty_username>You must enter a username</empty_username>
-		<username_exists>Username already exists</username_exists>
-		<password_mismatch>The passwords do not match</password_mismatch>
-		<empty_password>You must enter a password</empty_password>
-		<empty_email>You must enter an email</empty_email>
-		<empty_name>You must enter your name</empty_name>
-		<wrong_email>The email format must be: example@domain.com</wrong_email>
-		<invalid_date>The date format must be dd/mm/yyyy</invalid_date>
+		<incorrectLogin>Nombre de usuario o contraseña invalidos</incorrectLogin>
+		
+		<empty_username>Por favor escribe un nombre de usuario</empty_username>
+		<username_exists>El nombr de usuario ya existe</username_exists>
+		<password_mismatch>Las contraseñas no coinciden</password_mismatch>
+		<empty_password>Por favor escribe una contraseña</empty_password>
+		<empty_email>Por favor escribe un correo electrónico</empty_email>
+		<empty_name>Por favor escribe tu nombre</empty_name>
+		<wrong_email>La dirección de correo electrónico debe tener el siguiente formato: ejemplo@dominio.com</wrong_email>
+		<invalid_date>Por favor pon una fecha válida</invalid_date>
+		<year_error>Por favor pon un año válido</year_error>
+		<day_error>Por favor pon un día válido</day_error>
+		<month_error>Por favor pon un mes válido</month_error>	
 	</errors>
 	<header>
 		<allCats>Todas las categorias</allCats>
@@ -72,7 +77,11 @@
 
 	</general>
 	<order>
-		<confirmed>Tu orden ha sido confirmada</confirmed>
+		<rmvOrder>¿Eliminar esta orden?</rmvOrder>
+		<removeThisItem>¿Eliminar este objeto?</removeThisItem>		
+		<removeLabel>Eliminar: </removeLabel>
+		<rmvFromOrder>Eliminar de la orden</rmvFromOrder>		
+		<Oconfirmed>Tu orden ha sido confirmada</Oconfirmed>
 		<noOrder>Actualmente no tienes ordenes</noOrder>		
 		<myCart>Mi carrito</myCart>
 		<createdDate>Fecha de creación:</createdDate>
@@ -81,28 +90,34 @@
 		<deliveredDate>Fecha de entrega:</deliveredDate>
 		<viewOrder>Ver orden</viewOrder>
 		<deleteOrder>Borrar orden</deleteOrder>
-		<status>Estado:</status>
+		<status>Estado: </status>
 		<Order>Orden </Order>
 		<check_out>Confirmar!</check_out>
 		<createNewOrder>Crear nueva Orden</createNewOrder>
-		<created>creado</created>
-		<confirmed>confirmado</confirmed>
-		<transported>transportado</transported>
-		<delivered>mandado</delivered>
-		<shippedTo>Mandado a:</shippedTo>
+		<created>creada</created>
+		<confirmed>confirmada</confirmed>
+		<transported>transportada</transported>
+		<delivered>mandada</delivered>
+		<shippedTo>Mandada a: </shippedTo>
 		<amountLabel>Cantidad: </amountLabel>
 		<sendTo>Enviar a dirección: </sendTo>
-		<amount>Cantidad total:</amount>
+		<amount>Cantidad total: </amount>
 		<noItems>Actualmente no tienes objetos en esta orden</noItems>
 		<addToOrder>Agregar a la order</addToOrder>
 		<notLogged>Debes estar registrado para comprar un producto</notLogged>
 		<position>Posición de tu paquete: </position>
-
+		<productToOrder>Producto agregado a la orden</productToOrder>
 	</order>
 	<Address>
+		<confirm>Confirmar</confirm>
+		<newAddrT>Nueva dirección</newAddrT>		
+		<addr1>Dirección, línea 1: </addr1>
+		<addr2>Dirección, línea 2: </addr2>
 		<address>Dirección: </address>
+		<chooseCountry>Elige un país</chooseCountry>
+		<chooseState>Elige un estado</chooseState>		
 		<myAddrs>Mis direcciones</myAddrs>
-		<noAddr>Actualmente no tienes direcciones</noAddr>
+		<noAddrs>Actualmente no tienes direcciones</noAddrs>
 		<newAddr>Agregar nueva dirección</newAddr>
 		<country>País: </country>
 		<state>Estado: </state>

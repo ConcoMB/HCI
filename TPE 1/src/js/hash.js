@@ -1,14 +1,20 @@
 function hashChangeHandler(event) {
 	var hash = window.location.hash || '#target=home';
 	var params = parseHash(hash);
+	$("#main").html('<img id="loading" src="img/loading.gif"/>');
 	$.ajax({
 		url : params.target + '.html'
 	}).done(function(html) {
-		$('#main').html(html);
+		$('#main').append(html);
 		/*ADDITIONAL FUNCTIONS*/
 		switch(params.target) {
 			case 'signUp':
-				signupForm();
+				if(user)
+				{
+					window.location.hash="#target=home";					
+				}else{
+					signupForm();
+				}
 				break;
 			case 'category':
 				category(params.cid, params.sid, params.page, params.order);
@@ -47,6 +53,7 @@ function hashChangeHandler(event) {
 				carousel();
 		}
 		translate();
+		$("#loading").remove();	
 	});
 }
 

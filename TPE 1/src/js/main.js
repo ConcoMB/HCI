@@ -29,7 +29,7 @@ $(document).ready(function() {
 	});
 	$('#search').submit(searchHandler);
 	//$('.subcategory').click(subcategoryClickHandler);
-	$('.category').click(categoryClickHandler);
+//	$('.category').click(categoryClickHandler);
 	//$('.artName').click(productClickHandler);
 	$(window).bind('hashchange', hashChangeHandler);
 	$(window).trigger('hashchange');

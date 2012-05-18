@@ -24,7 +24,8 @@ function toCartHandler(product, order, cant) {
 	if(err) {
 		orderError(err);
 	} else {
-		alert("Product added to your order");
+		alert($(language).find("productToOrder").text());
 	}
+	return false;
 }
 

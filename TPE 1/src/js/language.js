@@ -28,7 +28,6 @@ function loadLanguage(lid) {
 		url : "lang/" + lid + ".xml",
 		dataType : "xml",
 		async: false,
-		async : false,
 		success : function(xml) {
 			$(xml).find('language').attr('id', lid);
 			language = xml;

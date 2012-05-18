@@ -44,7 +44,7 @@ function signupFormHandler(){
 		error=true;
 	}
 	var exp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	if(!email.match(exp)){
+	if(email && !email.match(exp)){
 		$('#reqMail').text($(language).find('wrong_email').text());
 		error=true;
 	}
@@ -52,8 +52,9 @@ function signupFormHandler(){
 		$('#reqName').text($(language).find('requiredField').text());
 		error=true;
 	}
-	if(!ValidateForm(date)){
-		$('#reqDate').text($(language).find('requiredField').text());
+	var dateErr=isDate(date);
+	if(dateErr!=true){
+		$('#reqDate').text($(language).find(dateErr).text());
 		error=true;
 	}
 	if(!error){
@@ -78,22 +79,22 @@ function signupError(code){
 	var errString, id;
 	switch(code){
 		case '107':
-			$('#reqUser').text($(language).find('username_length'));
+			$('#reqUser').text($(language).find('username_length').text());
 			break;
 		case '108':
-			$('#reqPass').text($(language).find('password_length'));
+			$('#reqPass').text($(language).find('password_length').text());
 			break;
 		case '109':
-			$('#reqName').text($(language).find('name_length'));
+			$('#reqName').text($(language).find('name_length').text());
 			break;
 		case '110':
-			$('#reqMail').text($(language).find('email_length'));
+			$('#reqMail').text($(language).find('email_length').text());
 			break;
 		case '111':
-			$('#reqDate').text($(language).find('invalid_date'));
+			$('#reqDate').text($(language).find('invalid_date').text());
 			break;
 		case '201':
-			$('#reqUser').text($(language).find('username_exists'));
+			$('#reqUser').text($(language).find('username_exists').text());
 			break;		
 	}
 	$('#errors').append(errString);
@@ -165,32 +166,27 @@ function isDate(dtStr){
 		if (strYr.charAt(0)=="0" && strYr.length>1) 
 			strYr=strYr.substring(1);
 	}
-	month=parseInt(strMonth);
-	day=parseInt(strDay);
-	year=parseInt(strYr);
-	if (pos1==-1 || pos2==-1){
+	var month=parseInt(strMonth);
+	var day=parseInt(strDay);
+	var year=parseInt(strYr);
+	/*if (pos1==-1 || pos2==-1){
 		return false;
+	}*/
+	if(!month || !day || !year){
+		return "requiredField";
 	}
 	if (strMonth.length<1 || month<1 || month>12){
-		return false;
+		return "month_error";
 	}
 	if (strDay.length<1 || day<1 || day>31 || (month==2 && day>daysInFebruary(year)) || day > daysInMonth[month]){
-		return false;
+		return "day_error";
 	}
 	if (strYear.length != 4 || year==0 || year<minYear || year>maxYear){
-		return false;
+		return "year_error";
 	}
 	if (dtStr.indexOf(dtCh,pos2+1)!=-1 || isInteger(stripCharsInBag(dtStr, dtCh))==false){
-		return false;
+		return "invalid_date";
 	}
 	return true;
 }
-
-function ValidateForm(date){
-	if (isDate(date)==false){
-		//date.focus();
-		return false;
-	}
-    return true;
- }
 
