@@ -34,6 +34,10 @@
 	padding-left: 1em;
 }
 
+.profile .inputBox{
+	width: 35%;
+}
+
 .formItem {
 	margin-left: 0px;
 	height: 2em;
@@ -385,24 +389,28 @@ img#userPhoto {
 .profLabel{
 	
 	text-align: right;
-	width: 47%;
-	float: left;
+	width: 38%;
+	clear: left;
+	float:left;
 	font-weight: bold;
+	font-size: 14px;
 	
 }
 
 .profData{
+	margin-left: 10px;
 	text-align: left;
-	width: 47%;
-	float: right;
-	font-size: 15px;
+	width: 30%;
+	float: left;
+	font-size: 14px;
 }
 
 .profDataPass{
+	margin-left: 10px;
 	text-align: left;
-	width: 47%;
-	float: right;
-	font-size: 15px;
+	width: 30%;
+	float: left;
+	font-size: 14px;
 }
 
 #usern{
@@ -439,9 +447,8 @@ img#userPhoto {
 .reqProfError{
 	color: #CD0A0A;
 	width: 20%;
-	float: left;
+	float: right;
 	height: 65%;
-	display:none;
 
 }
 
