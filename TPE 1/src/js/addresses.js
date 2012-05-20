@@ -29,6 +29,7 @@ function viewAddrs() {
 					}*/
 					//alert("We're working on this event... check again later!");
 				});
+				translate(div);
 				$("#addrs").append(div);
 
 			});
