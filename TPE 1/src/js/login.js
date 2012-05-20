@@ -16,6 +16,7 @@ function updateUserPanel() {
 		//$('#myCart').click(cartClickHandler);
 		$('#logOut').click(logOutHandler);
 		$('#themeChooser').change(themeHandler);
+		updateUserTheme();
 		//translate($('.userhead'));
 		//$(window).trigger('hashchange');
 	});

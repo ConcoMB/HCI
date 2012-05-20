@@ -1,9 +1,16 @@
 function themeHandler(){
-	$('#theme').attr('href','css/'+$(this).val()+'.css');
+	var theme=$(this).val();
+	$('#theme').attr('href','css/'+theme+'.css');
+	SetAccountPreferences(theme);
 }
 
-function getUserTheme(){
-	
+function updateUserTheme(){
+	var resp=GetAccountPreferences();
+	var theme=$(resp).find('value').text();
+	if(theme){
+		$('#themeChooser').val(theme);
+		$('#theme').attr('href','css/'+theme+'.css');
+	}
 }
 
 function GetAccountPreferences(){
@@ -14,6 +21,11 @@ function GetAccountPreferences(){
 	return request("GetAccountPreferences", params, 'Common');
 }
 
-function SetAccountPreferences(){
-	
+function SetAccountPreferences(theme){
+	var params = {
+		username : $(user).find("user").attr("username"),
+		authentication_token : $(user).find("token").text(),
+		value: theme
+	}
+	return request("SetAccountPreferences", params, 'Common');
 }

@@ -21,20 +21,15 @@
 			<day_error>Please enter a valid day</day_error>
 			<month_error>Please enter a valid month</month_error>
 		</errors_signUp>
-		<errors_newShipDest>
-			<empty_sd_name>You must enter a name for your ship destination</empty_sd_name>
-			<empty_sd_address1>You must enter an address</empty_sd_address1>
-			<empty_country>Your must select a country</empty_country>
-			<empty_state>You must select a state</empty_state>
-			<empty_city>You must enter a city</empty_city>
-			<empty_ZC>You must enter a zip code</empty_ZC>
-			<empty_phone>You must enter a phone</empty_phone>
-		</errors_newShipDest>
 		<errors_changePassword>
 			<incorrectPassword>Wrong password</incorrectPassword>
 		</errors_changePassword>
 		<errors_newAddress>
 			<address_exists>Choose another address name</address_exists>
+			<wrong_addrname>Address Name must be 1~80 characters long</wrong_addrname>
+			<wrong_addrline1>Address Line must be 1~80 characters long</wrong_addrline1>
+			<wrong_zip>Zip Code must be 1~8 characters long</wrong_zip>
+			<wrong_phone>Only numbers and '-' accepted</wrong_phone>
 		</errors_newAddress>
 		<general_errors>
 			<missing_info>An error occurred: there's been a lack of information in the server. Please try again later</missing_info>

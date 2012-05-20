@@ -90,39 +90,47 @@ function newAddrHandler() {
 	var city = $('#sd_city').attr("value");
 	var zipCode = $('#sd_ZC').attr("value");
 	var phone = $('#sd_phone').attr("value");
-	var error = '';
+	var error = false;
 	$('#errors').html('');
 
 	if(!name) {
 		$('#reqAddressName').text($(language).find('requiredField').text());
+		error=true;
 	}
 
 	if(!address1) {
 		$('#reqAddress1').text($(language).find('requiredField').text());
+		error=true;
 	}
 
 	if(country == "no") {
 		$('#reqCountry').text($(language).find('requiredField').text());
+		error=true;
 	}
 
 	if(state == "no") {
 		$('#reqState').text($(language).find('requiredField').text());
+		error=true;
 	}
 
 	if(!city) {
 		$('#reqCity').text($(language).find('requiredField').text());
+		error=true;
 	}
 
 	if(!zipCode) {
 		text($(language).find('requiredField').text());
+		error=true;
 	}
 
 	if(!phone) {
 		$('#reqPhone').text($(language).find('requiredField').text());
+		error=true;
 	} else {
 		var pn = parseInt(phone);
 		if(!pn) {
-			$('#reqPhone').text($(language).find('invalid_sd_phone').text());
+			$('#reqPhone').text($(language).find('wrong_phone').text());
+			error=true;
 		}
 	}
 
@@ -168,10 +176,28 @@ function CreateAddress(addr) {
 	return request('CreateAddress', params, 'Order');
 }
 
+function UpdateAddress(addr) {
+	var params = {
+		address : addr,
+		username : $(user).find("user").attr("username"),
+		authentication_token : $(user).find("token").text()
+	}
+	return request('UpdateAddress', params, 'Order');
+}
+
 function createAddressError(code) {
 	switch(code) {
 		case '202':
 			$('#reqAddressName').text($(language).find('address_exists').text());
+			break;
+		case '118':
+			$('#reqAddressName').text($(language).find('wrong_addrname').text());
+			break;
+		case '119':
+			$('#reqAddress1').text($(language).find('wrong_addrline1').text());
+			break;
+		case '123':
+			$('#reqZC').text($(language).find('wrong_zip').text());
 			break;
 	}
 }
@@ -251,7 +277,9 @@ function editAddressHandler(addressID) {
 	$("#addr_phone").attr("value", phone);
 	$("#sd_country").change(updateStates);
 
-	$("#editAddressButton").submit(editAddressButtonHandler(addressID));
+	$("#editAddressButton").click(function(){
+		editAddressButtonHandler(addressID);
+	});
 	$("#cancelButton").click(function() {
 		window.location.hash = "#target=addresses";
 	});
@@ -262,11 +290,70 @@ function editAddressButtonHandler(addressID) {
 	var name = $('#addr_name').attr("value");
 	var address1 = $('#addr_address1').attr("value");
 	var address2 = $('#addr_address2').attr("value");
-	var country = $('#addr_country').attr("value");
-	var state = $('#addr_state').attr("value");
+	var country = $('#sd_country').attr("value");
+	var state = $('#sd_state').attr("value");
 	var city = $('#addr_city').attr("value");
 	var zipCode = $('#addr_ZC').attr("value");
 	var phone = $('#addr_phone').attr("value");
+	var error = false;
+	$('#errors').html('');
 
+	if(!name) {
+		$('#reqAddressName').text($(language).find('requiredField').text());
+		error=true;
+	}
+
+	if(!address1) {
+		$('#reqAddress1').text($(language).find('requiredField').text());
+		error=true;
+	}
+
+	if(country == "no") {
+		$('#reqCountry').text($(language).find('requiredField').text());
+		error=true;
+	}
+
+	if(state == "no") {
+		$('#reqState').text($(language).find('requiredField').text());
+		error=true;
+	}
+
+	if(!city) {
+		$('#reqCity').text($(language).find('requiredField').text());
+		error=true;
+	}
+
+	if(!zipCode) {
+		text($(language).find('requiredField').text());
+		error=true;
+	}
+
+	if(!phone) {
+		$('#reqPhone').text($(language).find('requiredField').text());
+		error=true;
+	} else {
+		var pn = parseInt(phone);
+		if(!pn) {
+			$('#reqPhone').text($(language).find('wrong_phone').text());
+			error=true;
+		}
+	}
+
+	//$('#errors').append(error);
+	if(!error) {
+		var xml = '<address id="'+addressID+'"><full_name>' + name + '</full_name><address_line_1>';
+		xml += address1 + '</address_line_1><address_line_2>' + address2 + '</address_line_2><country_id>';
+		xml += country + '</country_id><state_id>' + state + '</state_id><city>' + city + '</city><zip_code>';
+		xml += zipCode + '</zip_code><phone_number>' + phone + '</phone_number></address>';
+		alert(xml);
+		var resp = UpdateAddress(xml);
+		var err = parseError(resp);
+		if(!err) {
+			window.location.hash = "#target=addresses";
+		} else {
+			createAddressError(err);
+		}
+	}
+	return false;
 }
 

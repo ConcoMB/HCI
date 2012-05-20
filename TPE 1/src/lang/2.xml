@@ -14,6 +14,13 @@
 		<year_error>Por favor pon un año válido</year_error>
 		<day_error>Por favor pon un día válido</day_error>
 		<month_error>Por favor pon un mes válido</month_error>	
+		<errors_newAddress>
+			<address_exists>Eliga otro nombre</address_exists>
+			<wrong_addrname>El nombre debe tener 1~80 caracteres</wrong_addrname>
+			<wrong_addrline1>La direccion debe tener 1~80 caracteres</wrong_addrline1>
+			<wrong_zip>El codigo postal debe tener 1~8 caracteres</wrong_zip>
+			<wrong_phone>Solo numeros o '-'</wrong_phone>
+		</errors_newAddress>
 	</errors>
 	<header>
 		<allCats>Todas las categorias</allCats>
