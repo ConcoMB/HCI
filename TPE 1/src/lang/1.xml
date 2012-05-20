@@ -57,15 +57,15 @@
 		<allCats>All categories</allCats>
 		<all>All</all>
 		<hello>Hello </hello>
-		<logOut>log out</logOut>
+		<logOut>Log out</logOut>
 		<searchLabel>Search:</searchLabel>
-		<searchButton>Search</searchButton>
+		<searchButton>Go</searchButton>
 		<usernameLabel>Username:</usernameLabel>
 		<newInSiteLabel>New in the site?</newInSiteLabel>
 		<signupLink>Sign up now!</signupLink>
 		<sb>Log In</sb>
 		<profile>My profile</profile>
-		<notYou>It's not you?</notYou>
+		<notYou>It's not you? </notYou>
 	</header>
 	<product>
 		<results>Results for: </results>

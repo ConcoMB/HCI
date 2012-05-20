@@ -44,7 +44,7 @@ function updateProduct(pid){
 	var product=GetProduct(pid);
 	$("#like").attr("src","https://www.facebook.com/plugins/like.php?href="+window.location.href);
 	$('#artName').html($(product).find('name').text());
-	$('#artPrice').text($(product).find('price').text());
+	$('#artPrice').text($(product).find('price').text()+"$");
 	$('#artRank').text($(product).find('sales_rank').text());
 	$("#product").data("pid", pid);
 	$('.detailImg').attr("src",$(product).find('image_url').text());
@@ -113,6 +113,7 @@ function fillProducts(products) {
 				$(div).data("pid", pid);
 				$(div).find(".ranking").text(rank);
 				$(div).find('.articleImg').attr("src",img);
+				$(div).find(".prodImg").attr("href", nameLink);
 				$(div).find(".like").attr("src","https://www.facebook.com/plugins/like.php?href="+window.location.hostname +nameLink);
 
 				$('#productList').append(div);
