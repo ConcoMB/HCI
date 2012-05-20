@@ -3,8 +3,8 @@
 	margin-left: auto;
 	text-align: center;
 	width: 40em;
-	background-color: #fbffbf;
-	border: 1px solid black;
+	background-color: #6cd838;
+	border: 3px solid #eff13b;
 	padding: 2em;
 	overflow: auto;
 }
@@ -70,20 +70,10 @@ html,body{
 /*{
  font-family: Arial;
  text-decoration: underline;
- color:blue;
+ 
+:blue;
  }*/
 
-span {
-	font-family: Arial;
-}
-
-h1 {
-	font-family: Arial;
-}
-
-h2 {
-	font-family: Arial;
-}
 
 .language {
 	margin-left: 1em;
@@ -98,13 +88,17 @@ h2 {
 	/*font-size: 1.5em;*/
 	padding-bottom: 1em;
 	padding-top: 1em;
-	float: left;
 	font-size:1.2em;
+	float: left;
 	margin-top:20px;
 }
 
 .search input{
 	font-size: 0.8em;
+}
+
+#changePasswordForm{
+	margin-top: 2em;
 }
 
 .search select{
@@ -116,20 +110,13 @@ h2 {
 	font-size: 1em;
 }
 
-body{
-	background-image:url(../img/pattern.jpg); 
-}
-#changePasswordForm{
-	margin-top: 2em;
-}
-
 .search submit{
 	font-size: 1.5em;
 
 }
 #head {
-	border: 1px solid black;
-	background-color: #fbffbf;
+	border: 3px solid #eff13b;
+	background-color: #1e89d8;
 	height: 8em;
 }
 
@@ -145,13 +132,13 @@ body{
 	margin-left:10%;
 }
 #loggedFirstLine{
-	float: left;
+	float: right;
 	height:98%;
 	width:55%;
 	margin-top: 1em;
 }
 #userLinks{
-	float: right;
+	float: left;
 	height:98%;
 	margin-right: 10%;
 }
@@ -163,7 +150,7 @@ body{
 }
 
 #categories {
-	float: left;
+	float: right;
 	margin-top: 2em;
 	font-size: 2em;
 	width: 20%;
@@ -243,8 +230,8 @@ img#icon {
 	/*margin-left: 5%;*/
 	text-align: center;
 	width: 100%;
-	background-color: #fbffbf;
-	border: 1px solid black;
+	background-color: #6cd838;
+	border: 3px solid #eff13b;
 	padding: 2em;
 	margin-bottom: 20px;
 	overflow: auto;
@@ -325,8 +312,8 @@ div#info {
 	margin-left: auto;
 	overflow: auto;
 	width: 500px;
-	background-color: #fbffbf;
-	border: 1px solid black;
+	background-color: #6cd838;
+	border: 3px solid #eff13b;
 	padding: 2em;
 	margin-bottom:2em;
 }
@@ -367,8 +354,8 @@ img#userPhoto {
 	margin-left: auto;
 	text-align: center;
 	width: 30em;
-	background-color: #fbffbf;
-	border: 1px solid black;
+	background-color: #6cd838;
+	border: 3px solid #eff13b;
 	padding: 2em;
 	margin-bottom: 20px;
 	overflow: auto;
@@ -682,6 +669,11 @@ input#sb {
 	margin-top:1em;
 }
 
-.hide{
-	display: none;
+body{
+	font-family: "Courier New", Courier, Monaco, monospace;
+	background-image: url(../img/green_grass.jpg);
+}
+
+a{
+	font-weight: bold;
 }
