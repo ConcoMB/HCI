@@ -25,8 +25,8 @@ function GetAccount() {
 
 function editProfileHandler() {
 
-	$("#editProfileButton").css('display', 'none');
-	$(".profData").css('display', 'none');
+	$("#editProfileButton").addClass('hide');
+	$(".profData").addClass('hide');
 
 	var name = $("#uname").text();
 	var email = $("#uemail").text();
@@ -36,9 +36,9 @@ function editProfileHandler() {
 	$("#prof_mail").attr("value", email);
 	$("#prof_birthDate").attr("value", bdate);
 
-	$(".prof_input").css('display', 'inline');
-	$("#cancelEditProfile").css('display', 'inline');
-	$("#acceptProfileButton").css('display', 'inline');
+	$(".prof_input").removeClass('hide');
+	$("#cancelEditProfile").removeClass('hide');
+	$("#acceptProfileButton").removeClass('hide');
 
 	$("#prof_update").submit(acceptProfileHandler);
 }
@@ -106,14 +106,14 @@ function updateAccount(acc) {
 
 function changePassHandler() {
 
-	$("#changePasswordButton").css('display', 'none');
-	$(".profDataPass").css('display', 'none');
+	$("#changePasswordButton").addClass('hide');
+	$(".profDataPass").addClass('hide');
 
-	$(".prof_inputPass").css('display', 'inline');
-	$(".prof_newPass_item").css('display', 'block');
+	$(".prof_inputPass").removeClass('hide');
+	$(".prof_newPass_item").removeClass('hide');
 
-	$("#acceptChangePassword").css('display', 'inline');
-	$("#cancelChangePassword").css('display', 'inline');
+	$("#acceptChangePassword").removeClass('hide');
+	$("#cancelChangePassword").removeClass('hide');
 
 	$("#changePasswordForm").submit(changePasswordHandler);
 

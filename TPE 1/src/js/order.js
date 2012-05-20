@@ -39,20 +39,20 @@ function ordersToCart(orders) {
 				switch(status) {
 					case "1":
 						stat = "translate_created";
-						$(div).find(".cnfDiv").css("display", "none");
-						$(div).find(".shpDiv").css("display", "none");
-						$(div).find(".dlvDiv").css("display", "none");
+						$(div).find(".cnfDiv").addClass('hide');
+						$(div).find(".shpDiv").addClass('hide');
+						$(div).find(".dlvDiv").addClass('hide');
 						break;
 					case "2":
 						stat = "translate_confirmed";
-						$(div).find(".shpDiv").css("display", "none");
-						$(div).find(".dlvDiv").css("display", "none");
+						$(div).find(".shpDiv").addClass('hide');
+						$(div).find(".dlvDiv").addClass('hide');
 						$(div).find(".cnfDate").text($(this).find("confirmed_date").text());
 
 						break;
 					case "3":
 						stat = "translate_transported";
-						$(div).find(".dlvDiv").css("display", "none");
+						$(div).find(".dlvDiv").addClass('hide');
 						$(div).find(".cnfDate").text($(this).find("confirmed_date").text());
 						$(div).find(".shpDate").text($(this).find("shipped_date").text());
 
@@ -68,9 +68,9 @@ function ordersToCart(orders) {
 					var addressID = $(this).find("address_id").text();
 					var address = GetAddress(addressID);
 					$(div).find(".addressData").text($(address).find("full_name").text());
-					$(div).find(".deleteOrder").css("display", "none");
+					$(div).find(".deleteOrder").addClass('hide');
 				} else {
-					$(div).find(".addrDiv").css("display", "none");
+					$(div).find(".addrDiv").addClass('hide');
 					$(div).find(".deleteOrder").click(function() {
 						deleteOrderH(orderID);
 					});
@@ -85,10 +85,9 @@ function ordersToCart(orders) {
 			});
 			$('#content').tabs();
 			if(cant == 1) {
-				$("#content").css("display", "none");
-				$("#sort").css("display", "none");
-				$(".invisible").css("display", "inline");
-				$(".invisible").css("visibility", "visible");
+				$("#content").addClass('hide');
+				$("#sort").addClass('hide');
+				$(".invisible").removeClass('hide');
 			}
 		}
 	});
@@ -121,18 +120,16 @@ function goToOrder(orderID, status) {
 				break;
 			case "2":
 				$("#stat").attr("id","confirmed");
-				$("#checkOut").css("display", "none");
+				$("#checkOut").addClass('hide');
 				var addr=GetAddress($(ord).find("address_id").text());
-				$("#myAddr").css("visibility", "visible");
-				$("#myAddr").css("display", "inline");
+				$("#myAddr").removeClass('hide');
 				$("#addr").text($(addr).find("full_name").text());
 				break;
 			case "3":
 				$("#stat").attr("id","transported");
-				$("#checkOut").css("display", "none");
+				$("#checkOut").addClass('hide');
 				var addr=GetAddress($(ord).find("address_id").text());
-				$("#myAddr").css("visibility", "visible");
-				$("#myAddr").css("display", "inline");
+				$("#myAddr").removeClass('hide');
 				$("#addr").text($(addr).find("full_name").text());
 				var lat = parseInt($(ord).find("latitude").text());
 				var longit = parseInt($(ord).find("longitude").text());
@@ -142,10 +139,9 @@ function goToOrder(orderID, status) {
 				break;
 			case "4":
 				$("#stat").attr("id","delivered");
-				$("#checkOut").css("display", "none");
+				$("#checkOut").addClass('hide');
 				var addr=GetAddress($(ord).find("address_id").text());
-				$("#myAddr").css("visibility", "visible");
-				$("#myAddr").css("display", "inline");
+				$("#myAddr").removeClass('hide');
 				$("#addr").text($(addr).find("full_name").text());
 				break;
 		}
@@ -171,7 +167,7 @@ function goToOrder(orderID, status) {
 					$(div).find(".namePr").attr("href","#target=detail&pid="+prodID);
 					$('#items').append(div);
 					if(status != "1") {
-						$(div).find(".remove").css("display", "none");
+						$(div).find(".remove").addClass('hide');
 					} else {
 						$(div).find(".rmform").submit(function() {
 							if(confirm($(language).find("removeThisItem").text())) {
@@ -190,11 +186,10 @@ function goToOrder(orderID, status) {
 				$("#totalPrice").text(totalPrice);
 				$("#checkOut").attr("href", "#target=checkOut&oid=" + orderID);
 				if(totalPrice == 0) {
-					$("#checkOut").css("display", "none");
-					$("#price").css("display", "none");
-					$(".invisible").css("display", "inline");
-					$(".invisible").css("visibility", "visible");
-					$("#sort").css("display", "none");
+					$("#checkOut").addClass('hide');
+					$("#price").addClass('hide');
+					$(".invisible").removeClass('hide');
+					$("#sort").addClass('hide');
 
 				}
 			}

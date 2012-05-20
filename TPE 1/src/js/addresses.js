@@ -37,9 +37,8 @@ function viewAddrs() {
 				active : false
 			});
 			if(!flag) {
-				$("#addrs").css("display", "none");
-				$(".invisible").css("display", "inline");
-				$(".invisible").css("visibility", "visible");
+				$("#addrs").addClass('hide');
+				$(".invisible").removeClass('hide');
 			}
 		}
 	});
