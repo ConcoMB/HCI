@@ -29,6 +29,7 @@ function ordersToCart(orders) {
 			$(orders).find('order').each(function() {
 				$("#dumb").remove();
 				var div = $(template).clone();
+				//div=$(div).find("body");
 				var orderID = $(this).attr("id");
 				$(div).attr('id', 'orderTab' + orderID);
 				$(div).find('.orderName').text("Order " + orderID);

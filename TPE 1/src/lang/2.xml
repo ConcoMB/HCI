@@ -26,15 +26,15 @@
 		<allCats>Todas las categorias</allCats>
 		<all>Todas</all>
 		<hello>Hola </hello>
-		<logOut>cerrar sesión</logOut>
+		<logOut>Cerrar sesión</logOut>
 		<searchLabel>Buscar:</searchLabel>
-		<searchButton>Buscar</searchButton>
+		<searchButton>Ir</searchButton>
 		<usernameLabel>Usuario:</usernameLabel>
 		<newInSiteLabel>¿Nuevo en el sitio?</newInSiteLabel>
 		<signupLink>Regístrate!</signupLink>
 		<sb>Iniciar sesión</sb>
 		<profile>Mi perfil</profile>
-		<notYou>¿No eres tú?</notYou>
+		<notYou>¿No eres tú? </notYou>
 	</header>
 	<product>
 		<results>Resultados para: </results>
