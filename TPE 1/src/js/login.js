@@ -15,8 +15,9 @@ function updateUserPanel() {
 		$("#userName").html(name);
 		//$('#myCart').click(cartClickHandler);
 		$('#logOut').click(logOutHandler);
+		$('#themeChooser').change(themeHandler);
 		//translate($('.userhead'));
-		$(window).trigger('hashchange');
+		//$(window).trigger('hashchange');
 	});
 }
 

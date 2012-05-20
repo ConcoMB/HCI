@@ -22,7 +22,7 @@ function updateCategoryList() {
 		var cid = $(this).attr('id');
 		var div = $('<div></div>').addClass('subCat');
 		var href = '#target=category&page=1&order=ASC&cid=' + cid;
-		var a = $('<a></a>').addClass('subcategory', 'translate_all').attr('href', href).attr('id', cid);
+		var a = $('<a></a>').addClass('subcategory').attr('href', href).attr('id', cid).text($(language).find('all').text());
 		var h3 = $('<h3></h3>').addClass('category');
 		h3.append($('<a></a>').html(cname).attr('href', getHash()).attr('id', cid));
 		div.append(a, '<br>');
