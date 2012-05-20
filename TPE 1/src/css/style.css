@@ -9,6 +9,12 @@
 	overflow: auto;
 }
 
+html,body{
+	height: 100%;
+	margin:0;
+	padding:0;
+}
+
 .center {
 	margin: auto;
 	text-align: center;
@@ -89,7 +95,7 @@ h2 {
 .search {
 	padding-left: 1em;
 	height: 1em;
-	font-size: 1.5em;
+	/*font-size: 1.5em;*/
 	padding-bottom: 1em;
 	padding-top: 1em;
 	float: left;
@@ -106,7 +112,7 @@ h2 {
 }
 
 #searchButton{
-	font-size: 2em;
+	font-size: 1em;
 }
 
 .search submit{
@@ -132,14 +138,14 @@ h2 {
 }
 #loggedFirstLine{
 	float: left;
-	heigth:98%;
-	width:49%;
+	height:98%;
+	width:55%;
 	margin-top: 1em;
 }
 #userLinks{
-	float: rigth;
-	heigth:98%;
-	margin-left: 60%;
+	float: right;
+	height:98%;
+	margin-right: 10%;
 }
 .signHelp {
 	margin-bottom: 0.4em;
@@ -296,6 +302,19 @@ div#info {
 	width: 95%;
 }
 
+<<<<<<< HEAD
+=======
+#spacer{
+	clear: both;
+}
+
+#footer{
+	bottom:0;
+	position:absolute;
+	width: 100%;
+	height: 2em;
+}
+>>>>>>> d7796570b22a6428c9d4500c3689430f72850641
 .profile {
 	margin-right: auto;
 	margin-left: auto;
@@ -315,6 +334,8 @@ img#userPhoto {
 }
 #wrapper {
 	width: 80em;
+	min-height: 100%;
+	position: relative;
 }
 #prev {
 	margin-left: 1em;
@@ -428,6 +449,10 @@ img#userPhoto {
 
 #buyCant {
 	width: 3em;
+}
+
+.centerStuff{
+	padding-bottom:2em;
 }
 
 .buyOrderData {
@@ -590,11 +615,10 @@ input#sb {
 #helloDiv{
 	clear: left;
 	margin-bottom: 1em;
-	width: 50%;
 }
 
 #logoutDiv{
-	width: %;
+	/*width: %;*/
 	margin-left: 1em;
 }
 /*
@@ -609,7 +633,7 @@ input#sb {
 	
 	font-size:14px;
 	
-		text-align: left;
+	text-align: left;
 	height:1.5em;
 }
 

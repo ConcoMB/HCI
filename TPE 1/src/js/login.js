@@ -46,7 +46,7 @@ function login(username, password)
 	} else {
 		var errString = $(language).find('incorrectLogin').text();
 		$('#loginError').text(errString);
-		$('#loginError').css('visibility', 'visible');
+		$('#loginError').removeClass('hide');
 	}
 
 	return false;

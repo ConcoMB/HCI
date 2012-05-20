@@ -51,7 +51,7 @@ function updateProduct(pid){
 	var catID = $(product).find("category_id").text();
 	if(catID=="1"){
 		//DVD
-		$(".book").css("display","none");
+		$(".book").addClass('hide');
 		$("#artActor").text($(product).find("actors").text());
 		$("#artFormat").text($(product).find("format").text());
 		$("#artlang").text($(product).find("language").text());
@@ -68,7 +68,7 @@ function updateProduct(pid){
 		});
 	}else if(catID=="2"){
 		//BOOK
-		$(".DVD").css("display","none");
+		$(".DVD").addClass('hide');
 		$("#artAuthors").text($(product).find("authors").text());
 		$("#artPublisher").text($(product).find("publisher").text());
 		$("#artPDate").text($(product).find("published_date").text());
@@ -89,8 +89,8 @@ function updateProduct(pid){
 			toCartHandler(pid, order, cant);
 		});
 	}else{
-		$("#BUY").css("visibility", "hidden");
-		$(".translate_notLogged").css("visibility", "visible");
+		$("#BUY").addClass('hide');
+		$(".translate_notLogged").removeClass('hide');
 	}
 }
 
@@ -128,9 +128,8 @@ function fillProducts(products) {
 					updateOrderList(or, $(div).find(".orderList"));
 					
 				}else{
-					$(div).find(".toTheCart").css("display", "none");
-					$(div).find(".translate_notLogged").css("visibility", "visible");
-					$(div).find(".translate_notLogged").css("display", "inline");
+					$(div).find(".toTheCart").addClass('hide');
+					$(div).find(".translate_notLogged").removeClass('hide');
 				}
 				translate($('#productList'));
 			});
