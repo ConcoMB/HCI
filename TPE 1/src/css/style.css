@@ -49,7 +49,7 @@
 .submit {
 	margin-top: 1em;
 	margin-bottom: 1em;
-	font-size: 1.5em;
+	font-size: 2em;
 	width: 13em;
 	height: 2em;
 	/*-webkit-appearance: button;*/
@@ -161,6 +161,12 @@ img#icon {
 	/*-webkit-appearance: button;*/
 }
 
+#like{
+	margin-top:2em;
+	margin-left:20%;
+    width:80% !important;
+}
+
 .addressInfo {
 
 	width: 400px;
@@ -182,11 +188,10 @@ img#icon {
 }
 
 .itemBox {
-
 	margin-right: auto;
-	margin-left: auto;
+	margin-left: 5%;
 	text-align: center;
-	width: 30em;
+	width: 100%;
 	background-color: #fbffbf;
 	border: 1px solid black;
 	padding: 2em;
@@ -194,6 +199,19 @@ img#icon {
 	overflow: auto;
 }
 
+#BUY{
+	font-size: 1.5em;
+}
+#BUY input{
+	height: 1.75em;
+}
+#BUY select{
+	font-size: 1.5em;
+}
+
+.moreInfo{
+	margin-top:2em !important;
+}
 .articleImg {
 	width: 20%;
 	float: left;

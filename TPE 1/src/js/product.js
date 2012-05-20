@@ -58,7 +58,7 @@ function updateProduct(pid){
 		$("#artSubtit").text($(product).find("subtitles").text());
 		$("#artRegion").text($(product).find("region").text());
 		$("#artAspect").text($(product).find("aspect_ratio").text());
-		$("#artDiscs").text($(product).find("numer_discs").text());
+		$("#artDiscs").text($(product).find("number_discs").text());
 		$("#artRelease").text($(product).find("release_date").text());
 		$("#artRuntime").text($(product).find("run_time").text());
 		$("#artASIN").text($(product).find("ASIN").text());
