@@ -8,6 +8,7 @@ function getOrderList() {
 }
 
 function updateOrderList(orders, where) {
+	$("#dumb").remove();
 	$(where).append('<option value="new">'+$(language).find('createNewOrder').text()+'</option>');
 	$(orders).find("order").each(function() {
 		if(!$(this).find("confirmed_date").text()) {
@@ -26,7 +27,7 @@ function ordersToCart(orders) {
 		async:false,
 		success : function(template) {
 			$(orders).find('order').each(function() {
-
+				$("#dumb").remove();
 				var div = $(template).clone();
 				var orderID = $(this).attr("id");
 				$(div).attr('id', 'orderTab' + orderID);

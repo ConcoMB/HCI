@@ -43,13 +43,16 @@
 	height: 2em;
 }
 
+.subcategory{
+	padding-top:0.2em;
+}
 .submit {
 	margin-top: 1em;
 	margin-bottom: 1em;
 	font-size: 1.5em;
 	width: 13em;
 	height: 2em;
-	-webkit-appearance: button;
+	/*-webkit-appearance: button;*/
 	text-align: center;
 }
 
@@ -120,11 +123,12 @@ h2 {
 	float: left;
 	margin-top: 2em;
 	font-size: 2em;
-	width: 15%;
+	width: 20%;
 }
 
 .subCat a {
 	font-size: 13px;
+	margin-left: 5%;
 }
 
 img#icon {
@@ -154,7 +158,7 @@ img#icon {
 }
 
 .button {
-	-webkit-appearance: button;
+	/*-webkit-appearance: button;*/
 }
 
 .addressInfo {
@@ -226,7 +230,7 @@ img#icon {
 #main {
 	margin-right: 15%;
 	margin-top: 2em;
-	width: 70%;
+	width: 65%;
 	float: right;
 }
 div#info {

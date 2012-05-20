@@ -68,7 +68,7 @@
 		<notYou>It's not you?</notYou>
 	</header>
 	<product>
-		<results>results for: </results>
+		<results>Results for: </results>
 		
 		<pnameLabel>Name:</pnameLabel>
 		<priceLabel>Price:</priceLabel>
@@ -96,7 +96,7 @@
 	<signUpForm>
 		<signUp>Sign up</signUp>
 		<accountInfo>Account information</accountInfo>
-		<userNameLabel>User name:</userNameLabel>
+		<userNameLabel>Username:</userNameLabel>
 		<confirmPasswordLabel>Confirm password:</confirmPasswordLabel>
 		<emailLabel>E-mail:</emailLabel>
 		<nameLabel>Name:</nameLabel>
@@ -140,6 +140,7 @@
 		<productToOrder>Product added to your order</productToOrder>
 	</order>
 	<Address>
+		<noCountry>Choose a country first</noCountry>
 		<addr1>Address line 1: </addr1>
 		<addr2>Address line 2: </addr2>
 		<address>Address: </address>
