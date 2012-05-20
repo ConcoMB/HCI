@@ -30,7 +30,7 @@
 		<notYou>¿No eres tú?</notYou>
 	</header>
 	<product>
-		<results>resultados para: </results>
+		<results>Resultados para: </results>
 		<pnameLabel>Nombre: </pnameLabel>
 		<priceLabel>Precio: </priceLabel>
 		<descLabel>Descripcion: </descLabel>
@@ -49,7 +49,7 @@
 	<signUpForm>
 		<signUp>Regístrate</signUp>
 		<accountInfo>Información de la cuenta</accountInfo>
-		<userNameLabel>Nombre del usuario:</userNameLabel>
+		<userNameLabel>Nombre de usuario:</userNameLabel>
 		<confirmPasswordLabel>Confirmar contraseña:</confirmPasswordLabel>
 		<emailLabel>E-mail:</emailLabel>
 		<nameLabel>Nombre:</nameLabel>
@@ -109,6 +109,7 @@
 		<productToOrder>Producto agregado a la orden</productToOrder>
 	</order>
 	<Address>
+		<noCountry>Elige un país primero</noCountry>
 		<confirm>Confirmar</confirm>
 		<newAddrT>Nueva dirección</newAddrT>		
 		<addr1>Dirección, línea 1: </addr1>

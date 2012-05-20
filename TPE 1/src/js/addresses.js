@@ -23,11 +23,11 @@ function viewAddrs() {
 				$(div).find(".astate").text(state);
 				var addrID = $(this).attr("id");
 				$(div).find(".editAddr").attr("href", "#target=editAddr&id=" + addrID);
-				$(div).find(".adrRmv").click(function(){
+				$(div).find(".adrRmv").click(function() {
 					/*if(confirm("Remove this address?")){
-						removeAddr(addrID);
+					removeAddr(addrID);
 					}*/
-					alert("We're working on this event... check again later!");
+					//alert("We're working on this event... check again later!");
 				});
 				$("#addrs").append(div);
 
@@ -46,7 +46,6 @@ function viewAddrs() {
 
 }
 
-
 function GetAddressList() {
 	var params = {
 		username : $(user).find("user").attr("username"),
@@ -60,11 +59,11 @@ function GetStateList(cID) {
 		language_id : $(language).find('language').attr('id'),
 		country_id : cID
 	}
-	var states =request('GetStateList', params, 'Common');
-	var err=parseError(err);
-	if(err){
-		alert("error state" +err);
-	}else{
+	var states = request('GetStateList', params, 'Common');
+	var err = parseError(err);
+	if(err) {
+		alert("error state" + err);
+	} else {
 		return states;
 	}
 }
@@ -73,11 +72,11 @@ function GetCountryList() {
 	var params = {
 		language_id : $(language).find('language').attr('id')
 	}
-	var countries =request('GetCountryList', params, 'Common');
-	var err=parseError(err);
-	if(err){
-		alert("error country"+err);
-	}else{
+	var countries = request('GetCountryList', params, 'Common');
+	var err = parseError(err);
+	if(err) {
+		alert("error country" + err);
+	} else {
 		return countries;
 	}
 }
@@ -139,7 +138,7 @@ function newAddrHandler() {
 			if(window.location.hash.match(/oid/)) {
 				var aux = window.location.hash.split("oid=");
 				var orderID = aux[1];
-				var addrID=$(resp).find("address").attr("id");
+				var addrID = $(resp).find("address").attr("id");
 				window.location.hash = "#target=checkOut&oid=" + orderID;
 			} else {
 				window.location.hash = "#target=addresses";
@@ -150,14 +149,14 @@ function newAddrHandler() {
 	}
 }
 
-function updateOrderAddr(order, addr){
-	var params={
+function updateOrderAddr(order, addr) {
+	var params = {
 		username : $(user).find("user").attr("username"),
 		authentication_token : $(user).find("token").text(),
-		order_id: order,
-		address_id:addr
+		order_id : order,
+		address_id : addr
 	}
-	return request("ChangeOrderAddress",params,"Order");
+	return request("ChangeOrderAddress", params, "Order");
 }
 
 function CreateAddress(addr) {
@@ -184,8 +183,9 @@ function newAddr() {
 }
 
 function updateCountries() {
+	$("#dumbC").remove();
 	var countries = GetCountryList();
-	$("#sd_country").append('<option value="no">'+$(language).find("chooseCountry").text()+'</option>');
+	$("#sd_country").append('<option value="no">' + $(language).find("chooseCountry").text() + '</option>');
 	$(countries).find('country').each(function() {
 		var cID = $(this).attr("id");
 		var cName = $(this).find("name").text();
@@ -199,15 +199,18 @@ function updateCountries() {
 function updateStates() {
 	$("#sd_state").html("");
 	var thisCountryID = $("#sd_country").attr("value");
-	var states = GetStateList(thisCountryID);
-	$("#sd_state").append('<option value="no">'+$(language).find("chooseState").text()+'</option>');
-	$(states).find('state').each(function() {
-		var sID = $(this).attr("id");
-		var sName = $(this).find("name").text();
-		var state = '<option value="' + sID + '">' + sName + '</option>';
-		$("#sd_state").append(state);
-	});
-
+	if(thisCountryID == "no") {
+		$("#sd_state").append('<option id="no" value="no">' + $(language).find("noCountry").text() + '</option>')
+	}else{
+		var states = GetStateList(thisCountryID);
+		$("#sd_state").append('<option value="no">' + $(language).find("chooseState").text() + '</option>');
+		$(states).find('state').each(function() {
+			var sID = $(this).attr("id");
+			var sName = $(this).find("name").text();
+			var state = '<option value="' + sID + '">' + sName + '</option>';
+			$("#sd_state").append(state);
+		});
+	}
 }
 
 function GetAddress(addressID) {
@@ -247,7 +250,7 @@ function editAddressHandler(addressID) {
 	$("#addr_ZC").attr("value", zipCode);
 	$("#addr_phone").attr("value", phone);
 	$("#sd_country").change(updateStates);
-	
+
 	$("#editAddressButton").submit(editAddressButtonHandler(addressID));
 	$("#cancelButton").click(function() {
 		window.location.hash = "#target=addresses";
@@ -264,6 +267,6 @@ function editAddressButtonHandler(addressID) {
 	var city = $('#addr_city').attr("value");
 	var zipCode = $('#addr_ZC').attr("value");
 	var phone = $('#addr_phone').attr("value");
-	
+
 }
 
