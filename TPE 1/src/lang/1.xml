@@ -132,7 +132,7 @@
 		<noItems>You currently have no items in this order</noItems>
 		<addToOrder>Add to order</addToOrder>
 		<notLogged>You need to be logged in order to buy a product</notLogged>
-		<productToOrder>Product added to your order</productToOrder>
+		<productToOrder>Product added to your order. \nGo to order?</productToOrder>
 	</order>
 	<Address>
 		<noCountry>Choose a country first</noCountry>

@@ -24,7 +24,9 @@ function toCartHandler(product, order, cant) {
 	if(err) {
 		orderError(err);
 	} else {
-		alert($(language).find("productToOrder").text());
+		if(confirm($(language).find("productToOrder").text())){
+			window.location.hash="#target=order&oid="+order+"&status=1";
+		}else{}
 	}
 	return false;
 }

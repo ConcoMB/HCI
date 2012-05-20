@@ -113,7 +113,7 @@
 		<addToOrder>Agregar a la order</addToOrder>
 		<notLogged>Debes estar registrado para comprar un producto</notLogged>
 		<position>Posición de tu paquete: </position>
-		<productToOrder>Producto agregado a la orden</productToOrder>
+		<productToOrder>Producto agregado a la orden. ¿Desea ir a la orden ahora?</productToOrder>
 	</order>
 	<Address>
 		<noCountry>Elige un país primero</noCountry>
