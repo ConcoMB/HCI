@@ -226,7 +226,7 @@ img#icon {
 
 .itemBox {
 	margin-right: auto;
-	margin-left: 5%;
+	/*margin-left: 5%;*/
 	text-align: center;
 	width: 100%;
 	background-color: #fbffbf;
@@ -295,9 +295,7 @@ div#info {
 .wide {
 	width: 95%;
 }
-#footer{
-	margin-bottom: 0px;
-}
+
 .profile {
 	margin-right: auto;
 	margin-left: auto;
@@ -351,6 +349,23 @@ img#userPhoto {
 }
 .itemBox select {
 	margin-left: 1em;
+}
+
+
+.goToRight{
+	width: 29%;
+	float:right;
+	margin-bottom: 10%;
+}
+
+.goToLeft{
+    margin-top: 10%;
+	width:49%;
+	float:left;
+}
+#sort{
+	clear:both;
+	margin-bottom:2em;
 }
 
 #footer {

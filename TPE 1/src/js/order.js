@@ -136,9 +136,12 @@ function goToOrder(orderID, status) {
 				$("#addr").text($(addr).find("full_name").text());
 				var lat = parseInt($(ord).find("latitude").text());
 				var longit = parseInt($(ord).find("longitude").text());
-				$(".center").append('<h3><span id="position" class="translate"></span></h3>');
-				$(".center").append('<div id="map_canvas" style="width:100%; height:100%"></div>');
+				$("#mapHere").append('<h3><span id="position" class="translate"></span></h3>');
+				$("#mapHere").append('<div id="map_canvas" style="width:250px; height:250px"></div>');
 				gMap(lat,longit);
+				$("#mapHere").addClass("goToRight");
+				$("#mid").removeClass("center");
+				$("#mid").addClass("goToLeft");
 				break;
 			case "4":
 				$("#stat").attr("id","delivered");
