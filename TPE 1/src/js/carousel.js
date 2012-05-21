@@ -1,5 +1,5 @@
 function carousel() {
-
+	loadImgs();
 	//rotation speed and timer
 	var speed = 3000;
 	var run = setInterval('rotate()', speed);
@@ -74,6 +74,24 @@ function carousel() {
 	}, function() {
 		run = setInterval('rotate()', speed);
 	});
+
+}
+
+function loadImgs(){
+	var prod1 = GetProduct(49);
+	$("#img1").attr("src", $(prod1).find("image_url").text());	
+	$("#link1").attr("href","#target=detail&pid=49");
+	prod1 = GetProduct(73);
+	$("#img2").attr("src", $(prod1).find("image_url").text());
+	$("#link2").attr("href","#target=detail&pid=73");
+
+	prod1 = GetProduct(68);
+	$("#img3").attr("src", $(prod1).find("image_url").text());
+	$("#link3").attr("href","#target=detail&pid=68");
+
+	prod1 = GetProduct(56);
+	$("#img4").attr("src", $(prod1).find("image_url").text());
+	$("#link4").attr("href","#target=detail&pid=56");
 
 }
 

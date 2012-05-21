@@ -324,7 +324,7 @@ function editAddressButtonHandler(addressID) {
 	}
 
 	if(!zipCode) {
-		text($(language).find('requiredField').text());
+		$("#reqZC").text($(language).find('requiredField').text());
 		error=true;
 	}
 
@@ -332,7 +332,7 @@ function editAddressButtonHandler(addressID) {
 		$('#reqPhone').text($(language).find('requiredField').text());
 		error=true;
 	} else {
-		var pn = parseInt(phone);
+		var pn = isNumber(phone);
 		if(!pn) {
 			$('#reqPhone').text($(language).find('wrong_phone').text());
 			error=true;
@@ -345,7 +345,6 @@ function editAddressButtonHandler(addressID) {
 		xml += address1 + '</address_line_1><address_line_2>' + address2 + '</address_line_2><country_id>';
 		xml += country + '</country_id><state_id>' + state + '</state_id><city>' + city + '</city><zip_code>';
 		xml += zipCode + '</zip_code><phone_number>' + phone + '</phone_number></address>';
-		alert(xml);
 		var resp = UpdateAddress(xml);
 		var err = parseError(resp);
 		if(!err) {
@@ -357,3 +356,9 @@ function editAddressButtonHandler(addressID) {
 	return false;
 }
 
+function isNumber(number){
+	if(number.match(/[^0-9 \-]+/)){
+		return false;
+	}
+	return true;
+}

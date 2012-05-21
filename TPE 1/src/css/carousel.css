@@ -49,7 +49,7 @@
     float:left;
     outline:0;
 }
- 
+
 a#prev {
     background:url(../img/arrow.png) 0 -31px no-repeat; 
 }
@@ -63,6 +63,7 @@ a#next {
 }
  
 a#next:hover {
+
     background:url(../img/arrow.png) -32px 0 no-repeat;
 }
  
