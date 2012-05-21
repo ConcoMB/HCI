@@ -51,19 +51,19 @@
 }
  
 a#prev {
-    background:url(arrow.gif) 0 -31px no-repeat; 
+    background:url(../img/arrow.png) 0 -31px no-repeat; 
 }
  
 a#prev:hover {
-    background:url(arrow.gif) 0 0 no-repeat;
+    background:url(../img/arrow.png) 0 0 no-repeat;
 }
  
 a#next {
-    background:url(arrow.gif) -32px -31px no-repeat; 
+    background:url(../img/arrow.png) -32px -31px no-repeat; 
 }
  
 a#next:hover {
-    background:url(arrow.gif) -32px 0 no-repeat;
+    background:url(../img/arrow.png) -32px 0 no-repeat;
 }
  
 .clear {clear:both}
