@@ -64,7 +64,6 @@ function signupFormHandler(){
 		var err=parseError(req);
 		if(!err){
 			user=signIn(username, password);
-			SetAccountPreferences('style');
 			updateUserPanel();
 			$('#main').load('home.html');
 		}else{
