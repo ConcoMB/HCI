@@ -23,6 +23,7 @@
 		</errors_newAddress>
 	</errors>
 	<header>
+		<theme>Tema: </theme>
 		<allCats>Todas las categorias</allCats>
 		<all>Todas</all>
 		<hello>Hola </hello>

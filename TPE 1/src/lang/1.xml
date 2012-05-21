@@ -49,6 +49,7 @@
 		<passMismatch>Passwords don't match</passMismatch>
 	</prof>
 	<header>
+		<theme>Theme: </theme>
 		<allCats>All categories</allCats>
 		<all>All</all>
 		<hello>Hello </hello>
