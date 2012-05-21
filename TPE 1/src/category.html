@@ -1,34 +1,36 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<title>Buy Stuff!</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
-<body>	
-<div class="center">
-	<h1><span class="translate_categoryLabel">Category: </span><span id="categoryName"></span></h1>
-	<h2><span id="subcategoryName"></span></h2>
-	<form id="sort" action="">
-		<span class="translate_orderBy">Order by:</span>
-		<select id="sortBy">
-			<option class="translate_asc" value="ASC">Ascendent</option>
-			<option class="translate_desc" value="DESC">Descendent</option>
-		</select>
 
-		<select>
-			<option class="translate_prix">Price</option>
-			<option class="translate_Name">Name</option>
-			<option class="translate_ranking">Ranking</option>
-		</select>
-	</form>
-	<div id='productList'>
-		
-		<div class="pages">
-			<a id="prev" class="translate">Prev</a>
-			<a id="next" class="translate">Next</a>
+	<head>
+		<title>Buy Stuff!</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	<body>
+		<div class="center">
+			<h1><span class="translate_categoryLabel">Category: </span><span id="categoryName"></span></h1>
+			<h2><span id="subcategoryName"></span></h2>
+			<form id="sort" action="">
+				<span class="translate_orderBy">Order by:</span>
+				<select id="sortBy">
+					<option class="translate_asc" value="ASC">Ascendent</option>
+					<option class="translate_desc" value="DESC">Descendent</option>
+				</select>
+
+				<select>
+					<option class="translate_prix">Price</option>
+					<option class="translate_Name">Name</option>
+					<option class="translate_ranking">Ranking</option>
+				</select>
+			</form>
+			<div class="pages">
+					<span class="translate_pagesLabel"></span>
+				</div>
+			<div id='productList'>
+			</div>
+			<div class="pages">
+					<span class="translate_pagesLabel"></span>
+				</div>
 		</div>
-	</div>
-</div>
-</body>
+	</body>
 </html>
