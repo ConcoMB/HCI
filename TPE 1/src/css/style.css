@@ -530,32 +530,6 @@ img#userPhoto {
 	text-align:center;
 }
 
-.prof_input{
-	display:none;
-}
-
-.prof_inputPass{
-	display:none;
-}
-
-
-.prof_newPass_item{
-	display:none;
-}
-
-#acceptProfileButton{
-	display:none;
-}
-#cancelEditProfile{
-	display:none;
-}
-#acceptChangePassword{
-	display:none;
-}
-#cancelChangePassword{
-	display:none;
-}
-
 
 .reqProfError{
 	color: #CD0A0A;
