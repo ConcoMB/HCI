@@ -81,7 +81,7 @@
 		<Name>Nombre</Name>
 		<ranking>Ranking</ranking>
 		<welcome>Bienvenido a Buy Stuff!</welcome>
-
+		<pagesLabel>Paginas:</pagesLabel>
 	</general>
 	<order>
 		<rmvOrder>¿Eliminar esta orden?</rmvOrder>

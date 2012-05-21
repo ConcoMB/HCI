@@ -9,6 +9,15 @@
 	overflow: auto;
 }
 
+.page{
+	color:#710909;
+}
+
+.currentPage{
+	color:#E3A345;
+	font-weight: bold;
+}
+
 html,body{
 	height: 100%;
 	margin:0;

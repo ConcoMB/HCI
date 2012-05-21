@@ -87,6 +87,7 @@
 		<prix>Price</prix>
 		<Name>Name</Name>
 		<ranking>Ranking</ranking>
+		<pagesLabel>Pages:</pagesLabel>
 	</general>
 	<signUpForm>
 		<signUp>Sign up</signUp>
