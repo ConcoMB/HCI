@@ -8,26 +8,28 @@
 <body>	
 <div class="center">
 	<h1><span id="numberResults"></span> <span class="translate_results">results for:</span><span id="searchTitle"></span></h1>
-	<form action="">
+	<form id="sort" action="">
 		<span class="translate_orderBy">Order by:</span>
 		<select id="sortBy">
 			<option class="translate_asc" value="ASC">Ascendent</option>
 			<option class="translate_desc" value="DESC">Descendent</option>
 		</select>
 
-		<select>
-			<option class="translate_prix">Price</option>
-			<option class="translate_Name">Name</option>
-			<option class="translate_ranking">Ranking</option>
-		</select>
-	</form>
-	<div id="productList">
-		
-	</div>
-	<div class="pages">
-		<a id="prev" class="translate">&lt;&lt;Prev</a>
-		<a id="next" class="translate">Next&gt;&gt;</a>
-	</div>
-</div>
-</body>
+				<select>
+					<option class="translate_prix">Price</option>
+					<option class="translate_Name">Name</option>
+					<option class="translate_ranking">Ranking</option>
+				</select>
+			</form>
+			<div class="pages">
+				<span class="translate_pagesLabel"></span>
+			</div>
+			<div id="productList">
+
+			</div>
+			<div class="pages">
+				<span class="translate_pagesLabel"></span>
+			</div>
+		</div>
+	</body>
 </html>

@@ -15,7 +15,7 @@
 				<div class="dataItem">
 					<span class="profLabel translate_pnameLabel">Name: </span><span id="uname" class="profData">Name1</span>
 					<div class="inputBox">
-						<input id="prof_name" class="wide prof_input" type="text"/>
+						<input id="prof_name" class="wide prof_input hide" type="text"/>
 					</div>
 					<div id="reqProfName" class="reqProfError">
 						
@@ -25,7 +25,7 @@
 				<div class="dataItem">
 					<span class="profLabel translate_mail">E-mail: </span> <span id="uemail" class="profData"></span>
 					<div class="inputBox">
-						<input id="prof_mail" class="wide prof_input" type="text"/>
+						<input id="prof_mail" class="wide prof_input hide" type="text"/>
 					</div>
 					<div id="reqProfEmail" class="reqProfError">
 						
@@ -35,27 +35,27 @@
 				<div class="dataItem">
 					<span class="profLabel translate_bday">Birth date: </span><span id="ubdate" class="profData"></span>
 					<div class="inputBox">
-						<input id="prof_birthDate" class="wide prof_input" type="text"/>
+						<input id="prof_birthDate" class="wide prof_input hide" type="text"/>
 					</div>
 					<div id="reqProfBdate" class="reqProfError">
 						
 					</div>
 				</div>
-				<input id="acceptProfileButton" type="submit" class="translate_accept" value="Accept"/>
-				<a><input id="cancelEditProfile" type="button" class="translate_cancel" value="Cancel"/></a>
+				<input id="acceptProfileButton" type="submit" class="hide translate_accept" value="Accept"/>
+				<a><input id="cancelEditProfile" type="button" class="hide translate_cancel" value="Cancel"/></a>
 				<a><input id="editProfileButton" type="button" class="translate_editP" value="Edit profile"/></a>
 			</form>
 			<form id="changePasswordForm" action="">
 				<div class="dataItem">
 					<span class="profLabel translate_passwordLabel">Password: </span><span class="profDataPass"> ****** </span>
 					<div class="inputBox">
-						<input id="prof_pass" class="wide prof_inputPass" type="password"/>
+						<input id="prof_pass" class="wide prof_inputPass hide" type="password"/>
 					</div>
 					<div id="reqProfPass" class="reqProfError">
 						
 					</div>
 				</div>
-				<div class="dataItem prof_newPass_item">
+				<div class="hide dataItem prof_newPass_item">
 					<span class="profLabel translate_newPass">New password: </span>
 					<div class="inputBox">
 						<input id="prof_newPass" class="wide prof_inputPass" type="password"/>
@@ -63,21 +63,19 @@
 					<div id="reqProfNewPass" class="reqProfError">
 						
 					</div>
-					<div id="reqProfNewPassMatch" class="reqProfError translate_passMismatch">
-						Passwords don't match 
+					<div id="reqProfNewPassMatch" class="reqProfError">
 					</div>
 				</div>
-				<div class="dataItem prof_newPass_item">
+				<div class="hide dataItem prof_newPass_item">
 					<span class="profLabel translate_confirmPass">Confirm password: </span>
 					<div class="inputBox">
 						<input id="prof_confPass" class="wide prof_inputPass" type="password"/>
 					</div>
-					<div id="reqProfConfPass" class="reqProfError translate_requiredField">
-						
+					<div id="reqProfConfPass" class="reqProfError">
 					</div>
 				</div>
-				<input id="acceptChangePassword" type="submit" class="translate_accept" value="Accept"/>
-				<a><input id="cancelChangePassword" type="button" class="translate_cancel" value="Cancel"/></a>
+				<input id="acceptChangePassword" type="submit" class="hide translate_accept" value="Accept"/>
+				<a><input id="cancelChangePassword" type="button" class="hide translate_cancel" value="Cancel"/></a>
 				<a><input id="changePasswordButton" type="button" class="translate_changePass" value="Change password"/></a>
 
 			</form>

@@ -126,6 +126,7 @@ function changePasswordHandler() {
 	var confPass = $("#prof_confPass").attr("value");
 	var error = false;
 
+	$('[id^="reqProf"]').text('');
 	if(!pass) {
 		$('#reqProfPass').text($(language).find('requiredField').text());
 		error = true;
@@ -137,10 +138,12 @@ function changePasswordHandler() {
 
 	if(!confPass) {
 		$('#reqProfConfPass').text($(language).find('requiredField').text());
+		error = true;
 	}
 
 	if(newPass != confPass) {
 		$('#reqProfNewPass').text($(language).find('password_mismatch').text());
+		error= true;
 	}
 
 	if(!error) {

@@ -18,7 +18,7 @@ function searchHandler() {
 function search(query, cid, sid, page, order) {
 	$('#searchTitle').text(query);
 	var response = GetProductListByName(query, order, page);
-	$('#numberResults').text($(response).find('products').attr('size'));
+	$('#numberResults').text($(response).find('products').attr('size')+' ');
 	if(cid != -1) {
 		$(response).find('product').each(function() {
 			if($(this).find('category_id').text() != cid) {

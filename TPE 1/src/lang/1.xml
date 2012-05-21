@@ -49,6 +49,7 @@
 		<passMismatch>Passwords don't match</passMismatch>
 	</prof>
 	<header>
+		<theme>Theme: </theme>
 		<allCats>All categories</allCats>
 		<all>All</all>
 		<hello>Hello </hello>
@@ -87,6 +88,7 @@
 		<prix>Price</prix>
 		<Name>Name</Name>
 		<ranking>Ranking</ranking>
+		<pagesLabel>Pages:</pagesLabel>
 	</general>
 	<signUpForm>
 		<signUp>Sign up</signUp>

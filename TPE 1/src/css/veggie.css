@@ -28,6 +28,10 @@ html,body{
 	clear: left
 }
 
+.buyCant{
+	width: 3em;
+}
+
 .translate_notLogged{
 	visibility:hidden;
 	display:none;
@@ -123,14 +127,12 @@ html,body{
 .userhead {
 	/*height:100%;*/
 	/*border: 1px solid black;*/
-	width: 35%;
+	width: 37%;
 	float: right;
 	padding-top: 1em;
 }
 
-#helloDiv{
-	margin-left:10%;
-}
+
 #loggedFirstLine{
 	float: right;
 	height:98%;
@@ -507,33 +509,6 @@ img#userPhoto {
 	text-align:center;
 }
 
-.prof_input{
-	display:none;
-}
-
-.prof_inputPass{
-	display:none;
-}
-
-
-.prof_newPass_item{
-	display:none;
-}
-
-#acceptProfileButton{
-	display:none;
-}
-#cancelEditProfile{
-	display:none;
-}
-#acceptChangePassword{
-	display:none;
-}
-#cancelChangePassword{
-	display:none;
-}
-
-
 .reqProfError{
 	color: #CD0A0A;
 	width: 20%;
@@ -557,7 +532,7 @@ img#userPhoto {
 }
 
 .loginInput{
-	width: 35%;
+	width: 33%;
 }
 
 
@@ -598,10 +573,12 @@ input#sb {
 	font-size: 14px;
 	color:#CD0A0A;
 	margin-bottom: 2px;
+	margin-top: 12px;
 }
 
 #helloDiv{
 	clear: left;
+	margin-left: 1em;
 	margin-bottom: 1em;
 }
 
@@ -657,6 +634,9 @@ input#sb {
 	font-size:13px;
 	width:45%;
 }
+.hide{
+	display: none;
+}
 
 #loading{
 	height: 50px;
@@ -676,4 +656,9 @@ body{
 
 a{
 	font-weight: bold;
+	
+}
+
+a:visited{
+	color: #ff72c2;
 }
