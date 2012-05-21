@@ -15,6 +15,14 @@ html,body{
 	padding:0;
 }
 
+
+.currentPage{
+	font-style: italic;
+	color: #010208 !important;
+	font-weight: bold;
+	
+}
+
 .center {
 	margin: auto;
 	text-align: center;

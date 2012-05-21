@@ -332,7 +332,7 @@ function editAddressButtonHandler(addressID) {
 		$('#reqPhone').text($(language).find('requiredField').text());
 		error=true;
 	} else {
-		var pn = parseInt(phone);
+		var pn = isNumber(phone);
 		if(!pn) {
 			$('#reqPhone').text($(language).find('wrong_phone').text());
 			error=true;
@@ -356,3 +356,9 @@ function editAddressButtonHandler(addressID) {
 	return false;
 }
 
+function isNumber(number){
+	if(number.match(/[^0-9 \-]+/)){
+		return false;
+	}
+	return true;
+}
