@@ -32,10 +32,7 @@ html,body{
 	width: 3em;
 }
 
-.translate_notLogged{
-	visibility:hidden;
-	display:none;
-}
+
 
 .inputBox {
 	float: left;

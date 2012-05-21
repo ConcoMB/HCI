@@ -48,11 +48,6 @@ html,body{
 	clear: left
 }
 
-.translate_notLogged{
-	visibility:hidden;
-	display:none;
-}
-
 .inputBox {
 	float: left;
 	width: 45%;
