@@ -132,7 +132,7 @@ html,body{
 .userhead {
 	/*height:100%;*/
 	/*border: 1px solid black;*/
-	width: 35%;
+	width: 37%;
 	float: right;
 	padding-top: 1em;
 }
@@ -514,33 +514,6 @@ img#userPhoto {
 	text-align:center;
 }
 
-.prof_input{
-	display:none;
-}
-
-.prof_inputPass{
-	display:none;
-}
-
-
-.prof_newPass_item{
-	display:none;
-}
-
-#acceptProfileButton{
-	display:none;
-}
-#cancelEditProfile{
-	display:none;
-}
-#acceptChangePassword{
-	display:none;
-}
-#cancelChangePassword{
-	display:none;
-}
-
-
 .reqProfError{
 	color: #CD0A0A;
 	width: 20%;
@@ -564,7 +537,7 @@ img#userPhoto {
 }
 
 .loginInput{
-	width: 35%;
+	width: 33%;
 }
 
 
@@ -605,6 +578,7 @@ input#sb {
 	font-size: 14px;
 	color:#CD0A0A;
 	margin-bottom: 2px;
+	margin-top: 12px;
 }
 
 #helloDiv{
