@@ -28,6 +28,10 @@ html,body{
 	clear: left
 }
 
+.buyCant{
+	width: 3em;
+}
+
 .translate_notLogged{
 	visibility:hidden;
 	display:none;
@@ -128,9 +132,7 @@ html,body{
 	padding-top: 1em;
 }
 
-#helloDiv{
-	margin-left:10%;
-}
+
 #loggedFirstLine{
 	float: right;
 	height:98%;
@@ -602,6 +604,7 @@ input#sb {
 
 #helloDiv{
 	clear: left;
+	margin-left: 1em;
 	margin-bottom: 1em;
 }
 
@@ -657,6 +660,9 @@ input#sb {
 	font-size:13px;
 	width:45%;
 }
+.hide{
+	display: none;
+}
 
 #loading{
 	height: 50px;
@@ -676,4 +682,9 @@ body{
 
 a{
 	font-weight: bold;
+	
+}
+
+a:visited{
+	color: #ff72c2;
 }
