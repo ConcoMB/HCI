@@ -9,6 +9,10 @@
 	overflow: auto;
 }
 
+.buyCant{
+	width: 3em;
+}
+
 a, a:visited{
 	text-decoration: none;
 	color:#F39814;
@@ -149,9 +153,6 @@ h2 {
 	padding-top: 1em;
 }
 
-#helloDiv{
-	margin-left:10%;
-}
 #loggedFirstLine{
 	float: left;
 	height:98%;
@@ -626,6 +627,7 @@ input#sb {
 
 #helloDiv{
 	clear: left;
+	margin.left:1em;
 	margin-bottom: 1em;
 }
 

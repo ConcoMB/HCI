@@ -8,6 +8,9 @@
 	padding: 2em;
 	overflow: auto;
 }
+.buyCant{
+	width: 3em;
+}
 
 .page{
 	color:#710909;
@@ -150,9 +153,6 @@ body{
 	padding-top: 1em;
 }
 
-#helloDiv{
-	margin-left:10%;
-}
 #loggedFirstLine{
 	float: left;
 	height:98%;
@@ -625,6 +625,8 @@ input#sb {
 
 #helloDiv{
 	clear: left;
+	margin-left:1em;
+
 	margin-bottom: 1em;
 }
 
