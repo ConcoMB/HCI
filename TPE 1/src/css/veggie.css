@@ -251,7 +251,8 @@ img#icon {
 	height: 1.75em;
 }
 #BUY select{
-	font-size: 1.5em;
+	font-size: 1em;
+	width: 12em;
 }
 
 .moreInfo{
@@ -666,4 +667,12 @@ a{
 
 a:visited{
 	color: #ff72c2;
+}
+
+input{
+	
+	font-style: normal;
+	
+	font-weight: normal;
+	
 }

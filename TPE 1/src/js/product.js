@@ -42,7 +42,7 @@ function getProductListByCategory(cid, p, ord) {
 
 function updateProduct(pid){
 	var product=GetProduct(pid);
-	$("#like").attr("src","https://www.facebook.com/plugins/like.php?href="+window.location.href);
+	$("#like").attr("src","https://www.facebook.com/plugins/like.php?href=www.hciGrupo5/"+window.location.hash);
 	$('#artName').html($(product).find('name').text());
 	$('#artPrice').text($(product).find('price').text()+"$");
 	$('#artRank').text($(product).find('sales_rank').text());
@@ -114,7 +114,7 @@ function fillProducts(products) {
 				$(div).find(".ranking").text(rank);
 				$(div).find('.articleImg').attr("src",img);
 				$(div).find(".prodImg").attr("href", nameLink);
-				$(div).find(".like").attr("src","https://www.facebook.com/plugins/like.php?href="+window.location.hostname +nameLink);
+				$(div).find(".like").attr("src","https://www.facebook.com/plugins/like.php?href=www.hciGrupo5/"+nameLink);
 
 				$('#productList').append(div);
 				if(user){

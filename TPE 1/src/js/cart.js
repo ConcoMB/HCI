@@ -26,7 +26,7 @@ function toCartHandler(product, order, cant) {
 	} else {
 		if(confirm($(language).find("productToOrder").text())){
 			window.location.hash="#target=order&oid="+order+"&status=1";
-		}else{}
+		}
 	}
 	return false;
 }

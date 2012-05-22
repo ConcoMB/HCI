@@ -68,11 +68,11 @@ function ordersToCart(orders) {
 					var addressID = $(this).find("address_id").text();
 					var address = GetAddress(addressID);
 					$(div).find(".addressData").text($(address).find("full_name").text());
-					$(div).find(".deleteOrder").addClass('hide');
+					$(div).find(".translate_deleteOrder").addClass('hide');
 				} else {
 					$(div).find(".addrDiv").addClass('hide');
-					$(div).find(".deleteOrder").click(function() {
-						deleteOrderH(orderID);
+					$(div).find(".translate_deleteOrder").click(function() {
+							deleteOrderH(orderID);
 					});
 				}
 				$(div).find('.status').addClass(stat);
@@ -266,8 +266,9 @@ function checkOut(orderID) {
 				var state = $(GetStateList(countryID)).find("state[id=" + stateID + "]").find("name").text();
 				$(div).find(".astate").text(state);
 				var addrID = $(this).attr("id");
-				$(div).find(".adrBut").attr("value", "Select address");
+				$(div).find(".adrBut").attr("value", $(language).find("selectAddr").text());
 				$(div).find(".editAddr").attr("href", "#target=confirmed&oid=" + orderID + "&aid=" + addrID);
+				$(div).find(".adrRmv").addClass("hide");
 				$("#addrs").append(div);
 
 			});

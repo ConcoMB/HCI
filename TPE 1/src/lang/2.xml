@@ -115,8 +115,11 @@
 		<notLogged>Debes estar registrado para comprar un producto</notLogged>
 		<position>Posición de tu paquete: </position>
 		<productToOrder>Producto agregado a la orden. ¿Desea ir a la orden ahora?</productToOrder>
+		<backToCart>Volver a mi carrito</backToCart>
+		<goHome>Ir a la página de inicio</goHome>
 	</order>
 	<Address>
+		<selectAddr>Seleccionar dirreción</selectAddr>		
 		<noCountry>Elige un país primero</noCountry>
 		<confirm>Confirmar</confirm>
 		<newAddrT>Nueva dirección</newAddrT>		

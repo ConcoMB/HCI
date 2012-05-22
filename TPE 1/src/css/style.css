@@ -262,7 +262,8 @@ img#icon {
 	height: 1.75em;
 }
 #BUY select{
-	font-size: 1.5em;
+	font-size: 1em;
+	width: 12em;
 }
 
 .moreInfo{
@@ -667,4 +668,12 @@ input#sb {
 
 .hide{
 	display: none;
+}
+
+input{
+	
+	font-style: normal;
+	
+	font-weight: normal;
+	
 }

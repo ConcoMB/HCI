@@ -135,6 +135,8 @@
 		<addToOrder>Add to order</addToOrder>
 		<notLogged>You need to be logged in order to buy a product</notLogged>
 		<productToOrder>Product added to your order. \nGo to order?</productToOrder>
+		<backToCart>Go back to my shopping cart</backToCart>
+		<goHome>Go to home site</goHome>
 	</order>
 	<Address>
 		<noCountry>Choose a country first</noCountry>
@@ -154,6 +156,7 @@
 		<phone>Phone number: </phone>
 		<editAd>Edit address</editAd>
 		<rmAd>Remove address</rmAd>
+		<selectAddr>Select address</selectAddr>
 	</Address>
 	<description>
 		<moreInfo>More information</moreInfo>
