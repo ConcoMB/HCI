@@ -319,7 +319,7 @@ div#info {
 	margin-right: auto;
 	margin-left: auto;
 	overflow: auto;
-	width: 500px;
+	width: 550px;
 	background-color: #6cd838;
 	border: 3px solid #eff13b;
 	padding: 2em;
@@ -459,10 +459,17 @@ img#userPhoto {
 	overflow: auto;
 }
 .dataItem {
-	width: 100%;
-	height: 2em;
+width: 100%;
+height: 1em;
+float: left;
+margin: 0.5em;
 }
-
+.profBut{
+	width:99%;
+	float:left;
+	margin-top:1em;
+	margin-bottom:2em;
+}
 .orderLabel {
 	text-align: right;
 	width: 49%;
@@ -493,6 +500,9 @@ img#userPhoto {
 	font-weight: bold;
 	font-size: 14px;
 	
+}
+.dateInputp{
+	width:4em;
 }
 
 .profData{

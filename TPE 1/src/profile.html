@@ -41,8 +41,8 @@
 								Birth date (dd/mm/yyyy):
 							</div>
 							<div class="inputBox">
-								<input id="su_birth_year" class="dateInput translate_year" type="text" value="Year"/>
-								<select id="su_birth_month" class="dateInput">
+								<input id="su_birth_year" class="dateInputp translate_year" type="text" value="Year"/>
+								<select id="su_birth_month" class="dateInputp">
 									<option class="translate_month">Month:</option>
 									<option>01</option>
 									<option>02</option>
@@ -58,7 +58,7 @@
 									<option>12</option>
 								</select>
 
-								<select id="su_birth_day" class="dateInput">
+								<select id="su_birth_day" class="dateInputp">
 									<option class="translate_day">Day:</option>
 									<option>01</option>
 									<option>02</option>
@@ -95,21 +95,18 @@
 
 								</select>
 
-								
-
 							</div>
 
 							<div id="reqProfBdate" class="reqProfError">
 
 							</div>
 						</div>
-						<input id="acceptProfileButton" type="submit" class="hide translate_accept" value="Accept"/>
-						<a>
-						<input id="cancelEditProfile" type="button" class="hide translate_cancel" value="Cancel"/>
-						</a>
-						<a>
-						<input id="editProfileButton" type="button" class="translate_editP" value="Edit profile"/>
-						</a>
+						<div class="profBut">
+
+							<input id="acceptProfileButton" type="submit" class="hide translate_accept" value="Accept"/>
+							<a>	<input id="cancelEditProfile" type="button" class="hide translate_cancel" value="Cancel"/></a>
+							<a>	<input id="editProfileButton" type="button" class="translate_editP" value="Edit profile"/>	</a>
+						</div>
 					</form>
 					<form id="changePasswordForm" action="">
 						<div class="dataItem">
@@ -138,14 +135,16 @@
 							</div>
 							<div id="reqProfConfPass" class="reqProfError"></div>
 						</div>
-						<input id="acceptChangePassword" type="submit" class="hide translate_accept" value="Accept"/>
-						<a>
-						<input id="cancelChangePassword" type="button" class="hide translate_cancel" value="Cancel"/>
-						</a>
-						<a>
-						<input id="changePasswordButton" type="button" class="translate_changePass" value="Change password"/>
-						</a>
+						<div class="profBut">
+							<input id="acceptChangePassword" type="submit" class="hide translate_accept" value="Accept"/>
+							<a>
+							<input id="cancelChangePassword" type="button" class="hide translate_cancel" value="Cancel"/>
+							</a>
 
+							<a>
+							<input id="changePasswordButton" type="button" class="translate_changePass" value="Change password"/>
+							</a>
+						</div>
 					</form>
 				</div>
 			</div>

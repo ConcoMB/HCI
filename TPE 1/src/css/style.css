@@ -331,7 +331,7 @@ div#info {
 	margin-right: auto;
 	margin-left: auto;
 	overflow: auto;
-	width: 500px;
+	width: 550px;
 	background-color: #fbffbf;
 	border: 1px solid black;
 	padding: 2em;
@@ -471,8 +471,14 @@ img#userPhoto {
 	overflow: auto;
 }
 .dataItem {
-	width: 100%;
-	height: 2em;
+width: 100%;
+height: 1em;
+float: left;
+margin: 0.5em;
+
+}
+#bdayInput{
+	margin-top:0.5em;
 }
 
 .orderLabel {
@@ -505,6 +511,17 @@ img#userPhoto {
 	font-weight: bold;
 	font-size: 14px;
 	
+}
+
+.profBut{
+	width:99%;
+	float:left;
+	margin-top:1em;
+	margin-bottom:2em;
+}
+
+.dateInputp{
+	width:4em;
 }
 
 .profData{
