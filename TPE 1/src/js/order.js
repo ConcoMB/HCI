@@ -163,7 +163,7 @@ function goToOrder(orderID, status) {
 					totalPrice += parseFloat(price)*parseInt(amount);
 					var product = GetProduct(prodID);
 					$(div).find(".artName").text($(product).find("name").text());
-					$(div).find(".artPrice").text(price);
+					$(div).find(".artPrice").text("$"+price);
 					$(div).find(".artAmount").text(amount);
 					$(div).find(".ranking").text($(this).find("sales_rank").text());
 					$(div).find('.articleImg').attr("src",$(product).find('image_url').text());
@@ -186,7 +186,7 @@ function goToOrder(orderID, status) {
 					
 					
 				});
-				$("#totalPrice").text(totalPrice);
+				$("#totalPrice").text("$"+totalPrice);
 				$("#checkOut").attr("href", "#target=checkOut&oid=" + orderID);
 				if(totalPrice == 0) {
 					$("#checkOut").addClass('hide');

@@ -71,6 +71,9 @@
 		<categoryLabel>Categoría: </categoryLabel>		
 		<month>Mes</month>
 		<day>Día</day>
+		<thisPas>Contraseña actual: </thisPas>
+		<birthDateLabel2>Fecha de nacimiento (aaaa/mm/dd):</birthDateLabel2>
+
 		<year>Año</year>
 		<passwordLabel>Contraseña:</passwordLabel>
 		<orderBy>Ordenar por:</orderBy>

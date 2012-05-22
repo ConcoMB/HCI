@@ -27,15 +27,19 @@ function editProfileHandler() {
 
 	$("#editProfileButton").addClass('hide');
 	$(".profData").addClass('hide');
-
+	$("#bday").addClass('hide');
 	var name = $("#uname").text();
 	var email = $("#uemail").text();
-	var bdate = $("#ubdate").text();
-
+	var bdate = $("#ubdate").text().split("-");
+	var year=bdate[0];
+	var month=bdate[1];
+	var day=bdate[2];
 	$("#prof_name").attr("value", name);
 	$("#prof_mail").attr("value", email);
-	$("#prof_birthDate").attr("value", bdate);
-
+	$("#su_birth_year").attr("value", year);
+	$("#su_birth_month").attr("value", month);
+	$("#su_birth_day").attr("value", day);
+	$("#bdayInput").removeClass('hide');
 	$(".prof_input").removeClass('hide');
 	$("#cancelEditProfile").removeClass('hide');
 	$("#acceptProfileButton").removeClass('hide');
@@ -47,7 +51,10 @@ function acceptProfileHandler() {
 
 	var name = $("#prof_name").attr("value");
 	var email = $("#prof_mail").attr("value");
-	var bdate = $("#prof_birthDate").attr("value");
+	var bdateD = $("#su_birth_day").attr("value");
+	var bdateM = $("#su_birth_month").attr("value");
+	var bdateY = $("#su_birth_year").attr("value");
+	
 	var error = false;
 
 	if(!name) {
@@ -60,13 +67,13 @@ function acceptProfileHandler() {
 		error = true;
 	}
 
-	if(!bdate) {
+	if(!bdateD || !bdateM || !bdateY) {
 		$('#reqProfBdate').text($(language).find('requiredField').text());
 		error = true;
 	}
-
+	
 	if(!error) {
-
+		var bdate=bdateY+"-"+bdateM+"-"+bdateD;
 		var xml = '<account><name>' + name + '</name><email>';
 		xml += email + '</email><birth_date>' + bdate + '</birth_date></account>';
 		var req = updateAccount(xml);
@@ -84,13 +91,13 @@ function acceptProfileHandler() {
 function editProfileError(code){
 	switch(code){
 		case '109':
-			$('#reqProfName').text($(language).find('name_length'));
+			$('#reqProfName').text($(language).find('name_length').text());
 			break;
 		case '110':
-			$('#reqProfEmail').text($(language).find('email_length'));
+			$('#reqProfEmail').text($(language).find('email_length').text());
 			break;
 		case '111':
-			$('#reqProfBdate').text($(language).find('invalid_date'));
+			$('#reqProfBdate').text($(language).find('invalid_date').text());
 			break;	
 	}
 }
@@ -108,10 +115,10 @@ function changePassHandler() {
 
 	$("#changePasswordButton").addClass('hide');
 	$(".profDataPass").addClass('hide');
-
+	
 	$(".prof_inputPass").removeClass('hide');
 	$(".prof_newPass_item").removeClass('hide');
-
+	$("#old").text($(language).find("thisPas").text());
 	$("#acceptChangePassword").removeClass('hide');
 	$("#cancelChangePassword").removeClass('hide');
 
@@ -151,7 +158,7 @@ function changePasswordHandler() {
 		var req=ChangePassword(pass, newPass);
 		var err=parseError(req);
 		if(!err) {
-
+			$("#old").text($(language).find("passwordLabel").text());
 			$(window).trigger('hashchange');
 		}
 		else{

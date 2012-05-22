@@ -45,6 +45,7 @@
 		<editP>Edit profile</editP>
 		<changePass>Change password</changePass>
 		<newPass>New password: </newPass>
+		<thisPas>Current password: </thisPas>
 		<confirmPass>Confirm new password: </confirmPass>
 		<passMismatch>Passwords don't match</passMismatch>
 	</prof>
@@ -98,6 +99,8 @@
 		<emailLabel>E-mail:</emailLabel>
 		<nameLabel>Name:</nameLabel>
 		<birthDateLabel>Birth date:</birthDateLabel>
+		<birthDateLabel2>Birth date (yyyy/mm/dd):</birthDateLabel2>
+
 		<dayLabel>Day:</dayLabel>
 		<monthLabel>Month:</monthLabel>
 		<yearLabel>Year:</yearLabel>
