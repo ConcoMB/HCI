@@ -71,7 +71,10 @@ function acceptProfileHandler() {
 		$('#reqProfBdate').text($(language).find('requiredField').text());
 		error = true;
 	}
-	
+	if(!isAYear(bdateY)){
+		$('#reqProfBdate').text($(language).find('year_error').text());
+		error=true;
+	}
 	if(!error) {
 		var bdate=bdateY+"-"+bdateM+"-"+bdateD;
 		var xml = '<account><name>' + name + '</name><email>';
@@ -86,6 +89,17 @@ function acceptProfileHandler() {
 	}
 
 	return false;
+}
+
+function isAYear(year){
+	if(year.match(/[^0-9]+/)){
+		return false;
+	}
+	var num=parseInt(year);
+	if(num<0||num>2012){
+		return false;
+	}
+	return true;
 }
 
 function editProfileError(code){

@@ -99,7 +99,7 @@
 		<emailLabel>E-mail:</emailLabel>
 		<nameLabel>Name:</nameLabel>
 		<birthDateLabel>Birth date:</birthDateLabel>
-		<birthDateLabel2>Birth date (yyyy/mm/dd):</birthDateLabel2>
+		<birthDateLabel2>Birth date (yyyy-mm-dd):</birthDateLabel2>
 
 		<dayLabel>Day:</dayLabel>
 		<monthLabel>Month:</monthLabel>
