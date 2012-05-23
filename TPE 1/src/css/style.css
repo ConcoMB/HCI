@@ -694,3 +694,11 @@ input{
 	font-weight: normal;
 	
 }
+
+#su_birth_month{
+	width: 6em;
+}
+
+#su_birth_day{
+	width: 5em;
+}
