@@ -286,7 +286,7 @@ function confirmed(order, address) {
 	var err = updateOrderAddr(order, address);
 	err = parseError(err);
 	if(err) {
-		alert(err);
+		//alert(err);
 		orderError(err);
 	} else {
 		var params = {
