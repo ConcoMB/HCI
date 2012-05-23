@@ -88,6 +88,7 @@ function ordersToCart(orders) {
 				$("#content").addClass('hide');
 				$("#sort").addClass('hide');
 				$(".invisible").removeClass('hide');
+				$("#noOrd").removeClass("invisible");
 			}
 		}
 	});

@@ -40,6 +40,7 @@ function viewAddrs() {
 			if(!flag) {
 				$("#addrs").addClass('hide');
 				$(".invisible").removeClass('hide');
+				$("#noAddr").removeClass("invisible");
 			}
 		}
 	});

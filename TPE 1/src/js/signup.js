@@ -65,7 +65,7 @@ function signupFormHandler(){
 		if(!err){
 			user=signIn(username, password);
 			updateUserPanel();
-			$('#main').load('home.html');
+			window.location.hash="#target=home";
 		}else{
 			/*FALLO*/
 			signupError(err);
