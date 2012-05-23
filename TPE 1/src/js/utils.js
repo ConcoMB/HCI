@@ -1,7 +1,7 @@
 function request(method, params, service) {
 	var ans;
 	if(dummy) {
-		ans=dummyCall(method, params, service);
+		ans = dummyCall(method, params, service);
 	} else {
 		/*API CALL*/
 		var path = 'service/' + service + '.groovy?' + 'method=' + method + parseParams(params);
@@ -9,7 +9,7 @@ function request(method, params, service) {
 		$.ajax({
 			type : "GET",
 			url : path,
-			contentType: "text/html; charset=iso-8859-1",		
+			contentType : "text/html; charset=iso-8859-1",
 			dataType : "xml",
 			async : false,
 			success : function(xml) {
@@ -19,10 +19,15 @@ function request(method, params, service) {
 		});
 	}
 	/*if(!ans || $(ans).find('response').attr('status')!='ok') {
-		alert('Error on request');
-		return dummyCall(method, params, service);
-	}*/
-	return ans;
+	 alert('Error on request');
+	 return dummyCall(method, params, service);
+	 }*/
+	var ok = $(ans).find("response").attr("status");
+	if(ok != "ok") {
+		alert($(language).find("errorX").text());
+	} else {
+		return ans;
+	}
 }
 
 function parseParams(params) {

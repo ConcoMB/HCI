@@ -1,6 +1,7 @@
 <language>
 	<name>English</name>
 	<errors>
+		<errorX>There's been an error with the server. Please try again later</errorX>
 		<errors_logIn>
 			<incorrectLogin>Username or password is incorrect</incorrectLogin>
 		</errors_logIn>
