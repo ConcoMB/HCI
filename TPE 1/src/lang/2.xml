@@ -73,6 +73,7 @@
 		<day>Día</day>
 		<thisPas>Contraseña actual: </thisPas>
 		<birthDateLabel2>Fecha de nacimiento (aaaa-mm-dd):</birthDateLabel2>
+		<formatDate>(aaaa-mm-dd)</formatDate>
 
 		<year>Año</year>
 		<passwordLabel>Contraseña:</passwordLabel>

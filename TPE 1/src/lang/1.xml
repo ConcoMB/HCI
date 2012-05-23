@@ -108,6 +108,7 @@
 		<signUpButton>Sign up!</signUpButton>
 	</signUpForm>
 	<order>
+		<formatDate>(yyyy-mm-dd)</formatDate>
 		<Oconfirmed>Your order has been confirmed</Oconfirmed>
 		<position>Your package whereabouts: </position>
 		<noOrder>You currently have no orders</noOrder>
