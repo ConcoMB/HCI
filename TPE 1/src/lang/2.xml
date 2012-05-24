@@ -117,7 +117,7 @@
 		<sendTo>Enviar a dirección: </sendTo>
 		<amount>Cantidad total: </amount>
 		<noItems>Actualmente no tienes objetos en esta orden</noItems>
-		<addToOrder>Agregar a la order</addToOrder>
+		<addToOrder>Agregar a la orden</addToOrder>
 		<notLogged>Debes estar registrado para comprar un producto</notLogged>
 		<position>Posición de tu paquete: </position>
 		<productToOrder>Producto agregado a la orden. ¿Desea ir a la orden ahora?</productToOrder>
