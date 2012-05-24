@@ -28,6 +28,7 @@ $(document).ready(function() {
 		active: false
 	});
 	$('#search').submit(searchHandler);
+	updateSearchAutocomplete();
 	//$('.subcategory').click(subcategoryClickHandler);
 //	$('.category').click(categoryClickHandler);
 	//$('.artName').click(productClickHandler);

@@ -1,6 +1,7 @@
 function themeHandler(){
 	var theme=$(this).val();
 	$('#theme').attr('href','css/'+theme+'.css');
+	$('#uiTheme').attr('href','css/'+theme+'-ui.css');
 	SetAccountPreferences('theme='+theme);
 }
 
@@ -16,6 +17,7 @@ function updateUserTheme(){
 	if(theme){
 		$('#themeChooser').val(theme);
 		$('#theme').attr('href','css/'+theme+'.css');
+		$('#uiTheme').attr('href','css/'+theme+'-ui.css');
 	}
 }
 
