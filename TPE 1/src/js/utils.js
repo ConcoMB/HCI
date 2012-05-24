@@ -24,10 +24,11 @@ function request(method, params, service) {
 	 }*/
 	var ok = $(ans).find("response").attr("status");
 	if(ok != "ok") {
-		alert($(language).find("errorX").text());
-	} else {
-		return ans;
+		if(criticalError(ans)){
+			window.location.hash='#target=criterror';
+		}
 	}
+	return ans;
 }
 
 function parseParams(params) {
@@ -56,4 +57,14 @@ function dummyCall(method, params, service) {
 		}
 	});
 	return ans;
+}
+
+function criticalError(xml){
+	var err=parseError(xml);
+	switch(err){
+		case '999':
+			return true;
+		default:
+			return false;
+	}
 }

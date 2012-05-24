@@ -3,7 +3,7 @@ function viewAddrs() {
 	var flag = false;
 	$.ajax({
 		type : "GET",
-		url : "addressTemplate.html",
+		url : "html/addressTemplate.html",
 		dataType : "html",
 		success : function(template) {
 			$(list).find('address').each(function() {

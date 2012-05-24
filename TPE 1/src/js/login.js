@@ -9,7 +9,7 @@ function signIn(name, pass) {
 function updateUserPanel() {
 	var name = $(user).find('user').attr('username');
 	$.ajax({
-		url : "signed.html"
+		url : "html/signed.html"
 	}).done(function(html) {
 		$(".userhead").html(html);
 		$("#userName").html(name);

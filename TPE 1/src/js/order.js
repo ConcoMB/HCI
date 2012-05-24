@@ -152,7 +152,7 @@ function goToOrder(orderID, status) {
 		$("#orderID").text(name);
 		$.ajax({
 			type : "GET",
-			url : "orderProduct.html",
+			url : "html/orderProduct.html",
 			async:false,
 			dataType : "html",
 			success : function(template) {
@@ -249,7 +249,7 @@ function checkOut(orderID) {
 	var list = GetAddressList();
 	$.ajax({
 		type : "GET",
-		url : "addressTemplate.html",
+		url : "html/addressTemplate.html",
 		dataType : "html",
 		success : function(template) {
 			$(list).find('address').each(function() {

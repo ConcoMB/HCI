@@ -97,7 +97,7 @@ function updateProduct(pid){
 function fillProducts(products) {
 	$.ajax({
 		type : "GET",
-		url : "product.html",
+		url : "html/product.html",
 		dataType : "html",
 		success : function(template) {
 			$(products).find('product').each(function() {

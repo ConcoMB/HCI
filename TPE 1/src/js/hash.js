@@ -3,7 +3,7 @@ function hashChangeHandler(event) {
 	var params = parseHash(hash);
 	$("#main").html('<img id="loading" src="img/loading.gif"/>');
 	$.ajax({
-		url : params.target + '.html'
+		url : 'html/'+params.target + '.html'
 	}).done(function(html) {
 		$('#main').append(html);
 		/*ADDITIONAL FUNCTIONS*/
