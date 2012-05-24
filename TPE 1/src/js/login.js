@@ -55,7 +55,7 @@ function login(username, password)
 function logOutHandler() {
 	destroyCookie("login");
 	window.location = "index.html"
-	window.location.hash="";
+	//window.location.hash="";
 	//$('#main').load('home.html');
 }
 
