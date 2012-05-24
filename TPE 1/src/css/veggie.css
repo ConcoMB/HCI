@@ -9,6 +9,10 @@
 	overflow: auto;
 }
 
+#autoc{
+	font-size: 0.5em;
+}
+
 html,body{
 	height: 100%;
 	margin:0;
