@@ -22,7 +22,7 @@ function ordersToCart(orders) {
 	var cant = 1;
 	$.ajax({
 		type : "GET",
-		url : "orderPreview.html",
+		url : "html/orderPreview.html",
 		dataType : "html",
 		async:false,
 		success : function(template) {
