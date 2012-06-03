@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.grupo5.buyStuff"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="15" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:icon="@drawable/ic_menu_companylogo"
+        android:label="@string/app_name" >
+        <uses-library android:name="com.google.android.maps" />
+
+        <activity
+            android:label="@string/app_name"
+            android:name=".activities.SplashScreen" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="@string/loginText"
+            android:name=".activities.Login" >
+        </activity>
+        <activity
+            androidLabel="@string/menuTitle"
+            android:name=".activities.Menu" >
+        </activity>
+        <activity
+            android:label="@string/categoryTitle"
+            android:name=".activities.ListingCategories" >
+        </activity>
+        <activity
+            android:label="@string/subCategoryTitle"
+            android:name=".activities.ListingSubcategories" >
+        </activity>
+        <activity
+            android:label="Products"
+            android:name=".activities.ListingArticles" >
+        </activity>
+        <activity
+            android:label="Product"
+            android:name=".activities.ShowingArticle" >
+        </activity>
+        <activity
+            android:label="@string/orders"
+            android:name=".activities.ListingOrders" >
+        </activity>
+        <activity
+            android:label="@string/orders"
+            android:name=".activities.ListingOrderTypes" >
+        </activity>
+        <activity
+            android:label="@string/orders"
+            android:name="com.grupo5.buyStuff.activities.ViewingOrders" >
+        </activity>
+
+        <service android:name=".services.LoginService" >
+        </service>
+        <service android:name=".services.OrderMasterService" >
+        </service>
+        <service android:name=".services.RefreshService" >
+        </service>
+        <service android:name=".services.ArticleMasterService" >
+        </service>
+        <service android:name=".services.OrderCategoriesListService" >
+        </service>
+    </application>
+</manifest>

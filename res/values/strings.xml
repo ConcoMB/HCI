@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="companyName">Koppe</string>
+    <string name="orderTitle">Order</string>
+    <string name="logoString">Koppe - buying made easier</string>
+    <string name="app_name">Koppe App</string>
+    <string name="username">Username:</string>
+    <string name="password">Password:</string>
+    <string name="loginText">Log In</string>
+    <string name="categoryTitle">Categories</string>
+    <string name="subCategoryTitle">Sub-Categories</string>
+    <string name="menuTitle">Menu</string>
+    <string name="browseItems">Browse</string>
+    <string name="logOut">Log Out</string>
+    <string name="orders">Orders</string>
+    <string name="browserTitle">Categories</string>
+    <string name="orderUpdated">Order updated: </string>
+    <string name="orderModified">Your order has been modified</string>
+    <string name="created">Created</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="transported">Transported</string>
+    <string name="delivered">Delivered</string>
+    <string name="orderStatusLabel">Status: </string>
+    <string name="orderShippedDateLabel">Created date: </string>
+    <string name="orderLocationLabel">Location: </string>
+    <string name="orderInformation">Order Information</string>
+    <string name="orderProductBtn">View product list</string>
+    <string name="orderLocationBtn">View order location</string>
+    <string name="connectionError">There seems to be a connectivity problem. Please
+		check your internet access.</string>
+    <string name="listHint">Hint: Type in some text at any time to filter the
+		lists!</string>
+    <string name="notLoggedIn">You need to log in to access this area</string>
+    <string name="rememberMe">Remember Me</string>
+    <string name="ordersNotLoaded">Oops! There was a problem when trying to load the orders.</string>
+    <string name="noMenuOptions">Oops! We couldn\'t load any options for your menu.</string>
+    <string-array name="dvd_labels">
+        <item>Actors: </item>
+        <item>Format: </item>
+        <item>Language: </item>
+        <item>Subtitles: </item>
+        <item>Region: </item>
+        <item>Number of Discs: </item>
+        <item>Release Date: </item>
+        <item>Run Time: </item>
+        <item>ASIN: </item>
+    </string-array>
+    <string-array name="book_labels">
+        <item>Authors: </item>
+        <item>Publisher: </item>
+        <item>Published Date: </item>
+        <item>ISBN10: </item>
+        <item>ISBN13: </item>
+    </string-array>
+</resources>

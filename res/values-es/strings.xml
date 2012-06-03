@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="companyName">Koppe</string>
+    <string name="orderTitle">Orden</string>
+    <string name="logoString">Koppe - comprar, más fácil</string>
+    <string name="app_name">Koppe App</string>
+    <string name="username">Usuario:</string>
+    <string name="password">Contraseña:</string>
+    <string name="loginText">Iniciar Sesión</string>
+    <string name="categoryTitle">Categorías</string>
+    <string name="subCategoryTitle">Subcategorías</string>
+    <string name="menuTitle">Menú</string>
+    <string name="browseItems">Navegar</string>
+    <string name="logOut">Cerrar Sesión</string>
+    <string name="orders">Órdenes</string>
+    <string name="browserTitle">Categorías</string>
+    <string name="orderUpdated">Orden actualizada: </string>
+    <string name="orderModified">Su orden ha sido modificada</string>
+    <string name="created">Creadas</string>
+    <string name="confirmed">Confirmadas</string>
+    <string name="transported">Transportadas</string>
+    <string name="delivered">Entregadas</string>
+    <string name="orderStatusLabel">Estado: </string>
+    <string name="orderShippedDateLabel">Fecha de creación: </string>
+    <string name="orderLocationLabel">Posición: </string>
+    <string name="orderInformation">Información de la orden</string>
+    <string name="orderProductBtn">Ver lista de productos</string>
+    <string name="orderLocationBtn">Ver posición de la orden</string>
+    <string name="connectionError">Ayuda: Parece haber habido un problema de conexión. Por
+		favor revise su conexión a internet.
+	</string>
+    <string name="listHint">¡Escriba un texto en cualquier momento para filtar
+		resultados!
+	</string>
+    <string name="notLoggedIn">Necesita registrarse para acceder al sitio
+	</string>
+    <string name="rememberMe">Recordarme</string>
+    <string name="ordersNotLoaded">¡Oops! Hubo un problema al cargar las ordenes
+	</string>
+    <string name="noMenuOptions">¡Oops! No pudimos cargar las opciones para el menú
+	</string>
+
+    <string-array name="dvd_labels">
+        <item>Actores: </item>
+        <item>Formato: </item>
+        <item>Lenguage: </item>
+        <item>Subtítulos: </item>
+        <item>Región: </item>
+        <item>Cant. de Discos: </item>
+        <item>Fecha de Lanzamiento: </item>
+        <item>Duración: </item>
+        <item>ASIN: </item>
+    </string-array>
+    <string-array name="book_labels">
+        <item>Autores: </item>
+        <item>Editorial: </item>
+        <item>Fecha de Edición: </item>
+        <item>ISBN10: </item>
+        <item>ISBN13: </item>
+    </string-array>
+
+</resources>
