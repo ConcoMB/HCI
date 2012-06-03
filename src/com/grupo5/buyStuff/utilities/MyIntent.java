@@ -35,12 +35,12 @@ public class MyIntent extends Intent {
 	}
 
 	public void addCommand(InnerServerMessages ism) {
-		intent.putExtra(BuyStuffBundleConstants.COMMAND.getText(),
+		intent.putExtra(KoppeBundleConstants.COMMAND.getText(),
 				String.valueOf(ism.getNumber()));
 	}
 
 	public void addCommand(String name) {
-		intent.putExtra(BuyStuffBundleConstants.COMMAND.getText(), name);
+		intent.putExtra(KoppeBundleConstants.COMMAND.getText(), name);
 	}
 
 	public void addReceiver(ResultReceiver rr) {

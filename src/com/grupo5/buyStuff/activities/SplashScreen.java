@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
-import com.grupo5.buyStuff.R;
 import com.grupo5.buyStuff.utilities.MyIntent;
+import com.grupo5.buyStuff.R;
 
 public class SplashScreen extends Activity {
 	private static final int STOP = 0;

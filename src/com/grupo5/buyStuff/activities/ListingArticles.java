@@ -18,12 +18,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.grupo5.buyStuff.R;
 import com.grupo5.buyStuff.model.Article;
 import com.grupo5.buyStuff.services.ArticleMasterService;
-import com.grupo5.buyStuff.utilities.BuyStuffBundleConstants;
+import com.grupo5.buyStuff.utilities.KoppeBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.utilities.ServerMessages;
+import com.grupo5.buyStuff.R;
 
 public class ListingArticles extends ListActivity {
 
@@ -37,8 +37,8 @@ public class ListingArticles extends ListActivity {
 
 		Bundle data = getIntent().getExtras();
 		articles = (List<Article>) data
-				.getSerializable(BuyStuffBundleConstants.ARTICLES.getText());
-		String path = data.getString(BuyStuffBundleConstants.PATH.getText());
+				.getSerializable(KoppeBundleConstants.ARTICLES.getText());
+		String path = data.getString(KoppeBundleConstants.PATH.getText());
 		setTitle(Html.fromHtml(path));
 		String[] products = getArticleNames();
 		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,
@@ -84,10 +84,10 @@ public class ListingArticles extends ListActivity {
 	private void loadArticle(int prodId) {
 		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, this,
 				ArticleMasterService.class);
-		myIntent.addAttribute(BuyStuffBundleConstants.COMMAND.getText(), String
+		myIntent.addAttribute(KoppeBundleConstants.COMMAND.getText(), String
 				.valueOf(ArticleMasterService.InnerServerMessages.LOAD_ARTICLE
 						.getNumber()));
-		myIntent.addAttribute(BuyStuffBundleConstants.ARTICLE_ID.getText(),
+		myIntent.addAttribute(KoppeBundleConstants.ARTICLE_ID.getText(),
 				String.valueOf(prodId));
 		myIntent.addReceiver(new ResultReceiver(new Handler()) {
 			@Override
@@ -96,14 +96,14 @@ public class ListingArticles extends ListActivity {
 				switch (ServerMessages.parse(resultCode)) {
 				case STATUS_OK:
 					Serializable article = resultData
-							.getSerializable(BuyStuffBundleConstants.ARTICLE
+							.getSerializable(KoppeBundleConstants.ARTICLE
 									.getText());
 					MyIntent myIntent = new MyIntent(ListingArticles.this,
 							ShowingArticle.class);
 					myIntent.addAttribute(
-							BuyStuffBundleConstants.ARTICLE.getText(), article);
+							KoppeBundleConstants.ARTICLE.getText(), article);
 					myIntent.addAttribute(
-							BuyStuffBundleConstants.PATH.getText(),
+							KoppeBundleConstants.PATH.getText(),
 							getTitle().toString()
 									+ ((Article) article).getName());
 					startActivity(myIntent);

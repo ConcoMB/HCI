@@ -6,10 +6,10 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.TextView;
 
-import com.grupo5.buyStuff.R;
 import com.grupo5.buyStuff.model.Order;
-import com.grupo5.buyStuff.utilities.BuyStuffBundleConstants;
+import com.grupo5.buyStuff.utilities.KoppeBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
+import com.grupo5.buyStuff.R;
 
 public class ViewingOrders extends Activity {
 	@SuppressWarnings("unused")
@@ -26,9 +26,9 @@ public class ViewingOrders extends Activity {
 
 		Log.v(Order.OrderStates.CONFIRMED.getName(),
 				String.valueOf(Order.OrderStates.CONFIRMED.getCode()));
-		this.userName = data.getString(BuyStuffBundleConstants.USERNAME.getText());
-		this.token = data.getString(BuyStuffBundleConstants.AUTH_TOKEN.getText());
-		this.order = (Order) data.getSerializable(BuyStuffBundleConstants.ORDER
+		this.userName = data.getString(KoppeBundleConstants.USERNAME.getText());
+		this.token = data.getString(KoppeBundleConstants.AUTH_TOKEN.getText());
+		this.order = (Order) data.getSerializable(KoppeBundleConstants.ORDER
 				.getText());
 		setInformation(data);
 	}

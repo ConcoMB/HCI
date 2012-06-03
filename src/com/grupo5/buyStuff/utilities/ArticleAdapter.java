@@ -14,8 +14,8 @@ import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import com.grupo5.buyStuff.R;
 import com.grupo5.buyStuff.model.Article;
+import com.grupo5.buyStuff.R;
 
 public class ArticleAdapter extends ArrayAdapter<Article> implements ListAdapter {
 

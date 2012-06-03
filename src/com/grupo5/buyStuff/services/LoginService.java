@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.os.ResultReceiver;
 import android.util.Log;
 
-import com.grupo5.buyStuff.utilities.BuyStuffBundleConstants;
+import com.grupo5.buyStuff.utilities.KoppeBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.utilities.ServerMessages;
 import com.grupo5.buyStuff.utilities.ServerXMLConstants;
@@ -34,11 +34,11 @@ public class LoginService extends IntentService {
 		MyIntent myIntent = new MyIntent(intent);
 		ResultReceiver receiver = myIntent.getReceiver();
 		String command = myIntent
-				.getStringAttribute(BuyStuffBundleConstants.COMMAND.getText());
-		String user = myIntent.getStringAttribute(BuyStuffBundleConstants.USERNAME
+				.getStringAttribute(KoppeBundleConstants.COMMAND.getText());
+		String user = myIntent.getStringAttribute(KoppeBundleConstants.USERNAME
 				.getText());
 		String password = myIntent
-				.getStringAttribute(BuyStuffBundleConstants.PASSWORD.getText());
+				.getStringAttribute(KoppeBundleConstants.PASSWORD.getText());
 		Bundle b = new Bundle();
 		try {
 			if (command.equals(DO_LOGIN)) {
@@ -78,11 +78,11 @@ public class LoginService extends IntentService {
 
 	private boolean checkLogin(Bundle b, XMLParser xp) {
 		if (xp.getErrorMessage() != null) {
-			b.putString(BuyStuffBundleConstants.ERROR_MESSAGE.getText(),
+			b.putString(KoppeBundleConstants.ERROR_MESSAGE.getText(),
 					xp.getErrorMessage());
 			return false;
 		}
-		b.putString(BuyStuffBundleConstants.AUTH_TOKEN.getText(), xp
+		b.putString(KoppeBundleConstants.AUTH_TOKEN.getText(), xp
 				.getStringFromSingleElement(ServerXMLConstants.AUTH_TOKEN
 						.getText()));
 		return true;

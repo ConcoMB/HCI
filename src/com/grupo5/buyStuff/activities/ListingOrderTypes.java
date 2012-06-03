@@ -22,14 +22,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.grupo5.buyStuff.R;
 import com.grupo5.buyStuff.model.Order;
 import com.grupo5.buyStuff.model.Order.OrderStates;
 import com.grupo5.buyStuff.services.OrderMasterService;
 import com.grupo5.buyStuff.services.RefreshService;
-import com.grupo5.buyStuff.utilities.BuyStuffBundleConstants;
+import com.grupo5.buyStuff.utilities.KoppeBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.utilities.ServerMessages;
+import com.grupo5.buyStuff.R;
 
 public class ListingOrderTypes extends ListActivity {
 	private String type;
@@ -42,9 +42,9 @@ public class ListingOrderTypes extends ListActivity {
 		super.onCreate(savedInstanceState);
 		Bundle b = getIntent().getExtras();
 
-		this.type = b.getString(BuyStuffBundleConstants.TYPE.getText());
-		this.userName = b.getString(BuyStuffBundleConstants.USERNAME.getText());
-		this.token = b.getString(BuyStuffBundleConstants.AUTH_TOKEN.getText());
+		this.type = b.getString(KoppeBundleConstants.TYPE.getText());
+		this.userName = b.getString(KoppeBundleConstants.USERNAME.getText());
+		this.token = b.getString(KoppeBundleConstants.AUTH_TOKEN.getText());
 		this.orders = new ArrayList<Order>();
 		this.setViewTitle();
 		this.loadOrders();
@@ -110,11 +110,11 @@ public class ListingOrderTypes extends ListActivity {
 	private void launchOrdersByType(int position, final String title) {
 		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, this,
 				OrderMasterService.class);
-		myIntent.addAttribute(BuyStuffBundleConstants.ID.getText(),
+		myIntent.addAttribute(KoppeBundleConstants.ID.getText(),
 				String.valueOf(this.orders.get(position).getId()));
-		myIntent.addAttribute(BuyStuffBundleConstants.USERNAME.getText(),
+		myIntent.addAttribute(KoppeBundleConstants.USERNAME.getText(),
 				this.userName);
-		myIntent.addAttribute(BuyStuffBundleConstants.AUTH_TOKEN.getText(),
+		myIntent.addAttribute(KoppeBundleConstants.AUTH_TOKEN.getText(),
 				this.token);
 		Order order = this.orders.get(position);
 		String userN = this.userName;
@@ -161,19 +161,19 @@ public class ListingOrderTypes extends ListActivity {
 			switch (ServerMessages.parse(resultCode)) {
 			case STATUS_OK:
 				Serializable productList = resultData
-						.getSerializable(BuyStuffBundleConstants.ARTICLES
+						.getSerializable(KoppeBundleConstants.ARTICLES
 								.getText());
 				MyIntent myIntent = new MyIntent(ListingOrderTypes.this,
 						ViewingOrders.class);
 				Bundle b = new Bundle();
-				b.putSerializable(BuyStuffBundleConstants.ARTICLES.getText(),
+				b.putSerializable(KoppeBundleConstants.ARTICLES.getText(),
 						productList);
-				b.putSerializable(BuyStuffBundleConstants.ORDER.getText(),
+				b.putSerializable(KoppeBundleConstants.ORDER.getText(),
 						(Serializable) order);
-				b.putString(BuyStuffBundleConstants.USERNAME.getText(), userName);
-				b.putString(BuyStuffBundleConstants.AUTH_TOKEN.getText(),
+				b.putString(KoppeBundleConstants.USERNAME.getText(), userName);
+				b.putString(KoppeBundleConstants.AUTH_TOKEN.getText(),
 						authToken);
-				b.putString(BuyStuffBundleConstants.PATH.getText(), title + " > ");
+				b.putString(KoppeBundleConstants.PATH.getText(), title + " > ");
 				myIntent.putExtras(b);
 				startActivity(myIntent);
 				break;

@@ -17,13 +17,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.grupo5.buyStuff.R;
 import com.grupo5.buyStuff.model.CacheManager;
 import com.grupo5.buyStuff.model.Category;
 import com.grupo5.buyStuff.services.ArticleMasterService;
-import com.grupo5.buyStuff.utilities.BuyStuffBundleConstants;
+import com.grupo5.buyStuff.utilities.KoppeBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.utilities.ServerMessages;
+import com.grupo5.buyStuff.R;
 
 public class ListingCategories extends ListActivity {
 	@Override
@@ -84,7 +84,7 @@ public class ListingCategories extends ListActivity {
 		myIntent.addCommand(ArticleMasterService.InnerServerMessages.LOAD_SUBCATEGORIES);
 		int categoryId = CacheManager.getInstance().getCategories()
 				.get(catIndex).getId();
-		myIntent.addAttribute(BuyStuffBundleConstants.SUBCAT_ID.getText(),
+		myIntent.addAttribute(KoppeBundleConstants.SUBCAT_ID.getText(),
 				String.valueOf(categoryId));
 		myIntent.addReceiver(new MyResultReceiver(new Handler(), catIndex));
 		startService(myIntent);
@@ -93,9 +93,9 @@ public class ListingCategories extends ListActivity {
 	private void startSubcategoriesActivity(int catIndex) {
 		MyIntent myIntent = new MyIntent(ListingCategories.this,
 				ListingSubcategories.class);
-		myIntent.addAttribute(BuyStuffBundleConstants.CAT_POSITION.getText(),
+		myIntent.addAttribute(KoppeBundleConstants.CAT_POSITION.getText(),
 				String.valueOf(catIndex));
-		myIntent.addAttribute(BuyStuffBundleConstants.PATH.getText(), CacheManager
+		myIntent.addAttribute(KoppeBundleConstants.PATH.getText(), CacheManager
 				.getInstance().getCategories().get(catIndex).getName());
 		startActivity(myIntent);
 	}
@@ -115,7 +115,7 @@ public class ListingCategories extends ListActivity {
 			switch (ServerMessages.parse(resultCode)) {
 			case STATUS_OK:
 				List<Category> subCategories = (List<Category>) resultData
-						.getSerializable(BuyStuffBundleConstants.SUBCATEGORIES
+						.getSerializable(KoppeBundleConstants.SUBCATEGORIES
 								.getText());
 				CacheManager.getInstance().persistSubcategories(catIndex,
 						subCategories);

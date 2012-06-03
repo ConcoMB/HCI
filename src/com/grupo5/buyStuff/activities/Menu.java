@@ -18,15 +18,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.grupo5.buyStuff.R;
 import com.grupo5.buyStuff.model.CacheManager;
 import com.grupo5.buyStuff.model.Category;
 import com.grupo5.buyStuff.model.Session;
 import com.grupo5.buyStuff.services.ArticleMasterService;
 import com.grupo5.buyStuff.services.RefreshService;
-import com.grupo5.buyStuff.utilities.BuyStuffBundleConstants;
+import com.grupo5.buyStuff.utilities.KoppeBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.utilities.ServerMessages;
+import com.grupo5.buyStuff.R;
 
 public class Menu extends ListActivity {
 	private static boolean refreshOrderStarted = false;
@@ -109,18 +109,18 @@ public class Menu extends ListActivity {
 				Session u = CacheManager.getInstance().getSession();
 				if (u != null) {
 					myIntent.addAttribute(
-							BuyStuffBundleConstants.USERNAME.getText(),
+							KoppeBundleConstants.USERNAME.getText(),
 							u.getUsername());
 					myIntent.addAttribute(
-							BuyStuffBundleConstants.AUTH_TOKEN.getText(),
+							KoppeBundleConstants.AUTH_TOKEN.getText(),
 							u.getAuthToken());
 				} else {
-					myIntent.addAttribute(BuyStuffBundleConstants.USERNAME
+					myIntent.addAttribute(KoppeBundleConstants.USERNAME
 							.getText(), b
-							.getString(BuyStuffBundleConstants.USERNAME.getText()));
-					myIntent.addAttribute(BuyStuffBundleConstants.AUTH_TOKEN
+							.getString(KoppeBundleConstants.USERNAME.getText()));
+					myIntent.addAttribute(KoppeBundleConstants.AUTH_TOKEN
 							.getText(), b
-							.getString(BuyStuffBundleConstants.AUTH_TOKEN
+							.getString(KoppeBundleConstants.AUTH_TOKEN
 									.getText()));
 				}
 				Menu.this.startActivity(myIntent);
@@ -157,10 +157,10 @@ public class Menu extends ListActivity {
 		}
 		MyIntent intent = new MyIntent(Intent.ACTION_SYNC, null, this,
 				RefreshService.class);
-		intent.addAttribute(BuyStuffBundleConstants.USERNAME.getText(),
-				b.getString(BuyStuffBundleConstants.USERNAME.getText()));
-		intent.addAttribute(BuyStuffBundleConstants.AUTH_TOKEN.getText(),
-				b.getString(BuyStuffBundleConstants.AUTH_TOKEN.getText()));
+		intent.addAttribute(KoppeBundleConstants.USERNAME.getText(),
+				b.getString(KoppeBundleConstants.USERNAME.getText()));
+		intent.addAttribute(KoppeBundleConstants.AUTH_TOKEN.getText(),
+				b.getString(KoppeBundleConstants.AUTH_TOKEN.getText()));
 		intent.addReceiver(new ResultReceiver(new Handler()) {
 			@Override
 			protected void onReceiveResult(int resultCode, Bundle resultData) {
@@ -172,10 +172,10 @@ public class Menu extends ListActivity {
 					break;
 				case STATUS_ERROR:
 					if (resultData
-							.containsKey(BuyStuffBundleConstants.ERROR_MESSAGE
+							.containsKey(KoppeBundleConstants.ERROR_MESSAGE
 									.getText())) {
 						String errorMessage = resultData
-								.getString(BuyStuffBundleConstants.ERROR_MESSAGE
+								.getString(KoppeBundleConstants.ERROR_MESSAGE
 										.getText());
 						Toast.makeText(getApplicationContext(), errorMessage,
 								Toast.LENGTH_SHORT).show();

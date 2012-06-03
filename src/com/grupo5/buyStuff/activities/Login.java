@@ -10,12 +10,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.grupo5.buyStuff.R;
 import com.grupo5.buyStuff.model.CacheManager;
 import com.grupo5.buyStuff.services.LoginService;
-import com.grupo5.buyStuff.utilities.BuyStuffBundleConstants;
+import com.grupo5.buyStuff.utilities.KoppeBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.utilities.ServerMessages;
+import com.grupo5.buyStuff.R;
 
 public class Login extends Activity {
 	@Override
@@ -38,8 +38,8 @@ public class Login extends Activity {
 
 		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, this,
 				LoginService.class);
-		myIntent.addAttribute(BuyStuffBundleConstants.USERNAME.getText(), username);
-		myIntent.addAttribute(BuyStuffBundleConstants.PASSWORD.getText(), password);
+		myIntent.addAttribute(KoppeBundleConstants.USERNAME.getText(), username);
+		myIntent.addAttribute(KoppeBundleConstants.PASSWORD.getText(), password);
 		myIntent.addCommand(LoginService.DO_LOGIN);
 		myIntent.addReceiver(new MyResultReceiver(new Handler(), username));
 		startService(myIntent);
@@ -60,15 +60,15 @@ public class Login extends Activity {
 			switch (svm) {
 			case STATUS_OK:
 				MyIntent myIntent = new MyIntent(Login.this, Menu.class);
-				myIntent.addAttribute(BuyStuffBundleConstants.USERNAME.getText(),
+				myIntent.addAttribute(KoppeBundleConstants.USERNAME.getText(),
 						name);
 				myIntent.addAttribute(
-						BuyStuffBundleConstants.AUTH_TOKEN.getText(), resultData
-								.getString(BuyStuffBundleConstants.AUTH_TOKEN
+						KoppeBundleConstants.AUTH_TOKEN.getText(), resultData
+								.getString(KoppeBundleConstants.AUTH_TOKEN
 										.getText()));
 				CacheManager.getInstance().persistSession(
 						name,
-						resultData.getString(BuyStuffBundleConstants.AUTH_TOKEN
+						resultData.getString(KoppeBundleConstants.AUTH_TOKEN
 								.getText()));
 				startActivity(myIntent);
 				Login.this.finish();
@@ -76,10 +76,10 @@ public class Login extends Activity {
 			case STATUS_CONNECTION_ERROR:
 				break;
 			case STATUS_ERROR:
-				if (resultData.containsKey(BuyStuffBundleConstants.ERROR_MESSAGE
+				if (resultData.containsKey(KoppeBundleConstants.ERROR_MESSAGE
 						.getText())) {
 					String errorMessage = resultData
-							.getString(BuyStuffBundleConstants.ERROR_MESSAGE
+							.getString(KoppeBundleConstants.ERROR_MESSAGE
 									.getText());
 					Toast.makeText(getApplicationContext(), errorMessage,
 							Toast.LENGTH_LONG).show();

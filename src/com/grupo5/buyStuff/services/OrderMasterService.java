@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.os.ResultReceiver;
 
 import com.grupo5.buyStuff.model.Article;
-import com.grupo5.buyStuff.utilities.BuyStuffBundleConstants;
+import com.grupo5.buyStuff.utilities.KoppeBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.utilities.ServerMessages;
 import com.grupo5.buyStuff.utilities.ServerXMLConstants;
@@ -29,10 +29,10 @@ public class OrderMasterService extends IntentService {
 		MyIntent myIntent = new MyIntent(intent);
 		ResultReceiver receiver = myIntent.getReceiver();
 		String userName = myIntent
-				.getStringAttribute(BuyStuffBundleConstants.USERNAME.getText());
+				.getStringAttribute(KoppeBundleConstants.USERNAME.getText());
 		String authToken = myIntent
-				.getStringAttribute(BuyStuffBundleConstants.AUTH_TOKEN.getText());
-		String orderId = myIntent.getStringAttribute(BuyStuffBundleConstants.ID
+				.getStringAttribute(KoppeBundleConstants.AUTH_TOKEN.getText());
+		String orderId = myIntent.getStringAttribute(KoppeBundleConstants.ID
 				.getText());
 
 		URLGenerator order = new URLGenerator("Order");
@@ -60,7 +60,7 @@ public class OrderMasterService extends IntentService {
 				receiver.send(ServerMessages.STATUS_OK.getNumber(), b);
 			}
 		} catch (Exception e) {
-			b.putString(BuyStuffBundleConstants.ERROR_MESSAGE.getText(),
+			b.putString(KoppeBundleConstants.ERROR_MESSAGE.getText(),
 					e.getMessage());
 			receiver.send(ServerMessages.STATUS_ERROR.getNumber(), b);
 		}

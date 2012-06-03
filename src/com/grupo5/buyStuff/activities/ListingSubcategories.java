@@ -18,13 +18,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.grupo5.buyStuff.R;
 import com.grupo5.buyStuff.model.CacheManager;
 import com.grupo5.buyStuff.model.Category;
 import com.grupo5.buyStuff.services.ArticleMasterService;
-import com.grupo5.buyStuff.utilities.BuyStuffBundleConstants;
+import com.grupo5.buyStuff.utilities.KoppeBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.utilities.ServerMessages;
+import com.grupo5.buyStuff.R;
 
 public class ListingSubcategories extends ListActivity {
 	@Override
@@ -33,8 +33,8 @@ public class ListingSubcategories extends ListActivity {
 
 		Bundle recdData = getIntent().getExtras();
 		int catPosition = Integer.parseInt(recdData
-				.getString(BuyStuffBundleConstants.CAT_POSITION.getText()));
-		String breadCrumb = recdData.getString(BuyStuffBundleConstants.PATH
+				.getString(KoppeBundleConstants.CAT_POSITION.getText()));
+		String breadCrumb = recdData.getString(KoppeBundleConstants.PATH
 				.getText());
 		setTitle(Html.fromHtml(breadCrumb + " > "));
 
@@ -80,7 +80,7 @@ public class ListingSubcategories extends ListActivity {
 	private void loadProductList(final int subCatIndex) {
 		Bundle data = getIntent().getExtras();
 		int catIndex = Integer.parseInt(data
-				.getString(BuyStuffBundleConstants.CAT_POSITION.getText()));
+				.getString(KoppeBundleConstants.CAT_POSITION.getText()));
 		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, this,
 				ArticleMasterService.class);
 		myIntent.addCommand(ArticleMasterService.InnerServerMessages.LOAD_ARTICLES_BY_SUBCATEGORY);
@@ -88,9 +88,9 @@ public class ListingSubcategories extends ListActivity {
 				.get(catIndex);
 		int catId = category.getId();
 		int subCatId = category.getSubcategories().get(subCatIndex).getId();
-		myIntent.addAttribute(BuyStuffBundleConstants.CAT_ID.getText(),
+		myIntent.addAttribute(KoppeBundleConstants.CAT_ID.getText(),
 				String.valueOf(catId));
-		myIntent.addAttribute(BuyStuffBundleConstants.SUBCAT_ID.getText(),
+		myIntent.addAttribute(KoppeBundleConstants.SUBCAT_ID.getText(),
 				String.valueOf(subCatId));
 		myIntent.addReceiver(new MyResultReceiver(new Handler(), category,
 				subCatIndex));
@@ -113,13 +113,13 @@ public class ListingSubcategories extends ListActivity {
 			switch (ServerMessages.parse(resultCode)) {
 			case STATUS_OK:
 				Serializable productList = resultData
-						.getSerializable(BuyStuffBundleConstants.ARTICLES
+						.getSerializable(KoppeBundleConstants.ARTICLES
 								.getText());
 				MyIntent myIntent = new MyIntent(ListingSubcategories.this,
 						ListingArticles.class);
-				myIntent.addAttribute(BuyStuffBundleConstants.ARTICLES.getText(),
+				myIntent.addAttribute(KoppeBundleConstants.ARTICLES.getText(),
 						productList);
-				myIntent.addAttribute(BuyStuffBundleConstants.PATH.getText(),
+				myIntent.addAttribute(KoppeBundleConstants.PATH.getText(),
 						getTitle().toString()
 								+ category.getSubcategories().get(subCatIndex)
 										.getName() + " > ");
