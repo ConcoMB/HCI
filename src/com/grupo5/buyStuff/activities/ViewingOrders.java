@@ -7,7 +7,7 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 
 import com.grupo5.buyStuff.model.Order;
-import com.grupo5.buyStuff.utilities.KoppeBundleConstants;
+import com.grupo5.buyStuff.utilities.BSBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.R;
 
@@ -26,9 +26,9 @@ public class ViewingOrders extends Activity {
 
 		Log.v(Order.OrderStates.CONFIRMED.getName(),
 				String.valueOf(Order.OrderStates.CONFIRMED.getCode()));
-		this.userName = data.getString(KoppeBundleConstants.USERNAME.getText());
-		this.token = data.getString(KoppeBundleConstants.AUTH_TOKEN.getText());
-		this.order = (Order) data.getSerializable(KoppeBundleConstants.ORDER
+		this.userName = data.getString(BSBundleConstants.USERNAME.getText());
+		this.token = data.getString(BSBundleConstants.AUTH_TOKEN.getText());
+		this.order = (Order) data.getSerializable(BSBundleConstants.ORDER
 				.getText());
 		setInformation(data);
 	}
@@ -46,8 +46,8 @@ public class ViewingOrders extends Activity {
 		t.setText(R.string.orderStatusLabel);
 		t = (TextView) findViewById(R.id.shippedDateLabel);
 		t.setText(R.string.orderShippedDateLabel);
-		t = (TextView) findViewById(R.id.locationLabel);
-		t.setText(R.string.orderLocationLabel);
+		/*t = (TextView) findViewById(R.id.locationLabel);
+		t.setText(R.string.orderLocationLabel);*/
 	}
 
 	private void setValues() {
@@ -56,13 +56,13 @@ public class ViewingOrders extends Activity {
 		t.setText(" " + order.getStatusName());
 		t = (TextView) findViewById(R.id.shippedDateValue);
 		t.setText(" " + order.getShippedDate());
-		t = (TextView) findViewById(R.id.locationValue);
-		String coord = " ( " + order.getLatitude()
+		//t = (TextView) findViewById(R.id.locationValue);
+		/*String coord = " ( " + order.getLatitude()
 				+ ((Integer.valueOf(order.getLatitude()) < 0) ? "ºS" : "ºN")
 				+ ", " + order.getLongitude()
 				+ ((Integer.valueOf(order.getLongitude()) < 0) ? "ºW" : "ºE")
 				+ ")";
-		t.setText(coord);
+		t.setText(coord);*/
 	}
 
 	@Override

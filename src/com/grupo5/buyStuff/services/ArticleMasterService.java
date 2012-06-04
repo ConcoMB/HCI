@@ -24,7 +24,7 @@ import android.util.Log;
 import com.grupo5.buyStuff.model.Article;
 import com.grupo5.buyStuff.model.Category;
 import com.grupo5.buyStuff.utilities.ArticleConstants;
-import com.grupo5.buyStuff.utilities.KoppeBundleConstants;
+import com.grupo5.buyStuff.utilities.BSBundleConstants;
 import com.grupo5.buyStuff.utilities.LanguageManager;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.utilities.ServerMessages;
@@ -216,7 +216,7 @@ public class ArticleMasterService extends IntentService {
 		MyIntent myIntent = new MyIntent(intent);
 		ResultReceiver receiver = myIntent.getReceiver();
 		Integer commandNumber = myIntent
-				.getIntegerAttribute(KoppeBundleConstants.COMMAND.getText());
+				.getIntegerAttribute(BSBundleConstants.COMMAND.getText());
 		Bundle bundle = new Bundle();
 		List<Category> categories;
 		Log.v("ME LLEGA EL COMMAND NUMBER", String.valueOf(commandNumber));
@@ -226,7 +226,7 @@ public class ArticleMasterService extends IntentService {
 				categories = fetchCategories();
 				if (categories != null) {
 					bundle.putSerializable(
-							KoppeBundleConstants.COMMAND.getText(),
+							BSBundleConstants.COMMAND.getText(),
 							(Serializable) categories);
 				} else {
 					throw new ConnectException("Connection error");
@@ -234,39 +234,39 @@ public class ArticleMasterService extends IntentService {
 				break;
 			case LOAD_SUBCATEGORIES:
 				int id = myIntent
-						.getIntegerAttribute(KoppeBundleConstants.SUBCAT_ID
+						.getIntegerAttribute(BSBundleConstants.SUBCAT_ID
 								.getText());
 				categories = fetchSubCategories(id);
 				bundle.putSerializable(
-						KoppeBundleConstants.SUBCATEGORIES.getText(),
+						BSBundleConstants.SUBCATEGORIES.getText(),
 						(Serializable) categories);
 				break;
 			case LOAD_ARTICLES_BY_SUBCATEGORY:
 				int catId = myIntent
-						.getIntegerAttribute(KoppeBundleConstants.CAT_ID
+						.getIntegerAttribute(BSBundleConstants.CAT_ID
 								.getText());
 				int subCatId = myIntent
-						.getIntegerAttribute(KoppeBundleConstants.SUBCAT_ID
+						.getIntegerAttribute(BSBundleConstants.SUBCAT_ID
 								.getText());
 				List<Article> articles = fetchArticlesBySubcategory(catId,
 						subCatId);
-				bundle.putSerializable(KoppeBundleConstants.ARTICLES.getText(),
+				bundle.putSerializable(BSBundleConstants.ARTICLES.getText(),
 						(Serializable) articles);
 				break;
 			case LOAD_ARTICLE:
 				Log.v("Hola", "facu");
 				int prodId = myIntent
-						.getIntegerAttribute(KoppeBundleConstants.ARTICLE_ID
+						.getIntegerAttribute(BSBundleConstants.ARTICLE_ID
 								.getText());
 				Article p = fetchArticle(prodId);
-				bundle.putSerializable(KoppeBundleConstants.ARTICLE.getText(),
+				bundle.putSerializable(BSBundleConstants.ARTICLE.getText(),
 						p);
 				break;
 			}
 			receiver.send(ServerMessages.STATUS_OK.getNumber(), bundle);
 		} catch (IOException ioe) {
 			// Log.v("ERROR", e.getMessage());
-			bundle.putString(KoppeBundleConstants.ERROR_MESSAGE.getText(),
+			bundle.putString(BSBundleConstants.ERROR_MESSAGE.getText(),
 					ioe.getMessage());
 			receiver.send(ServerMessages.STATUS_ERROR.getNumber(), bundle);
 		}

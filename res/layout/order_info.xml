@@ -61,27 +61,6 @@
             android:paddingTop="5sp"
             android:text="TextView" >
         </TextView>
-
-        <TextView
-            android:id="@+id/locationLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/shippedDateLabel"
-            android:layout_below="@+id/shippedDateLabel"
-            android:text="TextView"
-            android:textSize="20sp" >
-        </TextView>
-
-        <TextView
-            android:id="@+id/locationValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/locationLabel"
-            android:layout_alignTop="@+id/locationLabel"
-            android:layout_toRightOf="@+id/locationLabel"
-            android:paddingTop="5sp"
-            android:text="TextView" >
-        </TextView>
     </RelativeLayout>
 
 </RelativeLayout>

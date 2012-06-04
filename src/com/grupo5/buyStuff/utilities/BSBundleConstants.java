@@ -1,6 +1,6 @@
 package com.grupo5.buyStuff.utilities;
 
-public enum KoppeBundleConstants {
+public enum BSBundleConstants {
 	ARTICLE("article"), ARTICLES("articles"), CAT_ID("categoryId"), SUBCAT_ID(
 			"subcategoryId"), CAT_POSITION("categoryPos"), PATH(
 			"path"), CATEGORIES("categories"), SUBCATEGORIES(
@@ -11,7 +11,7 @@ public enum KoppeBundleConstants {
 
 	private String s;
 
-	private KoppeBundleConstants(String s) {
+	private BSBundleConstants(String s) {
 		this.s = s;
 	}
 

@@ -25,7 +25,7 @@ import android.os.ResultReceiver;
 
 import com.grupo5.buyStuff.activities.Menu;
 import com.grupo5.buyStuff.model.Order;
-import com.grupo5.buyStuff.utilities.KoppeBundleConstants;
+import com.grupo5.buyStuff.utilities.BSBundleConstants;
 import com.grupo5.buyStuff.utilities.LanguageManager;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.utilities.ServerMessages;
@@ -56,9 +56,9 @@ public class RefreshService extends IntentService {
 		MyIntent myIntent = new MyIntent(intent);
 		ResultReceiver receiver = myIntent.getReceiver();
 		String userName = myIntent
-				.getStringAttribute(KoppeBundleConstants.USERNAME.getText());
+				.getStringAttribute(BSBundleConstants.USERNAME.getText());
 		String authToken = myIntent
-				.getStringAttribute(KoppeBundleConstants.AUTH_TOKEN.getText());
+				.getStringAttribute(BSBundleConstants.AUTH_TOKEN.getText());
 		Bundle b = new Bundle();
 		Timer timer = new Timer();
 		this.timerTask = new MyTimerTask(receiver, userName, authToken, b,
@@ -92,7 +92,7 @@ public class RefreshService extends IntentService {
 		if (order != null) {
 			contentText = getString(R.string.orderUpdated) + " " + order;
 			notificationIntent.addAttribute(
-					KoppeBundleConstants.ORDER_ID.getText(),
+					BSBundleConstants.ORDER_ID.getText(),
 					String.valueOf(order));
 		} else {
 			contentText = getString(R.string.orderModified);
@@ -129,7 +129,7 @@ public class RefreshService extends IntentService {
 			}
 			return false;
 		} catch (Exception e) {
-			b.putString(KoppeBundleConstants.ERROR_MESSAGE.getText(),
+			b.putString(BSBundleConstants.ERROR_MESSAGE.getText(),
 					e.getMessage());
 			receiver.send(ServerMessages.STATUS_CONNECTION_ERROR.getNumber(), b);
 		}
@@ -148,7 +148,7 @@ public class RefreshService extends IntentService {
 						if (!(oi.getLatitude().equals(oj.getLatitude())
 								&& oi.getLongitude().equals(oj.getLongitude()) && oi
 								.getStatus().equals(oj.getStatus()))) {
-							b.putInt(KoppeBundleConstants.ORDER_ID.getText(),
+							b.putInt(BSBundleConstants.ORDER_ID.getText(),
 									new Integer(oi.getId()));
 							return true;
 						}
@@ -206,8 +206,8 @@ public class RefreshService extends IntentService {
 			try {
 				if (getOrderInfo(receiver, b, userName, authToken)) {
 					Integer order = null;
-					if (b.containsKey(KoppeBundleConstants.ORDER_ID.getText())) {
-						order = b.getInt(KoppeBundleConstants.ORDER_ID
+					if (b.containsKey(BSBundleConstants.ORDER_ID.getText())) {
+						order = b.getInt(BSBundleConstants.ORDER_ID
 								.getText());
 					}
 					if (!RefreshService.this.isFirst) {
@@ -215,8 +215,8 @@ public class RefreshService extends IntentService {
 					} else {
 						RefreshService.this.isFirst = false;
 					}
-					b.putString(KoppeBundleConstants.UPDATED.getText(),
-							KoppeBundleConstants.YES.getText());
+					b.putString(BSBundleConstants.UPDATED.getText(),
+							BSBundleConstants.YES.getText());
 				}
 				receiver.send(ServerMessages.STATUS_OK.getNumber(), b);
 			} catch (SocketTimeoutException e) {

@@ -26,7 +26,7 @@ import com.grupo5.buyStuff.model.Order;
 import com.grupo5.buyStuff.model.Order.OrderStates;
 import com.grupo5.buyStuff.services.OrderMasterService;
 import com.grupo5.buyStuff.services.RefreshService;
-import com.grupo5.buyStuff.utilities.KoppeBundleConstants;
+import com.grupo5.buyStuff.utilities.BSBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.utilities.ServerMessages;
 import com.grupo5.buyStuff.R;
@@ -42,9 +42,9 @@ public class ListingOrderTypes extends ListActivity {
 		super.onCreate(savedInstanceState);
 		Bundle b = getIntent().getExtras();
 
-		this.type = b.getString(KoppeBundleConstants.TYPE.getText());
-		this.userName = b.getString(KoppeBundleConstants.USERNAME.getText());
-		this.token = b.getString(KoppeBundleConstants.AUTH_TOKEN.getText());
+		this.type = b.getString(BSBundleConstants.TYPE.getText());
+		this.userName = b.getString(BSBundleConstants.USERNAME.getText());
+		this.token = b.getString(BSBundleConstants.AUTH_TOKEN.getText());
 		this.orders = new ArrayList<Order>();
 		this.setViewTitle();
 		this.loadOrders();
@@ -110,11 +110,11 @@ public class ListingOrderTypes extends ListActivity {
 	private void launchOrdersByType(int position, final String title) {
 		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, this,
 				OrderMasterService.class);
-		myIntent.addAttribute(KoppeBundleConstants.ID.getText(),
+		myIntent.addAttribute(BSBundleConstants.ID.getText(),
 				String.valueOf(this.orders.get(position).getId()));
-		myIntent.addAttribute(KoppeBundleConstants.USERNAME.getText(),
+		myIntent.addAttribute(BSBundleConstants.USERNAME.getText(),
 				this.userName);
-		myIntent.addAttribute(KoppeBundleConstants.AUTH_TOKEN.getText(),
+		myIntent.addAttribute(BSBundleConstants.AUTH_TOKEN.getText(),
 				this.token);
 		Order order = this.orders.get(position);
 		String userN = this.userName;
@@ -161,19 +161,19 @@ public class ListingOrderTypes extends ListActivity {
 			switch (ServerMessages.parse(resultCode)) {
 			case STATUS_OK:
 				Serializable productList = resultData
-						.getSerializable(KoppeBundleConstants.ARTICLES
+						.getSerializable(BSBundleConstants.ARTICLES
 								.getText());
 				MyIntent myIntent = new MyIntent(ListingOrderTypes.this,
 						ViewingOrders.class);
 				Bundle b = new Bundle();
-				b.putSerializable(KoppeBundleConstants.ARTICLES.getText(),
+				b.putSerializable(BSBundleConstants.ARTICLES.getText(),
 						productList);
-				b.putSerializable(KoppeBundleConstants.ORDER.getText(),
+				b.putSerializable(BSBundleConstants.ORDER.getText(),
 						(Serializable) order);
-				b.putString(KoppeBundleConstants.USERNAME.getText(), userName);
-				b.putString(KoppeBundleConstants.AUTH_TOKEN.getText(),
+				b.putString(BSBundleConstants.USERNAME.getText(), userName);
+				b.putString(BSBundleConstants.AUTH_TOKEN.getText(),
 						authToken);
-				b.putString(KoppeBundleConstants.PATH.getText(), title + " > ");
+				b.putString(BSBundleConstants.PATH.getText(), title + " > ");
 				myIntent.putExtras(b);
 				startActivity(myIntent);
 				break;

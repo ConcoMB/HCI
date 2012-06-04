@@ -18,7 +18,7 @@ import android.widget.ListView;
 import com.grupo5.buyStuff.model.Order;
 import com.grupo5.buyStuff.model.Order.OrderStates;
 import com.grupo5.buyStuff.services.RefreshService;
-import com.grupo5.buyStuff.utilities.KoppeBundleConstants;
+import com.grupo5.buyStuff.utilities.BSBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.R;
 
@@ -57,13 +57,13 @@ public class ListingOrders extends ListActivity {
 	protected void onListItemClick(ListView l, View view, int position, long id) {
 		int type = position + 1;
 		Bundle b = getIntent().getExtras();
-		String userName = b.getString(KoppeBundleConstants.USERNAME.getText());
-		String token = b.getString(KoppeBundleConstants.AUTH_TOKEN.getText());
+		String userName = b.getString(BSBundleConstants.USERNAME.getText());
+		String token = b.getString(BSBundleConstants.AUTH_TOKEN.getText());
 		MyIntent myIntent = new MyIntent(ListingOrders.this,
 				ListingOrderTypes.class);
-		myIntent.putExtra(KoppeBundleConstants.USERNAME.getText(), userName);
-		myIntent.putExtra(KoppeBundleConstants.AUTH_TOKEN.getText(), token);
-		myIntent.putExtra(KoppeBundleConstants.TYPE.getText(),
+		myIntent.putExtra(BSBundleConstants.USERNAME.getText(), userName);
+		myIntent.putExtra(BSBundleConstants.AUTH_TOKEN.getText(), token);
+		myIntent.putExtra(BSBundleConstants.TYPE.getText(),
 				Integer.toString(type));
 		startActivity(myIntent);
 	}

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="companyName">Koppe</string>
+    <string name="companyName">BuyStuff Corp</string>
     <string name="orderTitle">Orden</string>
-    <string name="logoString">Koppe - comprar, más fácil</string>
-    <string name="app_name">Koppe App</string>
+    <string name="myOrder">Mis órdenes</string>
+    <string name="logoString">BuyStuff! - compra donde quieras</string>
+    <string name="app_name">BuyStuff!</string>
     <string name="username">Usuario:</string>
     <string name="password">Contraseña:</string>
     <string name="loginText">Iniciar Sesión</string>
@@ -44,7 +45,7 @@
     <string-array name="dvd_labels">
         <item>Actores: </item>
         <item>Formato: </item>
-        <item>Lenguage: </item>
+        <item>Idioma: </item>
         <item>Subtítulos: </item>
         <item>Región: </item>
         <item>Cant. de Discos: </item>
@@ -59,5 +60,6 @@
         <item>ISBN10: </item>
         <item>ISBN13: </item>
     </string-array>
-
+    <string name="myOrders">Mis Ordenes</string>
+    <string name="categories">Categorías</string>
 </resources>

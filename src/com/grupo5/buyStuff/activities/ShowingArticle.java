@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.grupo5.buyStuff.model.Article;
-import com.grupo5.buyStuff.utilities.KoppeBundleConstants;
+import com.grupo5.buyStuff.utilities.BSBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.R;
 
@@ -36,8 +36,8 @@ public class ShowingArticle extends Activity {
 
 		Bundle recdData = getIntent().getExtras();
 		Article article = (Article) recdData
-				.getSerializable(KoppeBundleConstants.ARTICLE.getText());
-		String path = recdData.getString(KoppeBundleConstants.PATH.getText());
+				.getSerializable(BSBundleConstants.ARTICLE.getText());
+		String path = recdData.getString(BSBundleConstants.PATH.getText());
 		setTitle(Html.fromHtml(path));
 
 		TextView textView = (TextView) findViewById(R.id.title);

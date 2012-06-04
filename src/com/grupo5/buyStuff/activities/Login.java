@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.grupo5.buyStuff.model.CacheManager;
 import com.grupo5.buyStuff.services.LoginService;
-import com.grupo5.buyStuff.utilities.KoppeBundleConstants;
+import com.grupo5.buyStuff.utilities.BSBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.utilities.ServerMessages;
 import com.grupo5.buyStuff.R;
@@ -38,8 +38,8 @@ public class Login extends Activity {
 
 		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, this,
 				LoginService.class);
-		myIntent.addAttribute(KoppeBundleConstants.USERNAME.getText(), username);
-		myIntent.addAttribute(KoppeBundleConstants.PASSWORD.getText(), password);
+		myIntent.addAttribute(BSBundleConstants.USERNAME.getText(), username);
+		myIntent.addAttribute(BSBundleConstants.PASSWORD.getText(), password);
 		myIntent.addCommand(LoginService.DO_LOGIN);
 		myIntent.addReceiver(new MyResultReceiver(new Handler(), username));
 		startService(myIntent);
@@ -60,15 +60,15 @@ public class Login extends Activity {
 			switch (svm) {
 			case STATUS_OK:
 				MyIntent myIntent = new MyIntent(Login.this, Menu.class);
-				myIntent.addAttribute(KoppeBundleConstants.USERNAME.getText(),
+				myIntent.addAttribute(BSBundleConstants.USERNAME.getText(),
 						name);
 				myIntent.addAttribute(
-						KoppeBundleConstants.AUTH_TOKEN.getText(), resultData
-								.getString(KoppeBundleConstants.AUTH_TOKEN
+						BSBundleConstants.AUTH_TOKEN.getText(), resultData
+								.getString(BSBundleConstants.AUTH_TOKEN
 										.getText()));
 				CacheManager.getInstance().persistSession(
 						name,
-						resultData.getString(KoppeBundleConstants.AUTH_TOKEN
+						resultData.getString(BSBundleConstants.AUTH_TOKEN
 								.getText()));
 				startActivity(myIntent);
 				Login.this.finish();
@@ -76,10 +76,10 @@ public class Login extends Activity {
 			case STATUS_CONNECTION_ERROR:
 				break;
 			case STATUS_ERROR:
-				if (resultData.containsKey(KoppeBundleConstants.ERROR_MESSAGE
+				if (resultData.containsKey(BSBundleConstants.ERROR_MESSAGE
 						.getText())) {
 					String errorMessage = resultData
-							.getString(KoppeBundleConstants.ERROR_MESSAGE
+							.getString(BSBundleConstants.ERROR_MESSAGE
 									.getText());
 					Toast.makeText(getApplicationContext(), errorMessage,
 							Toast.LENGTH_LONG).show();
