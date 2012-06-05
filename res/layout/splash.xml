@@ -9,6 +9,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/bsLogo.png" />
+        android:src="@drawable/koppe_isologo" />
 
 </RelativeLayout>

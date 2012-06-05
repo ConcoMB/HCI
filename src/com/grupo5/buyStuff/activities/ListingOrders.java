@@ -1,40 +1,97 @@
 package com.grupo5.buyStuff.activities;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import android.app.ListActivity;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.KeyEvent;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.TextView;
 
+import com.grupo5.buyStuff.R;
+import com.grupo5.buyStuff.activities.ListingSubcategories.MyResultReceiver;
+import com.grupo5.buyStuff.model.Article;
+import com.grupo5.buyStuff.model.CacheManager;
+import com.grupo5.buyStuff.model.Category;
 import com.grupo5.buyStuff.model.Order;
-import com.grupo5.buyStuff.model.Order.OrderStates;
-import com.grupo5.buyStuff.services.RefreshService;
+import com.grupo5.buyStuff.services.ArticleMasterService;
 import com.grupo5.buyStuff.utilities.BSBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
-import com.grupo5.buyStuff.R;
 
-public class ListingOrders extends ListActivity {
+public class ViewingOrders extends Activity {
+	@SuppressWarnings("unused")
+	private String userName;
+	@SuppressWarnings("unused")
+	private String token;
+	private Order order;
+	private List<Article> articles;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		ListView lv = getListView();
-		lv.setTextFilterEnabled(true);
-		this.refreshList();
-		Animation a = AnimationUtils.makeInAnimation(getBaseContext(), false);
-		a.setDuration(500);
-		lv.setAnimation(a);
+		setContentView(R.layout.order_info);
+		Bundle data = getIntent().getExtras();
+
+		Log.v(Order.OrderStates.CONFIRMED.getName(),
+				String.valueOf(Order.OrderStates.CONFIRMED.getCode()));
+		this.userName = data.getString(BSBundleConstants.USERNAME.getText());
+		this.token = data.getString(BSBundleConstants.AUTH_TOKEN.getText());
+		this.order = (Order) data.getSerializable(BSBundleConstants.ORDER.getText());
+		articles = (List<Article>) data.getSerializable(BSBundleConstants.ARTICLES.getText());
+		setInformation(data);
 	}
 
+	private void setInformation(Bundle data) {
+		TextView t = (TextView) findViewById(R.id.title);
+		t.setText(R.string.orderInformation);
+		setLabels();
+		setValues();
+	}
+
+	private void setLabels() {
+		TextView t;
+		t = (TextView) findViewById(R.id.orderStatusLabel);
+		t.setText(R.string.orderStatusLabel);
+		t = (TextView) findViewById(R.id.shippedDateLabel);
+		t.setText(R.string.orderShippedDateLabel);
+		t = (TextView) findViewById(R.id.myArts);
+		t.setText(R.string.myArts);
+
+		/*t = (TextView) findViewById(R.id.locationLabel);
+		t.setText(R.string.orderLocationLabel);*/
+	}
+
+	private void setValues() {
+		TextView t;
+		t = (TextView) findViewById(R.id.orderStatusValue);
+		t.setText(" " + order.getStatusName());
+		t = (TextView) findViewById(R.id.shippedDateValue);
+		t.setText(" " + order.getShippedDate());
+		t = (TextView) findViewById(R.id.myArts);
+		//t = (TextView) findViewById(R.id.locationValue);
+		/*String coord = " ( " + order.getLatitude()
+				+ ((Integer.valueOf(order.getLatitude()) < 0) ? "ºS" : "ºN")
+				+ ", " + order.getLongitude()
+				+ ((Integer.valueOf(order.getLongitude()) < 0) ? "ºW" : "ºE")
+				+ ")";
+		t.setText(coord);*/
+	}
+
+	private void showArts(){
+		Bundle data = getIntent().getExtras();
+		int catIndex = Integer.parseInt(data.getString(BSBundleConstants.CAT_POSITION.getText()));
+		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, this,ArticleMasterService.class);
+		myIntent.addCommand(ArticleMasterService.InnerServerMessages.LOAD_ARTICLES_BY_ORDER);
+		int ordID = Integer.parseInt(order.getId());
+		myIntent.addAttribute(BSBundleConstants.ORDER_ID.getText(),String.valueOf(ordID));
+		//myIntent.addReceiver(new MyResultReceiver(new Handler(), category,subCatIndex));
+		startService(myIntent);
+	}
+	
+	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_MENU) {
@@ -43,102 +100,7 @@ public class ListingOrders extends ListActivity {
 			startActivity(myIntent);
 			return true;
 		}
-
-		if (keyCode == KeyEvent.KEYCODE_SEARCH) {
-			((InputMethodManager) this
-					.getSystemService(ListActivity.INPUT_METHOD_SERVICE))
-					.toggleSoftInput(0, 0);
-			return true;
-		}
 		return super.onKeyDown(keyCode, event);
 	}
 
-	@Override
-	protected void onListItemClick(ListView l, View view, int position, long id) {
-		int type = position + 1;
-		Bundle b = getIntent().getExtras();
-		String userName = b.getString(BSBundleConstants.USERNAME.getText());
-		String token = b.getString(BSBundleConstants.AUTH_TOKEN.getText());
-		MyIntent myIntent = new MyIntent(ListingOrders.this,
-				ListingOrderTypes.class);
-		myIntent.putExtra(BSBundleConstants.USERNAME.getText(), userName);
-		myIntent.putExtra(BSBundleConstants.AUTH_TOKEN.getText(), token);
-		myIntent.putExtra(BSBundleConstants.TYPE.getText(),
-				Integer.toString(type));
-		startActivity(myIntent);
-	}
-
-	private void refreshList() {
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,
-				R.id.listText, this.getListItems()));
-	}
-
-	private List<String> getListItems() {
-		List<String> types = this.getOrderTypes();
-		List<String> items = new ArrayList<String>();
-		Map<String, String> strings = this.getTypeStrings();
-
-		for (int i = 0; i < types.size(); i++) {
-			items.add(strings.get(types.get(i)));
-		}
-
-		return items;
-	}
-
-	private boolean listContains(List<String> l, String s) {
-		int oldV, newV;
-		for (int i = 0; i < l.size(); i++) {
-			oldV = new Integer(l.get(i));
-			newV = new Integer(s);
-			if (oldV == newV) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	private Map<String, String> getTypeStrings() {
-		Map<String, String> map = new HashMap<String, String>();
-		for (OrderStates o : Order.OrderStates.values()) {
-			map.put(String.valueOf(o.getCode()), o.getName());
-		}
-		return map;
-	}
-
-	private List<String> getOrderTypes() {
-		List<Order> orders = RefreshService.getOrders();
-		List<String> types = new ArrayList<String>();
-
-		for (int i = 0; i < orders.size(); i++) {
-			String status = orders.get(i).getStatus();
-			if (!this.listContains(types, status)) {
-				if (types.size() == 0) {
-					types.add(status);
-				} else {
-					boolean added;
-					int size = types.size();
-					for (int j = 0; j < size; j++) {
-						added = false;
-						Integer newItem = new Integer(status);
-						Integer currItem = new Integer(types.get(j));
-						int comparison = newItem.compareTo(currItem);
-						if (comparison < 0 /* && newItem != currItem */) {
-							added = true;
-							types.add(j, status);
-							break;
-						} else if (j == types.size() - 1 && !added) {
-							types.add(j, status);
-							added = true;
-						}
-
-						if (added) {
-							break;
-						}
-					}
-				}
-			}
-		}
-
-		return types;
-	}
 }
