@@ -55,4 +55,7 @@
         <item>ISBN10: </item>
         <item>ISBN13: </item>
     </string-array>
+    <color name="cream">#FBFFBF</color>  
+    <color name="black">#000000</color>  
+    
 </resources>

@@ -62,5 +62,7 @@
         <item>ISBN13: </item>
     </string-array>
     <string name="myOrders">Mis Ordenes</string>
-    <string name="categories">Categorías</string>
+    <color name="cream">#FBFFBF</color>  
+        <color name="black">#000000</color>  
+    
 </resources>
