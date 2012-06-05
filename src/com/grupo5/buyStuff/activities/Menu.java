@@ -107,8 +107,7 @@ public class Menu extends ListActivity {
 				}
 
 				Bundle b = getIntent().getExtras();
-				MyIntent myIntent = new MyIntent(Menu.this,
-						ListingOrders.class);
+				MyIntent myIntent = new MyIntent(Menu.this,ListingOrders.class);
 
 				Session u = CacheManager.getInstance().getSession();
 				if (u != null) {
