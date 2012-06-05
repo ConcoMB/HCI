@@ -28,12 +28,9 @@ public class OrderMasterService extends IntentService {
 	protected void onHandleIntent(Intent intent) {
 		MyIntent myIntent = new MyIntent(intent);
 		ResultReceiver receiver = myIntent.getReceiver();
-		String userName = myIntent
-				.getStringAttribute(BSBundleConstants.USERNAME.getText());
-		String authToken = myIntent
-				.getStringAttribute(BSBundleConstants.AUTH_TOKEN.getText());
-		String orderId = myIntent.getStringAttribute(BSBundleConstants.ID
-				.getText());
+		String userName = myIntent.getStringAttribute(BSBundleConstants.USERNAME.getText());
+		String authToken = myIntent.getStringAttribute(BSBundleConstants.AUTH_TOKEN.getText());
+		String orderId = myIntent.getStringAttribute(BSBundleConstants.ID.getText());
 
 		URLGenerator order = new URLGenerator("Order");
 		order.addParameter("method", "GetOrder");
@@ -51,17 +48,13 @@ public class OrderMasterService extends IntentService {
 						.getText());
 				ArrayList<Article> products = new ArrayList<Article>();
 				for (int j = 0; j < items.getLength(); j++) {
-					products.add(ArticleMasterService
-							.fetchArticle(new Integer(items.item(j)
-									.getFirstChild().getNodeValue())));
+					products.add(ArticleMasterService.fetchArticle(new Integer(items.item(j).getFirstChild().getNodeValue())));
 				}
-				b.putSerializable(ServerXMLConstants.ARTICLES.getText(),
-						products);
+				b.putSerializable(ServerXMLConstants.ARTICLES.getText(),products);
 				receiver.send(ServerMessages.STATUS_OK.getNumber(), b);
 			}
 		} catch (Exception e) {
-			b.putString(BSBundleConstants.ERROR_MESSAGE.getText(),
-					e.getMessage());
+			b.putString(BSBundleConstants.ERROR_MESSAGE.getText(), e.getMessage());
 			receiver.send(ServerMessages.STATUS_ERROR.getNumber(), b);
 		}
 	}

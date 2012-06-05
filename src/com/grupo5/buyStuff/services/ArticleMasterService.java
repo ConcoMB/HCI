@@ -45,15 +45,13 @@ public class ArticleMasterService extends IntentService {
 
 		catalogServer.clearParameters();
 		catalogServer.addParameter("method", "GetCategoryList");
-		catalogServer.addParameter("language_id",
-				LanguageManager.getLanguageId());
+		catalogServer.addParameter("language_id",LanguageManager.getLanguageId());
 		HttpResponse response = catalogServer.getServerResponse();
 
 		try {
 			List<Category> categories = new LinkedList<Category>();
 			XMLParser parser = new XMLParser(response);
-			NodeList catNodes = parser.getElements(ServerXMLConstants.CATEGORY
-					.getText());
+			NodeList catNodes = parser.getElements(ServerXMLConstants.CATEGORY.getText());
 			for (int i = 0; i < catNodes.getLength(); i++) {
 				categories.add(parseCategory(parser, catNodes.item(i)));
 			}
@@ -64,10 +62,8 @@ public class ArticleMasterService extends IntentService {
 	}
 
 	private static Category parseCategory(XMLParser parser, Node node) {
-		int id = Integer.parseInt(node.getAttributes()
-				.getNamedItem(ServerXMLConstants.ID.getText()).getNodeValue());
-		String name = parser.getStringFromSingleElement(
-				ServerXMLConstants.NAME.getText(), (Element) node);
+		int id = Integer.parseInt(node.getAttributes().getNamedItem(ServerXMLConstants.ID.getText()).getNodeValue());
+		String name = parser.getStringFromSingleElement(ServerXMLConstants.NAME.getText(), (Element) node);
 		return new Category(name, id);
 	}
 
@@ -76,8 +72,7 @@ public class ArticleMasterService extends IntentService {
 
 		catalogServer.clearParameters();
 		catalogServer.addParameter("method", "GetSubcategoryList");
-		catalogServer.addParameter("language_id",
-				LanguageManager.getLanguageId());
+		catalogServer.addParameter("language_id",LanguageManager.getLanguageId());
 		catalogServer.addParameter("category_id", categoryId + "");
 		HttpResponse response = catalogServer.getServerResponse();
 
@@ -98,13 +93,23 @@ public class ArticleMasterService extends IntentService {
 		return null;
 	}
 
-	public static List<Article> fetchArticlesBySubcategory(int categoryId,
-			int subcategoryId) throws IOException {
+	/*public static List<Article> fetchArticlesByOrder(int orderID) throws IOException{
+		catalogServer.clearParameters();
+		/*String userName = myIntent.getStringAttribute(BSBundleConstants.USERNAME.getText());
+		String authToken = myIntent.getStringAttribute(BSBundleConstants.AUTH_TOKEN.getText());
+		catalogServer.addParameter("method", "GetOrder");
+		catalogServer.addParameter("authentication_token", authToken);
+		catalogServer.addParameter("username", userName);
+		catalogServer.addParameter("order_id", orderID + "");
+		HttpResponse response = catalogServer.getServerResponse();
+		
+
+	}*/
+ 	public static List<Article> fetchArticlesBySubcategory(int categoryId,int subcategoryId) throws IOException {
 		catalogServer.clearParameters();
 
 		catalogServer.addParameter("method", "GetProductListBySubcategory");
-		catalogServer.addParameter("language_id",
-				LanguageManager.getLanguageId());
+		catalogServer.addParameter("language_id",LanguageManager.getLanguageId());
 		catalogServer.addParameter("category_id", categoryId + "");
 		catalogServer.addParameter("subcategory_id", subcategoryId + "");
 		HttpResponse response = catalogServer.getServerResponse();
@@ -112,8 +117,7 @@ public class ArticleMasterService extends IntentService {
 		try {
 			List<Article> articles = new LinkedList<Article>();
 			XMLParser parser = new XMLParser(response);
-			NodeList articleNodes = parser
-					.getElements(ServerXMLConstants.ARTICLE.getText());
+			NodeList articleNodes = parser.getElements(ServerXMLConstants.ARTICLE.getText());
 			for (int i = 0; i < articleNodes.getLength(); i++) {
 				articles.add(parseArticle(parser, articleNodes.item(i)));
 			}
@@ -135,7 +139,8 @@ public class ArticleMasterService extends IntentService {
 				ServerXMLConstants.PRICE.getText(), (Element) node));
 		return new Article(id, name, price);
 	}
-
+	
+	
 	public static Article fetchArticle(int ArticleId)
 			throws ClientProtocolException, IOException {
 
@@ -162,51 +167,31 @@ public class ArticleMasterService extends IntentService {
 
 	private static Article parseArticleComplete(XMLParser parser, Node node) {
 		Article p = parseArticle(parser, node);
-		int categoryId = Integer.parseInt(parser.getStringFromSingleElement(
-				ServerXMLConstants.CAT_ID.getText(), (Element) node));
+		int categoryId = Integer.parseInt(parser.getStringFromSingleElement(ServerXMLConstants.CAT_ID.getText(), (Element) node));
 		p.setCategoryId(categoryId);
-		int rank = Integer.parseInt(parser.getStringFromSingleElement(
-				ServerXMLConstants.SALES_RANK.getText(), (Element) node));
+		int rank = Integer.parseInt(parser.getStringFromSingleElement(ServerXMLConstants.SALES_RANK.getText(), (Element) node));
 		p.setSaleRank(rank);
-		String imgSrc = parser.getStringFromSingleElement(
-				ServerXMLConstants.IMAGE_SRC.getText(), (Element) node);
+		String imgSrc = parser.getStringFromSingleElement(ServerXMLConstants.IMAGE_SRC.getText(), (Element) node);
 		p.setImgSrc(imgSrc);
 
 		if (categoryId == 1) {
-			p.setInformation(ArticleConstants.ACTORS.getValue(),
-					parser.getStringFromSingleElement("actors", (Element) node));
-			p.setInformation(ArticleConstants.FORMAT.getValue(),
-					parser.getStringFromSingleElement("format", (Element) node));
-			p.setInformation(ArticleConstants.LANGUAGE.getValue(), parser.getStringFromSingleElement(
-					"language", (Element) node));
-			p.setInformation(ArticleConstants.SUBTITLES.getValue(), parser.getStringFromSingleElement(
-					"subtitles", (Element) node));
-			p.setInformation(ArticleConstants.REGION.getValue(),
-					parser.getStringFromSingleElement("region", (Element) node));
-			p.setInformation(ArticleConstants.ASPECT_RATIO.getValue(), parser.getStringFromSingleElement(
-					"aspect_ratio", (Element) node));
-			p.setInformation(ArticleConstants.NUMBER_DISC.getValue(), parser.getStringFromSingleElement(
-					"number_discs", (Element) node));
-			p.setInformation(ArticleConstants.RELEASE_DATE.getValue(), parser.getStringFromSingleElement(
-					"release_date", (Element) node));
-			p.setInformation(ArticleConstants.RUN_TIME.getValue(), parser.getStringFromSingleElement(
-					"run_time", (Element) node));
-			p.setInformation(ArticleConstants.ASIN.getValue(),
-					parser.getStringFromSingleElement("ASIN", (Element) node));
+			p.setInformation(ArticleConstants.ACTORS.getValue(),parser.getStringFromSingleElement("actors", (Element) node));
+			p.setInformation(ArticleConstants.FORMAT.getValue(),parser.getStringFromSingleElement("format", (Element) node));
+			p.setInformation(ArticleConstants.LANGUAGE.getValue(), parser.getStringFromSingleElement("language", (Element) node));
+			p.setInformation(ArticleConstants.SUBTITLES.getValue(), parser.getStringFromSingleElement("subtitles", (Element) node));
+			p.setInformation(ArticleConstants.REGION.getValue(),parser.getStringFromSingleElement("region", (Element) node));
+			p.setInformation(ArticleConstants.ASPECT_RATIO.getValue(), parser.getStringFromSingleElement("aspect_ratio", (Element) node));
+			p.setInformation(ArticleConstants.NUMBER_DISC.getValue(), parser.getStringFromSingleElement("number_discs", (Element) node));
+			p.setInformation(ArticleConstants.RELEASE_DATE.getValue(), parser.getStringFromSingleElement("release_date", (Element) node));
+			p.setInformation(ArticleConstants.RUN_TIME.getValue(), parser.getStringFromSingleElement("run_time", (Element) node));
+			p.setInformation(ArticleConstants.ASIN.getValue(),parser.getStringFromSingleElement("ASIN", (Element) node));
 		} else {
-			p.setInformation(ArticleConstants.AUTHORS.getValue(), parser.getStringFromSingleElement(
-					"authors", (Element) node));
-			p.setInformation(ArticleConstants.PUBLISHER.getValue(), parser.getStringFromSingleElement(
-					"publisher", (Element) node));
-			p.setInformation(ArticleConstants.PUBLISHED_DATE.getValue(), parser
-					.getStringFromSingleElement("published_date",
-							(Element) node));
-			p.setInformation(ArticleConstants.ISBN10.getValue(), parser.getStringFromSingleElement(
-					"ISBN_10", (Element) node));
-			p.setInformation(ArticleConstants.ISBN13.getValue(), parser.getStringFromSingleElement(
-					"ISBN_13", (Element) node));
-			p.setInformation(ArticleConstants.LANGUAGE.getValue(), parser.getStringFromSingleElement(
-					"language", (Element) node));
+			p.setInformation(ArticleConstants.AUTHORS.getValue(), parser.getStringFromSingleElement("authors", (Element) node));
+			p.setInformation(ArticleConstants.PUBLISHER.getValue(), parser.getStringFromSingleElement("publisher", (Element) node));
+			p.setInformation(ArticleConstants.PUBLISHED_DATE.getValue(), parser.getStringFromSingleElement("published_date",(Element) node));
+			p.setInformation(ArticleConstants.ISBN10.getValue(), parser.getStringFromSingleElement("ISBN_10", (Element) node));
+			p.setInformation(ArticleConstants.ISBN13.getValue(), parser.getStringFromSingleElement("ISBN_13", (Element) node));
+			p.setInformation(ArticleConstants.LANGUAGE.getValue(), parser.getStringFromSingleElement("language", (Element) node));
 		}
 		return p;
 	}
@@ -219,49 +204,38 @@ public class ArticleMasterService extends IntentService {
 				.getIntegerAttribute(BSBundleConstants.COMMAND.getText());
 		Bundle bundle = new Bundle();
 		List<Category> categories;
-		Log.v("ME LLEGA EL COMMAND NUMBER", String.valueOf(commandNumber));
 		try {
 			switch (InnerServerMessages.parse(commandNumber)) {
 			case LOAD_CATEGORIES:
 				categories = fetchCategories();
 				if (categories != null) {
-					bundle.putSerializable(
-							BSBundleConstants.COMMAND.getText(),
-							(Serializable) categories);
+					bundle.putSerializable(BSBundleConstants.COMMAND.getText(),(Serializable) categories);
 				} else {
 					throw new ConnectException("Connection error");
 				}
 				break;
 			case LOAD_SUBCATEGORIES:
-				int id = myIntent
-						.getIntegerAttribute(BSBundleConstants.SUBCAT_ID
-								.getText());
+				int id = myIntent.getIntegerAttribute(BSBundleConstants.SUBCAT_ID.getText());
 				categories = fetchSubCategories(id);
-				bundle.putSerializable(
-						BSBundleConstants.SUBCATEGORIES.getText(),
-						(Serializable) categories);
+				bundle.putSerializable(BSBundleConstants.SUBCATEGORIES.getText(),(Serializable) categories);
 				break;
 			case LOAD_ARTICLES_BY_SUBCATEGORY:
-				int catId = myIntent
-						.getIntegerAttribute(BSBundleConstants.CAT_ID
-								.getText());
-				int subCatId = myIntent
-						.getIntegerAttribute(BSBundleConstants.SUBCAT_ID
-								.getText());
-				List<Article> articles = fetchArticlesBySubcategory(catId,
-						subCatId);
-				bundle.putSerializable(BSBundleConstants.ARTICLES.getText(),
-						(Serializable) articles);
+				int catId = myIntent.getIntegerAttribute(BSBundleConstants.CAT_ID.getText());
+				int subCatId = myIntent.getIntegerAttribute(BSBundleConstants.SUBCAT_ID.getText());
+				List<Article> articles = fetchArticlesBySubcategory(catId,subCatId);
+				bundle.putSerializable(BSBundleConstants.ARTICLES.getText(),(Serializable) articles);
 				break;
 			case LOAD_ARTICLE:
-				Log.v("Hola", "facu");
-				int prodId = myIntent
-						.getIntegerAttribute(BSBundleConstants.ARTICLE_ID
-								.getText());
+				int prodId = myIntent.getIntegerAttribute(BSBundleConstants.ARTICLE_ID.getText());
 				Article p = fetchArticle(prodId);
-				bundle.putSerializable(BSBundleConstants.ARTICLE.getText(),
-						p);
+				bundle.putSerializable(BSBundleConstants.ARTICLE.getText(),	p);
 				break;
+			
+			case LOAD_ARTICLES_BY_ORDER:
+				/*int ordID = myIntent.getIntegerAttribute(BSBundleConstants.ORDER_ID.getText());
+				List<Article> artivles = fetchArticlesByOrder(orderID);
+				bundle.putSerializable(BSBundleConstants.ARTICLES.getText(), (Serializable)articles);
+				*/break;
 			}
 			receiver.send(ServerMessages.STATUS_OK.getNumber(), bundle);
 		} catch (IOException ioe) {
@@ -273,7 +247,7 @@ public class ArticleMasterService extends IntentService {
 	}
 
 	public enum InnerServerMessages {
-		LOAD_CATEGORIES(), LOAD_SUBCATEGORIES(), LOAD_ARTICLES_BY_SUBCATEGORY(), LOAD_ARTICLE();
+		LOAD_CATEGORIES(), LOAD_SUBCATEGORIES(), LOAD_ARTICLES_BY_SUBCATEGORY(), LOAD_ARTICLE(), LOAD_ARTICLES_BY_ORDER();
 
 		private int number;
 
@@ -286,19 +260,11 @@ public class ArticleMasterService extends IntentService {
 		}
 
 		public static InnerServerMessages parse(int resultCode) {
-			Log.v("Entro", "entro");
 			for (InnerServerMessages svm : values()) {
-				Log.v("ISM",
-						svm.toString() + " number="
-								+ String.valueOf(svm.getNumber()));
-				Log.v("Hola", "hola");
-				Log.v("JP", String.valueOf(svm.getNumber() == resultCode));
 				if (svm.getNumber() == resultCode) {
-					Log.v("Salgo", "salgo");
 					return svm;
 				}
 			}
-			Log.v("Salgo mal", "salgo mal");
 			return null;
 		}
 	}

@@ -97,7 +97,7 @@ public class ListingSubcategories extends ListActivity {
 		startService(myIntent);
 	}
 
-	private class MyResultReceiver extends ResultReceiver {
+	public class MyResultReceiver extends ResultReceiver {
 		private final Category category;
 		private final int subCatIndex;
 

@@ -61,6 +61,6 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/koppe_isologo" />
+        android:src="@drawable/bsLogo.png" />
 
 </RelativeLayout>
