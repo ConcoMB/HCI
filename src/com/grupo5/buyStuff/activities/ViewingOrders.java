@@ -34,9 +34,6 @@ public class ViewingOrders extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.order_info);
 		Bundle data = getIntent().getExtras();
-
-		Log.v(Order.OrderStates.CONFIRMED.getName(),
-				String.valueOf(Order.OrderStates.CONFIRMED.getCode()));
 		this.userName = data.getString(BSBundleConstants.USERNAME.getText());
 		this.token = data.getString(BSBundleConstants.AUTH_TOKEN.getText());
 		this.order = (Order) data.getSerializable(BSBundleConstants.ORDER.getText());

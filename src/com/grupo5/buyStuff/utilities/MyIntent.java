@@ -28,9 +28,6 @@ public class MyIntent extends Intent {
 	}
 
 	public void addAttribute(String name, String value) {
-		// Log.v("Vicky name", (name == null) ? "null" : name);
-		// Log.v("Vicky value", (value == null) ? "null" : value);
-		// Log.v("Vicky intent", (intent == null) ? "null" : intent.toString());
 		intent.putExtra(name, value.toString());
 	}
 
@@ -56,10 +53,6 @@ public class MyIntent extends Intent {
 	}
 
 	public int getIntegerAttribute(String name) {
-		// Log.v("SOY", this.intent.toString());
-		// Log.v("LLAMADA CON", name);
-		// Log.v("Y TENGO AHI", (this.getStringAttribute(name) == null) ? "null"
-		// : this.getStringAttribute(name));
 		return Integer.parseInt(this.getStringAttribute(name));
 	}
 

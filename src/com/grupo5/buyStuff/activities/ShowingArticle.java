@@ -36,8 +36,7 @@ public class ShowingArticle extends Activity {
 		setContentView(R.layout.article);
 
 		Bundle recdData = getIntent().getExtras();
-		Article article = (Article) recdData
-				.getSerializable(BSBundleConstants.ARTICLE.getText());
+		Article article = (Article) recdData.getSerializable(BSBundleConstants.ARTICLE.getText());
 		String path = recdData.getString(BSBundleConstants.PATH.getText());
 		setTitle(Html.fromHtml(path));
 
@@ -46,14 +45,12 @@ public class ShowingArticle extends Activity {
 		textView = (TextView) findViewById(R.id.price);
 		textView.setText(Article.CURRENCY + " " + article.getPrice());
 
-		/*Object obj = fetch(article.getImgSrc());
-		Drawable img;
+		Object obj = fetch(article.getImgSrc());
 		if (obj != null) {
-			img = Drawable.createFromStream((InputStream) obj, "src");
-		
+			Drawable img = Drawable.createFromStream((InputStream) obj, "src");
 			ImageView imgView = (ImageView) findViewById(R.id.image);
 			imgView.setImageDrawable(img);
-		}*/
+		}
 		String[] fields;
 		switch (article.getCategoryId()) {
 		case 1:
@@ -93,8 +90,10 @@ public class ShowingArticle extends Activity {
 			Object content = url.getContent();
 			return content;
 		} catch (MalformedURLException e) {
+			Log.v("ERROR", "error1");
 			return null;
 		} catch (IOException e) {
+			Log.v("ERROR", "error2");
 			return null;
 		}
 	}

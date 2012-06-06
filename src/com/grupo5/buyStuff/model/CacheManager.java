@@ -34,7 +34,6 @@ public class CacheManager {
 		try {
 			c = categories.get(index);
 		} catch (Exception e) {
-			Log.v("", "");
 		}
 		return getCategoryNames(c.getSubcategories());
 	}
