@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/cream"
     android:orientation="vertical" >
 
     <ListView
@@ -9,12 +10,13 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1" />
-
+
     <TextView
         android:id="@android:id/empty"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:text="@string/noMenuOptions" />
+        android:text="@string/noMenuOptions"
+        android:textColor="@color/black" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -28,6 +30,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:textColor="@color/black"
             android:onClick="logout"
             android:text="@string/logOut" />
     </LinearLayout>

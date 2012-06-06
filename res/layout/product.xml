@@ -3,6 +3,7 @@
     android:id="@+id/scroller"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/cream"
     android:fillViewport="true" >
 
     <RelativeLayout
@@ -14,6 +15,7 @@
 
         <TextView
             android:id="@+id/title"
+            android:textColor="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dip"
@@ -32,13 +34,13 @@
 
         <TextView
             android:id="@+id/price"
+            android:textColor="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/image"
             android:layout_alignTop="@+id/image"
             android:layout_toRightOf="@+id/image"
             android:gravity="center"
-            android:textColor="#00ff00"
             android:textSize="25sp"
             android:textStyle="bold" >
         </TextView>
@@ -48,7 +50,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/image"
-            android:text="TextView" >
+            android:text="TextView"
+            android:textColor="@color/black" >
+
         </TextView>
 
         <TextView
@@ -58,11 +62,13 @@
             android:layout_alignLeft="@+id/info1"
             android:layout_alignRight="@+id/info1"
             android:layout_below="@+id/info1"
+            android:textColor="@color/black"
             android:text="TextView" >
         </TextView>
 
         <TextView
             android:id="@+id/info3"
+            android:textColor="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/info2"
@@ -73,6 +79,7 @@
 
         <TextView
             android:id="@+id/info4"
+            android:textColor="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/info3"
@@ -83,6 +90,7 @@
 
         <TextView
             android:id="@+id/info5"
+            android:textColor="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/info4"
@@ -93,6 +101,7 @@
 
         <TextView
             android:id="@+id/info6"
+            android:textColor="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/info5"
@@ -103,6 +112,7 @@
 
         <TextView
             android:id="@+id/info7"
+            android:textColor="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/info6"
@@ -113,6 +123,7 @@
 
         <TextView
             android:id="@+id/info8"
+            android:textColor="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/info7"

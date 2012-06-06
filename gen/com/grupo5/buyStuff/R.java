@@ -15,8 +15,10 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int black=0x7f060001;
+        public static final int black=0x7f060002;
         public static final int cream=0x7f060000;
+        public static final int red=0x7f060001;
+        public static final int white=0x7f060003;
     }
     public static final class drawable {
         public static final int expander_ic_minimized=0x7f020000;
@@ -30,26 +32,26 @@ public final class R {
         public static final int articleThumbnail=0x7f070016;
         public static final int asd=0x7f070022;
         public static final int icon=0x7f070018;
-        public static final int image=0x7f070002;
+        public static final int image=0x7f070015;
         public static final int imageView1=0x7f070020;
-        public static final int info1=0x7f07000c;
-        public static final int info2=0x7f07000d;
-        public static final int info3=0x7f07000e;
-        public static final int info4=0x7f07000f;
-        public static final int info5=0x7f070010;
-        public static final int info6=0x7f070011;
-        public static final int info7=0x7f070012;
-        public static final int info8=0x7f070013;
-        public static final int info9=0x7f070015;
-        public static final int label1=0x7f070004;
-        public static final int label2=0x7f070005;
-        public static final int label3=0x7f070006;
-        public static final int label4=0x7f070007;
-        public static final int label5=0x7f070008;
-        public static final int label6=0x7f070009;
-        public static final int label7=0x7f07000a;
-        public static final int label8=0x7f07000b;
-        public static final int label9=0x7f070014;
+        public static final int info1=0x7f07000b;
+        public static final int info2=0x7f07000c;
+        public static final int info3=0x7f07000d;
+        public static final int info4=0x7f07000e;
+        public static final int info5=0x7f07000f;
+        public static final int info6=0x7f070010;
+        public static final int info7=0x7f070011;
+        public static final int info8=0x7f070012;
+        public static final int info9=0x7f070014;
+        public static final int label1=0x7f070003;
+        public static final int label2=0x7f070004;
+        public static final int label3=0x7f070005;
+        public static final int label4=0x7f070006;
+        public static final int label5=0x7f070007;
+        public static final int label6=0x7f070008;
+        public static final int label7=0x7f070009;
+        public static final int label8=0x7f07000a;
+        public static final int label9=0x7f070013;
         public static final int listText=0x7f070019;
         public static final int loginButton=0x7f07001f;
         public static final int logoutButton=0x7f070021;
@@ -58,7 +60,7 @@ public final class R {
         public static final int orderStatusLabel=0x7f070024;
         public static final int orderStatusValue=0x7f070025;
         public static final int passwordInput=0x7f07001d;
-        public static final int price=0x7f070003;
+        public static final int price=0x7f070002;
         public static final int rememberMe=0x7f07001e;
         public static final int scroller=0x7f070000;
         public static final int shippedDateLabel=0x7f070027;

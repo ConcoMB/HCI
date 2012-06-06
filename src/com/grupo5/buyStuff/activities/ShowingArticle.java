@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -45,13 +46,14 @@ public class ShowingArticle extends Activity {
 		textView = (TextView) findViewById(R.id.price);
 		textView.setText(Article.CURRENCY + " " + article.getPrice());
 
-		Object obj = fetch(article.getImgSrc());
+		/*Object obj = fetch(article.getImgSrc());
+		Drawable img;
 		if (obj != null) {
-			Drawable img = Drawable.createFromStream((InputStream) obj, "src");
+			img = Drawable.createFromStream((InputStream) obj, "src");
+		
 			ImageView imgView = (ImageView) findViewById(R.id.image);
 			imgView.setImageDrawable(img);
-		}
-
+		}*/
 		String[] fields;
 		switch (article.getCategoryId()) {
 		case 1:

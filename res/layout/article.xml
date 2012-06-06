@@ -3,6 +3,7 @@
     android:id="@+id/scroller"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/cream"
     android:fillViewport="true" >
 
     <RelativeLayout
@@ -18,41 +19,31 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dip"
             android:textSize="28sp"
+            android:textColor="@color/black"
             android:textStyle="bold" >
         </TextView>
-
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="160dip"
-            android:layout_height="220dip"
-            android:layout_below="@+id/title"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_menu_companylogo" >
-        </ImageView>
 
         <TextView
             android:id="@+id/price"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/image"
-            android:layout_alignTop="@+id/image"
-            android:layout_toRightOf="@+id/image"
             android:gravity="center"
-            android:textColor="#00ff00"
+            android:textColor="@color/red"
             android:textSize="25sp"
             android:textStyle="bold" >
         </TextView>
 
         <TextView
             android:id="@+id/label1"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/image"
             android:text=""
             android:textStyle="bold" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/label2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,6 +53,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/label3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,6 +64,7 @@
 
         <TextView
             android:id="@+id/label4"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -86,6 +79,7 @@
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/label4"
             android:text=""
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <TextView
@@ -95,6 +89,7 @@
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/label5"
             android:text=""
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <TextView
@@ -104,6 +99,7 @@
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/label6"
             android:text=""
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <TextView
@@ -113,70 +109,78 @@
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/label7"
             android:text=""
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/info1"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/image"
             android:layout_toRightOf="@+id/label1"
             android:text="" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/info2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/label2"
             android:layout_below="@+id/info1"
+            android:layout_toRightOf="@+id/label2"
             android:text="" />
 
         <TextView
             android:id="@+id/info3"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/label3"
             android:layout_below="@+id/info2"
+            android:layout_toRightOf="@+id/label3"
             android:text="" />
 
         <TextView
             android:id="@+id/info4"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/label4"
             android:layout_below="@+id/info3"
+            android:layout_toRightOf="@+id/label4"
             android:text="" />
 
         <TextView
             android:id="@+id/info5"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/label5"
             android:layout_below="@+id/info4"
+            android:layout_toRightOf="@+id/label5"
             android:text="" />
 
         <TextView
             android:id="@+id/info6"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/label6"
             android:layout_below="@+id/info5"
+            android:layout_toRightOf="@+id/label6"
             android:text="" />
 
         <TextView
             android:id="@+id/info7"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/label7"
             android:layout_below="@+id/info6"
+            android:layout_toRightOf="@+id/label7"
             android:text="" />
 
         <TextView
             android:id="@+id/info8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/label8"
             android:layout_below="@+id/info7"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/label8"
             android:text="" />
 
         <TextView
@@ -186,15 +190,26 @@
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/label8"
             android:text=""
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/info9"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/info8"
             android:layout_toRightOf="@+id/label9"
             android:text="" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="160dip"
+            android:layout_height="220dip"
+            android:layout_below="@+id/title"
+            android:layout_toRightOf="@+id/info1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_menu_companylogo" />
     </RelativeLayout>
 
 </ScrollView>
