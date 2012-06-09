@@ -3,7 +3,6 @@
     android:id="@+id/scroller"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/cream"     
     android:fillViewport="true" >
 
     <RelativeLayout
@@ -14,7 +13,6 @@
         android:gravity="center_horizontal" >
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/title"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -47,7 +45,6 @@
         </TextView>
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/info1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -56,7 +53,6 @@
         </TextView>
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/info2"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -68,7 +64,6 @@
 
         <TextView
             android:id="@+id/info3"
-            android:textColor="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/info2"
@@ -79,7 +74,6 @@
 
         <TextView
             android:id="@+id/info4"
-            android:textColor="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/info3"
@@ -90,7 +84,6 @@
 
         <TextView
             android:id="@+id/info5"
-            android:textColor="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/info4"
@@ -101,7 +94,6 @@
 
         <TextView
             android:id="@+id/info6"
-            android:textColor="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/info5"
@@ -112,7 +104,6 @@
 
         <TextView
             android:id="@+id/info7"
-            android:textColor="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/info6"
@@ -123,7 +114,6 @@
 
         <TextView
             android:id="@+id/info8"
-            android:textColor="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/info7"

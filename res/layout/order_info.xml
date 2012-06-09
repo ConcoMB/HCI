@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@color/cream" >
+    android:layout_height="fill_parent">
 
     <RelativeLayout
         android:id="@+id/textInformation"
@@ -18,7 +17,6 @@
             android:gravity="center_horizontal"
             android:padding="15sp"
             android:text="Order Information"
-            android:textColor="@color/black"
             android:textSize="25sp" >
 
         </TextView>
@@ -30,12 +28,10 @@
             android:layout_alignLeft="@+id/title"
             android:layout_below="@+id/title"
             android:text="TextView"
-            android:textColor="@color/black"
             android:textSize="20sp" >
         </TextView>
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/orderStatusValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,7 +43,6 @@
         </TextView>
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/shippedDateLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,7 +53,6 @@
         </TextView>
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/shippedDateValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

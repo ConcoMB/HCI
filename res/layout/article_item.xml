@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="?android:attr/listPreferredItemHeight"
-    android:background="@color/cream"
     android:padding="6dip" >
 
     <ImageView
@@ -16,7 +15,6 @@
     <TextView
         android:id="@+id/articleText"
         android:layout_width="200dp"
-        android:textColor="@color/black"
         android:layout_height="fill_parent"
         android:layout_toRightOf="@+id/articleThumbnail"
         android:padding="10dp"
