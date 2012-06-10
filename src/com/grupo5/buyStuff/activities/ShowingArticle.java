@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Html;
@@ -14,19 +15,19 @@ import android.view.KeyEvent;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.grupo5.buyStuff.R;
 import com.grupo5.buyStuff.model.Article;
 import com.grupo5.buyStuff.utilities.BSBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
-import com.grupo5.buyStuff.R;
 
 public class ShowingArticle extends Activity {
 
 	private static final int[] labelFields = new int[] { R.id.label1,
-			R.id.label2, R.id.label3, R.id.label4, R.id.label5, R.id.label6,
-			R.id.label7, R.id.label8, R.id.label9 };
+		R.id.label2, R.id.label3, R.id.label4, R.id.label5, R.id.label6,
+		R.id.label7, R.id.label8, R.id.label9 };
 	private static final int[] infoFields = new int[] { R.id.info1, R.id.info2,
-			R.id.info3, R.id.info4, R.id.info5, R.id.info6, R.id.info6,
-			R.id.info7, R.id.info8, R.id.info9 };
+		R.id.info3, R.id.info4, R.id.info5, R.id.info6, R.id.info6,
+		R.id.info7, R.id.info8, R.id.info9 };
 	@SuppressWarnings("unused")
 	private static final int MAX_ATTRIBUTE_LENGTH = 10;
 
@@ -44,13 +45,26 @@ public class ShowingArticle extends Activity {
 		textView.setText(article.getName());
 		textView = (TextView) findViewById(R.id.price);
 		textView.setText(Article.CURRENCY + " " + article.getPrice());
+		
+		
+		ImageView imgView = (ImageView) findViewById(R.id.image);
 
+		try{
+			URL url = new URL(article.getImgSrc());
+			InputStream is = (InputStream)url.getContent();
+			imgView.setImageDrawable(Drawable.createFromStream(is, "src"));
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		/*  
 		Object obj = fetch(article.getImgSrc());
 		if (obj != null) {
 			Drawable img = Drawable.createFromStream((InputStream) obj, "src");
 			ImageView imgView = (ImageView) findViewById(R.id.image);
 			imgView.setImageDrawable(img);
-		}
+		}*/
 		String[] fields;
 		switch (article.getCategoryId()) {
 		case 1:
@@ -90,14 +104,18 @@ public class ShowingArticle extends Activity {
 			Object content = url.getContent();
 			return content;
 		} catch (MalformedURLException e) {
-			Log.v("ERROR", "error1");
+			Log.v("ERROR URL", "error1");
 			return null;
 		} catch (IOException e) {
-			Log.v("ERROR", "error2");
+			Log.v("ERROR URL", "error2");
 			return null;
 		}
 	}
-
+	private Drawable ImageOperations(Context ctx, String url) {
+		InputStream is = (InputStream) this.fetch(url);
+		Drawable d = Drawable.createFromStream(is, "src");
+		return d;
+	}
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_MENU) {
