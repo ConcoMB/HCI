@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.text.Html;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -48,7 +49,11 @@ public class ShowingArticle extends Activity {
 		
 		
 		ImageView imgView = (ImageView) findViewById(R.id.image);
+		
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 
+		StrictMode.setThreadPolicy(policy); 
+		
 		try{
 			URL url = new URL(article.getImgSrc());
 			InputStream is = (InputStream)url.getContent();
