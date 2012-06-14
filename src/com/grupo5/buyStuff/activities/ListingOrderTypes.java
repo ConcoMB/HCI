@@ -85,9 +85,7 @@ public class ListingOrderTypes extends ListActivity {
 		}
 
 		if (keyCode == KeyEvent.KEYCODE_SEARCH) {
-			((InputMethodManager) this
-					.getSystemService(ListActivity.INPUT_METHOD_SERVICE))
-					.toggleSoftInput(0, 0);
+			((InputMethodManager) this.getSystemService(ListActivity.INPUT_METHOD_SERVICE)).toggleSoftInput(0, 0);
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
@@ -106,8 +104,7 @@ public class ListingOrderTypes extends ListActivity {
 		lv.setTextFilterEnabled(true);
 		final ListingOrderTypes me = this;
 		lv.setOnItemClickListener(new OnItemClickListener() {
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
+			public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
 				TextView tv = (TextView) view.findViewById(R.id.listText);
 				String text = tv.getText().toString();
 				me.launchOrdersByType(position, text);
@@ -158,14 +155,14 @@ public class ListingOrderTypes extends ListActivity {
 		private final Order order;
 		private final String userName;
 		private final String authToken;
-		private final String title;
+//		private final String title;
 
 		MyResultReceiver(Handler h, Order order, String userName,String authToken, String title) {
 			super(h);
 			this.order = order;
 			this.userName = userName;
 			this.authToken = authToken;
-			this.title = title;
+	//		this.title = title;
 		}
 
 		@Override

@@ -1,9 +1,6 @@
 package com.grupo5.buyStuff.activities;
 
-import java.io.IOException;
 import java.io.Serializable;
-
-import org.apache.http.client.ClientProtocolException;
 
 import android.app.Activity;
 import android.content.Intent;

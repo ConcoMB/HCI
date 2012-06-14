@@ -206,10 +206,7 @@ public class Menu extends ListActivity {
 
 			switch (ServerMessages.parse(resultCode)) {
 			case STATUS_OK:
-				List<Category> categories = (List<Category>) resultData.getSerializable("command"/*
-												 * KoppeBundleConstants.CATEGORIES
-												 * .getText()
-												 */);
+				List<Category> categories = (List<Category>) resultData.getSerializable("command");
 				CacheManager.getInstance().persistCategories(categories);
 				startCategoriesActivity();
 				break;

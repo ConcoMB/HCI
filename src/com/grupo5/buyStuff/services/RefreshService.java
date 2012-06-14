@@ -55,17 +55,13 @@ public class RefreshService extends IntentService {
 	protected void onHandleIntent(Intent intent) {
 		MyIntent myIntent = new MyIntent(intent);
 		ResultReceiver receiver = myIntent.getReceiver();
-		String userName = myIntent
-				.getStringAttribute(BSBundleConstants.USERNAME.getText());
-		String authToken = myIntent
-				.getStringAttribute(BSBundleConstants.AUTH_TOKEN.getText());
+		String userName = myIntent.getStringAttribute(BSBundleConstants.USERNAME.getText());
+		String authToken = myIntent.getStringAttribute(BSBundleConstants.AUTH_TOKEN.getText());
 		Bundle b = new Bundle();
 		Timer timer = new Timer();
-		this.timerTask = new MyTimerTask(receiver, userName, authToken, b,
-				timer);
+		this.timerTask = new MyTimerTask(receiver, userName, authToken, b,timer);
 		this.timerTask.run();
-		timer.scheduleAtFixedRate(this.timerTask, new Date(),
-				1000 * REFRESH_RATE_IN_SECONDS);
+		timer.scheduleAtFixedRate(this.timerTask, new Date(),1000 * REFRESH_RATE_IN_SECONDS);
 	}
 
 	private void createNotification(Integer order) {
@@ -106,9 +102,8 @@ public class RefreshService extends IntentService {
 		mNotificationManager.notify(NOTIFICATION_ID, notification);
 	}
 
-	private boolean getOrderInfo(ResultReceiver receiver, Bundle b,
-			String username, String token) throws ClientProtocolException,
-			IOException, SocketTimeoutException {
+	private boolean getOrderInfo(ResultReceiver receiver, Bundle b,String username, String token) 
+			throws ClientProtocolException,IOException, SocketTimeoutException {
 
 		URLGenerator order = new URLGenerator("Order");
 		order.addParameter("method", "GetOrderList");
@@ -129,8 +124,7 @@ public class RefreshService extends IntentService {
 			}
 			return false;
 		} catch (Exception e) {
-			b.putString(BSBundleConstants.ERROR_MESSAGE.getText(),
-					e.getMessage());
+			b.putString(BSBundleConstants.ERROR_MESSAGE.getText(),e.getMessage());
 			receiver.send(ServerMessages.STATUS_CONNECTION_ERROR.getNumber(), b);
 		}
 		return false;
@@ -145,11 +139,8 @@ public class RefreshService extends IntentService {
 					Order oi = old.get(i);
 					Order oj = RefreshService.orderList.get(j);
 					if (oi.getId().equals(oj.getId())) {
-						if (!(oi.getLatitude().equals(oj.getLatitude())
-								&& oi.getLongitude().equals(oj.getLongitude()) && oi
-								.getStatus().equals(oj.getStatus()))) {
-							b.putInt(BSBundleConstants.ORDER_ID.getText(),
-									new Integer(oi.getId()));
+						if (!(oi.getLatitude().equals(oj.getLatitude())&& oi.getLongitude().equals(oj.getLongitude()) && oi.getStatus().equals(oj.getStatus()))) {
+							b.putInt(BSBundleConstants.ORDER_ID.getText(),new Integer(oi.getId()));
 							return true;
 						}
 					}
@@ -161,8 +152,7 @@ public class RefreshService extends IntentService {
 
 	private List<Order> parseOrderResponse(Bundle b, XMLParser xp) {
 		if (xp.getErrorMessage() != null) {
-			b.putString(ServerXMLConstants.ERROR_MESSAGE.getText(),
-					xp.getErrorMessage());
+			b.putString(ServerXMLConstants.ERROR_MESSAGE.getText(),xp.getErrorMessage());
 			return null;
 		}
 		NodeList orders = xp.getElements(ServerXMLConstants.ORDER.getText());
@@ -175,16 +165,11 @@ public class RefreshService extends IntentService {
 
 	private void fillOrderData(List<Order> orderList, Node order, XMLParser xp) {
 		Order o = new Order(getApplicationContext());
-		o.setId(xp.getAttribute((Element) order,
-				ServerXMLConstants.ID.getText()));
-		o.setLatitude(xp.getStringFromSingleElement(
-				ServerXMLConstants.LATITUDE.getText(), (Element) order));
-		o.setLongitude(xp.getStringFromSingleElement(
-				ServerXMLConstants.LONGITUDE.getText(), (Element) order));
-		o.setStatus(xp.getStringFromSingleElement(
-				ServerXMLConstants.STATUS.getText(), (Element) order));
-		o.setCreatedDate(xp.getStringFromSingleElement(
-				ServerXMLConstants.CREATED_DATE.getText(), (Element) order));
+		o.setId(xp.getAttribute((Element) order,ServerXMLConstants.ID.getText()));
+		o.setLatitude(xp.getStringFromSingleElement(ServerXMLConstants.LATITUDE.getText(), (Element) order));
+		o.setLongitude(xp.getStringFromSingleElement(ServerXMLConstants.LONGITUDE.getText(), (Element) order));
+		o.setStatus(xp.getStringFromSingleElement(ServerXMLConstants.STATUS.getText(), (Element) order));
+		o.setCreatedDate(xp.getStringFromSingleElement(ServerXMLConstants.CREATED_DATE.getText(), (Element) order));
 		orderList.add(o);
 	}
 
@@ -194,8 +179,7 @@ public class RefreshService extends IntentService {
 		private final String authToken;
 		private final Bundle b;
 
-		public MyTimerTask(ResultReceiver receiver, String userName,
-				String authToken, Bundle b, Timer timer) {
+		public MyTimerTask(ResultReceiver receiver, String userName,String authToken, Bundle b, Timer timer) {
 			this.receiver = receiver;
 			this.userName = userName;
 			this.authToken = authToken;
@@ -207,21 +191,18 @@ public class RefreshService extends IntentService {
 				if (getOrderInfo(receiver, b, userName, authToken)) {
 					Integer order = null;
 					if (b.containsKey(BSBundleConstants.ORDER_ID.getText())) {
-						order = b.getInt(BSBundleConstants.ORDER_ID
-								.getText());
+						order = b.getInt(BSBundleConstants.ORDER_ID.getText());
 					}
 					if (!RefreshService.this.isFirst) {
 						RefreshService.this.createNotification(order);
 					} else {
 						RefreshService.this.isFirst = false;
 					}
-					b.putString(BSBundleConstants.UPDATED.getText(),
-							BSBundleConstants.YES.getText());
+					b.putString(BSBundleConstants.UPDATED.getText(),BSBundleConstants.YES.getText());
 				}
 				receiver.send(ServerMessages.STATUS_OK.getNumber(), b);
 			} catch (SocketTimeoutException e) {
-				receiver.send(
-						ServerMessages.STATUS_CONNECTION_ERROR.getNumber(), b);
+				receiver.send(ServerMessages.STATUS_CONNECTION_ERROR.getNumber(), b);
 			} catch (Exception e) {
 				receiver.send(ServerMessages.STATUS_ERROR.getNumber(), b);
 			}

@@ -47,7 +47,6 @@ public class Category {
 
 	@Override
 	public String toString() {
-		return "[ category: " + name + " subcategories: "
-				+ subcategories.toString() + " ]";
+		return "[ category: " + name + " subcategories: "+ subcategories.toString() + " ]";
 	}
 }

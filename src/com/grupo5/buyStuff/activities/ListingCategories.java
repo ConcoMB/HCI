@@ -45,10 +45,8 @@ public class ListingCategories extends ListActivity {
 
 	@Override
 	protected void onListItemClick(ListView l, View view, int position, long id) {
-		CharSequence text = ((TextView) view.findViewById(R.id.listText))
-				.getText();
-		Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT)
-				.show();
+		CharSequence text = ((TextView) view.findViewById(R.id.listText)).getText();
+		Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
 		if (!CacheManager.getInstance().loadedSubcategory(position)) {
 			loadSubcategory(position);
 		} else {
@@ -58,8 +56,7 @@ public class ListingCategories extends ListActivity {
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_MENU
-				|| keyCode == KeyEvent.KEYCODE_BACK) {
+		if (keyCode == KeyEvent.KEYCODE_MENU || keyCode == KeyEvent.KEYCODE_BACK) {
 			MyIntent myIntent = new MyIntent(this, Menu.class);
 			myIntent.putExtras(getIntent());
 			startActivity(myIntent);
@@ -67,9 +64,7 @@ public class ListingCategories extends ListActivity {
 		}
 
 		if (keyCode == KeyEvent.KEYCODE_SEARCH) {
-			((InputMethodManager) this
-					.getSystemService(ListActivity.INPUT_METHOD_SERVICE))
-					.toggleSoftInput(0, 0);
+			((InputMethodManager) this.getSystemService(ListActivity.INPUT_METHOD_SERVICE)).toggleSoftInput(0, 0);
 			return true;
 		}
 
@@ -77,24 +72,18 @@ public class ListingCategories extends ListActivity {
 	}
 
 	private void loadSubcategory(final int catIndex) {
-		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, this,
-				ArticleMasterService.class);
+		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, this,ArticleMasterService.class);
 		myIntent.addCommand(ArticleMasterService.InnerServerMessages.LOAD_SUBCATEGORIES);
-		int categoryId = CacheManager.getInstance().getCategories()
-				.get(catIndex).getId();
-		myIntent.addAttribute(BSBundleConstants.SUBCAT_ID.getText(),
-				String.valueOf(categoryId));
+		int categoryId = CacheManager.getInstance().getCategories().get(catIndex).getId();
+		myIntent.addAttribute(BSBundleConstants.SUBCAT_ID.getText(),String.valueOf(categoryId));
 		myIntent.addReceiver(new MyResultReceiver(new Handler(), catIndex));
 		startService(myIntent);
 	}
 
 	private void startSubcategoriesActivity(int catIndex) {
-		MyIntent myIntent = new MyIntent(ListingCategories.this,
-				ListingSubcategories.class);
-		myIntent.addAttribute(BSBundleConstants.CAT_POSITION.getText(),
-				String.valueOf(catIndex));
-		myIntent.addAttribute(BSBundleConstants.PATH.getText(), CacheManager
-				.getInstance().getCategories().get(catIndex).getName());
+		MyIntent myIntent = new MyIntent(ListingCategories.this,ListingSubcategories.class);
+		myIntent.addAttribute(BSBundleConstants.CAT_POSITION.getText(),String.valueOf(catIndex));
+		myIntent.addAttribute(BSBundleConstants.PATH.getText(), CacheManager.getInstance().getCategories().get(catIndex).getName());
 		startActivity(myIntent);
 	}
 
@@ -112,17 +101,13 @@ public class ListingCategories extends ListActivity {
 			super.onReceiveResult(resultCode, resultData);
 			switch (ServerMessages.parse(resultCode)) {
 			case STATUS_OK:
-				List<Category> subCategories = (List<Category>) resultData
-						.getSerializable(BSBundleConstants.SUBCATEGORIES
-								.getText());
-				CacheManager.getInstance().persistSubcategories(catIndex,
-						subCategories);
+				List<Category> subCategories = (List<Category>) resultData.getSerializable(BSBundleConstants.SUBCATEGORIES.getText());
+				CacheManager.getInstance().persistSubcategories(catIndex,subCategories);
 				startSubcategoriesActivity(catIndex);
 				break;
 			case STATUS_ERROR:
 				CharSequence text = getText(R.string.connectionError);
-				Toast.makeText(getApplicationContext(), text,
-						Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(), text,Toast.LENGTH_SHORT).show();
 				break;
 			}
 		}

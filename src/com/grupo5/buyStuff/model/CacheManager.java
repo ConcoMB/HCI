@@ -4,14 +4,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import android.util.Log;
-
 import com.grupo5.buyStuff.utilities.LanguageManager;
 
 public class CacheManager {
 	private static CacheManager instance = null;
 	private Session session;
-	// TODO:private List<Order> orderList;
 	private List<Category> categories;
 
 	public static CacheManager getInstance() {
@@ -72,15 +69,12 @@ public class CacheManager {
 	}
 
 	public boolean loadedCategories() {
-		return !this.categories.isEmpty()
-				&& categories.get(0).getLocale()
-						.equals(LanguageManager.getLanguageId());
+		return !this.categories.isEmpty()&& categories.get(0).getLocale().equals(LanguageManager.getLanguageId());
 	}
 
 	public boolean loadedSubcategory(int index) {
 		Category c = this.categories.get(index);
-		return c != null && !c.getSubcategories().isEmpty()
-				&& c.getLocale().equals(LanguageManager.getLanguageId());
+		return c != null && !c.getSubcategories().isEmpty()&& c.getLocale().equals(LanguageManager.getLanguageId());
 	}
 
 }

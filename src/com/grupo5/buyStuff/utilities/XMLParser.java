@@ -38,24 +38,18 @@ public class XMLParser {
 			return DocumentBuilderFactory.newInstance().newDocumentBuilder()
 					.parse(new ByteArrayInputStream(response.getBytes()));
 		} catch (SAXException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (FactoryConfigurationError e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
 	}
 
-	private Document createDocument(HttpResponse r) throws ParseException,
-			IOException, ParserConfigurationException, SAXException {
-
+	private Document createDocument(HttpResponse r) throws ParseException,IOException, ParserConfigurationException, SAXException {
 		HttpEntity r_entity = r.getEntity();
 		String xmlString = EntityUtils.toString(r_entity);
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -79,8 +73,7 @@ public class XMLParser {
 
 	public String getErrorMessage() {
 		if (!this.serverOk()) {
-			return this.getAttribute((Element) this.getElements("error")
-					.item(0), "message");
+			return this.getAttribute((Element) this.getElements("error").item(0), "message");
 		}
 		return null;
 	}

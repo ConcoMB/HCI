@@ -36,8 +36,7 @@ public class MyIntent extends Intent {
 	}
 
 	public void addCommand(InnerServerMessages ism) {
-		intent.putExtra(BSBundleConstants.COMMAND.getText(),
-				String.valueOf(ism.getNumber()));
+		intent.putExtra(BSBundleConstants.COMMAND.getText(),String.valueOf(ism.getNumber()));
 	}
 
 	public void addCommand(String name) {

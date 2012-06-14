@@ -57,9 +57,7 @@ public class ListingSubcategories extends ListActivity {
 		}
 
 		if (keyCode == KeyEvent.KEYCODE_SEARCH) {
-			((InputMethodManager) this
-					.getSystemService(ListActivity.INPUT_METHOD_SERVICE))
-					.toggleSoftInput(0, 0);
+			((InputMethodManager) this.getSystemService(ListActivity.INPUT_METHOD_SERVICE)).toggleSoftInput(0, 0);
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
@@ -101,23 +99,15 @@ public class ListingSubcategories extends ListActivity {
 			super.onReceiveResult(resultCode, resultData);
 			switch (ServerMessages.parse(resultCode)) {
 			case STATUS_OK:
-				Serializable productList = resultData
-						.getSerializable(BSBundleConstants.ARTICLES
-								.getText());
-				MyIntent myIntent = new MyIntent(ListingSubcategories.this,
-						ListingArticles.class);
-				myIntent.addAttribute(BSBundleConstants.ARTICLES.getText(),
-						productList);
-				myIntent.addAttribute(BSBundleConstants.PATH.getText(),
-						getTitle().toString()
-								+ category.getSubcategories().get(subCatIndex)
-										.getName() + " > ");
+				Serializable productList = resultData.getSerializable(BSBundleConstants.ARTICLES.getText());
+				MyIntent myIntent = new MyIntent(ListingSubcategories.this,ListingArticles.class);
+				myIntent.addAttribute(BSBundleConstants.ARTICLES.getText(),productList);
+				myIntent.addAttribute(BSBundleConstants.PATH.getText(),getTitle().toString()+ category.getSubcategories().get(subCatIndex).getName() + " > ");
 				startActivity(myIntent);
 				break;
 			case STATUS_ERROR:
 				CharSequence text = getText(R.string.connectionError);
-				Toast.makeText(getApplicationContext(), text,
-						Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(), text,Toast.LENGTH_SHORT).show();
 				break;
 			}
 		}

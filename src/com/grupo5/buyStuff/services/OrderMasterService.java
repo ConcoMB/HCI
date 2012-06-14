@@ -44,8 +44,7 @@ public class OrderMasterService extends IntentService {
 			XMLParser xp = new XMLParser(response);
 			if (xp.getErrorMessage() != null) {
 			} else {
-				NodeList items = xp.getElements(ServerXMLConstants.PRODUCT_ID
-						.getText());
+				NodeList items = xp.getElements(ServerXMLConstants.PRODUCT_ID.getText());
 				ArrayList<Article> products = new ArrayList<Article>();
 				for (int j = 0; j < items.getLength(); j++) {
 					products.add(ArticleMasterService.fetchArticle(new Integer(items.item(j).getFirstChild().getNodeValue())));

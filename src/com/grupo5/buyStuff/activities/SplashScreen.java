@@ -17,8 +17,7 @@ public class SplashScreen extends Activity {
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 			case SplashScreen.STOP:
-				MyIntent myIntent = new MyIntent(SplashScreen.this,
-						Login.class);
+				MyIntent myIntent = new MyIntent(SplashScreen.this,Login.class);
 				startActivity(myIntent);
 				SplashScreen.this.finish();
 				break;

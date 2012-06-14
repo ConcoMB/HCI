@@ -91,10 +91,7 @@ public class ArticleMasterService extends IntentService {
 
 		return null;
 	}
-	private List<Article> fetchArticlesByOrder(int oid) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	public static List<Article> fetchArticlesBySubcategory(int categoryId,
 			int subcategoryId) throws IOException {
@@ -109,8 +106,7 @@ public class ArticleMasterService extends IntentService {
 		try {
 			List<Article> articles = new LinkedList<Article>();
 			XMLParser parser = new XMLParser(response);
-			NodeList articleNodes = parser
-					.getElements(ServerXMLConstants.ARTICLE.getText());
+			NodeList articleNodes = parser.getElements(ServerXMLConstants.ARTICLE.getText());
 			for (int i = 0; i < articleNodes.getLength(); i++) {
 				articles.add(parseArticle(parser, articleNodes.item(i)));
 			}
@@ -195,9 +191,7 @@ public class ArticleMasterService extends IntentService {
 			case LOAD_CATEGORIES:
 				categories = fetchCategories();
 				if (categories != null) {
-					bundle.putSerializable(
-							BSBundleConstants.COMMAND.getText(),
-							(Serializable) categories);
+					bundle.putSerializable(BSBundleConstants.COMMAND.getText(),(Serializable) categories);
 				} else {
 					throw new ConnectException("Connection error");
 				}
@@ -219,16 +213,10 @@ public class ArticleMasterService extends IntentService {
 				bundle.putSerializable(BSBundleConstants.ARTICLE.getText(),	p);
 				break;
 			
-			case LOAD_ARTICLES_BY_ORDER:
-				int oid = myIntent.getIntegerAttribute(BSBundleConstants.ORDER_ID.getText());
-				List<Article> arts = fetchArticlesByOrder(oid);
-				bundle.putSerializable(BSBundleConstants.SUBCATEGORIES.getText(),(Serializable) arts);
-				break;
 			}
 			
 			receiver.send(ServerMessages.STATUS_OK.getNumber(), bundle);
 		} catch (IOException ioe) {
-			// Log.v("ERROR", e.getMessage());
 			bundle.putString(BSBundleConstants.ERROR_MESSAGE.getText(),ioe.getMessage());
 			receiver.send(ServerMessages.STATUS_ERROR.getNumber(), bundle);
 		}
@@ -237,7 +225,7 @@ public class ArticleMasterService extends IntentService {
 
 
 	public enum InnerServerMessages {
-		LOAD_CATEGORIES(), LOAD_SUBCATEGORIES(), LOAD_ARTICLES_BY_SUBCATEGORY(), LOAD_ARTICLE(), LOAD_ARTICLES_BY_ORDER();
+		LOAD_CATEGORIES(), LOAD_SUBCATEGORIES(), LOAD_ARTICLES_BY_SUBCATEGORY(), LOAD_ARTICLE();
 
 		private int number;
 

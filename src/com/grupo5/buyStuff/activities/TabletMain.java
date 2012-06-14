@@ -44,9 +44,7 @@ public class TabletMain extends ListActivity{
 		}
 
 		if (keyCode == KeyEvent.KEYCODE_SEARCH) {
-			((InputMethodManager) this
-					.getSystemService(ListActivity.INPUT_METHOD_SERVICE))
-					.toggleSoftInput(0, 0);
+			((InputMethodManager) this.getSystemService(ListActivity.INPUT_METHOD_SERVICE)).toggleSoftInput(0, 0);
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
@@ -66,8 +64,7 @@ public class TabletMain extends ListActivity{
 	}
 
 	private void refreshList() {
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,
-				R.id.listText, this.getListItems()));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,R.id.listText, this.getListItems()));
 	}
 
 	private List<String> getListItems() {

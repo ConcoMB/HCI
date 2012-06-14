@@ -22,8 +22,7 @@ public class ArticleAdapter extends ArrayAdapter<Article> implements ListAdapter
 	private List<Article> articles;
 	private Context context;
 	
-	public ArticleAdapter(Context context, int textViewResourceId,
-			List<Article> objects) {
+	public ArticleAdapter(Context context, int textViewResourceId,List<Article> objects) {
 		super(context, textViewResourceId, objects);
 		this.articles = objects;
 		this.context = context;
@@ -31,8 +30,7 @@ public class ArticleAdapter extends ArrayAdapter<Article> implements ListAdapter
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		LayoutInflater inflater = (LayoutInflater) context
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View rowView = inflater.inflate(R.layout.article_item, parent, true);
 		TextView textView = (TextView) rowView.findViewById(R.id.articleText);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.articleThumbnail);
