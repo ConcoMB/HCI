@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
+import android.text.Html;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -41,12 +42,29 @@ public class ListingOrderTypes extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Bundle b = getIntent().getExtras();
-
 		this.type = b.getString(BSBundleConstants.TYPE.getText());
 		this.userName = b.getString(BSBundleConstants.USERNAME.getText());
 		this.token = b.getString(BSBundleConstants.AUTH_TOKEN.getText());
 		this.orders = new ArrayList<Order>();
-		this.setViewTitle();
+		String breadCrumb = b.getString(BSBundleConstants.PATH.getText());
+		String st = "type";
+		switch (Integer.valueOf(this.type)){
+			case 1:
+				st=getText(R.string.created).toString();
+				break;
+			case 2:
+				st=getText(R.string.confirmed).toString();
+				break;
+			case 3:
+				st=getText(R.string.transported).toString();
+				break;
+			case 4:
+				st=getText(R.string.delivered).toString();
+				break;
+		}
+		setTitle(Html.fromHtml(breadCrumb+ st + " > "));
+
+		//this.setViewTitle();
 		this.loadOrders();
 		this.setClickCallback();
 
@@ -75,13 +93,13 @@ public class ListingOrderTypes extends ListActivity {
 		return super.onKeyDown(keyCode, event);
 	}
 
-	private void setViewTitle() {
-		Map<String, String> strings = new HashMap<String, String>();
-		for (OrderStates o : Order.OrderStates.values()) {
-			strings.put(String.valueOf(o.getCode()), o.getName());
-		}
-		setTitle(strings.get(this.type));
-	}
+//	private void setViewTitle() {
+//		Map<String, String> strings = new HashMap<String, String>();
+//		for (OrderStates o : Order.OrderStates.values()) {
+//			strings.put(String.valueOf(o.getCode()), o.getName());
+//		}
+//		setTitle(strings.get(this.type));
+//	}
 
 	private void setClickCallback() {
 		final ListView lv = getListView();
@@ -108,19 +126,16 @@ public class ListingOrderTypes extends ListActivity {
 	}
 
 	private void launchOrdersByType(int position, final String title) {
-		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, this,
-				OrderMasterService.class);
-		myIntent.addAttribute(BSBundleConstants.ID.getText(),
-				String.valueOf(this.orders.get(position).getId()));
-		myIntent.addAttribute(BSBundleConstants.USERNAME.getText(),
-				this.userName);
-		myIntent.addAttribute(BSBundleConstants.AUTH_TOKEN.getText(),
-				this.token);
+		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, this,OrderMasterService.class);
+		myIntent.addAttribute(BSBundleConstants.ID.getText(),String.valueOf(this.orders.get(position).getId()));
+		myIntent.addAttribute(BSBundleConstants.USERNAME.getText(),this.userName);
+		myIntent.addAttribute(BSBundleConstants.AUTH_TOKEN.getText(),this.token);
+		myIntent.putExtra(BSBundleConstants.TYPE.getText(),this.getTitle());	
+		myIntent.putExtra(BSBundleConstants.PATH.getText(), title /*+ " > "*/);
 		Order order = this.orders.get(position);
 		String userN = this.userName;
 		String toK = this.token;
-		myIntent.addReceiver(new MyResultReceiver(new Handler(), order, userN,
-				toK, title));
+		myIntent.addReceiver(new MyResultReceiver(new Handler(), order, userN,toK, title));
 		startService(myIntent);
 	}
 
@@ -136,8 +151,7 @@ public class ListingOrderTypes extends ListActivity {
 
 	private void loadOrders() {
 		this.fillOrders();
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,
-				R.id.listText, this.getItemStringList()));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,R.id.listText, this.getItemStringList()));
 	}
 
 	private class MyResultReceiver extends ResultReceiver {
@@ -146,8 +160,7 @@ public class ListingOrderTypes extends ListActivity {
 		private final String authToken;
 		private final String title;
 
-		MyResultReceiver(Handler h, Order order, String userName,
-				String authToken, String title) {
+		MyResultReceiver(Handler h, Order order, String userName,String authToken, String title) {
 			super(h);
 			this.order = order;
 			this.userName = userName;
@@ -160,20 +173,14 @@ public class ListingOrderTypes extends ListActivity {
 			super.onReceiveResult(resultCode, resultData);
 			switch (ServerMessages.parse(resultCode)) {
 			case STATUS_OK:
-				Serializable productList = resultData
-						.getSerializable(BSBundleConstants.ARTICLES
-								.getText());
-				MyIntent myIntent = new MyIntent(ListingOrderTypes.this,
-						ViewingOrders.class);
+				Serializable productList = resultData.getSerializable(BSBundleConstants.ARTICLES.getText());
+				MyIntent myIntent = new MyIntent(ListingOrderTypes.this,ViewingOrders.class);
 				Bundle b = new Bundle();
-				b.putSerializable(BSBundleConstants.ARTICLES.getText(),
-						productList);
-				b.putSerializable(BSBundleConstants.ORDER.getText(),
-						(Serializable) order);
+				b.putSerializable(BSBundleConstants.ARTICLES.getText(),productList);
+				b.putSerializable(BSBundleConstants.ORDER.getText(),(Serializable) order);
 				b.putString(BSBundleConstants.USERNAME.getText(), userName);
-				b.putString(BSBundleConstants.AUTH_TOKEN.getText(),
-						authToken);
-				b.putString(BSBundleConstants.PATH.getText(), title + " > ");
+				b.putString(BSBundleConstants.AUTH_TOKEN.getText(),authToken);
+				b.putString(BSBundleConstants.PATH.getText(), getTitle().toString());
 				myIntent.putExtras(b);
 				startActivity(myIntent);
 				break;

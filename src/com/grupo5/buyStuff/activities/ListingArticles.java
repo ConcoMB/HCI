@@ -36,8 +36,7 @@ public class ListingArticles extends ListActivity {
 		super.onCreate(savedInstanceState);
 
 		Bundle data = getIntent().getExtras();
-		articles = (List<Article>) data
-				.getSerializable(BSBundleConstants.ARTICLES.getText());
+		articles = (List<Article>) data.getSerializable(BSBundleConstants.ARTICLES.getText());
 		String path = data.getString(BSBundleConstants.PATH.getText());
 		if (path != null) {
 			setTitle(Html.fromHtml(path));
@@ -46,8 +45,7 @@ public class ListingArticles extends ListActivity {
 		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,R.id.listText, products));
 		ListView listView = getListView();
 		listView.setTextFilterEnabled(true);
-		Animation animation = AnimationUtils.makeInAnimation(getBaseContext(),
-				false);
+		Animation animation = AnimationUtils.makeInAnimation(getBaseContext(),false);
 		animation.setDuration(500);
 		listView.setAnimation(animation);
 	}
@@ -67,9 +65,7 @@ public class ListingArticles extends ListActivity {
 		}
 
 		if (keyCode == KeyEvent.KEYCODE_SEARCH) {
-			((InputMethodManager) this
-					.getSystemService(ListActivity.INPUT_METHOD_SERVICE))
-					.toggleSoftInput(0, 0);
+			((InputMethodManager) this.getSystemService(ListActivity.INPUT_METHOD_SERVICE)).toggleSoftInput(0, 0);
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);

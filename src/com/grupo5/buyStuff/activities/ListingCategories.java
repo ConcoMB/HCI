@@ -30,8 +30,7 @@ public class ListingCategories extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		CacheManager catManager = CacheManager.getInstance();
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,
-				R.id.listText, catManager.getCategoryNames()));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,R.id.listText, catManager.getCategoryNames()));
 		setTitle(R.string.categoryTitle);
 		ListView listView = getListView();
 
@@ -39,8 +38,7 @@ public class ListingCategories extends ListActivity {
 		Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
 
 		listView.setTextFilterEnabled(true);
-		Animation animation = AnimationUtils.makeInAnimation(getBaseContext(),
-				false);
+		Animation animation = AnimationUtils.makeInAnimation(getBaseContext(),false);
 		animation.setDuration(500);
 		listView.setAnimation(animation);
 	}

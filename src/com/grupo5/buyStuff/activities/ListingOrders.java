@@ -7,6 +7,7 @@ import java.util.Map;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -28,6 +29,7 @@ public class ListingOrders extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		ListView lv = getListView();
+		setTitle(getText(R.string.myOrder).toString() + " > ");
 		lv.setTextFilterEnabled(true);
 		this.refreshList();
 		Animation a = AnimationUtils.makeInAnimation(getBaseContext(), false);
@@ -45,9 +47,7 @@ public class ListingOrders extends ListActivity {
 		}
 
 		if (keyCode == KeyEvent.KEYCODE_SEARCH) {
-			((InputMethodManager) this
-					.getSystemService(ListActivity.INPUT_METHOD_SERVICE))
-					.toggleSoftInput(0, 0);
+			((InputMethodManager) this.getSystemService(ListActivity.INPUT_METHOD_SERVICE)).toggleSoftInput(0, 0);
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
@@ -59,18 +59,16 @@ public class ListingOrders extends ListActivity {
 		Bundle b = getIntent().getExtras();
 		String userName = b.getString(BSBundleConstants.USERNAME.getText());
 		String token = b.getString(BSBundleConstants.AUTH_TOKEN.getText());
-		MyIntent myIntent = new MyIntent(ListingOrders.this,
-				ListingOrderTypes.class);
+		MyIntent myIntent = new MyIntent(ListingOrders.this,ListingOrderTypes.class);
 		myIntent.putExtra(BSBundleConstants.USERNAME.getText(), userName);
 		myIntent.putExtra(BSBundleConstants.AUTH_TOKEN.getText(), token);
-		myIntent.putExtra(BSBundleConstants.TYPE.getText(),
-				Integer.toString(type));
+		myIntent.putExtra(BSBundleConstants.TYPE.getText(),Integer.toString(type));
+		myIntent.putExtra(BSBundleConstants.PATH.getText(), this.getTitle());
 		startActivity(myIntent);
 	}
 
 	private void refreshList() {
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,
-				R.id.listText, this.getListItems()));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,R.id.listText, this.getListItems()));
 	}
 
 	private List<String> getListItems() {

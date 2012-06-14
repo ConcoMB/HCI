@@ -32,15 +32,12 @@ public class ListingSubcategories extends ListActivity {
 		super.onCreate(savedInstanceState);
 
 		Bundle recdData = getIntent().getExtras();
-		int catPosition = Integer.parseInt(recdData
-				.getString(BSBundleConstants.CAT_POSITION.getText()));
-		String breadCrumb = recdData.getString(BSBundleConstants.PATH
-				.getText());
+		int catPosition = Integer.parseInt(recdData.getString(BSBundleConstants.CAT_POSITION.getText()));
+		String breadCrumb = recdData.getString(BSBundleConstants.PATH.getText());
 		setTitle(Html.fromHtml(breadCrumb + " > "));
 
 		CacheManager catManager = CacheManager.getInstance();
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,
-				R.id.listText, catManager.getSubcategoryNames(catPosition)));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,R.id.listText, catManager.getSubcategoryNames(catPosition)));
 
 		ListView lv = getListView();
 		lv.setTextFilterEnabled(true);
@@ -70,30 +67,22 @@ public class ListingSubcategories extends ListActivity {
 
 	@Override
 	protected void onListItemClick(ListView l, View view, int position, long id) {
-		CharSequence text = ((TextView) view.findViewById(R.id.listText))
-				.getText();
-		Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT)
-				.show();
+		CharSequence text = ((TextView) view.findViewById(R.id.listText)).getText();
+		Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
 		loadProductList(position);
 	}
 
 	private void loadProductList(final int subCatIndex) {
 		Bundle data = getIntent().getExtras();
-		int catIndex = Integer.parseInt(data
-				.getString(BSBundleConstants.CAT_POSITION.getText()));
-		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, this,
-				ArticleMasterService.class);
+		int catIndex = Integer.parseInt(data.getString(BSBundleConstants.CAT_POSITION.getText()));
+		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, this,ArticleMasterService.class);
 		myIntent.addCommand(ArticleMasterService.InnerServerMessages.LOAD_ARTICLES_BY_SUBCATEGORY);
-		Category category = CacheManager.getInstance().getCategories()
-				.get(catIndex);
+		Category category = CacheManager.getInstance().getCategories().get(catIndex);
 		int catId = category.getId();
 		int subCatId = category.getSubcategories().get(subCatIndex).getId();
-		myIntent.addAttribute(BSBundleConstants.CAT_ID.getText(),
-				String.valueOf(catId));
-		myIntent.addAttribute(BSBundleConstants.SUBCAT_ID.getText(),
-				String.valueOf(subCatId));
-		myIntent.addReceiver(new MyResultReceiver(new Handler(), category,
-				subCatIndex));
+		myIntent.addAttribute(BSBundleConstants.CAT_ID.getText(),String.valueOf(catId));
+		myIntent.addAttribute(BSBundleConstants.SUBCAT_ID.getText(),String.valueOf(subCatId));
+		myIntent.addReceiver(new MyResultReceiver(new Handler(), category,subCatIndex));
 		startService(myIntent);
 	}
 

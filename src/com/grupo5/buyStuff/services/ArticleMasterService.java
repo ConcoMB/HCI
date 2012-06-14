@@ -20,7 +20,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 import android.text.Html;
-import android.util.Log;
 
 import com.grupo5.buyStuff.model.Article;
 import com.grupo5.buyStuff.model.Category;
@@ -46,8 +45,7 @@ public class ArticleMasterService extends IntentService {
 
 		catalogServer.clearParameters();
 		catalogServer.addParameter("method", "GetCategoryList");
-		catalogServer.addParameter("language_id",
-				LanguageManager.getLanguageId());
+		catalogServer.addParameter("language_id",LanguageManager.getLanguageId());
 		HttpResponse response = catalogServer.getServerResponse();
 
 		try {
@@ -205,25 +203,15 @@ public class ArticleMasterService extends IntentService {
 				}
 				break;
 			case LOAD_SUBCATEGORIES:
-				int id = myIntent
-						.getIntegerAttribute(BSBundleConstants.SUBCAT_ID
-								.getText());
+				int id = myIntent.getIntegerAttribute(BSBundleConstants.SUBCAT_ID.getText());
 				categories = fetchSubCategories(id);
-				bundle.putSerializable(
-						BSBundleConstants.SUBCATEGORIES.getText(),
-						(Serializable) categories);
+				bundle.putSerializable(BSBundleConstants.SUBCATEGORIES.getText(),(Serializable) categories);
 				break;
 			case LOAD_ARTICLES_BY_SUBCATEGORY:
-				int catId = myIntent
-						.getIntegerAttribute(BSBundleConstants.CAT_ID
-								.getText());
-				int subCatId = myIntent
-						.getIntegerAttribute(BSBundleConstants.SUBCAT_ID
-								.getText());
-				List<Article> articles = fetchArticlesBySubcategory(catId,
-						subCatId);
-				bundle.putSerializable(BSBundleConstants.ARTICLES.getText(),
-						(Serializable) articles);
+				int catId = myIntent.getIntegerAttribute(BSBundleConstants.CAT_ID.getText());
+				int subCatId = myIntent.getIntegerAttribute(BSBundleConstants.SUBCAT_ID.getText());
+				List<Article> articles = fetchArticlesBySubcategory(catId,subCatId);
+				bundle.putSerializable(BSBundleConstants.ARTICLES.getText(),(Serializable) articles);
 				break;
 			case LOAD_ARTICLE:
 				int prodId = myIntent.getIntegerAttribute(BSBundleConstants.ARTICLE_ID.getText());
@@ -262,19 +250,12 @@ public class ArticleMasterService extends IntentService {
 		}
 
 		public static InnerServerMessages parse(int resultCode) {
-			Log.v("Entro", "entro");
 			for (InnerServerMessages svm : values()) {
-				Log.v("ISM",
-						svm.toString() + " number="
-								+ String.valueOf(svm.getNumber()));
-				Log.v("Hola", "hola");
-				Log.v("JP", String.valueOf(svm.getNumber() == resultCode));
+				
 				if (svm.getNumber() == resultCode) {
-					Log.v("Salgo", "salgo");
 					return svm;
 				}
 			}
-			Log.v("Salgo mal", "salgo mal");
 			return null;
 		}
 	}

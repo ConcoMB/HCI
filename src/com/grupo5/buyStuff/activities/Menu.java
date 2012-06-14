@@ -42,8 +42,7 @@ public class Menu extends ListActivity {
 		this.init();
 
 		setContentView(R.layout.menu_layout);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,
-				R.id.listText, this.menuOptions));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,R.id.listText, this.menuOptions));
 		setTitle(R.string.menuTitle);
 
 		ListView lv = getListView();
@@ -84,8 +83,7 @@ public class Menu extends ListActivity {
 					Menu.this.startCategoriesActivity();
 					return;
 				}
-				MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null,
-						Menu.this, ArticleMasterService.class);
+				MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null,Menu.this, ArticleMasterService.class);
 				myIntent.addCommand(ArticleMasterService.InnerServerMessages.LOAD_CATEGORIES);
 				myIntent.addReceiver(new MyResultReceiver(new Handler()));
 				Menu.this.startService(myIntent);
@@ -104,8 +102,7 @@ public class Menu extends ListActivity {
 				}
 				if (!Menu.this.ordersAvailable()) {
 					CharSequence text = getText(R.string.ordersNotLoaded);
-					Toast.makeText(getApplicationContext(), text,
-							Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), text,Toast.LENGTH_LONG).show();
 				}
 
 				Bundle b = getIntent().getExtras();
@@ -113,20 +110,11 @@ public class Menu extends ListActivity {
 
 				Session u = CacheManager.getInstance().getSession();
 				if (u != null) {
-					myIntent.addAttribute(
-							BSBundleConstants.USERNAME.getText(),
-							u.getUsername());
-					myIntent.addAttribute(
-							BSBundleConstants.AUTH_TOKEN.getText(),
-							u.getAuthToken());
+					myIntent.addAttribute(BSBundleConstants.USERNAME.getText(),u.getUsername());
+					myIntent.addAttribute(BSBundleConstants.AUTH_TOKEN.getText(),u.getAuthToken());
 				} else {
-					myIntent.addAttribute(BSBundleConstants.USERNAME
-							.getText(), b
-							.getString(BSBundleConstants.USERNAME.getText()));
-					myIntent.addAttribute(BSBundleConstants.AUTH_TOKEN
-							.getText(), b
-							.getString(BSBundleConstants.AUTH_TOKEN
-									.getText()));
+					myIntent.addAttribute(BSBundleConstants.USERNAME.getText(), b.getString(BSBundleConstants.USERNAME.getText()));
+					myIntent.addAttribute(BSBundleConstants.AUTH_TOKEN.getText(), b.getString(BSBundleConstants.AUTH_TOKEN.getText()));
 				}
 				Menu.this.startActivity(myIntent);
 
@@ -160,12 +148,9 @@ public class Menu extends ListActivity {
 			showLoginErrorStatus();
 			return;
 		}
-		MyIntent intent = new MyIntent(Intent.ACTION_SYNC, null, this,
-				RefreshService.class);
-		intent.addAttribute(BSBundleConstants.USERNAME.getText(),
-				b.getString(BSBundleConstants.USERNAME.getText()));
-		intent.addAttribute(BSBundleConstants.AUTH_TOKEN.getText(),
-				b.getString(BSBundleConstants.AUTH_TOKEN.getText()));
+		MyIntent intent = new MyIntent(Intent.ACTION_SYNC, null, this,RefreshService.class);
+		intent.addAttribute(BSBundleConstants.USERNAME.getText(),b.getString(BSBundleConstants.USERNAME.getText()));
+		intent.addAttribute(BSBundleConstants.AUTH_TOKEN.getText(),b.getString(BSBundleConstants.AUTH_TOKEN.getText()));
 		intent.addReceiver(new ResultReceiver(new Handler()) {
 			@Override
 			protected void onReceiveResult(int resultCode, Bundle resultData) {
@@ -176,14 +161,9 @@ public class Menu extends ListActivity {
 					Menu.this.toggleOrders(true);
 					break;
 				case STATUS_ERROR:
-					if (resultData
-							.containsKey(BSBundleConstants.ERROR_MESSAGE
-									.getText())) {
-						String errorMessage = resultData
-								.getString(BSBundleConstants.ERROR_MESSAGE
-										.getText());
-						Toast.makeText(getApplicationContext(), errorMessage,
-								Toast.LENGTH_SHORT).show();
+					if (resultData.containsKey(BSBundleConstants.ERROR_MESSAGE.getText())) {
+						String errorMessage = resultData.getString(BSBundleConstants.ERROR_MESSAGE.getText());
+						Toast.makeText(getApplicationContext(), errorMessage,Toast.LENGTH_SHORT).show();
 					}
 					break;
 				default:
@@ -201,8 +181,7 @@ public class Menu extends ListActivity {
 	}
 
 	private void startCategoriesActivity() {
-		MyIntent myIntent = new MyIntent(Menu.this,
-				ListingCategories.class);
+		MyIntent myIntent = new MyIntent(Menu.this,ListingCategories.class);
 		startActivity(myIntent);
 	}
 
@@ -227,8 +206,7 @@ public class Menu extends ListActivity {
 
 			switch (ServerMessages.parse(resultCode)) {
 			case STATUS_OK:
-				List<Category> categories = (List<Category>) resultData
-						.getSerializable("command"/*
+				List<Category> categories = (List<Category>) resultData.getSerializable("command"/*
 												 * KoppeBundleConstants.CATEGORIES
 												 * .getText()
 												 */);

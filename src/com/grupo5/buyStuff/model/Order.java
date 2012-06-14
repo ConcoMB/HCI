@@ -64,9 +64,8 @@ public class Order implements Serializable {
 	}
 
 	public enum OrderStates {
-		CREATED( context.getString(R.string.created)), CONFIRMED(context.getString(R.string.confirmed)), TRANSPORTED(
-				context.getString(R.string.transported)), DELIVERED(context
-				.getString(R.string.delivered));
+		CREATED( context.getString(R.string.created)), CONFIRMED(context.getString(R.string.confirmed)), 
+		TRANSPORTED(context.getString(R.string.transported)), DELIVERED(context.getString(R.string.delivered));
 
 		private int code;
 		private String name;

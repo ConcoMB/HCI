@@ -4,7 +4,7 @@
     <string name="companyName">BuyStuff Corp</string>
     <string name="myArts">Ordered articles</string>
     <string name="orderTitle">Order</string>
-    <string name="myOrder">My orders</string>
+    <string name="myOrder">Orders</string>
     <string name="QRCode">QRCode</string>
     <string name="logoString">BuyStuff! - buy everywhere</string>
     <string name="app_name">BuyStuff!</string>
@@ -14,7 +14,7 @@
     <string name="categoryTitle">Categories</string>
     <string name="subCategoryTitle">Sub-Categories</string>
     <string name="menuTitle">Menu</string>
-    <string name="products">Products</string>
+    <string name="products">Products &gt; </string>
     <string name="product">Product</string>
     <string name="browseItems">Browse</string>
     <string name="logOut">Log Out</string>
