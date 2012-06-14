@@ -76,7 +76,7 @@
             android:layout_width="250dip"
             android:layout_height="wrap_content"
             android:onClick="viewOrderItems"
-            android:text="Button" />
+            android:text="products" />
 
 
     </RelativeLayout>

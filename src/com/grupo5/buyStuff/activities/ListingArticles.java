@@ -43,8 +43,7 @@ public class ListingArticles extends ListActivity {
 			setTitle(Html.fromHtml(path));
 		}
 		String[] products = getArticleNames();
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,
-				R.id.listText, products));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,R.id.listText, products));
 		ListView listView = getListView();
 		listView.setTextFilterEnabled(true);
 		Animation animation = AnimationUtils.makeInAnimation(getBaseContext(),
@@ -84,36 +83,24 @@ public class ListingArticles extends ListActivity {
 	}
 
 	private void loadArticle(int prodId) {
-		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, this,
-				ArticleMasterService.class);
-		myIntent.addAttribute(BSBundleConstants.COMMAND.getText(), String
-				.valueOf(ArticleMasterService.InnerServerMessages.LOAD_ARTICLE
-						.getNumber()));
-		myIntent.addAttribute(BSBundleConstants.ARTICLE_ID.getText(),
-				String.valueOf(prodId));
+		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, this,ArticleMasterService.class);
+		myIntent.addAttribute(BSBundleConstants.COMMAND.getText(), String.valueOf(ArticleMasterService.InnerServerMessages.LOAD_ARTICLE.getNumber()));
+		myIntent.addAttribute(BSBundleConstants.ARTICLE_ID.getText(), String.valueOf(prodId));
 		myIntent.addReceiver(new ResultReceiver(new Handler()) {
 			@Override
 			protected void onReceiveResult(int resultCode, Bundle resultData) {
 				super.onReceiveResult(resultCode, resultData);
 				switch (ServerMessages.parse(resultCode)) {
 				case STATUS_OK:
-					Serializable article = resultData
-							.getSerializable(BSBundleConstants.ARTICLE
-									.getText());
-					MyIntent myIntent = new MyIntent(ListingArticles.this,
-							ShowingArticle.class);
-					myIntent.addAttribute(BSBundleConstants.ARTICLE.getText(),
-							article);
-					myIntent.addAttribute(
-							BSBundleConstants.PATH.getText(),
-							getTitle().toString()
-									+ ((Article) article).getName());
+					Serializable article = resultData.getSerializable(BSBundleConstants.ARTICLE.getText());
+					MyIntent myIntent = new MyIntent(ListingArticles.this,ShowingArticle.class);
+					myIntent.addAttribute(BSBundleConstants.ARTICLE.getText(),article);
+					myIntent.addAttribute(BSBundleConstants.PATH.getText(), getTitle().toString()+ ((Article) article).getName());
 					startActivity(myIntent);
 					break;
 				case STATUS_ERROR:
 					CharSequence text = getText(R.string.connectionError);
-					Toast.makeText(getApplicationContext(), text,
-							Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(), text,Toast.LENGTH_SHORT).show();
 					break;
 				}
 			}
@@ -130,8 +117,7 @@ public class ListingArticles extends ListActivity {
 			if (text.length() > MAX_TEXT_LENGTH) {
 				text = text.substring(0, MAX_TEXT_LENGTH) + "...";
 			}
-			articleNames[i++] = text + " - " + Article.CURRENCY + " "
-					+ article.getPrice();
+			articleNames[i++] = text + " - " + Article.CURRENCY + " "+ article.getPrice();
 		}
 		return articleNames;
 	}

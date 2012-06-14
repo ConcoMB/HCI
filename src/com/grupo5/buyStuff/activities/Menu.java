@@ -11,12 +11,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
-import android.text.Editable;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +27,7 @@ import com.grupo5.buyStuff.services.RefreshService;
 import com.grupo5.buyStuff.utilities.BSBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.utilities.ServerMessages;
+import com.grupo5.buyStuff.utilities.Themes;
 
 public class Menu extends ListActivity {
 	private static boolean refreshOrderStarted = false;
@@ -56,7 +54,11 @@ public class Menu extends ListActivity {
 			refreshOrderStarted = true;
 		}
 	}
+	 public void changeTheme(View v) 
+     {
+         Themes.changeToTheme(this, Themes.THEME_BLACK);
 
+     }
 	public boolean isLoggedIn() {
 		return this.isLoggedIn;
 	}

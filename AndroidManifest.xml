@@ -3,59 +3,74 @@
     package="com.grupo5.buyStuff"
     android:versionCode="1"
     android:versionName="1.0" >
+
     <uses-sdk android:minSdkVersion="15" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-	
+
     <application
         android:icon="@drawable/ic_menu_companylogo"
-        android:label="@string/app_name" android:theme="@android:style/Theme.Light">
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Light" >
         <uses-library android:name="com.google.android.maps" />
 
         <activity
-            android:label="@string/app_name"
-            android:name=".activities.SplashScreen" >
-            <intent-filter >
+            android:name=".activities.SplashScreen"
+            android:label="@string/app_name" >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:label="@string/loginText"
-            android:name=".activities.Login" >
+            android:name=".activities.Login"
+            android:label="@string/loginText" >
         </activity>
         <activity
-            androidLabel="@string/menuTitle"
-            android:name=".activities.Menu" >
+            android:name=".activities.QRCode"
+            android:label="@string/QRCode" >
+            <intent-filter>
+                <data
+                    android:scheme="buystuff" />
+                <action android:name="android.intent.action.VIEW" />
+                        <category android:name="android.intent.category.ALTERNATIVE" />
+                
+<category android:name="android.intent.category.DEFAULT"/>
+<category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
         </activity>
         <activity
-            android:label="@string/categoryTitle"
-            android:name=".activities.ListingCategories" >
+            android:name=".activities.Menu"
+            androidLabel="@string/menuTitle" >
         </activity>
         <activity
-            android:label="@string/subCategoryTitle"
-            android:name=".activities.ListingSubcategories" >
+            android:name=".activities.ListingCategories"
+            android:label="@string/categoryTitle" >
         </activity>
         <activity
-            android:label="Products"
-            android:name=".activities.ListingArticles" >
+            android:name=".activities.ListingSubcategories"
+            android:label="@string/subCategoryTitle" >
         </activity>
         <activity
-            android:label="Product"
-            android:name=".activities.ShowingArticle" >
+            android:name=".activities.ListingArticles"
+            android:label="@string/products" >
         </activity>
         <activity
-            android:label="@string/orders"
-            android:name=".activities.ListingOrders" >
+            android:name=".activities.ShowingArticle"
+            android:label="@string/product" >
         </activity>
         <activity
-            android:label="@string/orders"
-            android:name=".activities.ListingOrderTypes" >
+            android:name=".activities.ListingOrders"
+            android:label="@string/orders" >
         </activity>
         <activity
-            android:label="@string/orders"
-            android:name="com.grupo5.buyStuff.activities.ViewingOrders" >
+            android:name=".activities.ListingOrderTypes"
+            android:label="@string/orders" >
+        </activity>
+        <activity
+            android:name="com.grupo5.buyStuff.activities.ViewingOrders"
+            android:label="@string/orders" >
         </activity>
 
         <service android:name=".services.LoginService" >
@@ -69,4 +84,5 @@
         <service android:name="com.grupo5.buyStuff.services.OrderCategoriesListService" >
         </service>
     </application>
+
 </manifest>

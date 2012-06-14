@@ -38,10 +38,8 @@ public class ViewingOrders extends Activity {
 		Bundle data = getIntent().getExtras();
 		this.userName = data.getString(BSBundleConstants.USERNAME.getText());
 		this.token = data.getString(BSBundleConstants.AUTH_TOKEN.getText());
-		this.order = (Order) data.getSerializable(BSBundleConstants.ORDER
-				.getText());
-		articles = (List<Article>) data
-				.getSerializable(BSBundleConstants.ARTICLES.getText());
+		this.order = (Order) data.getSerializable(BSBundleConstants.ORDER.getText());
+		articles = (List<Article>) data.getSerializable(BSBundleConstants.ARTICLES.getText());
 		setInformation(data);
 	}
 
@@ -119,13 +117,10 @@ public class ViewingOrders extends Activity {
 	
 	public void viewOrderItems(View button) {
 		
-		MyIntent i = new MyIntent(Intent.ACTION_SYNC, null, this,
-				OrderMasterService.class);
+		MyIntent i = new MyIntent(Intent.ACTION_SYNC, null, this,OrderMasterService.class);
 		i.addAttribute(BSBundleConstants.ID,order.getId());
-		i.addAttribute(BSBundleConstants.USERNAME,
-				this.userName);
-		i.addAttribute(BSBundleConstants.AUTH_TOKEN,
-				this.token);
+		i.addAttribute(BSBundleConstants.USERNAME,this.userName);
+		i.addAttribute(BSBundleConstants.AUTH_TOKEN,this.token);
 		
 
 		final Bundle b = getIntent().getExtras();
@@ -135,15 +130,13 @@ public class ViewingOrders extends Activity {
 				super.onReceiveResult(resultCode, resultData);
 				switch (ServerMessages.parse(resultCode)) {
 				case STATUS_OK:
-					MyIntent myIntent = new MyIntent(ViewingOrders.this,
-							ListingArticles.class);
+					MyIntent myIntent = new MyIntent(ViewingOrders.this,ListingArticles.class);
 					myIntent.putExtras(resultData);
 					startActivity(myIntent);
 					break;
 				case STATUS_ERROR:
 					CharSequence text = getText(R.string.connectionError);
-					Toast.makeText(getApplicationContext(), text,
-							Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(), text,Toast.LENGTH_SHORT).show();
 					break;
 				}
 			}

@@ -5,6 +5,7 @@
     <string name="myArts">Artículos ordenados</string>
     <string name="orderTitle">Orden</string>
     <string name="myOrder">Mis órdenes</string>
+    <string name="QRCode">QRCode</string>
     <string name="logoString">BuyStuff! - compra donde quieras</string>
     <string name="app_name">BuyStuff!</string>
     <string name="username">Usuario:</string>
@@ -13,6 +14,8 @@
     <string name="categoryTitle">Categorías</string>
     <string name="subCategoryTitle">Subcategorías</string>
     <string name="menuTitle">Menú</string>
+       <string name="products">Productos</string>
+    <string name="product">Producto</string>
     <string name="browseItems">Navegar</string>
     <string name="logOut">Cerrar Sesión</string>
     <string name="orders">Órdenes</string>

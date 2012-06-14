@@ -192,7 +192,6 @@ public class ArticleMasterService extends IntentService {
 		Integer commandNumber = myIntent.getIntegerAttribute(BSBundleConstants.COMMAND.getText());
 		Bundle bundle = new Bundle();
 		List<Category> categories;
-		Log.v("ME LLEGA EL COMMAND NUMBER", String.valueOf(commandNumber));
 		try {
 			switch (InnerServerMessages.parse(commandNumber)) {
 			case LOAD_CATEGORIES:
@@ -227,13 +226,9 @@ public class ArticleMasterService extends IntentService {
 						(Serializable) articles);
 				break;
 			case LOAD_ARTICLE:
-				Log.v("Hola", "facu");
-				int prodId = myIntent
-						.getIntegerAttribute(BSBundleConstants.ARTICLE_ID
-								.getText());
+				int prodId = myIntent.getIntegerAttribute(BSBundleConstants.ARTICLE_ID.getText());
 				Article p = fetchArticle(prodId);
-				bundle.putSerializable(BSBundleConstants.ARTICLE.getText(),
-						p);
+				bundle.putSerializable(BSBundleConstants.ARTICLE.getText(),	p);
 				break;
 			
 			case LOAD_ARTICLES_BY_ORDER:
@@ -246,8 +241,7 @@ public class ArticleMasterService extends IntentService {
 			receiver.send(ServerMessages.STATUS_OK.getNumber(), bundle);
 		} catch (IOException ioe) {
 			// Log.v("ERROR", e.getMessage());
-			bundle.putString(BSBundleConstants.ERROR_MESSAGE.getText(),
-					ioe.getMessage());
+			bundle.putString(BSBundleConstants.ERROR_MESSAGE.getText(),ioe.getMessage());
 			receiver.send(ServerMessages.STATUS_ERROR.getNumber(), bundle);
 		}
 	}
