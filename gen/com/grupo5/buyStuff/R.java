@@ -55,7 +55,6 @@ public final class R {
         public static final int listText=0x7f070019;
         public static final int loginButton=0x7f070020;
         public static final int logoutButton=0x7f070022;
-        public static final int myArts=0x7f07002a;
         public static final int orderStatus=0x7f070027;
         public static final int orderStatusLabel=0x7f070025;
         public static final int orderStatusValue=0x7f070026;
@@ -71,6 +70,7 @@ public final class R {
         public static final int title=0x7f070001;
         public static final int tutlist_fragment=0x7f07001a;
         public static final int usernameInput=0x7f07001c;
+        public static final int viewProductsBtn=0x7f07002a;
     }
     public static final class layout {
         public static final int article=0x7f030000;

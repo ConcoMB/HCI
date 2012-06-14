@@ -39,7 +39,9 @@ public class ListingArticles extends ListActivity {
 		articles = (List<Article>) data
 				.getSerializable(BSBundleConstants.ARTICLES.getText());
 		String path = data.getString(BSBundleConstants.PATH.getText());
-		setTitle(Html.fromHtml(path));
+		if (path != null) {
+			setTitle(Html.fromHtml(path));
+		}
 		String[] products = getArticleNames();
 		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,
 				R.id.listText, products));
@@ -100,8 +102,8 @@ public class ListingArticles extends ListActivity {
 									.getText());
 					MyIntent myIntent = new MyIntent(ListingArticles.this,
 							ShowingArticle.class);
-					myIntent.addAttribute(
-							BSBundleConstants.ARTICLE.getText(), article);
+					myIntent.addAttribute(BSBundleConstants.ARTICLE.getText(),
+							article);
 					myIntent.addAttribute(
 							BSBundleConstants.PATH.getText(),
 							getTitle().toString()

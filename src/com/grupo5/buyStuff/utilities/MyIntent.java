@@ -27,6 +27,10 @@ public class MyIntent extends Intent {
 		this.intent = MyIntent.this;
 	}
 
+	public void addAttribute(BSBundleConstants name, String value) {
+		addAttribute(name.getText(), value);
+	}
+
 	public void addAttribute(String name, String value) {
 		intent.putExtra(name, value.toString());
 	}
