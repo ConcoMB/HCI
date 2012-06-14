@@ -1,17 +1,13 @@
 package com.grupo5.buyStuff.activities;
 
-import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.text.Html;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -63,13 +59,7 @@ public class ShowingArticle extends Activity {
 		{
 			ex.printStackTrace();
 		}
-		/*  
-		Object obj = fetch(article.getImgSrc());
-		if (obj != null) {
-			Drawable img = Drawable.createFromStream((InputStream) obj, "src");
-			ImageView imgView = (ImageView) findViewById(R.id.image);
-			imgView.setImageDrawable(img);
-		}*/
+		
 		String[] fields;
 		switch (article.getCategoryId()) {
 		case 1:
@@ -103,25 +93,6 @@ public class ShowingArticle extends Activity {
 		}
 	}
 
-	private Object fetch(String address) {
-		try {
-			URL url = new URL(address);
-			Object content = url.getContent();
-			return content;
-		} catch (MalformedURLException e) {
-			Log.v("ERROR URL", "error1");
-			return null;
-		} catch (IOException e) {
-			Log.v("ERROR URL", "error2");
-			return null;
-		}
-	}
-	private Drawable ImageOperations(Context ctx, String url) {
-		InputStream is = (InputStream) this.fetch(url);
-		Drawable d = Drawable.createFromStream(is, "src");
-		return d;
-	}
-	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_MENU) {
 			MyIntent myIntent = new MyIntent(this, Menu.class);
