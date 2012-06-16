@@ -27,7 +27,7 @@ import com.grupo5.buyStuff.R;
 
 public class ListingArticles extends ListActivity {
 
-	private static final int MAX_TEXT_LENGTH = 12;
+	private static final int MAX_TEXT_LENGTH = 20;
 	private List<Article> articles;
 
 	@SuppressWarnings("unchecked")
@@ -113,7 +113,8 @@ public class ListingArticles extends ListActivity {
 			if (text.length() > MAX_TEXT_LENGTH) {
 				text = text.substring(0, MAX_TEXT_LENGTH) + "...";
 			}
-			articleNames[i++] = text + " - " + Article.CURRENCY + " "+ article.getPrice();
+			articleNames[i++] = text;
+			//+ " - " + Article.CURRENCY + " "+ article.getPrice();
 		}
 		return articleNames;
 	}
