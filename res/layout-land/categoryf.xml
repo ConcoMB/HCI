@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <fragment
+        android:name="com.grupo5.buyStuff.fragments.CategoryList"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/categoryf"
+        android:layout_weight="30">
+    </fragment>
+    <fragment
+        android:name="com.grupo5.buyStuff.fragments.SubcategoryList"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/subcategoryf"
+        android:layout_weight="30">
+    </fragment>
+    <fragment
+        android:name="com.grupo5.buyStuff.fragments.ArticleList"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/articlef"
+        android:layout_weight="40">
+    </fragment>
+</LinearLayout>

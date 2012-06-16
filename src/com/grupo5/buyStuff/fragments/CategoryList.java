@@ -2,11 +2,13 @@ package com.grupo5.buyStuff.fragments;
 
 import java.util.List;
 
+import android.app.Fragment;
 import android.app.ListFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -21,15 +23,18 @@ import com.grupo5.buyStuff.model.CacheManager;
 import com.grupo5.buyStuff.model.Category;
 import com.grupo5.buyStuff.services.ArticleMasterService;
 import com.grupo5.buyStuff.utilities.BSBundleConstants;
+import com.grupo5.buyStuff.utilities.Listable;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.utilities.ServerMessages;
 
 public class CategoryList extends ListFragment{
-	
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+
+	@Override
+	public void onStart() {
+		super.onStart();
 		CacheManager catManager = CacheManager.getInstance();
-		setListAdapter(new ArrayAdapter<String>(getActivity(), R.layout.list_item, R.id.listText, catManager.getCategoryNames()));
+		setListAdapter(new ArrayAdapter<String>(getActivity(), R.layout.list_item,R.id.listText, catManager.getCategoryNames()));
+		getActivity().setTitle(R.string.categoryTitle);
 		ListView listView = getListView();
 
 		CharSequence text = getText(R.string.listHint);
@@ -39,37 +44,39 @@ public class CategoryList extends ListFragment{
 		Animation animation = AnimationUtils.makeInAnimation(getActivity().getBaseContext(),false);
 		animation.setDuration(500);
 		listView.setAnimation(animation);
-		
 	}
 
-	
+	@Override
 	public void onListItemClick(ListView l, View view, int position, long id) {
-		CharSequence text = ((TextView) view.findViewById(R.id.listText))
-				.getText();
-		Toast.makeText(getActivity().getApplicationContext(), text, Toast.LENGTH_SHORT)
-				.show();
+		CharSequence text = ((TextView) view.findViewById(R.id.listText)).getText();
+		Toast.makeText(getActivity().getApplicationContext(), text, Toast.LENGTH_SHORT).show();
+		Log.v("subcat",position+"");
 		if (!CacheManager.getInstance().loadedSubcategory(position)) {
 			loadSubcategory(position);
 		} else {
 			startSubcategoriesActivity(position);
 		}
 	}
+
 	private void loadSubcategory(final int catIndex) {
-		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, getActivity(), ArticleMasterService.class);
+		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, this.getActivity(),ArticleMasterService.class);
 		myIntent.addCommand(ArticleMasterService.InnerServerMessages.LOAD_SUBCATEGORIES);
-		int categoryId = CacheManager.getInstance().getCategories()
-				.get(catIndex).getId();
-		myIntent.addAttribute(BSBundleConstants.SUBCAT_ID.getText(),
-				String.valueOf(categoryId));
+		int categoryId = CacheManager.getInstance().getCategories().get(catIndex).getId();
+		myIntent.addAttribute(BSBundleConstants.SUBCAT_ID.getText(),String.valueOf(categoryId));
 		myIntent.addReceiver(new MyResultReceiver(new Handler(), catIndex));
 		getActivity().startService(myIntent);
 	}
 
 	private void startSubcategoriesActivity(int catIndex) {
-		MyIntent myIntent = new MyIntent(getActivity(), ListingSubcategories.class);
+		MyIntent myIntent = new MyIntent(CategoryList.this.getActivity(),ListingSubcategories.class);
 		myIntent.addAttribute(BSBundleConstants.CAT_POSITION.getText(),String.valueOf(catIndex));
 		myIntent.addAttribute(BSBundleConstants.PATH.getText(), CacheManager.getInstance().getCategories().get(catIndex).getName());
-		startActivity(myIntent);
+		Listable lis = (Listable) getFragmentManager().findFragmentById(R.id.subcategoryf);
+		if(lis==null || !((Fragment)lis).isInLayout()){
+			startActivity(myIntent);
+		}else{			
+			lis.fill(catIndex);
+		}
 	}
 
 	private class MyResultReceiver extends ResultReceiver {
@@ -86,17 +93,13 @@ public class CategoryList extends ListFragment{
 			super.onReceiveResult(resultCode, resultData);
 			switch (ServerMessages.parse(resultCode)) {
 			case STATUS_OK:
-				List<Category> subCategories = (List<Category>) resultData
-						.getSerializable(BSBundleConstants.SUBCATEGORIES
-								.getText());
-				CacheManager.getInstance().persistSubcategories(catIndex,
-						subCategories);
+				List<Category> subCategories = (List<Category>) resultData.getSerializable(BSBundleConstants.SUBCATEGORIES.getText());
+				CacheManager.getInstance().persistSubcategories(catIndex,subCategories);
 				startSubcategoriesActivity(catIndex);
 				break;
 			case STATUS_ERROR:
 				CharSequence text = getText(R.string.connectionError);
-				Toast.makeText(getActivity().getApplicationContext(), text,
-						Toast.LENGTH_SHORT).show();
+				Toast.makeText(getActivity().getApplicationContext(), text,Toast.LENGTH_SHORT).show();
 				break;
 			}
 		}

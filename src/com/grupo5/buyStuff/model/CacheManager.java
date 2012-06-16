@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import android.util.Log;
+
 import com.grupo5.buyStuff.utilities.LanguageManager;
 
 public class CacheManager {
@@ -31,6 +33,7 @@ public class CacheManager {
 		try {
 			c = categories.get(index);
 		} catch (Exception e) {
+			Log.v("FAIL", "getsubcategoryname");
 		}
 		return getCategoryNames(c.getSubcategories());
 	}
