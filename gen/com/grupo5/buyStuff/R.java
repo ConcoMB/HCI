@@ -61,26 +61,25 @@ public final class R {
         public static final int loginButton=0x7f080024;
         public static final int logoutButton=0x7f080027;
         public static final int myordersf=0x7f080028;
-        public static final int orderStatus=0x7f08002d;
-        public static final int orderStatusLabel=0x7f08002b;
-        public static final int orderStatusValue=0x7f08002c;
-        public static final int ordersf=0x7f080033;
+        public static final int orderStatus=0x7f08002c;
+        public static final int orderStatusLabel=0x7f08002a;
+        public static final int orderStatusValue=0x7f08002b;
+        public static final int ordersf=0x7f080032;
         public static final int passwordInput=0x7f080022;
         public static final int price=0x7f080003;
-        public static final int priceLabel=0x7f080030;
-        public static final int priceValue=0x7f080031;
+        public static final int priceLabel=0x7f08002f;
+        public static final int priceValue=0x7f080030;
         public static final int rememberMe=0x7f080023;
         public static final int scroller=0x7f080000;
-        public static final int shippedDateLabel=0x7f08002e;
-        public static final int shippedDateValue=0x7f08002f;
+        public static final int shippedDateLabel=0x7f08002d;
+        public static final int shippedDateValue=0x7f08002e;
         public static final int subcategoryf=0x7f08001e;
-        public static final int textInformation=0x7f08002a;
         public static final int textView1=0x7f08001f;
         public static final int textView2=0x7f080021;
         public static final int title=0x7f080001;
         public static final int tutlist_fragment=0x7f08001b;
         public static final int usernameInput=0x7f080020;
-        public static final int viewProductsBtn=0x7f080032;
+        public static final int viewProductsBtn=0x7f080031;
     }
     public static final class layout {
         public static final int article=0x7f030000;
