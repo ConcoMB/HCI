@@ -19,6 +19,7 @@
     <string name="product">Producto</string>
     <string name="browseItems">Navegar</string>
     <string name="logOut">Cerrar Sesión</string>
+    <string name="changeTheme">Cambiar Tema</string>
     <string name="orders">Órdenes</string>
     <string name="browserTitle">Categorías</string>
     <string name="orderUpdated">Orden actualizada: </string>

@@ -60,6 +60,7 @@ public class Login extends Activity {
 				MyIntent myIntent = new MyIntent(Login.this, Menu.class);
 				myIntent.addAttribute(BSBundleConstants.USERNAME.getText(),name);
 				myIntent.addAttribute(BSBundleConstants.AUTH_TOKEN.getText(), resultData.getString(BSBundleConstants.AUTH_TOKEN.getText()));
+				//myIntent.putExtra("theme", 0);
 				CacheManager.getInstance().persistSession(name,	resultData.getString(BSBundleConstants.AUTH_TOKEN.getText()));
 				startActivity(myIntent);
 				Login.this.finish();
@@ -68,8 +69,8 @@ public class Login extends Activity {
 				break;
 			case STATUS_ERROR:
 				if (resultData.containsKey(BSBundleConstants.ERROR_MESSAGE.getText())) {
-					//String errorMessage = resultData.getString(BSBundleConstants.ERROR_MESSAGE.getText());
-					String errorMessage = getText(R.string.errorLogin).toString();
+					String errorMessage = resultData.getString(BSBundleConstants.ERROR_MESSAGE.getText());
+					errorMessage = getText(R.string.errorLogin).toString();
 					Toast.makeText(getApplicationContext(), errorMessage,Toast.LENGTH_LONG).show();
 				}
 				break;

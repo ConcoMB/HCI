@@ -21,22 +21,10 @@
             android:textStyle="bold" >
         </TextView>
 
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="160dip"
-            android:layout_height="220dip"
-            android:layout_below="@+id/title"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_menu_companylogo" >
-        </ImageView>
-
         <TextView
             android:id="@+id/price"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/image"
-            android:layout_alignTop="@+id/image"
-            android:layout_toRightOf="@+id/image"
             android:gravity="center"
             android:textSize="25sp"
             android:textStyle="bold" >
@@ -46,9 +34,7 @@
             android:id="@+id/info1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/image"
-            android:text="TextView"
-	>
+            android:text="TextView" >
         </TextView>
 
         <TextView
@@ -120,6 +106,17 @@
             android:layout_below="@+id/info7"
             android:text="TextView" >
         </TextView>
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="220dip"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/info8"
+            android:layout_marginTop="30dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_menu_companylogo" />
+
     </RelativeLayout>
 
 </ScrollView>

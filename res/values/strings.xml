@@ -20,6 +20,7 @@
     <string name="browseItems">Browse</string>
     <string name="logOut">Log Out</string>
     <string name="orders">Orders</string>
+    <string name="changeTheme">Chamge Theme</string>
     <string name="browserTitle">Categories</string>
     <string name="orderUpdated">Order updated: </string>
     <string name="orderModified">Your order has been modified</string>

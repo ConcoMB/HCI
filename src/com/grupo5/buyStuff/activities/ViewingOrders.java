@@ -39,6 +39,12 @@ public class ViewingOrders extends Activity {
 		super.onCreate(savedInstanceState);
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy); 
+		if(Menu.color%2==0){
+			setTheme(R.style.LightTheme);
+
+		}else{
+			setTheme(R.style.BlackTheme);
+		}
 		setContentView(R.layout.order_info);
 		Bundle data = getIntent().getExtras();
 		this.userName = data.getString(BSBundleConstants.USERNAME.getText());
