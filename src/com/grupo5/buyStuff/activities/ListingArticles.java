@@ -9,7 +9,9 @@ import android.view.inputmethod.InputMethodManager;
 import com.grupo5.buyStuff.R;
 import com.grupo5.buyStuff.utilities.MyIntent;
 
+
 public class ListingArticles extends Activity {
+
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
