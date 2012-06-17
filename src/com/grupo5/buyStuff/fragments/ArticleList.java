@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
 import android.text.Html;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -91,6 +92,7 @@ public class ArticleList extends ListFragment implements Listable{
 
 	private void loadArticle(int prodId) {
 		MyIntent myIntent = new MyIntent(Intent.ACTION_SYNC, null, getActivity(),ArticleMasterService.class);
+		Log.v("article:",""+ArticleMasterService.InnerServerMessages.LOAD_ARTICLE.getNumber());
 		myIntent.addAttribute(BSBundleConstants.COMMAND.getText(), String.valueOf(ArticleMasterService.InnerServerMessages.LOAD_ARTICLE.getNumber()));
 		myIntent.addAttribute(BSBundleConstants.ARTICLE_ID.getText(), String.valueOf(prodId));
 		myIntent.addReceiver(new ResultReceiver(new Handler()) {

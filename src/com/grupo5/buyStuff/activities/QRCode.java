@@ -1,12 +1,15 @@
 package com.grupo5.buyStuff.activities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.grupo5.buyStuff.R;
@@ -21,9 +24,12 @@ public class QRCode extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		int i = Integer.valueOf(getIntent().getDataString());
+		Uri data = getIntent().getData();
+		List<String> params = data.getPathSegments();
+		String first = params.get(0); // "status"
+		int i = Integer.valueOf(first);
+		Log.v("articleid:",i+"");
 		loadArticle(i);
-
 	}
 
 	private void loadArticle(int prodId) {
@@ -39,7 +45,10 @@ public class QRCode extends Activity{
 					Serializable article = resultData.getSerializable(BSBundleConstants.ARTICLE.getText());
 					MyIntent myIntent = new MyIntent(QRCode.this, ShowingArticle.class);
 					myIntent.addAttribute(BSBundleConstants.ARTICLE.getText(),article);
-					myIntent.addAttribute(BSBundleConstants.PATH.getText(), getTitle().toString()+ ((Article) article).getName());
+					String title=getTitle().toString();
+					String aname=((Article) article).getName();
+					Log.v("title+a:",title+aname);
+					myIntent.addAttribute(BSBundleConstants.PATH.getText(),title +aname );
 					startActivity(myIntent);
 					break;
 				case STATUS_ERROR:

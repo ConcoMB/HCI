@@ -8,9 +8,14 @@ import android.view.inputmethod.InputMethodManager;
 
 import com.grupo5.buyStuff.R;
 import com.grupo5.buyStuff.utilities.MyIntent;
+<<<<<<< HEAD
 
 public class ListingArticles extends Activity {
 
+=======
+
+public class ListingArticles extends Activity {
+>>>>>>> fb933f1fa210f020e813895db5b211ef21345070
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -32,9 +37,13 @@ public class ListingArticles extends Activity {
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
+<<<<<<< HEAD
 	}
 
 
 
+=======
+	}
+>>>>>>> fb933f1fa210f020e813895db5b211ef21345070
 
 }
