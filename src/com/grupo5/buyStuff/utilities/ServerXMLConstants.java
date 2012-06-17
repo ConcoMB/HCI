@@ -6,7 +6,7 @@ public enum ServerXMLConstants {
 			"sales_rank"), IMAGE_SRC("image_url"), AUTH_TOKEN("token"), PRODUCT_ID(
 			"product_id"), ARTICLES("articles"), ERROR_MESSAGE("errorMessage"), ORDER(
 			"order"), LATITUDE("latitude"), LONGITUDE("longitude"), STATUS(
-			"status"), CREATED_DATE("created_date");
+			"status"), CREATED_DATE("created_date"), ITEM("item"), COUNT("count");
 
 	private String s;
 

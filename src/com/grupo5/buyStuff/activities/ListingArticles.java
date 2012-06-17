@@ -10,6 +10,7 @@ import com.grupo5.buyStuff.R;
 import com.grupo5.buyStuff.utilities.MyIntent;
 
 
+
 public class ListingArticles extends Activity {
 	
 	@Override
@@ -39,8 +40,6 @@ public class ListingArticles extends Activity {
 		}
 		return super.onKeyDown(keyCode, event);
 	}
-
-
 
 
 }

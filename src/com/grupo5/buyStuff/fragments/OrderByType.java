@@ -66,12 +66,13 @@ public class OrderByType extends ListFragment implements Listable{
 				getActivity().setTitle(Html.fromHtml(breadCrumb+ st + " > "));
 				this.loadOrders();
 			}
+		}else{
+			String[] s={};
+			setListAdapter(new ArrayAdapter<String>(getActivity(), R.layout.list_item,R.id.listText, s));
 		}
 		this.setClickCallback();
 		ListView lv = getListView();
 		lv.setTextFilterEnabled(true);
-		String[] s={};
-		setListAdapter(new ArrayAdapter<String>(getActivity(), R.layout.list_item,R.id.listText, s));
 		Animation a = AnimationUtils.makeInAnimation(getActivity().getBaseContext(), false);
 		a.setDuration(500);
 		lv.setAnimation(a);

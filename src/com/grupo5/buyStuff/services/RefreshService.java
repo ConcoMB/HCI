@@ -22,7 +22,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.ResultReceiver;
+import android.util.Log;
 
+import com.grupo5.buyStuff.R;
 import com.grupo5.buyStuff.activities.Menu;
 import com.grupo5.buyStuff.model.Order;
 import com.grupo5.buyStuff.utilities.BSBundleConstants;
@@ -32,7 +34,6 @@ import com.grupo5.buyStuff.utilities.ServerMessages;
 import com.grupo5.buyStuff.utilities.ServerXMLConstants;
 import com.grupo5.buyStuff.utilities.URLGenerator;
 import com.grupo5.buyStuff.utilities.XMLParser;
-import com.grupo5.buyStuff.R;
 
 public class RefreshService extends IntentService {
 	private static final int NOTIFICATION_ID = 1;
@@ -114,7 +115,7 @@ public class RefreshService extends IntentService {
 		try {
 			XMLParser xp;
 			xp = new XMLParser(response);
-			List<Order> newOrders = this.parseOrderResponse(b, xp);
+			List<Order> newOrders = this.parseOrderResponse(b, xp, username, token);
 			if (newOrders == null) {
 				return false;
 			}
@@ -150,7 +151,7 @@ public class RefreshService extends IntentService {
 		return false;
 	}
 
-	private List<Order> parseOrderResponse(Bundle b, XMLParser xp) {
+	private List<Order> parseOrderResponse(Bundle b, XMLParser xp,String username, String token) {
 		if (xp.getErrorMessage() != null) {
 			b.putString(ServerXMLConstants.ERROR_MESSAGE.getText(),xp.getErrorMessage());
 			return null;
@@ -158,14 +159,15 @@ public class RefreshService extends IntentService {
 		NodeList orders = xp.getElements(ServerXMLConstants.ORDER.getText());
 		List<Order> orderList = new ArrayList<Order>();
 		for (int i = 0; i < orders.getLength(); i++) {
-			this.fillOrderData(orderList, orders.item(i), xp);
+			this.fillOrderData(orderList, orders.item(i), xp,username, token);
 		}
 		return orderList;
 	}
 
-	private void fillOrderData(List<Order> orderList, Node order, XMLParser xp) {
-		Order o = new Order(getApplicationContext());
-		o.setId(xp.getAttribute((Element) order,ServerXMLConstants.ID.getText()));
+	private void fillOrderData(List<Order> orderList, Node order, XMLParser xp, String username, String token) {
+		int orderID=Integer.valueOf(xp.getAttribute((Element) order,ServerXMLConstants.ID.getText()));
+		Order o = new Order(getApplicationContext());		
+		o.setId(orderID+"");
 		o.setLatitude(xp.getStringFromSingleElement(ServerXMLConstants.LATITUDE.getText(), (Element) order));
 		o.setLongitude(xp.getStringFromSingleElement(ServerXMLConstants.LONGITUDE.getText(), (Element) order));
 		o.setStatus(xp.getStringFromSingleElement(ServerXMLConstants.STATUS.getText(), (Element) order));

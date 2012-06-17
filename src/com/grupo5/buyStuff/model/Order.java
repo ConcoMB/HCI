@@ -14,6 +14,7 @@ public class Order implements Serializable {
 	private String status;
 	private static Context context;
 	private String createdDate;
+	private String price;
 
 	public Order(Context context) {
 		Order.context = context;
@@ -91,5 +92,13 @@ public class Order implements Serializable {
 		public String getName() {
 			return this.name;
 		}
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
 	}
 }

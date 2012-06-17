@@ -22,10 +22,11 @@ public final class R {
     }
     public static final class drawable {
         public static final int expander_ic_minimized=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int ic_menu_companylogo=0x7f020002;
-        public static final int ic_splash=0x7f020003;
-        public static final int koppe_isologo=0x7f020004;
+        public static final int expander_ic_minimized2=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int ic_menu_companylogo=0x7f020003;
+        public static final int ic_splash=0x7f020004;
+        public static final int koppe_isologo=0x7f020005;
     }
     public static final class id {
         public static final int articleText=0x7f080017;
@@ -63,9 +64,11 @@ public final class R {
         public static final int orderStatus=0x7f08002d;
         public static final int orderStatusLabel=0x7f08002b;
         public static final int orderStatusValue=0x7f08002c;
-        public static final int ordersf=0x7f080031;
+        public static final int ordersf=0x7f080033;
         public static final int passwordInput=0x7f080022;
         public static final int price=0x7f080003;
+        public static final int priceLabel=0x7f080030;
+        public static final int priceValue=0x7f080031;
         public static final int rememberMe=0x7f080023;
         public static final int scroller=0x7f080000;
         public static final int shippedDateLabel=0x7f08002e;
@@ -77,7 +80,7 @@ public final class R {
         public static final int title=0x7f080001;
         public static final int tutlist_fragment=0x7f08001b;
         public static final int usernameInput=0x7f080020;
-        public static final int viewProductsBtn=0x7f080030;
+        public static final int viewProductsBtn=0x7f080032;
     }
     public static final class layout {
         public static final int article=0x7f030000;
@@ -107,35 +110,36 @@ public final class R {
         public static final int changeTheme=0x7f040013;
         public static final int companyName=0x7f040000;
         public static final int confirmed=0x7f040018;
-        public static final int connectionError=0x7f040021;
+        public static final int connectionError=0x7f040022;
         public static final int created=0x7f040017;
         public static final int delivered=0x7f04001a;
         public static final int errorLogin=0x7f040005;
-        public static final int listHint=0x7f040022;
+        public static final int listHint=0x7f040023;
         public static final int logOut=0x7f040011;
         public static final int loginText=0x7f04000a;
         public static final int logoString=0x7f040006;
         public static final int menuTitle=0x7f04000d;
         public static final int myArts=0x7f040001;
         public static final int myOrder=0x7f040003;
-        public static final int myOrders=0x7f040027;
-        public static final int noMenuOptions=0x7f040026;
-        public static final int notLoggedIn=0x7f040023;
-        public static final int orderInformation=0x7f04001e;
-        public static final int orderLocationBtn=0x7f040020;
-        public static final int orderLocationLabel=0x7f04001d;
+        public static final int myOrders=0x7f040028;
+        public static final int noMenuOptions=0x7f040027;
+        public static final int notLoggedIn=0x7f040024;
+        public static final int orderInformation=0x7f04001f;
+        public static final int orderLocationBtn=0x7f040021;
+        public static final int orderLocationLabel=0x7f04001e;
         public static final int orderModified=0x7f040016;
-        public static final int orderProductBtn=0x7f04001f;
-        public static final int orderShippedDateLabel=0x7f04001c;
+        public static final int orderProductBtn=0x7f040020;
+        public static final int orderShippedDateLabel=0x7f04001d;
         public static final int orderStatusLabel=0x7f04001b;
         public static final int orderTitle=0x7f040002;
         public static final int orderUpdated=0x7f040015;
         public static final int orders=0x7f040012;
-        public static final int ordersNotLoaded=0x7f040025;
+        public static final int ordersNotLoaded=0x7f040026;
         public static final int password=0x7f040009;
+        public static final int priceLabel=0x7f04001c;
         public static final int product=0x7f04000f;
         public static final int products=0x7f04000e;
-        public static final int rememberMe=0x7f040024;
+        public static final int rememberMe=0x7f040025;
         public static final int subCategoryTitle=0x7f04000c;
         public static final int transported=0x7f040019;
         public static final int username=0x7f040008;
