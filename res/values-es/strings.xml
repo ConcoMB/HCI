@@ -27,6 +27,7 @@
     <string name="transported">Transportadas</string>
     <string name="delivered">Entregadas</string>
     <string name="orderStatusLabel">Estado: </string>
+    <string name="priceLabel">Precio: </string>
     <string name="orderShippedDateLabel">Fecha de creación: </string>
     <string name="orderLocationLabel">Posición: </string>
     <string name="orderInformation">Información de la orden</string>

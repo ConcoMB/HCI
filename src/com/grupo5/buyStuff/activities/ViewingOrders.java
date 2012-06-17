@@ -1,10 +1,17 @@
 package com.grupo5.buyStuff.activities;
 
+import org.apache.http.HttpResponse;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
+import android.os.StrictMode;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +24,9 @@ import com.grupo5.buyStuff.services.OrderMasterService;
 import com.grupo5.buyStuff.utilities.BSBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.utilities.ServerMessages;
+import com.grupo5.buyStuff.utilities.ServerXMLConstants;
+import com.grupo5.buyStuff.utilities.URLGenerator;
+import com.grupo5.buyStuff.utilities.XMLParser;
 
 public class ViewingOrders extends Activity {
 	private String userName;
@@ -27,6 +37,8 @@ public class ViewingOrders extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		StrictMode.setThreadPolicy(policy); 
 		setContentView(R.layout.order_info);
 		Bundle data = getIntent().getExtras();
 		this.userName = data.getString(BSBundleConstants.USERNAME.getText());
@@ -49,6 +61,8 @@ public class ViewingOrders extends Activity {
 		TextView t;
 		t = (TextView) findViewById(R.id.orderStatusLabel);
 		t.setText(R.string.orderStatusLabel);
+		t = (TextView) findViewById(R.id.priceLabel);
+		t.setText(R.string.priceLabel);
 		t = (TextView) findViewById(R.id.shippedDateLabel);
 		t.setText(R.string.orderShippedDateLabel);
 		
@@ -58,13 +72,44 @@ public class ViewingOrders extends Activity {
 	}
 
 	private void setValues() {
+		double price=getPrice();
 		TextView t;
 		t = (TextView) findViewById(R.id.orderStatusValue);
 		t.setText(" " + order.getStatusName());
 		t = (TextView) findViewById(R.id.shippedDateValue);
 		t.setText(" " + order.getShippedDate());
+		t = (TextView) findViewById(R.id.priceValue);
+		t.setText(" " + price);
 	}
 
+	private double getPrice(){
+		try {
+			URLGenerator ug = new URLGenerator("Order");
+			ug.addParameter("method", "GetOrder");
+			ug.addParameter("username", userName);
+			ug.addParameter("authentication_token", token);
+			ug.addParameter("order_id", ""+order.getId());
+			HttpResponse response = ug.getServerResponse();
+			XMLParser xp2;
+			xp2 = new XMLParser(response);
+			double price=0;
+			NodeList prods=xp2.getElements(ServerXMLConstants.ITEM.getText());
+			int n=prods.getLength();
+			Log.v("ciclo","1");
+			for(int i=0;i<n;i++){
+				Log.v("ciclo",i+"");
+				Node p=prods.item(i);
+				double itemPrice=Double.valueOf(xp2.getStringFromSingleElement(ServerXMLConstants.PRICE.getText(), (Element)p));
+				int q=Integer.valueOf(xp2.getStringFromSingleElement(ServerXMLConstants.COUNT.getText(), (Element)p));
+				price+=itemPrice*q;
+			}
+			return price;
+		}catch (Exception e) {
+			Log.v("Exception",e.toString());
+		}
+		return 0.0;
+	}
+	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_MENU) {
