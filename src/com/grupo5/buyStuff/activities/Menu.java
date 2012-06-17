@@ -40,7 +40,7 @@ public class Menu extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.init();
-
+		//setTheme(R.style.BlackTheme);
 		setContentView(R.layout.menu_layout);
 		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,R.id.listText, this.menuOptions));
 		setTitle(R.string.menuTitle);
