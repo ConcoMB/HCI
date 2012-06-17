@@ -14,6 +14,12 @@ public class ListingOrderTypes extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		if(Menu.color%2==0){
+			setTheme(R.style.LightTheme);
+
+		}else{
+			setTheme(R.style.BlackTheme);
+		}
 		setContentView(R.layout.myordersf);
 	}
 

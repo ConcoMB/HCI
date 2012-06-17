@@ -27,6 +27,12 @@ public class ViewingOrders extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		if(Menu.color%2==0){
+			setTheme(R.style.LightTheme);
+
+		}else{
+			setTheme(R.style.BlackTheme);
+		}
 		setContentView(R.layout.order_info);
 		Bundle data = getIntent().getExtras();
 		this.userName = data.getString(BSBundleConstants.USERNAME.getText());

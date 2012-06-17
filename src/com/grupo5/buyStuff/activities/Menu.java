@@ -27,11 +27,11 @@ import com.grupo5.buyStuff.services.RefreshService;
 import com.grupo5.buyStuff.utilities.BSBundleConstants;
 import com.grupo5.buyStuff.utilities.MyIntent;
 import com.grupo5.buyStuff.utilities.ServerMessages;
-import com.grupo5.buyStuff.utilities.Themes;
 
 public class Menu extends ListActivity {
 	private static boolean refreshOrderStarted = false;
 	private boolean isLoggedIn = true;
+	public static int color= 0;
 	private boolean ordersAvailable;
 	private List<String> menuOptions;
 	private Map<String, ActivityLauncher> optionHandler;
@@ -40,7 +40,12 @@ public class Menu extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.init();
-		//setTheme(R.style.BlackTheme);
+		if(color%2==0){
+			setTheme(R.style.LightTheme);
+
+		}else{
+			setTheme(R.style.BlackTheme);
+		}
 		setContentView(R.layout.menu_layout);
 		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,R.id.listText, this.menuOptions));
 		setTitle(R.string.menuTitle);
@@ -55,8 +60,10 @@ public class Menu extends ListActivity {
 	}
 	 public void changeTheme(View v) 
      {
-         Themes.changeToTheme(this, Themes.THEME_BLACK);
-
+		 color++;
+		Intent intent = getIntent();
+		finish();
+		startActivity(intent);
      }
 	public boolean isLoggedIn() {
 		return this.isLoggedIn;

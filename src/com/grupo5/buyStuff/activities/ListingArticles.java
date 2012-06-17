@@ -15,6 +15,12 @@ public class ListingArticles extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		if(Menu.color%2==0){
+			setTheme(R.style.LightTheme);
+
+		}else{
+			setTheme(R.style.BlackTheme);
+		}
 		setContentView(R.layout.articlef);
 
 	}

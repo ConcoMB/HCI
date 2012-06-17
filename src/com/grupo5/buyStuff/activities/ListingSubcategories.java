@@ -12,6 +12,12 @@ import com.grupo5.buyStuff.utilities.MyIntent;
 public class ListingSubcategories extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		if(Menu.color%2==0){
+			setTheme(R.style.LightTheme);
+
+		}else{
+			setTheme(R.style.BlackTheme);
+		}
 		setContentView(R.layout.subcategoryf);
 	}
 
