@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 import android.text.Html;
+import android.util.Log;
 
 import com.grupo5.buyStuff.model.Article;
 import com.grupo5.buyStuff.model.Category;
@@ -209,6 +210,7 @@ public class ArticleMasterService extends IntentService {
 				break;
 			case LOAD_ARTICLE:
 				int prodId = myIntent.getIntegerAttribute(BSBundleConstants.ARTICLE_ID.getText());
+				Log.v("prodID recibido",""+prodId);
 				Article p = fetchArticle(prodId);
 				bundle.putSerializable(BSBundleConstants.ARTICLE.getText(),	p);
 				break;

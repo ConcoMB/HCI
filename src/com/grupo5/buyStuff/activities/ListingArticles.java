@@ -9,15 +9,7 @@ import android.view.inputmethod.InputMethodManager;
 import com.grupo5.buyStuff.R;
 import com.grupo5.buyStuff.utilities.MyIntent;
 
-<<<<<<< HEAD
 public class ListingArticles extends Activity {
-=======
-public class ListingArticles extends ListActivity {
-
-	private static final int MAX_TEXT_LENGTH = 20;
-	private List<Article> articles;
->>>>>>> ee808a61219358e8cbf3687835837c06d2f5ed6f
-
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -40,24 +32,5 @@ public class ListingArticles extends ListActivity {
 		}
 		return super.onKeyDown(keyCode, event);
 	}
-
-
-<<<<<<< HEAD
-=======
-	private String[] getArticleNames() {
-		String[] articleNames = new String[articles.size()];
-		int i = 0;
-		String text;
-		for (Article article : articles) {
-			text = article.getName();
-			if (text.length() > MAX_TEXT_LENGTH) {
-				text = text.substring(0, MAX_TEXT_LENGTH) + "...";
-			}
-			articleNames[i++] = text;
-			//+ " - " + Article.CURRENCY + " "+ article.getPrice();
-		}
-		return articleNames;
-	}
->>>>>>> ee808a61219358e8cbf3687835837c06d2f5ed6f
 
 }

@@ -78,6 +78,11 @@ public class OrderByType extends ListFragment implements Listable{
 	}
 
 	public void fill(Object o){
+		Bundle b=(Bundle)o;
+		this.type = b.getString(BSBundleConstants.TYPE.getText());
+		this.userName = b.getString(BSBundleConstants.USERNAME.getText());
+		this.token = b.getString(BSBundleConstants.AUTH_TOKEN.getText());
+		this.orders = new ArrayList<Order>();
 		loadOrders();
 	}
 

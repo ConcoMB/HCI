@@ -8,6 +8,7 @@ import java.util.Map;
 import android.app.Fragment;
 import android.app.ListFragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -50,8 +51,9 @@ public class MyOrders extends ListFragment{
 		Listable lis = (Listable) getFragmentManager().findFragmentById(R.id.myordersf);
 		if(lis==null || !((Fragment)lis).isInLayout()){
 			startActivity(myIntent);
-		}else{			
-			lis.fill(null);
+		}else{		
+			Log.v("launched",position+"");
+			lis.fill(myIntent.getExtras());
 		}
 	}
 
