@@ -32,7 +32,7 @@ import com.grupo5.buyStuff.utilities.ServerMessages;
 
 public class ArticleList extends ListFragment implements Listable{
 
-	private static final int MAX_TEXT_LENGTH = 12;
+	private static final int MAX_TEXT_LENGTH = 20;
 	private List<Article> articles;
 
 	@Override
@@ -126,7 +126,7 @@ public class ArticleList extends ListFragment implements Listable{
 			if (text.length() > MAX_TEXT_LENGTH) {
 				text = text.substring(0, MAX_TEXT_LENGTH) + "...";
 			}
-			articleNames[i++] = text + " - " + Article.CURRENCY + " "+ article.getPrice();
+			articleNames[i++] = text;
 		}
 		return articleNames;
 	}

@@ -40,7 +40,10 @@ public class OrderByType extends ListFragment implements Listable{
 	@Override
 	public void onStart() {
 		super.onStart();
+		String[] s={};
+		setListAdapter(new ArrayAdapter<String>(getActivity(), R.layout.list_item,R.id.listText, s));
 		Bundle b = getActivity().getIntent().getExtras();
+		
 		if(b!=null){
 			this.type = b.getString(BSBundleConstants.TYPE.getText());
 			this.userName = b.getString(BSBundleConstants.USERNAME.getText());
@@ -66,9 +69,6 @@ public class OrderByType extends ListFragment implements Listable{
 				getActivity().setTitle(Html.fromHtml(breadCrumb+ st + " > "));
 				this.loadOrders();
 			}
-		}else{
-			String[] s={};
-			setListAdapter(new ArrayAdapter<String>(getActivity(), R.layout.list_item,R.id.listText, s));
 		}
 		this.setClickCallback();
 		ListView lv = getListView();

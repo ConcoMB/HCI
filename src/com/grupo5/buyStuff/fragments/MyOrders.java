@@ -52,7 +52,6 @@ public class MyOrders extends ListFragment{
 		if(lis==null || !((Fragment)lis).isInLayout()){
 			startActivity(myIntent);
 		}else{		
-			Log.v("launched",position+"");
 			lis.fill(myIntent.getExtras());
 		}
 	}
