@@ -94,11 +94,9 @@ public class RefreshService extends IntentService {
 		} else {
 			contentText = getString(R.string.orderModified);
 		}
-		PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-				notificationIntent, 0);
+		PendingIntent contentIntent = PendingIntent.getActivity(this, 0,notificationIntent, 0);
 
-		notification.setLatestEventInfo(context, contentTitle, contentText,
-				contentIntent);
+		notification.setLatestEventInfo(context, contentTitle, contentText,contentIntent);
 
 		mNotificationManager.notify(NOTIFICATION_ID, notification);
 	}
