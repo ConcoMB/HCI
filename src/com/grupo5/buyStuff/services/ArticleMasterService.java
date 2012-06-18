@@ -126,6 +126,27 @@ public class ArticleMasterService extends IntentService {
 		double price = Double.parseDouble(parser.getStringFromSingleElement(ServerXMLConstants.PRICE.getText(), (Element) node));
 		return new Article(id, name, price);
 	}
+	
+	public static List<Article> fetchArticlesByName(String query) throws ClientProtocolException, IOException{
+		catalogServer.clearParameters();
+		catalogServer.addParameter("method", "GetProductListByName");
+		catalogServer.addParameter("criteria",query);
+		HttpResponse response = catalogServer.getServerResponse();
+
+		try {
+			List<Article> articles = new LinkedList<Article>();
+			XMLParser parser = new XMLParser(response);
+			NodeList articleNodes = parser.getElements(ServerXMLConstants.ARTICLE.getText());
+			for (int i = 0; i < articleNodes.getLength(); i++) {
+				articles.add(parseArticle(parser, articleNodes.item(i)));
+			}
+			return articles;
+
+		} catch (ParserConfigurationException e) {
+		} catch (SAXException e) {
+		}
+		return null;
+	}
 
 	public static Article fetchArticle(int ArticleId) throws ClientProtocolException, IOException {
 
@@ -210,9 +231,13 @@ public class ArticleMasterService extends IntentService {
 				break;
 			case LOAD_ARTICLE:
 				int prodId = myIntent.getIntegerAttribute(BSBundleConstants.ARTICLE_ID.getText());
-				Log.v("prodID recibido",""+prodId);
 				Article p = fetchArticle(prodId);
 				bundle.putSerializable(BSBundleConstants.ARTICLE.getText(),	p);
+				break;
+			case LOAD_ARTICLES_BY_NAME:
+				String query = myIntent.getStringAttribute("query");
+				articles = fetchArticlesByName(query);
+				bundle.putSerializable(BSBundleConstants.ARTICLES.getText(),(Serializable) articles);
 				break;
 			
 			}
@@ -227,7 +252,7 @@ public class ArticleMasterService extends IntentService {
 
 
 	public enum InnerServerMessages {
-		LOAD_CATEGORIES(), LOAD_SUBCATEGORIES(), LOAD_ARTICLES_BY_SUBCATEGORY(), LOAD_ARTICLE();
+		LOAD_CATEGORIES(), LOAD_SUBCATEGORIES(), LOAD_ARTICLES_BY_SUBCATEGORY(), LOAD_ARTICLE(), LOAD_ARTICLES_BY_NAME;
 
 		private int number;
 

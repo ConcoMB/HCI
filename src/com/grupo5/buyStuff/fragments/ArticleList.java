@@ -44,6 +44,7 @@ public class ArticleList extends ListFragment implements Listable{
 			articles = (List<Article>) data.getSerializable(BSBundleConstants.ARTICLES.getText());
 			products=getArticleNames();
 			String path = data.getString(BSBundleConstants.PATH.getText());
+			Log.v("EMEPZO", "empezo");
 			if (path != null) {
 				getActivity().setTitle(Html.fromHtml(path));
 			}

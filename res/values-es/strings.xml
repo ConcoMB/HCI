@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+ 	<string name="search_label">Búsqueda: </string>
+    
+    <string name="searchHint">Escribe el nombre de un producto</string>   
     <string name="companyName">BuyStuff Corp</string>
     <string name="myArts">Artículos ordenados</string>
     <string name="orderTitle">Orden</string>
